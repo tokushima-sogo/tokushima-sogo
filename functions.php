@@ -1,7 +1,7 @@
 <?php
 
 /**
- * body要素直後に何かを挿入する時 htmlタグではない！
+ * body要素直後に何かを挿入する場合 htmlタグを挿入するものではない！
  *
  * @return void
  */
@@ -49,3 +49,32 @@ function tokushima_sogo_document_title_parts($title)
     return $title;
 }
 add_filter('document_title_parts', 'tokushima_sogo_document_title_parts');
+
+/**
+ * cssスタイルの読み込み
+ *
+ * @return void
+ */
+function add_tokushima_sogo_styles()
+{
+
+    wp_enqueue_style('tokushima_sogo_reset_style', get_template_directory_uri() . '/assets/css/reset.css');
+    wp_enqueue_style('tokushima_sogo_base_style', get_template_directory_uri() . '/assets/css/reset.css');
+
+    if (is_home()) {
+    }
+}
+add_action('wp_enqueue_scripts', 'add_tokushima_sogo_styles');
+
+/**
+ * jsファイルの読み込み
+ *
+ * @return void
+ */
+function add_tokushima_sogo_scripts()
+{
+
+    // jqueryの利用
+    wp_enqueue_script('jquery');
+}
+add_action('wp_enqueue_scripts', 'add_tokushima_sogo_scripts');
