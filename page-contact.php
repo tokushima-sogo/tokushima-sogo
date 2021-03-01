@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+<!-- 問い合わせフォームの編集 -->
 <main>
     <section class="contact">
         <div class="contact--wrapper">
