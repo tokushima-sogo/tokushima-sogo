@@ -1,9 +1,7 @@
-<!-- 何回やってもターム名出てこない -->
-
 <!-- 【引継ぎ事項】
 １,クラス名は適当，命名ルールに合わせて直す必要あり。
 ２,スポットの写真表示の部分は仮です。jQueryのslickで書き直してください。
-３,サブループは自信ない。
+３,76~79行目エラー。ターム名出てこない。誰か助けて。
 ４,cssは作っていない。
 ５,wpulinkのショートコードは埋め込んでいない。 -->
 
@@ -68,10 +66,9 @@
                     <!-- タクソノミースラッグの表示 -->
                     <div class="term">
                         <!-- タクソノミースラッグの取得 -->
-                        <?php $area_slug = get_query_var('east'); ?>
+                        <?php $area_terms(array('taxonomy' => 'east')); ?>
                         <!-- タクソノミー(area)のターム -->
-                        <?php $area_term = get_term_by('slug', $area_slug, 'east'); ?>
-                        <?php echo $area_term->name; ?>
+                        <?php echo $area_terms->name; ?>
                     </div>
 
                     <!-- カスタム投稿タイプのスラッグ表示 get_post_typeの方？-->
