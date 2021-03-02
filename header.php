@@ -11,6 +11,9 @@
 
     <link href="contact-style.css" rel="stylesheet" media="screen">
 
+    <!-- 小野寛智のfontsawesomeアカウントなので必ず消す！！ -->
+    <script src="https://kit.fontawesome.com/72a93cd7e4.js" crossorigin="anonymous"></script>
+
     <?php wp_head(); ?>
 </head>
 
@@ -18,12 +21,12 @@
     <?php wp_body_open(); ?>
 
     <header>
-<a href="<?php echo home_url(); ?>">Topへ</a><br>
-<section id="search">
-<div class="p-search u-search--margin u-clearfix">
-<img src="<?php echo get_template_directory_uri(); ?>/image/search.png" class="c-imageSmall p-search__image"  alt="虫眼鏡">
-<p class="c-search p-search__p">検索する</p>
-</div>
-<?php echo do_shortcode( '[searchandfilter fields="search,category,taxocategory,taxotag" types=",radio,radio,checkbox" hierarchical="0,1,0,0" show_count=",1,1,1" submit_label="検索" headings=",デフォルトカテゴリー,カスタムタクソノミー,"]' ); ?>
-</section>
+        <a href="<?php echo home_url(); ?>">Topへ</a><br>
+        <section id="search">
+            <div class="p-search u-search--margin u-clearfix">
+                <img src="<?php echo get_template_directory_uri(); ?>/image/search.png" class="c-imageSmall p-search__image" alt="虫眼鏡">
+                <p class="c-search p-search__p">検索する</p>
+            </div>
+            <?php echo do_shortcode('[searchandfilter fields="search,category,taxocategory,taxotag" types=",radio,radio,checkbox" hierarchical="0,1,0,0" show_count=",1,1,1" submit_label="検索" headings=",デフォルトカテゴリー,カスタムタクソノミー,"]'); ?>
+        </section>
     </header>
