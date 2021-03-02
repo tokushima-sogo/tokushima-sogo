@@ -52,10 +52,10 @@
                 )
 
             );
-        $spot_query = new WP_Query($args);
+        $history_query = new WP_Query($args);
 
-        if ($spot_query->have_posts()) :
-            while ($spot_query->have_posts()) : $spot_query->the_post();
+        if ($history_query->have_posts()) :
+            while ($history_query->have_posts()) : $history_query->the_post();
         ?>
                 <!-- サムネイル部分 -->
                 <div class="pic">
@@ -124,10 +124,10 @@ $args =
         )
 
     );
-$spot_query = new WP_Query($args);
+$goast_query = new WP_Query($args);
 
-if ($spot_query->have_posts()) :
-    while ($spot_query->have_posts()) : $spot_query->the_post();
+if ($goast_query->have_posts()) :
+    while ($goast_query->have_posts()) : $goast_query->the_post();
 ?>
         <!-- サムネイル部分 -->
         <div class="pic">
