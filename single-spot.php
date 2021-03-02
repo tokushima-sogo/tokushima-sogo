@@ -1,7 +1,6 @@
 <!-- 【引継ぎ事項】
 １,クラス名は適当，命名ルールに合わせて直す必要あり。
 ２,スポットの写真表示の部分は仮です。jQueryのslickで書き直してください。
-３,76~79行目エラー。ターム名出てこない。誰か助けて。
 ４,cssは作っていない。
 ５,wpulinkのショートコードは埋め込んでいない。 -->
 
@@ -27,25 +26,38 @@
         <h2>関連記事</h2>
         ​
         <!-- サブループ設定 -->
+
+        <!-- 表示されている記事の投稿タイプでターム記事をランダムで表示するループ -->
+        <!-- 【https://cotodama.co/get_posts_sub_loop/#i-8】 -->
         <?php
-        $args = array(
-            'post_type'      => 'spot',          //カスタム投稿タイプ名
-            'posts_per_page' => 3,               // 取得する投稿数
-            'orderby'        => 'rand',          //ランダムで表示
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'area', // タクソノミースラッグを指定
-                    'field' => 'slug', // termsで使用する種類指定。指定できる値は 'term_id','name','slug'
-                    'terms' => 'east', // タームスラッグを指定
+        global $post;
+        $post_id = $post->ID;                           //投稿記事を取得する。
+        $post_type = get_post_type($post_id);           //投稿タイプを取得
+        $taxonomy = 'area';                             //タクソノミーを指定
+        $terms = get_the_terms($post_id, $taxonomy);     //タームデータを取得する。
+        $term_slug =  $terms[0]->slug;                   //タームを指定する。
+
+        $args =
+            array(
+                'post_type'      => $post_type,          //カスタム投稿タイプ名
+                'posts_per_page' => 3,                   // 取得する投稿数
+                'orderby'        => 'rand',              //ランダムで表示
+                'exclude'        => $post_id,            // 表示中の投稿を除外
+
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => $taxonomy,        // タクソノミースラッグを指定
+                        'field' => 'slug',              // termsで使用する種類指定。'term_id','name','slug'
+                        'terms' => $term_slug,          // タームスラッグを指定
+                    ),
                 )
-            )
-        );
+
+            );
         $spot_query = new WP_Query($args);
 
         if ($spot_query->have_posts()) :
             while ($spot_query->have_posts()) : $spot_query->the_post();
         ?>
-                ​
                 <!-- サムネイル部分 -->
                 <div class="pic">
                     <a href="<?php the_permalink(); ?>">
@@ -63,18 +75,13 @@
                 <!-- ターム表示といいね -->
                 <div class="flex">
 
-                    <!-- タクソノミースラッグの表示 -->
+                    <!-- タクソノミースラッグ（ターム）の表示 -->
                     <div class="term">
-                        <!-- タクソノミースラッグの取得 -->
-                        <?php $area_terms(array('taxonomy' => 'east')); ?>
-                        <!-- タクソノミー(area)のターム -->
-                        <?php echo $area_terms->name; ?>
+                        <?php echo $term_slug; ?>
                     </div>
 
                     <!-- カスタム投稿タイプのスラッグ表示 get_post_typeの方？-->
                     <div class="slug">
-                        <!-- カスタム投稿タイプのスラッグの取得 -->
-                        <?php $post_type = get_post_type($post); ?>
                         <!-- タクソノミー(area)のターム -->
                         <?php echo $post_type; ?>
                     </div>
