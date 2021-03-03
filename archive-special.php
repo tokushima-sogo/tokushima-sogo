@@ -6,28 +6,24 @@
 <?php get_header(); ?>
 <h1>特集一覧</h1>
 <p>本文</p>
-
-<!-- 特集バナー表示 -->
-<div>
-    <a href="<?php echo home_url('special/single-ramen'); ?>">
-        <h2>徳島ラーメン特集</h2>
-        <img src="<?php get_template_directory_uri(); ?>/assets/image/画像ファイルパス">
-        <p>特集紹介本文</p>
-    </a>
-</div>
-<div>
-    <a href="<?php echo home_url('special/single-specialshop'); ?>">
-        <h2>専門店</h2>
-
-        <img src="<?php get_template_directory_uri(); ?>/assets/image/画像ファイルパス">
-        <p>特集紹介本文</p>
-    </a>
-</div>
-<div>
-    <a href="<?php echo home_url('special/single-rarespot'); ?>">
-        <h2>珍スポット</h2>
-        <img src="<?php get_template_directory_uri(); ?>/assets/image/画像ファイルパス">
-        <p>特集紹介本文</p>
-    </a>
-</div>
+<?php if (have_posts()) : ?>
+    <?php while (have_posts()) :  the_post(); ?>
+        <a href="<?php the_permalink(); ?>">
+            <!-- タイトル -->
+            <h3><?php the_title(); ?></h3>
+            <!-- サムネイル部分 -->
+            <div class="pic">
+                <!-- サムネイルがあれば表示する-->
+                <?php if (has_post_thumbnail()) : ?>
+                    <?php the_post_thumbnail('medium') ?>
+                    <!-- なければ，NO＿IMAGEを表示 -->
+                <?php else : ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                <?php endif; ?>
+            </div>
+            <!-- 本文抜粋 -->
+            <p><?php the_excerpt(); ?></p>
+        </a>
+    <?php endwhile; ?>
+<?php endif; ?>
 <?php get_footer(); ?>
