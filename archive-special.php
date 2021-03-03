@@ -4,6 +4,10 @@
 
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) :  the_post(); ?>
+            <!-- 記事タイトル -->
+            <?php the_title(); ?>
+            <!-- 本文 -->
+            <?php the_content(); ?>
             <a href="<?php the_permalink(); ?>">
                 <!-- タイトル -->
                 <h3><?php the_title(); ?></h3>
@@ -23,15 +27,6 @@
             </a>
         <?php endwhile; ?>
     <?php endif; ?>
-
-
-
-    <!-- ループ内 -->
-    <a href="<?php the_permalink(); ?>">ループ内</a>
-
-    <!-- ループ外 -->
-    <a href="<?php echo get_permalink(); ?>">ループ外</a>
-
     <!-- 特集ページの詳細single-special.php -->
 
 </main>
