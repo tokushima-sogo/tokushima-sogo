@@ -16,6 +16,37 @@
             <?php the_post(); ?>
             <h3><?php the_title(); ?></h3>
             <?php the_content(); ?>
+
+            <!-- カスタムフィールドの住所 -->
+            <?php the_field('spot_address'); ?>
+
+            <!-- カスタムフィールドでsnsを表示 -->
+            <?php $facebook = get_field('spot_facebook'); ?>
+            <?php $instagram = get_field('spot_instagram'); ?>
+            <?php $twitter = get_field('spot_twitter'); ?>
+
+            <?php if ($facebook) : ?>
+                <a href="<?php the_field('spot_facebook'); ?>"><i class="fab fa-facebook-square"></i></a>
+            <?php endif; ?>
+            <?php if ($instagram) : ?>
+                <a href="<?php the_field('spot_instagram'); ?>"><i class="fab fa-instagram-square"></i></a>
+            <?php endif; ?>
+            <?php if ($twitter) : ?>
+                <a href="<?php the_field('spot_twitter'); ?>"><i class="fab fa-twitter-square"></i></a>
+            <?php endif; ?>
+
+            <!-- <?php if (get_field('spot_instagram')) : ?>
+                <a href="<?php the_field('spot_instagram'); ?>"><i class="fab fa-instagram-square"></i></a>
+            <?php endif; ?>
+            <?php if (get_field('spot_facebook')) : ?>
+                <a href="<?php the_field('spot_facebook'); ?>"><i class="fab fa-facebook-square"></i></a>
+            <?php endif; ?>
+            <?php if (get_field('spot_twitter')) : ?>
+                <a href="<?php the_field('spot_twitter'); ?>"><i class="fab fa-twitter-square"></i></a>
+            <?php endif; ?> -->
+
+            <?php the_field('spot_remarks'); ?>
+
             <p>カスタムタクソノミー</p>
             <?php the_taxonomies(); ?>
             </article>
