@@ -37,7 +37,7 @@
             <tbody class="c-conceptBase__formTable__item">
                 <tr class="u-privacy__formTable__item">
                     <th>ウィキペディア</th>
-                    <td>https://ja.wikipedia.org/wiki/</td>
+                    <td><a href="https://ja.wikipedia.org/wiki/">https://ja.wikipedia.org/wiki/</a></td>
                 </tr>
             </tbody>
         </table>
@@ -45,7 +45,7 @@
             <tbody class="c-conceptBase__formTable__item">
                 <tr class="u-privacy__formTable__item">
                     <th>徳島県観光情報:阿波ナビ</th>
-                    <td>http://www.awanavi.jp/</td>
+                    <td><a href="http://www.awanavi.jp/">http://www.awanavi.jp/</a></td>
                 </tr>
             </tbody>
         </table>
@@ -53,7 +53,7 @@
             <tbody class="c-conceptBase__formTable__item">
                 <tr class="u-privacy__formTable__item">
                     <th>周辺地図:Googleマップ</th>
-                    <td>https://www.google.co.jp/maps/?hl=ja</td>
+                    <td><a href="https://www.google.co.jp/maps/?hl=ja">https://www.google.co.jp/maps/?hl=ja</a></td>
                 </tr>
             </tbody>
         </table>
@@ -68,7 +68,7 @@
             <tbody class="c-conceptBase__formTable__item">
                 <tr class="u-privacy__formTable__item">
                     <th>イラストAC</th>
-                    <td>https://www.ac-illust.com/</td>
+                    <td><a href="https://www.ac-illust.com/">https://www.ac-illust.com/</a></td>
                 </tr>
             </tbody>
         </table>
@@ -76,7 +76,7 @@
             <tbody class="c-conceptBase__formTable__item">
                 <tr class="u-privacy__formTable__item">
                     <th>CLEANPNG</th>
-                    <td>https://www.cleanpng.com/</td>
+                    <td><a href="https://www.cleanpng.com/">https://www.cleanpng.com/</a></td>
                 </tr>
             </tbody>
         </table>
