@@ -1,6 +1,105 @@
 <?php get_header(); ?>
 
-<main>
+<main class="p-conceptBase__main">
+    <section id="conceptBase">
+        <div class="p-conceptBase__heading u-bgIndigo">
+            <h2 class="p-conceptBase__heading__title u-white">プライバシーポリシー</h2>
+        </div>
+        <div id="conceptBase__inner">
+            <!-- テーブルフォーム -->
+            <table class="u-conceptBase__formTable__line">
+                <tbody class="c-conceptBase__formTable__item">
+                    <tr class="u-privacy__formTable__item">
+                        <th>個人情報の<br>取り扱いについて</th>
+                        <td>本プライバシーポリシーは、『徳島SOGO』（以下「本サイト」といいます。） の各種サービス（本サイトによる情報提供、お問い合わせ等）において、本サイトを利用する皆様の個人情報もしくはそれに準ずる情報を取り扱う際に、本サイトが遵守する方針を示したものです。</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="u-conceptBase__formTable__line">
+                <tbody class="c-conceptBase__formTable__item">
+                    <tr class="u-privacy__formTable__item">
+                        <th>第１条　 基本方針</th>
+                        <td>本サイトでは、個人情報の重要性を認識し、個人情報を保護することが社会的責務であると考え、個人情報に関する法令を遵守し、本サイトで取り扱う個人情報の取得、利用、管理を適正に行います。
+                            本サイトで収集した情報は、利用目的の範囲内で適切に取り扱います。</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="u-conceptBase__formTable__line">
+                <tbody class="c-conceptBase__formTable__item">
+                    <tr class="u-privacy__formTable__item">
+                        <th>第２条　 収集する情報の範囲</th>
+                        <td>
+                            texttexttexttexttexttexttexttexttext
+                            texttexttexttexttexttexttexttexttext
+                            texttexttexttexttexttexttexttexttext
+                            texttexttexttexttexttexttexttexttext
+                            texttexttexttexttexttexttexttexttext
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="u-conceptBase__formTable__line">
+                <tbody class="c-conceptBase__formTable__item">
+                    <tr class="u-privacy__formTable__item">
+                        <th>第３条　 利用目的</th>
+                        <td>
+                            texttexttexttexttexttexttexttexttext
+                            texttexttexttexttexttexttexttexttext
+                            texttexttexttexttexttexttexttexttext
+                            texttexttexttexttexttexttexttexttext
+                            texttexttexttexttexttexttexttexttext
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="u-conceptBase__formTable__line">
+                <tbody class="c-conceptBase__formTable__item">
+                    <tr class="u-privacy__formTable__item">
+                        <th>第４条　 情報管理</th>
+                        <td>
+                            texttexttexttexttexttexttexttexttext
+                            texttexttexttexttexttexttexttexttext
+                            texttexttexttexttexttexttexttexttext
+                            texttexttexttexttexttexttexttexttext
+                            texttexttexttexttexttexttexttexttext
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="u-conceptBase__formTable__line">
+                <tbody class="c-conceptBase__formTable__item">
+                    <tr class="u-privacy__formTable__item">
+                        <th>第５条　 適用範囲</th>
+                        <td>
+                            texttexttexttexttexttexttexttexttext
+                            texttexttexttexttexttexttexttexttext
+                            texttexttexttexttexttexttexttexttext
+                            texttexttexttexttexttexttexttexttext
+                            texttexttexttexttexttexttexttexttext
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="u-conceptBase__formTable__line">
+                <tbody class="c-conceptBase__formTable__item">
+                    <tr class="u-privacy__formTable__item">
+                        <th>第６条　 内容の変更について</th>
+                        <td>
+                            texttexttexttexttexttexttexttexttext
+                            texttexttexttexttexttexttexttexttext
+                            texttexttexttexttexttexttexttexttext
+                            texttexttexttexttexttexttexttexttext
+                            texttexttexttexttexttexttexttexttext
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+
+<!-- <main>
     <div>
         <h1>プライバシーポリシー|tokushima-so go</h1>
         <p>プライバシーポリシー作成日：2021/2/25<br>
@@ -60,6 +159,6 @@
 
         <p>以上</p>
     </div>
-</main>
+</main> -->
 
 <?php get_footer(); ?>
