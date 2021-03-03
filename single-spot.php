@@ -45,6 +45,8 @@
                 <a href="<?php the_field('spot_twitter'); ?>"><i class="fab fa-twitter-square"></i></a>
             <?php endif; ?> -->
 
+            <?php the_field('spot_remarks'); ?>
+
             <p>カスタムタクソノミー</p>
             <?php the_taxonomies(); ?>
             </article>
