@@ -30,7 +30,7 @@
             array(
                 'post_type'      => 'famous',          //カスタム投稿タイプ名
                 'posts_per_page' => 3,                   // 取得する投稿数
-                'orderby'        => "post_tag",              //更新日で表示
+                'orderby'        => "post_modified",              //更新日で表示
                 'taxonomy' => 'snack',        // タクソノミースラッグを指定
             );
         $history_query = new WP_Query($args);
@@ -109,7 +109,7 @@
             array(
                 'post_type'      => 'famous',          //カスタム投稿タイプ名
                 'posts_per_page' => 3,                   // 取得する投稿数
-                'orderby'        => "post_tag",              //更新日で表示
+                'orderby'        => "post_modified",              //更新日で表示
                 'taxonomy' => 'meal',        // タクソノミースラッグを指定
             );
         $history_query = new WP_Query($args);
@@ -189,7 +189,7 @@
             array(
                 'post_type'      => 'famous',          //カスタム投稿タイプ名
                 'posts_per_page' => 3,                   // 取得する投稿数
-                'orderby'        => "post_tag",              //更新日で表示
+                'orderby'        => "post_modified",              //更新日で表示
                 'taxonomy' => 'alcohol',        // タクソノミースラッグを指定
             );
         $history_query = new WP_Query($args);
