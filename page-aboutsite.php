@@ -1,88 +1,88 @@
 <?php get_header(); ?>
 
-<main>
-    <h2>目的</h2>
-    <p>このサイトを通して、徳島を知らない人に魅力を知ってもらい、1つでも行きたいところを見つけてもらう。</p>
-    <p>当サイトのご利用にあたっては、以下の内容をご確認いただき、ご承諾いただいたものといたします。
-        また、内容は予告なく変更する場合がありますので、あらかじめご了承ください。</p>
-    <h2>掲載情報について</h2>
-    <p>このサイトは、QLIPプログラミングスクール　WEBプログラマー養成科第８期生のホームページです。
-        このサイトの管理・運営は、WEBプログラマー養成科第８期生（以下　管理者）が行っています。
-        （このサイトからリンクされたページが外部サイトである場合、管理者はその内容について責任を負いません。）？
-        このサイトに関するご意見・ご感想はお問い合わせよりお寄せください。
+<main class="p-conceptBase__main">
+    <section id="p-aboutsite__main">
+        <div class="p-conceptBase__heading u-bgIndigo">
+            <h2 class="p-conceptBase__heading__title u-white">このサイトについて</h2>
+        </div>
+        <div class="c-aboutBox__item u-bgWhite">
+            <p class="c-aboutBox__font u-m40 ">
+                私たちは国の求職者支援制度に基づく株式会社QLIP クリッププログラミングスクール「WEBプログラマー養成科」第8期生によって2021年に制作されたものです。
 
-        情報の掲載にあたっては、相当の注意をはらっていますが、機械等の誤操作やその他の事情によって、情報に誤りが生ずる場合があります。また、掲載されている情報は、発表時点のものです。閲覧時点で情報が異なる場合がありますので、あらかじめご了承ください。</p>
-    <h2>著作権について</h2>
-    <p>このサイトの著作権は、〇〇〇にあります。このサイトの情報・写真などのコンテンツを無断で複写・複製することは、著作権等、知的所有権の侵害となりますので、ご注意ください。</p>
-    <h2>リンクについて</h2>
-    <p>このサイトに対するリンクは必要に応じてご自由に行ってください。ただし画像などのページ構成要素に対してリンクを行う場合は、原典が明示される形で行ってください。明示されていない形での直接リンクなどは禁止します。</p>
-    <h2>個人情報について</h2>
-    <p>このサイトを通じてご提供いただく個人情報の取り扱いについては、〇〇〇個人情報保護基本方針および同規程に則り、適正に管理を行い、当該の目的以外での使用はいたしません。</p>
+                このサイトを通して、徳島を知らない方々に徳島の魅力を知ってもらい、
+                1つでも行きたいところを見つけて頂き、来県される際の参考になれば幸いです。
+                内容はできるだけ正確を期していますが、責任を負うものではありません。
+            </p>
 
-    <a href="">個人情報の取り扱い</a>
+        </div>
 
+        <div class="p-conceptBase__heading u-bgIndigo">
+            <h2 class="p-conceptBase__heading__title u-white">参考サイト一覧</h2>
+        </div>
+        <div class="c-aboutBox__item u-bgWhite">
+            <p class="c-aboutBox__font u-m40">
+                以下のサイトを参考元・引用元として、まとめさせて頂きました。<br>
+                アドレスをクリックすると、リンク先へ飛びます。
 
-    <h2>アクセスログの収集・解析とクッキー（Cookie）の利用について</h2>
-    <p>当Webサイトでは、利用者のアクセスをログ（履歴）として収集しております。アクセスログは（管理者）？の統計情報として、ユーザー利便性向上のためのマーケティングのために利用し、それ以外の目的に利用することはありません。</p>
+            </p>
+        </div>
+        <div class="c-aboutBox__tag u-bgIndigo">
+            <p class="u-aboutBox__tag__fonts u-white">
+                地域情報、等
 
-    <!-- アクセスログの収集・解析にはGoogle社の提供するユニバーサル・アナリティクスを使用しております。ユニバーサル・アナリティクスでは、クッキー（cookie）を使用し、個人を特定する情報を含まずにログを収集します。収集されるログはGoogle社のプライバシーポリシーに基づいて管理されます。
+            </p>
 
-        ユニバーサル・アナリティクスによるログ収集を無効にしたい場合は、以下より無効化を行ってください。
-        Googleアナリティクスオプトアウト
+        </div>
+        <table class="u-conceptBase__formTable__line">
+            <tbody class="c-conceptBase__formTable__item">
+                <tr class="u-privacy__formTable__item">
+                    <th>ウィキペディア</th>
+                    <td>https://ja.wikipedia.org/wiki/</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="u-conceptBase__formTable__line">
+            <tbody class="c-conceptBase__formTable__item">
+                <tr class="u-privacy__formTable__item">
+                    <th>徳島県観光情報:阿波ナビ</th>
+                    <td>http://www.awanavi.jp/</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="u-conceptBase__formTable__line">
+            <tbody class="c-conceptBase__formTable__item">
+                <tr class="u-privacy__formTable__item">
+                    <th>周辺地図:Googleマップ</th>
+                    <td>https://www.google.co.jp/maps/?hl=ja</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="c-aboutBox__tag u-bgIndigo">
+            <p class="u-aboutBox__tag__fonts u-white">
+                画像
 
-        Google社のプライバシーポリシーやクッキーに関する説明は、以下をご参照ください。
-        Googleプライバシーポリシー
-         -->
+            </p>
 
-    <h2>推奨環境について</h2>
-    <h3>モニタ解像度</h3>
-    <p>1024×768ピクセル以上</p>
-    <p>このサイトでは、より安全で快適にご利用いただくために下記の環境を推奨いたします。</p>
+        </div>
+        <table class="u-conceptBase__formTable__line">
+            <tbody class="c-conceptBase__formTable__item">
+                <tr class="u-privacy__formTable__item">
+                    <th>イラストAC</th>
+                    <td>https://www.ac-illust.com/</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="u-conceptBase__formTable__line">
+            <tbody class="c-conceptBase__formTable__item">
+                <tr class="u-privacy__formTable__item">
+                    <th>CLEANPNG</th>
+                    <td>https://www.cleanpng.com/</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <h3>ブラウザ</h3>
-    <table>
-        <tbody>
-            <tr>
-                <th>Windows</th>
-                <td>Internet Explorer 11</td>
-                <td>Microsoft Edge （最新版）</td>
-                <td>Mozilla Firefox （最新版）</td>
-                <td>Google Chrome （最新版）</td>
-            </tr>
-            <tr>
-                <th>Macintosh</th>
-                <td>Safari （最新版）</td>
-                <td>Mozilla Firefox （最新版）</td>
-                <td>Google Chrome （最新版）</td>
-            </tr>
-            <tr>
-                <th>iPhone</th>
-                <td>Safari （最新版）</td>
-            </tr>
-            <tr>
-                <th>Android</th>
-                <td>Google Chrome （最新版）</td>
-            </tr>
-        </tbody>
-    </table>
+    </section>
 
-    <h3>OS</h3>
-    <table>
-        <tbody>
-            <tr>
-                <th>iPhone</th>
-                <td>iOS（最新版）</td>
-            </tr>
-            <tr>
-                <th>Android</th>
-                <td>Android 6.0以降</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h3>JavaScript</h3>
-    <p>このサイトでは、より快適にご利用いただくため一部のコンテンツにおいてJavaScriptを使用しています。
-        ご使用のブラウザ設定においてJavaScriptをオン (有効) にされていない場合に、正しく表示されないまたは操作ができない場合がありますので、ご了承ください。</p>
 </main>
 
 <?php get_footer(); ?>
