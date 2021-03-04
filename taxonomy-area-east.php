@@ -66,7 +66,7 @@
         <?php wp_reset_postdata(); ?>
     <?php endif; ?>
 
-    <!-- 東部のお土産single-souvenir.php -->
+    <!-- 東部のお土産single-shop.php -->
     <?php
     $args = array(
         'post_type' => 'shop',
