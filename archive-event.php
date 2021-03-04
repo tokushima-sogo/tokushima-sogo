@@ -12,24 +12,36 @@
 <!-- <link href="<?php echo get_template_directory_uri(); ?>/assets/css/single-spot.css" rel="stylesheet" meida="all"> -->
 
 <main>
-    <h1>徳島の名物</h1>
+    <h1>徳島のイベント</h1>
     <p>紹介文</p><br><br>
 
 
 
     <section>
-        <h2>お菓子</h2>​
+        <h2>見学体験</h2>​
         <!-- サブループ設定 -->
         <!-- 表示されている記事の投稿タイプでターム記事を更新日で表示するループ -->
         <!-- 【https://cotodama.co/get_posts_sub_loop/#i-8】 -->
         <?php
-        $args =
-            array(
-                'post_type'      => 'event',          //カスタム投稿タイプ名
-                'posts_per_page' => 3,                   // 取得する投稿数
-                'orderby'        => "post_modified",              //更新日で表示
-                'taxonomy' => 'tour',        // タクソノミースラッグを指定
-            );
+        // $args =
+        //     array(
+        //         'post_type'      => 'event',          //カスタム投稿タイプ名
+        //         'posts_per_page' => 3,                   // 取得する投稿数
+        //         'orderby'        => "post_modified",              //更新日で表示
+        //         'taxonomy' => 'tour',        // タクソノミースラッグを指定
+        //     );
+        $args = array(
+            'post_type' => 'event',
+            'posts_per_page' => 3,
+            'tax_query' => array(
+                'relation' => 'AND',
+                array(
+                    'taxonomy' => 'taxotag',
+                    'field' => 'slug',
+                    'terms' => 'tour',
+                ),
+            ),
+        );
         $history_query = new WP_Query($args);
 
         if ($history_query->have_posts()) :
@@ -89,26 +101,39 @@
                 </div>
 
 
-                <?php wp_reset_postdata(); //$postをグローバル変数に戻す
-                ?>
+
             <?php endwhile; ?>
+            <?php wp_reset_postdata(); //$postをグローバル変数に戻す
+            ?>
             <?php endif; ?>​
     </section>
 
 
     <section>
-        <h2>おかず</h2>​
+        <h2>レジャー</h2>​
         <!-- サブループ設定 -->
         <!-- 表示されている記事の投稿タイプでターム記事を更新日で表示するループ -->
         <!-- 【https://cotodama.co/get_posts_sub_loop/#i-8】 -->
         <?php
-        $args =
-            array(
-                'post_type'      => 'event',          //カスタム投稿タイプ名
-                'posts_per_page' => 3,                   // 取得する投稿数
-                'orderby'        => "post_modified",              //更新日で表示
-                'taxonomy' => 'leisure',        // タクソノミースラッグを指定
-            );
+        // $args =
+        //     array(
+        //         'post_type'      => 'event',          //カスタム投稿タイプ名
+        //         'posts_per_page' => 3,                   // 取得する投稿数
+        //         'orderby'        => "post_modified",              //更新日で表示
+        //         'taxonomy' => 'leisure',        // タクソノミースラッグを指定
+        //     );
+        $args = array(
+            'post_type' => 'event',
+            'posts_per_page' => 3,
+            'tax_query' => array(
+                'relation' => 'AND',
+                array(
+                    'taxonomy' => 'taxotag',
+                    'field' => 'slug',
+                    'terms' => 'leisure',
+                ),
+            ),
+        );
         $history_query = new WP_Query($args);
 
         if ($history_query->have_posts()) :
@@ -168,27 +193,40 @@
                 </div>
 
 
-                <?php wp_reset_postdata(); //$postをグローバル変数に戻す
-                ?>
+
             <?php endwhile; ?>
+            <?php wp_reset_postdata(); //$postをグローバル変数に戻す
+            ?>
             <?php endif; ?>​
     </section>
 
 
 
     <section>
-        <h2>お酒</h2>​
+        <h2>お祭り</h2>​
         <!-- サブループ設定 -->
         <!-- 表示されている記事の投稿タイプでターム記事を更新日で表示するループ -->
         <!-- 【https://cotodama.co/get_posts_sub_loop/#i-8】 -->
         <?php
-        $args =
-            array(
-                'post_type'      => 'event',          //カスタム投稿タイプ名
-                'posts_per_page' => 3,                   // 取得する投稿数
-                'orderby'        => "post_modified",              //更新日で表示
-                'taxonomy' => 'festivel',        // タクソノミースラッグを指定
-            );
+        // $args =
+        //     array(
+        //         'post_type'      => 'event',          //カスタム投稿タイプ名
+        //         'posts_per_page' => 3,                   // 取得する投稿数
+        //         'orderby'        => "post_modified",              //更新日で表示
+        //         'taxonomy' => 'festivel',        // タクソノミースラッグを指定
+        //     );
+        $args = array(
+            'post_type' => 'event',
+            'posts_per_page' => 3,
+            'tax_query' => array(
+                'relation' => 'AND',
+                array(
+                    'taxonomy' => 'taxotag',
+                    'field' => 'slug',
+                    'terms' => 'festival',
+                ),
+            ),
+        );
         $history_query = new WP_Query($args);
 
         if ($history_query->have_posts()) :
@@ -248,9 +286,10 @@
                 </div>
 
 
-                <?php wp_reset_postdata(); //$postをグローバル変数に戻す
-                ?>
+
             <?php endwhile; ?>
+            <?php wp_reset_postdata(); //$postをグローバル変数に戻す
+            ?>
             <?php endif; ?>​
     </section>
 

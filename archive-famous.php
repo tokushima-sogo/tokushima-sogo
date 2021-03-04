@@ -18,21 +18,31 @@
     <h1>徳島の名物</h1>
     <p>紹介文</p><br><br>
 
-
-
     <section>
         <h2>お菓子</h2>​
         <!-- サブループ設定 -->
         <!-- 表示されている記事の投稿タイプでターム記事を更新日で表示するループ -->
         <!-- 【https://cotodama.co/get_posts_sub_loop/#i-8】 -->
         <?php
-        $args =
-            array(
-                'post_type'      => 'famous',          //カスタム投稿タイプ名
-                'posts_per_page' => 3,                   // 取得する投稿数
-                'orderby'        => "post_modified",              //更新日で表示
-                'taxonomy' => 'snack',        // タクソノミースラッグを指定
-            );
+        // $args =
+        //     array(
+        //         'post_type'      => 'famous',          //カスタム投稿タイプ名
+        //         'posts_per_page' => 3,                   // 取得する投稿数
+        //         'orderby'        => "post_modified",              //更新日で表示
+        //         'taxonomy' => 'snack',        // タクソノミースラッグを指定
+        //     );
+        $args = array(
+            'post_type' => 'famous',
+            'posts_per_page' => 3,
+            'tax_query' => array(
+                'relation' => 'AND',
+                array(
+                    'taxonomy' => 'taxotag',
+                    'field' => 'slug',
+                    'terms' => 'snack',
+                ),
+            ),
+        );
         $history_query = new WP_Query($args);
 
         if ($history_query->have_posts()) :
@@ -92,9 +102,10 @@
                 </div>
 
 
-                <?php wp_reset_postdata(); //$postをグローバル変数に戻す
-                ?>
+
             <?php endwhile; ?>
+            <?php wp_reset_postdata(); //$postをグローバル変数に戻す
+            ?>
             <?php endif; ?>​
     </section>
 
@@ -105,13 +116,25 @@
         <!-- 表示されている記事の投稿タイプでターム記事を更新日で表示するループ -->
         <!-- 【https://cotodama.co/get_posts_sub_loop/#i-8】 -->
         <?php
-        $args =
-            array(
-                'post_type'      => 'famous',          //カスタム投稿タイプ名
-                'posts_per_page' => 3,                   // 取得する投稿数
-                'orderby'        => "post_modified",              //更新日で表示
-                'taxonomy' => 'meal',        // タクソノミースラッグを指定
-            );
+        // $args =
+        //     array(
+        //         'post_type'      => 'famous',          //カスタム投稿タイプ名
+        //         'posts_per_page' => 3,                   // 取得する投稿数
+        //         'orderby'        => "post_modified",              //更新日で表示
+        //         'taxonomy' => 'meal',        // タクソノミースラッグを指定
+        //     );
+        $args = array(
+            'post_type' => 'famous',
+            'posts_per_page' => 3,
+            'tax_query' => array(
+                'relation' => 'AND',
+                array(
+                    'taxonomy' => 'taxotag',
+                    'field' => 'slug',
+                    'terms' => 'meal',
+                ),
+            ),
+        );
         $history_query = new WP_Query($args);
 
         if ($history_query->have_posts()) :
@@ -171,9 +194,10 @@
                 </div>
 
 
-                <?php wp_reset_postdata(); //$postをグローバル変数に戻す
-                ?>
+
             <?php endwhile; ?>
+            <?php wp_reset_postdata(); //$postをグローバル変数に戻す
+            ?>
             <?php endif; ?>​
     </section>
 
@@ -185,13 +209,25 @@
         <!-- 表示されている記事の投稿タイプでターム記事を更新日で表示するループ -->
         <!-- 【https://cotodama.co/get_posts_sub_loop/#i-8】 -->
         <?php
-        $args =
-            array(
-                'post_type'      => 'famous',          //カスタム投稿タイプ名
-                'posts_per_page' => 3,                   // 取得する投稿数
-                'orderby'        => "post_modified",              //更新日で表示
-                'taxonomy' => 'alcohol',        // タクソノミースラッグを指定
-            );
+        // $args =
+        //     array(
+        //         'post_type'      => 'famous',          //カスタム投稿タイプ名
+        //         'posts_per_page' => 3,                   // 取得する投稿数
+        //         'orderby'        => "post_modified",              //更新日で表示
+        //         'taxonomy' => 'alcohol',        // タクソノミースラッグを指定
+        //     );
+        $args = array(
+            'post_type' => 'famous',
+            'posts_per_page' => 3,
+            'tax_query' => array(
+                'relation' => 'AND',
+                array(
+                    'taxonomy' => 'taxotag',
+                    'field' => 'slug',
+                    'terms' => 'alcohol',
+                ),
+            ),
+        );
         $history_query = new WP_Query($args);
 
         if ($history_query->have_posts()) :
@@ -251,9 +287,10 @@
                 </div>
 
 
-                <?php wp_reset_postdata(); //$postをグローバル変数に戻す
-                ?>
+
             <?php endwhile; ?>
+            <?php wp_reset_postdata(); //$postをグローバル変数に戻す
+            ?>
             <?php endif; ?>​
     </section>
 
