@@ -1,0 +1,67 @@
+.searchandfilter {
+    display: none;
+}
+
+.searchandfilter li{
+    list-style: none;
+    display:block;
+    margin-bottom: 1em;
+}
+
+.searchandfilter{
+    text-align: center;
+}
+
+form > div > ul > li {
+    width: 100%;
+}
+
+.cat-item {
+    background-color: beige;
+}
+
+#search {
+    background-color: transparent;
+    border: none;
+}
+
+#close {
+    background-color: transparent;
+    border: none;
+}
+
+.close {
+    display: none;
+}
+
+/* #searchform > form > div > ul > li:nth-of-type(2) {
+    display: none;
+} */
+
+/* #searchfilter > form > div > ul > li:nth-of-type(1) > ul > li:nth-of-type(1) {
+    display: none;
+}
+
+#searchfilter > form > div > ul > li:nth-of-type(1) > ul > li:nth-of-type(2) {
+    display: none;
+}
+
+#searchfilter > form > div > ul > li:nth-of-type(1) > ul > li:nth-of-type(3) {
+    display: none;
+}
+
+#searchfilter > form > div > ul > li:nth-of-type(1) > ul > li:nth-of-type(7) {
+    display: none;
+}
+
+#searchfilter > form > div > ul > li:nth-of-type(1) > ul > li:nth-of-type(8) {
+    display: none;
+}
+
+#searchfilter > form > div > ul > li:nth-of-type(1) > ul > li:nth-of-type(9) {
+    display: none;
+}
+
+#searchfilter > form > div > ul > li:nth-of-type(1) > ul > li:nth-of-type(10) {
+    display: none;
+} */

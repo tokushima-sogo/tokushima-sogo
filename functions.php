@@ -78,3 +78,34 @@ function add_tokushima_sogo_scripts()
     wp_enqueue_script('jquery');
 }
 add_action('wp_enqueue_scripts', 'add_tokushima_sogo_scripts');
+
+/**
+ * ajaxの準備
+ */
+function add_my_ajaxurl() {
+?>
+    <script>
+        var ajaxurl = '<?php echo admin_url( 'admin-ajax.php'); ?>';
+    </script>
+<?php
+}
+add_action( 'wp_footer', 'add_my_ajaxurl', 1 );
+
+/**
+ * ajaxを受け取ってからの処理
+ */
+function my_ajax_do(){
+    $mes = $_POST['mes'];
+
+    global $wpdb;
+    $res = $wpdb->get_results("SELECT COUNT(object_id) AS 'article'
+FROM wp_term_relationships LEFT OUTER JOIN wp_posts
+ON wp_term_relationships.object_id = wp_posts.ID
+WHERE term_taxonomy_id = $mes
+AND post_status = 'publish';");
+
+    echo json_encode($res);
+    wp_die();
+}
+add_action( 'wp_ajax_my_ajax_do', 'my_ajax_do' );
+add_action( 'wp_ajax_nopriv_my_ajax_do', 'my_ajax_do' );
