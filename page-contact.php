@@ -59,7 +59,7 @@
 
 
     <!-- べーやんコード -->
-    <section class="contact">
+    <!-- <section class="contact">
         <div class="contact--wrapper">
             <h1 class="contact--title">
                 お問い合わせフォーム
@@ -98,7 +98,7 @@
 
             </form>
         </div>
-    </section>
+    </section> -->
 
 </main>
 

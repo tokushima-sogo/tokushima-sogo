@@ -66,10 +66,10 @@
         <?php wp_reset_postdata(); ?>
     <?php endif; ?>
 
-    <!-- 南部のお土産single-souvenir.php -->
+    <!-- 南部のお土産single-shop.php -->
     <?php
     $args = array(
-        'post_type' => 'souvenir',
+        'post_type' => 'shop',
         'tax_query' => array(
             'relation' => 'AND',
             array(

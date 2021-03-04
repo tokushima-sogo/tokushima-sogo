@@ -69,7 +69,7 @@
     <!-- 東部のお土産single-shop.php -->
     <?php
     $args = array(
-        'post_type' => 'souvenir',
+        'post_type' => 'shop',
         'tax_query' => array(
             'relation' => 'AND',
             array(
