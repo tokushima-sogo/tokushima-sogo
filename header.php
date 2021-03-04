@@ -8,9 +8,10 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/contact-style.css">
-
     <link href="contact-style.css" rel="stylesheet" media="screen">
-
+    <!-- プラグインsearch&filterのcssとjs ※後でfunctions.phpにまとめる -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/searchandfilter.css">
+    <?php wp_enqueue_script('searchandfilter',get_template_directory_uri() .'/assets/js/searchandfilter.js','','',true); ?>
     <!-- 小野寛智のfontsawesomeアカウントなので必ず消す！！ -->
     <script src="https://kit.fontawesome.com/72a93cd7e4.js" crossorigin="anonymous"></script>
 
@@ -22,11 +23,54 @@
 
     <header>
         <a href="<?php echo home_url(); ?>">Topへ</a><br>
-        <section id="search">
-            <div class="p-search u-search--margin u-clearfix">
-                <img src="<?php echo get_template_directory_uri(); ?>/image/search.png" class="c-imageSmall p-search__image" alt="虫眼鏡">
-                <p class="c-search p-search__p">検索する</p>
-            </div>
-            <?php echo do_shortcode('[searchandfilter fields="search,category,taxocategory,taxotag" types=",radio,radio,checkbox" hierarchical="0,1,0,0" show_count=",1,1,1" submit_label="検索" headings=",デフォルトカテゴリー,カスタムタクソノミー,"]'); ?>
-        </section>
+        <div class="p-search u-search--margin u-clearfix">
+        <!-- 検索ボタン -->
+        <button id="search" >
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/image/search.png" width="100px" alt="虫眼鏡">
+        </button>
+        <button id="close" class="close"><img src="<?php echo get_template_directory_uri(); ?>/assets/image/close.png" width="50px" alt="×"></button>
+        </div>
+        <!-- 検索フォーム -->
+        <div id="searchform">
+        <?php echo do_shortcode( '[searchandfilter fields="search"]' ); ?>
+        </div>
+        <div id="searchfilter">
+        <?php echo do_shortcode( '[searchandfilter fields="searcharea,contents,taxotag"  types="radio,radio,radio"  submit_label="検索" headings="エリアで探す,内容で探す,タグ" operators="and"]' ); ?>
+        </div>
+        <!-- ajaxの結果出力場所 -->
+        <div id="result"></div>
+
+        <!-- ajax -->
+        <script>
+        jQuery(document).ready(function($) {
+        //ラジオボタンをチェックしたら発動
+            $('input[type="radio"]').change(function() {
+
+            //選択したvalue値を変数に格納
+            var val = $(this).val();
+
+            $.ajax({
+                type: 'POST', //送信方法
+                url: ajaxurl, //送信先(functions.phpで変数にしてある)
+                data: { 'action': 'my_ajax_do',
+                        'mes' : val,
+                },
+                datatype: 'json', //送信データの種類
+                }).done(function(data){
+                    console.log("done...");
+                    console.log(data);
+                    var jsonData = JSON.stringify( data ); 
+                        
+                    var element = document.getElementById('result');  //結果を表示する場所
+                    element.innerHTML = jsonData;    //結果表示
+                    
+                    
+                }).fail(function(XMLHttpRequest, textStatus, error){
+                    console.log('失敗'+error);
+                    console.log(XMLHttpRequest.responseText);
+                });
+            });
+        });
+        </script>
+
     </header>
