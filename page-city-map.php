@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<link href="<?php echo get_template_directory_uri(); ?>assets/css/cookie.css" rel="stylesheet">
-
 <body>
     <h1>QLIP周辺のお食事処</h1>
     <h3>あじろ お好み焼き</h3>
