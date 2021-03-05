@@ -30,6 +30,7 @@
                 <?php endif; ?>
                 個別ページへ
             </a>
+            <?php echo do_shortcode('[wp_ulike]'); ?>
         <?php endwhile; ?>
         <?php wp_reset_postdata(); ?>
     <?php endif; ?>

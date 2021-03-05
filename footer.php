@@ -11,8 +11,10 @@
 
 </footer>
 
-<?php wp_footer(); ?>
 
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/map.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/map_create.js"></script>
+<?php wp_footer(); ?>
 </body>
 
 </html>

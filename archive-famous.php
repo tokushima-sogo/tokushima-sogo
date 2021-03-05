@@ -71,6 +71,11 @@
 
                         <!-- タグ検索できない -->
                         <?php
+                        $slug_name = get_query_var('taxotag');
+                        $term = get_term_by('slug', '$slug_name', 'taxotag'); ?>
+                        <?php echo $term->name; ?>
+
+                        <?php
                         echo $term_slug;
                         $tags = get_the_tags();
                         if (!empty($tags)) {

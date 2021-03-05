@@ -9,6 +9,10 @@
 <!-- spot用のCSSの読み込み CSS名は仮です-->
 <!-- <link href="<?php echo get_template_directory_uri(); ?>/assets/css/single-spot.css" rel="stylesheet" meida="all"> -->
 
+
+
+
+
 <main>
     <p>文字</p>
     <?php if (have_posts()) : ?>
@@ -16,6 +20,7 @@
             <?php the_post(); ?>
             <h3><?php the_title(); ?></h3>
             <?php the_content(); ?>
+            <?php echo do_shortcode('[wp_ulike]'); ?>
 
             <!-- カスタムフィールドの住所 -->
             <?php the_field('spot_address'); ?>
@@ -26,7 +31,7 @@
             <?php $twitter = get_field('spot_twitter'); ?>
 
             <?php if ($facebook) : ?>
-                <a href="<?php the_field('spot_facebook'); ?>"><i class="fab fa-facebook-square"></i></a>
+                <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
             <?php endif; ?>
             <?php if ($instagram) : ?>
                 <a href="<?php the_field('spot_instagram'); ?>"><i class="fab fa-instagram-square"></i></a>
@@ -35,19 +40,10 @@
                 <a href="<?php the_field('spot_twitter'); ?>"><i class="fab fa-twitter-square"></i></a>
             <?php endif; ?>
 
-            <!-- <?php if (get_field('spot_instagram')) : ?>
-                <a href="<?php the_field('spot_instagram'); ?>"><i class="fab fa-instagram-square"></i></a>
-            <?php endif; ?>
-            <?php if (get_field('spot_facebook')) : ?>
-                <a href="<?php the_field('spot_facebook'); ?>"><i class="fab fa-facebook-square"></i></a>
-            <?php endif; ?>
-            <?php if (get_field('spot_twitter')) : ?>
-                <a href="<?php the_field('spot_twitter'); ?>"><i class="fab fa-twitter-square"></i></a>
-            <?php endif; ?> -->
-
             <?php the_field('spot_remarks'); ?>
 
             <p>カスタムタクソノミー</p>
+
             <?php the_taxonomies(); ?>
             </article>
         <?php endwhile; ?>

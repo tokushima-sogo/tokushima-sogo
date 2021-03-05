@@ -7,7 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/contact-style.css">
-        <link href="<?php echo get_template_directory_uri(); ?>assets/css/map.css" rel="stylesheet">
+        <!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/map.css"> -->
+        <!-- <link href="<?php echo get_template_directory_uri(); ?>assets/css/map.css" rel="stylesheet"> -->
         <link href="contact-style.css" rel="stylesheet" media="screen">
         <!-- プラグインsearch&filterのcssとjs ※後でfunctions.phpにまとめる -->
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/searchandfilter.css">
@@ -33,7 +34,7 @@
                 <?php echo do_shortcode('[searchandfilter fields="search"]'); ?>
             </div>
             <div id="searchfilter">
-                <?php echo do_shortcode('[searchandfilter fields="searcharea,content"  types="radio,radio"  submit_label="検索" headings="エリアで探す,内容で探す,タグ" operators="and"]'); ?>
+                <?php echo do_shortcode('[searchandfilter fields="searcharea"  types="radio"  submit_label="検索" headings="エリアで探す,内容で探す,タグ" operators="and"]'); ?>
             </div>
             <!-- ajaxの結果出力場所 -->
             <div id="result"></div>
