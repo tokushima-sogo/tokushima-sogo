@@ -17,3 +17,10 @@ position:absolute;
     opacity:0.5;
     z-index:20;
 }
+
+@font-face
+{
+font-family: PixelMplus10-Regular;
+src: url('http://localhost/sogo/wp-content/themes/tokushima-sogo/assets/font/PixelMplus10-Regular.ttf')
+    format("woff2");
+}
