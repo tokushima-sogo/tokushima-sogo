@@ -2,100 +2,122 @@
 
 <main>
 
-    <!-- 市内の観光スポットsingle-spot.php -->
+    <!-- 市内の観光スポット記事を出力 -->
     <?php
     $args = array(
-        'post_type' => 'spot',
-        'tax_query' => array(
-            'relation' => 'AND',
+        'post_type'         => 'spot',      // カスタム投稿タイプ名
+        'orderby'           => 'modified',  // 更新日で表示
+        'tax_query'         => array(
+            'relation'      => 'AND',
             array(
-                'taxonomy' => 'area',
-                'field' => 'slug',
-                'terms' => 'city',
+                'taxonomy'  => 'area',      // タクソノミースラッグを指定
+                'field'     => 'slug',      // termsで使用する種類指定
+                'terms'     => 'city',      // タームスラッグを指定
             ),
         ),
     );
-    $the_query = new WP_Query($args); ?>
+    ?>
+    <?php $the_query = new WP_Query($args); ?>
     <?php if ($the_query->have_posts()) : ?>
         <?php while ($the_query->have_posts()) : ?>
             <?php $the_query->the_post(); ?>
+
+            <!-- タイトルを出力 -->
             <?php the_title(); ?>
-            <?php the_content(); ?>
+
+            <!-- サムネイルの表示 -->
             <a href="<?php the_permalink(); ?>">
                 <?php if (has_post_thumbnail()) : ?>
                     <?php the_post_thumbnail('medium') ?>
-                    <!-- なければ，NO＿IMAGEを表示 -->
                 <?php else : ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
                 <?php endif; ?>
                 個別ページへ
             </a>
-            <?php echo do_shortcode('[wp_ulike]'); ?>
+
+            <!-- コンテンツの抜粋 -->
+            <?php the_excerpt(); ?>
+
         <?php endwhile; ?>
         <?php wp_reset_postdata(); ?>
     <?php endif; ?>
 
-    <!-- 市内のグルメsingle-gourmet.php -->
+    <!-- 市内のグルメ記事を出力 -->
     <?php
     $args = array(
-        'post_type' => 'gourmet',
-        'tax_query' => array(
-            'relation' => 'AND',
+        'post_type'         => 'gourmet',   // カスタム投稿タイプ名
+        'orderby'           => 'modified',  // 更新日で表示
+        'tax_query'         => array(
+            'relation'      => 'AND',
             array(
-                'taxonomy' => 'area',
-                'field' => 'slug',
-                'terms' => 'city',
+                'taxonomy'  => 'area',      // タクソノミースラッグを指定
+                'field'     => 'slug',      // termsで使用する種類指定
+                'terms'     => 'city',      // タームスラッグを指定
             ),
         ),
     );
-    $the_query = new WP_Query($args); ?>
+    ?>
+    <?php $the_query = new WP_Query($args); ?>
     <?php if ($the_query->have_posts()) : ?>
         <?php while ($the_query->have_posts()) : ?>
             <?php $the_query->the_post(); ?>
+
+            <!-- タイトルの表示 -->
             <?php the_title(); ?>
-            <?php the_content(); ?>
+
+            <!-- サムネイルの表示 -->
             <a href="<?php the_permalink(); ?>">
                 <?php if (has_post_thumbnail()) : ?>
                     <?php the_post_thumbnail('medium') ?>
-                    <!-- なければ，NO＿IMAGEを表示 -->
                 <?php else : ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
                 <?php endif; ?>
                 個別ページへ
             </a>
+
+            <!-- コンテンツの抜粋 -->
+            <?php the_excerpt(); ?>
+
         <?php endwhile; ?>
         <?php wp_reset_postdata(); ?>
     <?php endif; ?>
 
-    <!-- 市内のお土産single-shop.php -->
+    <!-- 市内のお土産記事を出力 -->
     <?php
     $args = array(
-        'post_type' => 'shop',
-
-        'tax_query' => array(
-            'relation' => 'AND',
+        'post_type'         => 'shop',      // カスタム投稿タイプ名
+        'orderby'           => 'modified',  // 更新日で表示
+        'tax_query'         => array(
+            'relation'      => 'AND',
             array(
-                'taxonomy' => 'area',
-                'field' => 'slug',
-                'terms' => 'city',
+                'taxonomy'  => 'area',      // タクソノミースラッグを指定
+                'field'     => 'slug',      // termsで使用する種類指定
+                'terms'     => 'city',      // タームスラッグを指定
             ),
         ),
     );
-    $the_query = new WP_Query($args); ?>
+    ?>
+    <?php $the_query = new WP_Query($args); ?>
     <?php if ($the_query->have_posts()) : ?>
         <?php while ($the_query->have_posts()) : ?>
             <?php $the_query->the_post(); ?>
+
+            <!-- タイトルの表示 -->
             <?php the_title(); ?>
-            <?php the_content(); ?>
+
+            <!-- サムネイルの表示 -->
             <a href="<?php the_permalink(); ?>">
                 <?php if (has_post_thumbnail()) : ?>
                     <?php the_post_thumbnail('medium') ?>
-                    <!-- なければ，NO＿IMAGEを表示 -->
                 <?php else : ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
                 <?php endif; ?>
                 個別ページへ
             </a>
+
+            <!-- コンテンツの抜粋 -->
+            <?php the_excerpt(); ?>
+
         <?php endwhile; ?>
         <?php wp_reset_postdata(); ?>
     <?php endif; ?>
