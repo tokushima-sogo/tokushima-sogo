@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<link href="<?php echo get_template_directory_uri(); ?>/assets/css/map.css" rel="stylesheet" media="screen">
+<!-- <link href="<?php echo get_template_directory_uri(); ?>/assets/css/map.css" rel="stylesheet" media="screen"> -->
 
 <body>
     <h1>QLIP周辺のお食事処</h1>
@@ -17,7 +17,7 @@
     <br><br>
     <div id="create">地図作成</div>
 
-    <a href="<?php echo home_url('east-map'); ?>">西部</a>
+    <a href="<?php echo home_url('/east-map'); ?>">西部</a>
 
-    <script src="<?php echo get_template_directory_uri(); ?>/assets/js/map.js"></script>
+    <!-- <script src="<?php echo get_template_directory_uri(); ?>/assets/js/map.js"></script> -->
     <?php get_footer(); ?>

@@ -2,15 +2,15 @@
 
 <main>
     <?php if (have_posts()) : ?>
-        <?php while (have_posts()) :  the_post(); ?>
+        <?php while (have_posts()) : ?>
+            <?php the_post(); ?>
             <!-- タイトル -->
-            <h1>
-                <?php the_title(); ?>
-            </h1>
+            <h1><?php the_title(); ?></h1>
             <!-- 本文 -->
-            <p>
-                <?php the_content(); ?>
-            </p>
+            <?php echo do_shortcode('[wp_ulike]'); ?>
+
+
+            <p><?php the_content(); ?></p>
             <div class="pic">
                 <!-- サムネイルがあれば表示する-->
                 <?php if (has_post_thumbnail()) : ?>

@@ -23,30 +23,25 @@
         <!-- 表示されている記事の投稿タイプでターム記事を更新日で表示するループ -->
         <!-- 【https://cotodama.co/get_posts_sub_loop/#i-8】 -->
         <?php
-        // $args =
-        //     array(
-        //         'post_type'      => 'event',          //カスタム投稿タイプ名
-        //         'posts_per_page' => 3,                   // 取得する投稿数
-        //         'orderby'        => "post_modified",              //更新日で表示
-        //         'taxonomy' => 'tour',        // タクソノミースラッグを指定
-        //     );
         $args = array(
-            'post_type' => 'event',
-            'posts_per_page' => 3,
-            'tax_query' => array(
-                'relation' => 'AND',
+            'post_type'      => 'event',            // カスタム投稿タイプ名
+            'posts_per_page' => 3,                  // 取得する投稿数
+            'orderby'        => "post_modified",    // 更新日で表示
+            'tax_query'      => array(
+                'relation'   => 'AND',
                 array(
                     'taxonomy' => 'taxotag',
-                    'field' => 'slug',
-                    'terms' => 'tour',
+                    'field'    => 'slug',
+                    'terms'    => 'tour',           // タクソノミースラッグを指定
                 ),
             ),
         );
-        $history_query = new WP_Query($args);
-
-        if ($history_query->have_posts()) :
-            while ($history_query->have_posts()) : $history_query->the_post();
         ?>
+        <?php $history_query = new WP_Query($args); ?>
+
+        <?php if ($history_query->have_posts()) : ?>
+            <?php while ($history_query->have_posts()) : ?>
+                <?php $history_query->the_post(); ?>
                 <!-- サムネイル部分 -->
                 <div class="pic">
                     <a href="<?php the_permalink(); ?>">

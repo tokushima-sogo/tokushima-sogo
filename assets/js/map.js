@@ -177,7 +177,7 @@ console.log("【経度】" + getLngs);
 const CREATE = document.getElementById("create");
 CREATE.addEventListener("click", function () {
     //新しいウィンドウでnewmap.phpを開く
-    window.open("http://localhost/sogo/map-create/", "_blank");
+    window.open("http://localhost/tokushima-sogo/map-create/", "_blank");
 });
 
 const DELETE_COOKIE = document.getElementById("delete_cookie");
