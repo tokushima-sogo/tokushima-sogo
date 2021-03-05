@@ -1,28 +1,15 @@
 //【残り工程】
-
-//【システム】
-
-//【その他】
 /*
-タイムリミッドのバグ
-ゲーム終了画面
 →阿波度のコメントをどうするか
-→点数の処理
-
-*/
-
-/*
+if文作る
+draw
 都市伝説の画面
-→クリック判定
-→
-
-*/
-//外部リンク貼るか
-//スマホの画面直したとき，画面のみ再リロードさせる。
 //BGM
+*/
+//スマホの画面直したとき，画面のみ再リロードさせる。
 
-//【チェック】
-//処理が重い。sTime？timerどちらか。
+
+
 
 //const PATH = "http://localhost/wp-content/themes/sogo/";
 //canvas設定
@@ -168,9 +155,9 @@ class mobile {
     }
     finishResultFont() {
         if (isMobile == true) {
-            CTX.font = "100px serif";
+            CTX.font = "80px PixelMplus10-Regular";
         } else {
-            CTX.font = "250px serif";
+            CTX.font = "220px PixelMplus10-Regular";
         }
     }
 }
@@ -557,6 +544,13 @@ class draw {
     //終了画面描写
     finishDraw() {
         resultAnime = setInterval(function () {
+            CTX.clearRect(0, 0, CANVAS.width, CANVAS.height);
+            CTX.drawImage(RESULT_IMG, 0, 0, CANVAS.width, CANVAS.height);
+            DRAW.pointDraw();
+        })
+    }
+    /* finishDraw() {
+        resultAnime = setInterval(function () {
             setTimeout(function () {
                 CTX.clearRect(0, 0, CANVAS.width, CANVAS.height);
                 CTX.drawImage(RESULT_IMG, 0, 0, CANVAS.width, CANVAS.height);
@@ -570,12 +564,12 @@ class draw {
                 CTX.drawImage(CLICK2_IMG, CANVAS.width * 0.83, CANVAS.height * 0.8, CANVAS.width * 0.15, CANVAS.height * 0.15);
             }, 400);
         }, 400);
-    }
+    } */
     //成績表示・・・終了画面で表示
     pointDraw() {
         CTX.fillStyle = "gold";
         MOBILE.finishResultFont();
-        CTX.fillText(point, CANVAS.width * 0.46, CANVAS.height * 0.38);
+        CTX.fillText(point, CANVAS.width * 0.54, CANVAS.height * 0.48);
     }
     //クレジットと都市伝説ページの表示
     linkDraw() {
@@ -749,7 +743,7 @@ const QUIZ = new quiz();
 let start = null;
 //起動時
 window.addEventListener("load", function () {
-
+    DRAW.pointDraw();
     //クイズ生成とスマホ判定
     QUIZ.createQuestion();
     QUIZ.createAnswer();
