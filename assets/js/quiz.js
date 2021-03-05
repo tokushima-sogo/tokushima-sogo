@@ -743,7 +743,6 @@ const QUIZ = new quiz();
 let start = null;
 //起動時
 window.addEventListener("load", function () {
-    DRAW.pointDraw();
     //クイズ生成とスマホ判定
     QUIZ.createQuestion();
     QUIZ.createAnswer();
