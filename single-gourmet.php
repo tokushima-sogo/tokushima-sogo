@@ -14,31 +14,100 @@
         <?php while (have_posts()) : ?>
             <?php the_post(); ?>
 
+            <!-- カスタムフィールドの値を取得 -->
+            <?php
+            $spotname  = get_field('spot_name');
+            $picture1  = get_field('gourmet_pic1');
+            $picture2  = get_field('gourmet_pic2');
+            $picture3  = get_field('gourmet_pic3');
+            $address   = get_field('gourmet_address');
+            $tel       = get_field('gourmet_tel');
+            $opentime  = get_field('gourmet_open_time');
+            $closetime = get_field('gourmet_close');
+            $url       = get_field('gourmet_url');
+            $facebook  = get_field('gourmet_facebook');
+            $instagram = get_field('gourmet_instagram');
+            $twitter   = get_field('gourmet_twitter');
+            $remarks   = get_field('gourmet_remarks');
+            ?>
+
             <!-- タイトル -->
             <?php the_title(); ?>
 
             <!-- 本文 -->
             <?php the_content(); ?>
 
-            <!-- いいねぼたん -->
-            <?php echo do_shortcode('[wp_ulike]'); ?>
+            <!-- スポットの名称 -->
+            <?php if ($spotname) : ?>
+                <?php echo $spotname; ?>
+            <?php endif; ?>
 
-            <!-- カスタムフィールドでsnsを表示 -->
-            <?php $facebook = get_field('gourmet_facebook'); ?>
-            <?php $instagram = get_field('gourmet_instagram'); ?>
-            <?php $twitter = get_field('gourmet_twitter'); ?>
+            <!-- 緯度経度 -->
+            <?php
+            get_field('spot_lat');
+            get_field('spot_lag');
+            ?>
 
+            <!-- カスタムフィールド写真 -->
+            <?php if ($picture1) : ?>
+                <?php echo '<img src=" ' . $picture1 . '">'; ?>
+            <?php endif; ?>
+
+            <?php if ($picture2) : ?>
+                <?php echo '<img src=" ' . $picture2 . '">'; ?>
+            <?php endif; ?>
+
+            <?php if ($picture3) : ?>
+                <?php echo '<img src=" ' . $picture3 . '">'; ?>
+            <?php endif; ?>
+
+            <!-- カスタムフィールド住所 -->
+            <?php if ($address) : ?>
+                <?php echo $address; ?>
+            <?php endif; ?>
+
+            <!-- カスタムフィールド電話 -->
+            <?php if ($tel) : ?>
+                <?php echo $tel; ?>
+            <?php endif; ?>
+
+            <!-- カスタムフィールド営業時間 -->
+            <?php if ($opentime) : ?>
+                <?php echo $opentime; ?>
+            <?php endif; ?>
+
+            <!-- カスタムフィールド定休日 -->
+            <?php if ($closetime) : ?>
+                <?php echo $closetime; ?>
+            <?php endif; ?>
+
+            <!-- カスタムフィールドURL -->
+            <?php if ($url) : ?>
+                <?php echo $url; ?>
+            <?php endif; ?>
+
+            <!-- カスタムフィールドsns -->
             <?php if ($facebook) : ?>
                 <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
             <?php endif; ?>
+
             <?php if ($instagram) : ?>
-                <a href="<?php the_field('gourmet_instagram'); ?>"><i class="fab fa-instagram-square"></i></a>
-            <?php endif; ?>
-            <?php if ($twitter) : ?>
-                <a href="<?php the_field('gourmet_twitter'); ?>"><i class="fab fa-twitter-square"></i></a>
+                <a href="<?php echo $instagram; ?>"><i class="fab fa-instagram-square"></i></a>
             <?php endif; ?>
 
-            <p>カスタムタクソノミー</p>
+            <?php if ($twitter) : ?>
+                <a href="<?php echo $twitter; ?>"><i class="fab fa-twitter-square"></i></a>
+            <?php endif; ?>
+
+            <!-- カスタムフィールド備考 -->
+            <?php if ($remarks) : ?>
+                <?php echo $remarks; ?>
+            <?php endif; ?>
+
+            <!-- いいねぼたん -->
+            <?php echo do_shortcode('[wp_ulike]'); ?>
+
+            <!-- タグを持ってくる -->
             <?php the_taxonomies(); ?>
 
         <?php endwhile; ?>

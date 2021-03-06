@@ -25,6 +25,9 @@
             <!-- いいねぼたん -->
             <?php echo do_shortcode('[wp_ulike]'); ?>
 
+            <!-- タグを持ってくる -->
+            <?php the_taxonomies(); ?>
+
         <?php endwhile; ?>
     <?php endif; ?>
 

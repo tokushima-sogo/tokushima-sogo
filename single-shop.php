@@ -13,11 +13,94 @@
         <?php while (have_posts()) : ?>
             <?php the_post(); ?>
 
+            <?php
+            $spotname  = get_field('spot_name');
+            $picture1  = get_field('shop_pic1');
+            $picture2  = get_field('shop_pic2');
+            $picture3  = get_field('shop_pic3');
+            $address   = get_field('shop_address');
+            $tel       = get_field('shop_tel');
+            $opentime  = get_field('shop_open_time');
+            $closetime = get_field('shop_close');
+            $url       = get_field('shop_url');
+            $facebook  = get_field('shop_facebook');
+            $instagram = get_field('shop_instagram');
+            $twitter   = get_field('shop_twitter');
+            $remarks   = get_field('shop_remarks');
+            ?>
+
             <!-- タイトル -->
             <?php the_title(); ?>
 
             <!-- 本文 -->
             <?php the_content(); ?>
+
+            <!-- スポットの名称 -->
+            <?php if ($spotname) : ?>
+                <?php echo $spotname; ?>
+            <?php endif; ?>
+
+            <!-- 緯度経度 -->
+            <?php
+            get_field('spot_lat');
+            get_field('spot_lag');
+            ?>
+
+            <!-- カスタムフィールド写真 -->
+            <?php if ($picture1) : ?>
+                <?php echo '<img src=" ' . $picture1 . '">'; ?>
+            <?php endif; ?>
+
+            <?php if ($picture2) : ?>
+                <?php echo '<img src=" ' . $picture2 . '">'; ?>
+            <?php endif; ?>
+
+            <?php if ($picture3) : ?>
+                <?php echo '<img src=" ' . $picture3 . '">'; ?>
+            <?php endif; ?>
+
+            <!-- カスタムフィールド住所 -->
+            <?php if ($address) : ?>
+                <?php echo $address; ?>
+            <?php endif; ?>
+
+            <!-- カスタムフィールド電話 -->
+            <?php if ($tel) : ?>
+                <?php echo $tel; ?>
+            <?php endif; ?>
+
+            <!-- カスタムフィールド営業時間 -->
+            <?php if ($opentime) : ?>
+                <?php echo $opentime; ?>
+            <?php endif; ?>
+
+            <!-- カスタムフィールド定休日 -->
+            <?php if ($closetime) : ?>
+                <?php echo $closetime; ?>
+            <?php endif; ?>
+
+            <!-- カスタムフィールドURL -->
+            <?php if ($url) : ?>
+                <?php echo $url; ?>
+            <?php endif; ?>
+
+            <!-- カスタムフィールドsns -->
+            <?php if ($facebook) : ?>
+                <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
+            <?php endif; ?>
+
+            <?php if ($instagram) : ?>
+                <a href="<?php echo $instagram; ?>"><i class="fab fa-instagram-square"></i></a>
+            <?php endif; ?>
+
+            <?php if ($twitter) : ?>
+                <a href="<?php echo $twitter; ?>"><i class="fab fa-twitter-square"></i></a>
+            <?php endif; ?>
+
+            <!-- カスタムフィールド備考 -->
+            <?php if ($remarks) : ?>
+                <?php echo $remarks; ?>
+            <?php endif; ?>
 
             <!-- いいねぼたん -->
             <?php echo do_shortcode('[wp_ulike]'); ?>
