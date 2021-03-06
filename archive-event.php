@@ -5,54 +5,45 @@
 ４，タグ検索ができない！小川さん助けて！！
 -->
 
-
-<!-- ヘッダーの読み込み -->
 <?php get_header(); ?>
-<!-- spot用のCSSの読み込み CSS名は仮です-->
-<!-- <link href="<?php echo get_template_directory_uri(); ?>/assets/css/single-spot.css" rel="stylesheet" meida="all"> -->
 
 <main>
     <h1>徳島のイベント</h1>
     <p>紹介文</p><br><br>
 
-
-
     <section>
         <h2>見学体験</h2>​
-        <!-- サブループ設定 -->
-        <!-- 表示されている記事の投稿タイプでターム記事を更新日で表示するループ -->
-        <!-- 【https://cotodama.co/get_posts_sub_loop/#i-8】 -->
+
+        <!-- 見学・体験の記事を出力するループ -->
         <?php
         $args = array(
-            'post_type'      => 'event',            // カスタム投稿タイプ名
-            'posts_per_page' => 3,                  // 取得する投稿数
-            'orderby'        => "post_modified",    // 更新日で表示
-            'tax_query'      => array(
-                'relation'   => 'AND',
+            'post_type'         => 'event',     // カスタム投稿タイプ名
+            'orderby'           => "modified",  // 更新日で表示
+            'tax_query'         => array(
+                'relation'      => 'AND',
                 array(
-                    'taxonomy' => 'taxotag',
-                    'field'    => 'slug',
-                    'terms'    => 'tour',           // タクソノミースラッグを指定
+                    'taxonomy'  => 'taxotag',  // タクソノミースラッグを指定
+                    'field'     => 'slug',     // termsで使用する種類指定
+                    'terms'     => 'tour',     // タームスラッグを指定
                 ),
             ),
         );
         ?>
-        <?php $history_query = new WP_Query($args); ?>
+        <?php $the_query = new WP_Query($args); ?>
+        <?php if ($the_query->have_posts()) : ?>
+            <?php while ($the_query->have_posts()) : ?>
+                <?php $the_query->the_post(); ?>
 
-        <?php if ($history_query->have_posts()) : ?>
-            <?php while ($history_query->have_posts()) : ?>
-                <?php $history_query->the_post(); ?>
-                <!-- サムネイル部分 -->
+                <!-- サムネイルの表示 -->
                 <div class="pic">
                     <a href="<?php the_permalink(); ?>">
-                        <!-- サムネイルがあれば表示する
-                            サムネイルじゃなくてカスタム投稿の写真の表示方法？教科書ｐ205-->
+
                         <?php if (has_post_thumbnail()) : ?>
                             <?php the_post_thumbnail('medium') ?>
-                            <!-- なければ，NO＿IMAGEを表示 -->
                         <?php else : ?>
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
                         <?php endif; ?>
+
                     </a>
                 </div>
                 ​
@@ -90,61 +81,48 @@
                     <!-- wpulikeのショートコード 記入場所-->
                 </div>
                 ​
-                <!-- 抜粋 -->
-                <div>
-                    <?php the_excerpt(); ?>
-                </div>
-
-
+                <!-- コンテンツ文章の抜粋 -->
+                <?php the_excerpt(); ?>
 
             <?php endwhile; ?>
-            <?php wp_reset_postdata(); //$postをグローバル変数に戻す
-            ?>
+            <?php wp_reset_postdata(); ?>
             <?php endif; ?>​
     </section>
 
 
     <section>
         <h2>レジャー</h2>​
-        <!-- サブループ設定 -->
-        <!-- 表示されている記事の投稿タイプでターム記事を更新日で表示するループ -->
-        <!-- 【https://cotodama.co/get_posts_sub_loop/#i-8】 -->
+
+        <!-- レジャーの記事を出力するループ -->
         <?php
-        // $args =
-        //     array(
-        //         'post_type'      => 'event',          //カスタム投稿タイプ名
-        //         'posts_per_page' => 3,                   // 取得する投稿数
-        //         'orderby'        => "post_modified",              //更新日で表示
-        //         'taxonomy' => 'leisure',        // タクソノミースラッグを指定
-        //     );
         $args = array(
-            'post_type' => 'event',
-            'posts_per_page' => 3,
-            'tax_query' => array(
-                'relation' => 'AND',
+            'post_type'         => 'event',     // カスタム投稿タイプ名
+            'orderby'           => 'modified',  // 更新日で表示
+            'tax_query'         => array(
+                'relation'      => 'AND',
                 array(
-                    'taxonomy' => 'taxotag',
-                    'field' => 'slug',
-                    'terms' => 'leisure',
+                    'taxonomy'  => 'taxotag',   // タクソノミースラッグを指定
+                    'field'     => 'slug',      // termsで使用する種類指定
+                    'terms'     => 'leisure',   // タームスラッグを指定
                 ),
             ),
         );
-        $history_query = new WP_Query($args);
-
-        if ($history_query->have_posts()) :
-            while ($history_query->have_posts()) : $history_query->the_post();
         ?>
-                <!-- サムネイル部分 -->
+        <?php $the_query = new WP_Query($args); ?>
+        <?php if ($the_query->have_posts()) : ?>
+            <?php while ($the_query->have_posts()) : ?>
+                <?php $the_query->the_post(); ?>
+
+                <!-- サムネイルの表示 -->
                 <div class="pic">
                     <a href="<?php the_permalink(); ?>">
-                        <!-- サムネイルがあれば表示する
-                            サムネイルじゃなくてカスタム投稿の写真の表示方法？教科書ｐ205-->
+
                         <?php if (has_post_thumbnail()) : ?>
                             <?php the_post_thumbnail('medium') ?>
-                            <!-- なければ，NO＿IMAGEを表示 -->
                         <?php else : ?>
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
                         <?php endif; ?>
+
                     </a>
                 </div>
                 ​
@@ -182,16 +160,11 @@
                     <!-- wpulikeのショートコード 記入場所-->
                 </div>
                 ​
-                <!-- 抜粋 -->
-                <div>
-                    <?php the_excerpt(); ?>
-                </div>
-
-
+                <!-- コンテンツ文章の抜粋 -->
+                <?php the_excerpt(); ?>
 
             <?php endwhile; ?>
-            <?php wp_reset_postdata(); //$postをグローバル変数に戻す
-            ?>
+            <?php wp_reset_postdata(); ?>
             <?php endif; ?>​
     </section>
 
@@ -199,45 +172,37 @@
 
     <section>
         <h2>お祭り</h2>​
-        <!-- サブループ設定 -->
-        <!-- 表示されている記事の投稿タイプでターム記事を更新日で表示するループ -->
-        <!-- 【https://cotodama.co/get_posts_sub_loop/#i-8】 -->
+
+        <!-- お祭りの記事を出力するループ -->
         <?php
-        // $args =
-        //     array(
-        //         'post_type'      => 'event',          //カスタム投稿タイプ名
-        //         'posts_per_page' => 3,                   // 取得する投稿数
-        //         'orderby'        => "post_modified",              //更新日で表示
-        //         'taxonomy' => 'festivel',        // タクソノミースラッグを指定
-        //     );
         $args = array(
-            'post_type' => 'event',
-            'posts_per_page' => 3,
-            'tax_query' => array(
-                'relation' => 'AND',
+            'post_type'         => 'event',     // カスタム投稿タイプ名
+            'orderby'           => 'modified',  // 更新日で表示
+            'tax_query'         => array(
+                'relation'      => 'AND',
                 array(
-                    'taxonomy' => 'taxotag',
-                    'field' => 'slug',
-                    'terms' => 'festival',
+                    'taxonomy'  => 'taxotag',   // タクソノミースラッグを指定
+                    'field'     => 'slug',      // termsで使用する種類指定
+                    'terms'     => 'festival',  // タームスラッグを指定
                 ),
             ),
         );
-        $history_query = new WP_Query($args);
-
-        if ($history_query->have_posts()) :
-            while ($history_query->have_posts()) : $history_query->the_post();
         ?>
-                <!-- サムネイル部分 -->
+        <?php $the_query = new WP_Query($args); ?>
+        <?php if ($the_query->have_posts()) : ?>
+            <?php while ($the_query->have_posts()) : ?>
+                <?php $the_query->the_post(); ?>
+
+                <!-- サムネイルの表示 -->
                 <div class="pic">
                     <a href="<?php the_permalink(); ?>">
-                        <!-- サムネイルがあれば表示する
-                            サムネイルじゃなくてカスタム投稿の写真の表示方法？教科書ｐ205-->
+
                         <?php if (has_post_thumbnail()) : ?>
                             <?php the_post_thumbnail('medium') ?>
-                            <!-- なければ，NO＿IMAGEを表示 -->
                         <?php else : ?>
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
                         <?php endif; ?>
+
                     </a>
                 </div>
                 ​
@@ -275,16 +240,11 @@
                     <!-- wpulikeのショートコード 記入場所-->
                 </div>
                 ​
-                <!-- 抜粋 -->
-                <div>
-                    <?php the_excerpt(); ?>
-                </div>
-
-
+                <!-- コンテンツ文章の抜粋 -->
+                <?php the_excerpt(); ?>
 
             <?php endwhile; ?>
-            <?php wp_reset_postdata(); //$postをグローバル変数に戻す
-            ?>
+            <?php wp_reset_postdata(); ?>
             <?php endif; ?>​
     </section>
 
