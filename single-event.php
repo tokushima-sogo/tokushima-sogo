@@ -74,6 +74,17 @@
                 <a href="<?php echo $twitter; ?>"><i class="fab fa-twitter-square"></i></a>
             <?php endif; ?>
 
+            <!-- いいねぼたん -->
+            <?php echo do_shortcode('[wp_ulike]'); ?>
+
+            <!-- タグを持ってくる -->
+            <?php
+            echo get_the_term_list($post->ID, 'taxotag', 'タグ:', '|');
+            ?>
+
+            <!-- タグを持ってくる -->
+            <!-- <?php the_taxonomies(); ?> -->
+
             <!-- サムネイルの表示 -->
             <!-- <div class="pic">
                 <?php if (has_post_thumbnail()) : ?>
@@ -82,12 +93,6 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
                 <?php endif; ?>
             </div> -->
-
-            <!-- いいねぼたん -->
-            <?php echo do_shortcode('[wp_ulike]'); ?>
-
-            <!-- タグを持ってくる -->
-            <?php the_taxonomies(); ?>
 
         <?php endwhile; ?>
     <?php endif; ?>
