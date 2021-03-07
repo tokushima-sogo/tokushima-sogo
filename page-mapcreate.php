@@ -1,11 +1,13 @@
 <?php get_header(); ?>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/mapcreate.css">
 
 <main>
-    <p>プログラミングスクールQlipです。</p>
+    <div class="map_wrapper">
+        <p>徳島駅から</p>
 
-    <div id="map" style="width:600px; height:400px"></div>
+        <div id="map"></div>
+    </div>
 </main>
-
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNNbWvrL46SW-8K-D0w6Haff4Vbcc4rRQ">
 </script>
 <script>
@@ -22,6 +24,8 @@
     let lngs = [];
     let spots = [];
 
+    const USERAGENT = navigator.userAgent;
+    const MAP = document.getElementById("map");
     //wp ulikeでいいねをつけたスポットの座標データを取得
     jQuery(function($) {
         //ページロード時に実行
@@ -48,7 +52,6 @@
                 let spot_list = temp_list.map(temp => temp.meta_value)
                 console.log(spot_list);
 
-
                 for (let i = 0; i < spot_list.length / 3; i++) {
                     spotsName[i] = spot_list[0 + (i * 3)];
                     getLats[i] = parseFloat(spot_list[1 + (i * 3)]);
@@ -57,7 +60,18 @@
                     console.log(getLngs[i]);
                     console.log(getLats[i]);
                 }
-                //地図データ生成
+
+
+
+                //スマホだったら
+                /*  if (USERAGENT.indexOf('iPhone') != -1 || USERAGENT.indexOf('Android') != -1) {
+                 } */
+                function isSmartPhone() {
+
+                }
+
+
+                //地図データに使う緯度・経度データの生成。
                 for (let i = 0; i < spotsName.length; i++) {
                     spots[i] = {
                         lat: parseFloat(getLats[i]),
@@ -66,27 +80,38 @@
                     console.log(spots[i]);
                 }
                 console.dir(spots);
-                //【googleMap生成】
+
+
+                //【googleMap設定】
                 function initMap() {
-                    //地図の中心にするQLIPの座標。
-                    const qlip = {
-                        lat: 34.08851305415384,
-                        lng: 134.55011544448973
+                    //地図の初期位置の座標。
+
+
+
+                    const CENTER = {
+                        lat: 34.04273024112785,
+                        lng: 134.16295987060795
                     };
-                    //QLIPの座標を中心にmapの生成
+                    //徳島駅の座標
+                    const TOKUSHIMA_STATION = {
+                        lat: 34.07434415876051,
+                        lng: 134.55118033939166
+                    };
+
+                    //CENTERを中心にmapの生成
                     const opts = {
                         zoom: 10,
-                        center: qlip,
+                        center: CENTER,
                     };
-                    const map = new google.maps.Map(document.getElementById("map"), opts);
+                    const map = new google.maps.Map(MAP, opts);
 
-                    //QLIPのマーカーを生成する
+                    //徳島駅のマーカーを生成する
                     const centerMarker = new google.maps.Marker({
-                        position: qlip,
+                        position: TOKUSHIMA_STATION,
                         map: map,
                         label: {
-                            text: 'qlip',
-                            color: 'blue',
+                            text: '徳島駅',
+                            color: 'green',
                             fontFamily: 'sans-serif',
                             fontWeight: 'bold',
                             fontSize: '14px'
@@ -107,6 +132,14 @@
                         });
                     }
                 }
+                //リサイズしたときに初期位置を中央に持ってくる
+                google.maps.event.addDomListener(window, "resize", function() {
+                    var center = map.getCenter();
+                    google.maps.event.trigger(map, "resize");
+                    map.setCenter(center);
+                });
+
+                //googlemap生成
                 google.maps.event.addDomListener(window, "load", initMap());
                 //同期に失敗
             }).fail(function(XMLHttpRequest, textStatus, error) {
