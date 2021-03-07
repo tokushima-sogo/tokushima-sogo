@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+/* l */
+.l-main {
+    padding-top: 70px;
+}
+@media (min-width:1025px) {
+    .l-main {
+        padding-top: 100px;
+    }
+}
+/* Foundation base css */
+/* Foundation base css */
+body{
+    background-color: #EAE4AD;
+    font-family: 'mamelon5';
+}
+
+/* 領域を90％にする */
+main{
+    padding-top: 100px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+/* Layout main css */
+/* Layout main css */
+
+/* Object compornent css */
+/* Object compornent css */
+
+/*  メインビジュアル*/
+.c-articleSpecial__mv_mobile{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* メインビジュアル下のテキスト */
+.c-archiveSpecial__text{
+    padding: 2%;
+    font-size: 16px;
+}
+/* サムネイル画像 */
+.c-articleList__item__thumb{
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* サムネイル画像レスポンシブ */
+@media (min-width: 768px){
+    .c-articleList__item__thumb {
+        height: 200px;
+        object-fit: cover;
+    }
+}
+/* サムネイルテキスト */
+.c-articleList__item__description{
+    font-size: 14px;
+}
+
+
+/* Object project css */
+/* Object project css */
+
+/* メインビジュアル下のテキスト */
+.p-archiveSpecial__text{
+    background-color: #C2A062;
+}
+
+
+/* Object utillity css */
+/* Object utillity css */
+
+
+  /* バナーのResponsive */
+@media (min-width: 768px){
+    .u-flex{
+        display: flex;
+        justify-content: center;
+    }
+    .u-column{
+        width: 33.3%;
+    }
+    .u-column-center{
+        margin: 3%;
+        margin-top: 0;
+    }
+}
+.u-mb30{
+    margin-bottom: 30px;
+}
+.u-mb50 {
+    margin-bottom: 50px;
+}

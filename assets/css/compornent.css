@@ -1,0 +1,77 @@
+/* 検索結果ページ */
+.c-title__img {
+  height: 60px;
+}
+
+.c-seachResult__text {
+  font-size: 20px;
+  padding: 10px;
+}
+
+/* 共通のタイトル文字サイズ */
+.c-title {
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+@media (min-width:768px) {
+  .c-title {
+    font-size: 2.8rem;
+  }
+}
+
+.c-text {
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+@media (min-width:768px) {
+  .c-text {
+    font-size: 1.8rem;
+  }
+}
+
+
+/* ---------------------------------------------- */
+
+/* 検索フォームページ */
+
+/* 検索フォーム閉じるボタン */
+.c-button__seachForm__close {
+  display: block;
+  border: 0px;
+  height: 25px;
+  width: 25px;
+  background: url(../../images/btn_seachForm_close.png);
+  background-size: cover;
+  position: absolute;
+  right: 15px;
+  top: 85px;
+}
+
+@media screen and (min-width: 1025px) {
+  .c-button__seachForm__close {
+    display: block;
+    border: 0px;
+    height: 25px;
+    width: 25px;
+    background: url(../../images/btn_seachForm_close.png);
+    background-size: cover;
+    position: absolute;
+    right: 15px;
+    top: 85px;
+  }
+}
+
+/* サーチアイコン */
+.c-icon__submit {
+  position: absolute;
+  transform: translate(0, -50%);
+  top: 50%;
+  right: 0;
+  display: inline-block;
+  border: 0px;
+  height: 25px;
+  width: 25px;
+  background: url(../../images/btn_seachForm_submit.png);
+  background-size: cover;
+  margin-right: 10px;
+}

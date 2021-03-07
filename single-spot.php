@@ -9,6 +9,9 @@
 
 <main>
 
+    <!-- パンくずリスト -->
+
+
     <!-- 投稿記事の出力 -->
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : ?>
@@ -108,7 +111,11 @@
             <?php echo do_shortcode('[wp_ulike]'); ?>
 
             <!-- タグを持ってくる -->
-            <?php the_taxonomies(); ?>
+            <?php
+            echo get_the_term_list($post->ID, 'taxotag', 'タグ:', '|');
+            ?>
+            <!-- タグを持ってくる -->
+            <!-- <?php the_taxonomies(); ?> -->
 
         <?php endwhile; ?>
     <?php endif; ?>
