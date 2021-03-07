@@ -160,6 +160,13 @@ class mobile {
             CTX.font = "220px PixelMplus10-Regular";
         }
     }
+    commentFont() {
+        if (isMobile == true) {
+            CTX.font = "50px PixelMplus10-Regular";
+        } else {
+            CTX.font = "100px PixelMplus10-Regular";
+        }
+    }
 }
 const MOBILE = new mobile();
 
@@ -547,6 +554,7 @@ class draw {
             CTX.clearRect(0, 0, CANVAS.width, CANVAS.height);
             CTX.drawImage(RESULT_IMG, 0, 0, CANVAS.width, CANVAS.height);
             DRAW.pointDraw();
+            DRAW.commentDraw();
         })
     }
     /* finishDraw() {
@@ -570,6 +578,21 @@ class draw {
         CTX.fillStyle = "gold";
         MOBILE.finishResultFont();
         CTX.fillText(point, CANVAS.width * 0.54, CANVAS.height * 0.48);
+    }
+    commentDraw() {
+        CTX.fillStyle = "gold";
+        MOBILE.commentFont();
+        if (point < 30) {
+            CTX.fillText("ひよっ子", CANVAS.width * 0.5, CANVAS.height * 0.82);
+        } else if (point < 60) {
+            CTX.fillText("阿波っ子", CANVAS.width * 0.5, CANVAS.height * 0.82);
+        }
+        else if (point < 90) {
+            CTX.fillText("阿波博士", CANVAS.width * 0.5, CANVAS.height * 0.82);
+        }
+        else if (point = 100) {
+            CTX.fillText("阿波博士", CANVAS.width * 0.5, CANVAS.height * 0.82);
+        }
     }
     //クレジットと都市伝説ページの表示
     linkDraw() {
@@ -743,11 +766,12 @@ const QUIZ = new quiz();
 let start = null;
 //起動時
 window.addEventListener("load", function () {
+
     //クイズ生成とスマホ判定
     QUIZ.createQuestion();
     QUIZ.createAnswer();
     MOBILE.isSmartPhone();
-
+    DRAW.commentDraw()
     //スタート画面
     start = setInterval(function () {
         setTimeout(function () {
