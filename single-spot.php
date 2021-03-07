@@ -31,7 +31,11 @@
             $facebook  = get_field('spot_facebook');
             $instagram = get_field('spot_instagram');
             $twitter   = get_field('spot_twitter');
-            $remarks   = get_field('spot_remarks');
+            $remarks1  = get_field('spot_remarks1');
+            $remarks2  = get_field('spot_remarks2');
+            $remarks3  = get_field('spot_remarks3');
+            $remarks4  = get_field('spot_remarks4');
+            $remarks5  = get_field('spot_remarks5');
             ?>
 
             <!-- タイトル -->
@@ -103,12 +107,34 @@
             <?php endif; ?>
 
             <!-- カスタムフィールド備考 -->
-            <?php if ($remarks) : ?>
-                <?php echo $remarks; ?>
+            <?php if ($remarks1) : ?>
+                <?php echo $remarks1; ?>
+            <?php endif; ?>
+
+            <?php if ($remarks2) : ?>
+                <?php echo $remarks2; ?>
+            <?php endif; ?>
+
+            <?php if ($remarks3) : ?>
+                <?php echo $remarks3; ?>
+            <?php endif; ?>
+
+            <?php if ($remarks4) : ?>
+                <?php echo $remarks4; ?>
+            <?php endif; ?>
+
+            <?php if ($remarks5) : ?>
+                <?php echo $remarks5; ?>
             <?php endif; ?>
 
             <!-- いいねぼたん -->
             <?php echo do_shortcode('[wp_ulike]'); ?>
+
+            <!-- いいねボタン -->
+            <?php if (function_exists('the_ratings')) {
+                the_ratings();
+            }
+            ?>
 
             <!-- タグを持ってくる -->
             <?php

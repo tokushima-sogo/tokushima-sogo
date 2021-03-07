@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 
 <main>
+
+    <?php echo do_shortcode('[mwform_formkey key="193"]'); ?>
     <!-- <section id="conceptBase">
         <div class="p-conceptBase__heading u-bgIndigo">
             <h2 class="p-conceptBase__heading__title u-white">お問い合わせフォーム</h2>

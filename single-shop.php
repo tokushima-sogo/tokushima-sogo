@@ -26,7 +26,11 @@
             $facebook  = get_field('shop_facebook');
             $instagram = get_field('shop_instagram');
             $twitter   = get_field('shop_twitter');
-            $remarks   = get_field('shop_remarks');
+            $remarks1  = get_field('shop_remarks1');
+            $remarks2  = get_field('shop_remarks2');
+            $remarks3  = get_field('shop_remarks3');
+            $remarks4  = get_field('shop_remarks4');
+            $remarks5  = get_field('shop_remarks5');
             ?>
 
             <!-- タイトル -->
@@ -98,8 +102,24 @@
             <?php endif; ?>
 
             <!-- カスタムフィールド備考 -->
-            <?php if ($remarks) : ?>
-                <?php echo $remarks; ?>
+            <?php if ($remarks1) : ?>
+                <?php echo $remarks1; ?>
+            <?php endif; ?>
+
+            <?php if ($remarks2) : ?>
+                <?php echo $remarks2; ?>
+            <?php endif; ?>
+
+            <?php if ($remarks3) : ?>
+                <?php echo $remarks3; ?>
+            <?php endif; ?>
+
+            <?php if ($remarks4) : ?>
+                <?php echo $remarks4; ?>
+            <?php endif; ?>
+
+            <?php if ($remarks5) : ?>
+                <?php echo $remarks5; ?>
             <?php endif; ?>
 
             <!-- いいねぼたん -->

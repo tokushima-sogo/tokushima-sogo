@@ -250,17 +250,6 @@
         <!-- /header -->
 
 
-
-
-
-
-
-
-
-
-
-
-
         <!-- <header>
         <a href="<?php echo home_url(); ?>">Topへ</a> -->
         <br>
@@ -333,7 +322,8 @@
                 //マップ作成ボタンをクリックしたら発動
                 $('#mapbtn').click(function() {
                     //新しいウィンドウで開く
-                    window.open("http://localhost/tokushima-sogoTest/mapcreate/", "_blank");
+                    // window.open("http://localhost/tokushima-sogoTest/mapcreate/", "_blank");
+                    window.open("https://heroxs3v38.xsrv.jp/tokushima-sogo/mapcreate/", "_blank");
                 });
             });
         </script>

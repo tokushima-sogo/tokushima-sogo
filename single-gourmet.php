@@ -28,7 +28,11 @@
             $facebook  = get_field('gourmet_facebook');
             $instagram = get_field('gourmet_instagram');
             $twitter   = get_field('gourmet_twitter');
-            $remarks   = get_field('gourmet_remarks');
+            $remarks1   = get_field('gourmet_remarks1');
+            $remarks2   = get_field('gourmet_remarks2');
+            $remarks3   = get_field('gourmet_remarks3');
+            $remarks4   = get_field('gourmet_remarks4');
+            $remarks5   = get_field('gourmet_remarks5');
             ?>
 
             <!-- タイトル -->
@@ -100,8 +104,24 @@
             <?php endif; ?>
 
             <!-- カスタムフィールド備考 -->
-            <?php if ($remarks) : ?>
-                <?php echo $remarks; ?>
+            <?php if ($remarks1) : ?>
+                <?php echo $remarks1; ?>
+            <?php endif; ?>
+
+            <?php if ($remarks2) : ?>
+                <?php echo $remarks2; ?>
+            <?php endif; ?>
+
+            <?php if ($remarks3) : ?>
+                <?php echo $remarks3; ?>
+            <?php endif; ?>
+
+            <?php if ($remarks4) : ?>
+                <?php echo $remarks4; ?>
+            <?php endif; ?>
+
+            <?php if ($remarks5) : ?>
+                <?php echo $remarks5; ?>
             <?php endif; ?>
 
             <!-- いいねぼたん -->
