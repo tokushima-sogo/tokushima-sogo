@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+
+/* body{
+    background-color: black;
+
+} */
+
+.wrap{
+  background-color: #C2A062;
+width: 90%;
+margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+    padding: 50px;
+}
+
+p{
+    padding: 10px 0;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.p-favorite__wrap{
+    text-align: right;
+}
+/* ボタン単体 */
+.p-singleBtn,
+a.p-singleBtn,
+button.p-singleBtn {
+    position: relative;
+    display: inline-block;
+    margin: 5px 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    font-size: 12px;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+    border-radius: 13px;
+    text-align: center;
+    vertical-align: middle;
+
+}
+@media (min-width:400px) {
+    .p-singleBtn,
+    a.p-singleBtn,
+    button.p-singleBtn {
+        margin: 0 10px 0 0;
+    }
+}
+@media (min-width:768px) {
+    .p-singleBtn,
+    a.p-singleBtn,
+    button.p-singleBtn {
+        font-size: 18px;
+    }
+}
+
+/* ボタンのタグ */
+a.c-btnTag {
+    padding: 14px 14px 13px 50px;
+    color: #000000;
+    background: #f5f5f5;
+}
+@media (min-width:768px) {
+    a.c-btnTag {
+        padding: 26px 18px 24px 95px;
+    }
+}
+a.c-btnTag::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 100%;
+    content: "";
+    border-radius: 13px 0 0 13px;
+    background: #cccccc;
+    opacity: 0.5;
+}
+@media (min-width:768px) {
+    a.c-btnTag::before {
+        width: 80px;
+    }
+}
+
+/* ボタン内のsvg */
+a.c-btnTag img {
+    position: absolute;
+    padding: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    opacity: 0.3;
+}
+
+/* hoverしたら1.2倍 */
+a.c-btnTag:hover img {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 1;
+}
+/* いいねカウント数 */
+.c-favCount {
+    padding: 2px;
+    font-size: 18px;
+}
+
+/* いいね！アイコン */
+a.u-btnTag--fav img {
+    fill: black;
+    stroke: none;
+    top: 12px;
+    left: 8px;
+    width: 24px;
+}
+@media (min-width:768px) {
+    a.u-btnTag--fav img {
+        top: 16px;
+        left: 16px;
+        width: 48px;
+    }
+}
+
+
+@media(min-width:768px){
+    .main{
+        width: 70%;
+        margin: 0 auto;
+    }
+    p{
+    padding: 20px 0;
+    line-height: 50px;
+}
+}
+
+@media(min-width:1025px){
+    .main{
+        width: 50%;
+
+    }
+}

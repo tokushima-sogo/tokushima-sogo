@@ -6,14 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/contact-style.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/reset.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/base.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/project.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/compornent.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/utility.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/top.css">
+
+    <!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/contact-style.css"> -->
 
     <!-- プラグインsearch&filterのcssとjs ※後でfunctions.phpにまとめる -->
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/searchandfilter.css">
+    <!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/searchandfilter.css"> -->
     <?php wp_enqueue_script('searchandfilter', get_template_directory_uri() . '/assets/js/searchandfilter.js', '', '', true); ?>
 
-    <!-- 小野寛智のfontsawesomeアカウントなので必ず消す！！ -->
-    <script src="https://kit.fontawesome.com/72a93cd7e4.js" crossorigin="anonymous"></script>
+    <!-- fontsawesome -->
+    <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
 
     <?php wp_head(); ?>
 </head>
@@ -41,6 +48,8 @@
         <div id="result"></div>
         <p>taxoid <span id="span1"></span></p>
         <input type="button" value="ボタン" onclick="clickBtn1()" />
+        <!-- <button>値を取得</button> -->
+        <button id="mapbtn">マップ作成テスト</button>
         <!-- ajax -->
         <script>
             jQuery(document).ready(function($) {
@@ -81,6 +90,15 @@
                 $('button').click(function() {
                     var r = $('input[type="radio"]:checked').val();
                     console.log(r);
+                });
+            });
+
+            //マップ生成ページへ移動
+            jQuery(document).ready(function($) {
+                //マップ作成ボタンをクリックしたら発動
+                $('#mapbtn').click(function() {
+                    //新しいウィンドウで開く
+                    window.open("http://localhost/tokushima-sogoTest/mapcreate/", "_blank");
                 });
             });
         </script>

@@ -58,11 +58,12 @@ add_filter('document_title_parts', 'tokushima_sogo_document_title_parts');
 function add_tokushima_sogo_styles()
 {
 
-    wp_enqueue_style('tokushima_sogo_reset_style', get_template_directory_uri() . '/assets/css/reset.css');
-    wp_enqueue_style('tokushima_sogo_base_style', get_template_directory_uri() . '/assets/css/reset.css');
-
-    if (is_home()) {
-    }
+    // wp_enqueue_style('tokushima_sogo_reset_style', get_template_directory_uri() . '/assets/css/reset.css');
+    // wp_enqueue_style('tokushima_sogo_base_style', get_template_directory_uri() . '/assets/css/base.css');
+    // wp_enqueue_style('tokushima_sogo_project_style', get_template_directory_uri() . '/assets/css/project.css');
+    // wp_enqueue_style('tokushima_sogo_compornent_style', get_template_directory_uri() . '/assets/css/compornent.css');
+    // wp_enqueue_style('tokushima_sogo_utility_style', get_template_directory_uri() . '/assets/css/utility.css');
+    // wp_enqueue_style('tokushima_sogo_compornent_style', get_template_directory_uri() . '/assets/css/top.css');
 }
 add_action('wp_enqueue_scripts', 'add_tokushima_sogo_styles');
 
@@ -82,19 +83,21 @@ add_action('wp_enqueue_scripts', 'add_tokushima_sogo_scripts');
 /**
  * ajaxの準備
  */
-function add_my_ajaxurl() {
+function add_my_ajaxurl()
+{
 ?>
     <script>
-        var ajaxurl = '<?php echo admin_url( 'admin-ajax.php'); ?>';
+        var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
     </script>
 <?php
 }
-add_action( 'wp_footer', 'add_my_ajaxurl', 1 );
+add_action('wp_footer', 'add_my_ajaxurl', 1);
 
 /**
  * ajaxを受け取ってからの処理
  */
-function my_ajax_do(){
+function my_ajax_do()
+{
     $mes = $_POST['mes'];
 
     global $wpdb;
@@ -107,5 +110,5 @@ AND post_status = 'publish';");
     echo json_encode($res);
     wp_die();
 }
-add_action( 'wp_ajax_my_ajax_do', 'my_ajax_do' );
-add_action( 'wp_ajax_nopriv_my_ajax_do', 'my_ajax_do' );
+add_action('wp_ajax_my_ajax_do', 'my_ajax_do');
+add_action('wp_ajax_nopriv_my_ajax_do', 'my_ajax_do');
