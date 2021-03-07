@@ -54,6 +54,11 @@
     <!-- 都市伝説のアーカイブ -->
     <a href="<?php echo get_post_type_archive_link('horror'); ?>">都市伝説</a>
 
+
+
+    <!-- Ditty news ticker ショートコード -->
+    <?php echo do_shortcode('[ditty_news_ticker id="219"]'); ?>
+
 </main>
 
 <?php get_footer(); ?>
