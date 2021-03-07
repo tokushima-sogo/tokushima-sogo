@@ -96,19 +96,120 @@ add_action('wp_footer', 'add_my_ajaxurl', 1);
 /**
  * ajaxを受け取ってからの処理
  */
-function my_ajax_do()
+// function my_ajax_do()
+// {
+//     $mes = $_POST['mes'];
+
+//     global $wpdb;
+//     $res = $wpdb->get_results("SELECT COUNT(object_id) AS 'article'
+// FROM wp_term_relationships LEFT OUTER JOIN wp_posts
+// ON wp_term_relationships.object_id = wp_posts.ID
+// WHERE term_taxonomy_id = $mes
+// AND post_status = 'publish';");
+
+//     echo json_encode($res);
+//     wp_die();
+// }
+// add_action('wp_ajax_my_ajax_do', 'my_ajax_do');
+// add_action('wp_ajax_nopriv_my_ajax_do', 'my_ajax_do');
+
+// function map_test_do()
+// {
+//     header("Content-Type: application/json; charset=UTF-8"); //ヘッダー情報の明記。必須。
+//     $ary_list = []; //配列宣言
+//     global $wpdb;
+//     $ret = $wpdb->get_results("SELECT meta_value
+//                                 FROM wp_postmeta LEFT OUTER JOIN wp_ulike
+//                                 ON wp_postmeta.post_id = wp_ulike.post_id
+//                                 WHERE ip = '127.0.0.1'
+//                                 AND status = 'like'
+//                                 AND meta_key IN ('spot_name','spot_lat','spot_lag');");
+//     if (isset($ret)) $ary_list = $ret; //連想配列のプロパティから値を取得
+//     echo json_encode($ary_list);
+//     wp_die();
+// }
+// add_action('wp_ajax_map_test_do', 'map_test_do');
+// add_action('wp_ajax_nopriv_map_test_do', 'map_test_do');
+
+// ipベタ打ちテスト　配列取得
+function map_test_do()
 {
-    $mes = $_POST['mes'];
-
+    header("Content-Type: application/json; charset=UTF-8"); //ヘッダー情報の明記。必須。
+    $ary_list = []; //配列宣言
+    $ip = $_SERVER['REMOTE_ADDR'];
     global $wpdb;
-    $res = $wpdb->get_results("SELECT COUNT(object_id) AS 'article'
-FROM wp_term_relationships LEFT OUTER JOIN wp_posts
-ON wp_term_relationships.object_id = wp_posts.ID
-WHERE term_taxonomy_id = $mes
-AND post_status = 'publish';");
-
-    echo json_encode($res);
+    $ret = $wpdb->get_results("SELECT meta_value
+                                FROM wp_postmeta LEFT OUTER JOIN wp_ulike
+                                ON wp_postmeta.post_id = wp_ulike.post_id
+                                WHERE ip = '$ip'
+                                AND status = 'like'
+                                AND meta_key IN ('spot_name','spot_lat','spot_lag');");
+    if (isset($ret)) $ary_list = $ret; //連想配列のプロパティから値を取得
+    echo json_encode($ary_list);
     wp_die();
 }
-add_action('wp_ajax_my_ajax_do', 'my_ajax_do');
-add_action('wp_ajax_nopriv_my_ajax_do', 'my_ajax_do');
+add_action('wp_ajax_map_test_do', 'map_test_do');
+add_action('wp_ajax_nopriv_map_test_do', 'map_test_do');
+
+// function map_test_do()
+// {
+//     header("Content-Type: application/json; charset=UTF-8"); //ヘッダー情報の明記。必須。
+//     $ary_list = []; //配列宣言
+//     $tempip = $_SERVER['REMOTE_ADDR'];
+//     $long = ip2long($tempip);
+//     $ip = long2ip($long);
+//     global $wpdb;
+//     $ret = $wpdb->get_results("SELECT meta_value
+//                                 FROM wp_postmeta LEFT OUTER JOIN wp_ulike
+//                                 ON wp_postmeta.post_id = wp_ulike.post_id
+//                                 WHERE ip = '$ip'
+//                                 AND status = 'like'
+//                                 AND meta_key IN ('spot_name','spot_lat','spot_lag');");
+//     if (isset($ret)) $ary_list = $ret; //連想配列のプロパティから値を取得
+//     echo json_encode($ary_list);
+//     wp_die();
+// }
+// add_action('wp_ajax_map_test_do', 'map_test_do');
+// add_action('wp_ajax_nopriv_map_test_do', 'map_test_do');
+
+// function map_test_do()
+// {
+//     header("Content-Type: application/json; charset=UTF-8");
+//     $ary_list = [];
+//     $pretempip = $_SERVER['REMOTE_ADDR'];
+//     $pretempip2 = "$pretempip";
+//     $tempip = ip2long($pretempip2);
+//     $ip = long2ip($tempip);
+//     global $wpdb;
+//     $ret = $wpdb->get_results("SELECT meta_value
+//                                 FROM wp_postmeta LEFT OUTER JOIN wp_ulike
+//                                 ON wp_postmeta.post_id = wp_ulike.post_id
+//                                 WHERE ip = '$ip'
+//                                 AND status = 'like'
+//                                 AND meta_key IN ('spot_name','spot_lat','spot_lag');");
+//     if (isset($ret)) $ary_list = $ret;
+//     echo json_encode($ary_list);
+//     wp_die();
+// }
+// add_action('wp_ajax_map_test_do', 'map_test_do');
+// add_action('wp_ajax_nopriv_map_test_do', 'map_test_do');
+
+// function map_test_do()
+// {
+//     header("Content-Type: application/json; charset=UTF-8");
+//     $ary_list = [];
+//     $pretempip = $_SERVER['REMOTE_ADDR'];
+//     $pretempip2 = "$pretempip";
+//     // $tempip = ip2long($pretempip2);
+//     // $ip = long2ip($tempip);
+//     global $wpdb;
+//     $ret = $wpdb->get_results("SELECT meta_value
+//                                 FROM wp_postmeta LEFT OUTER JOIN wp_ulike
+//                                 ON wp_postmeta.post_id = wp_ulike.post_id
+//                                 WHERE ip = '$pretempip2'
+//                                 AND status = 'like'
+//                                 AND meta_key IN ('spot_name','spot_lat','spot_lag');");
+//     if (isset($ret)) $ary_list = $ret;
+//     echo json_encode($ary_list);
+//     wp_die();
+// }
