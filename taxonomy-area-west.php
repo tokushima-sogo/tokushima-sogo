@@ -76,10 +76,6 @@ CSSを消すこと。
                 <?php while ($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
 
-                    <?php echo esc_html(get_post_type_object(get_post_type())->label); ?>
-
-
-
                     <div class="p-articleList u-grid">
                         <article class="p-article c-more1">
                             <!-- サムネイルの表示 -->
