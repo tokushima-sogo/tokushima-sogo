@@ -11,7 +11,7 @@ draw
 
 
 
-//const PATH = "http://localhost/wp-content/themes/sogo/";
+// const PATH = "http://localhost/wp-content/themes/sogo/";
 //canvas設定
 const CANVAS = document.getElementById("canvas");
 const CTX = CANVAS.getContext("2d");
@@ -26,21 +26,21 @@ console.log(CANVAS.height);
 
 //画像
 const CORRECT_IMG = new Image();
-CORRECT_IMG.src = PATH + "/assets/image/quiz/correct.png";
+CORRECT_IMG.src = PATH + "/assets/images/quiz/correct.png";
 const MISTAKE_IMG = new Image();
-MISTAKE_IMG.src = PATH + "/assets/image/quiz/mistake.png";
+MISTAKE_IMG.src = PATH + "/assets/images/quiz/mistake.png";
 const START1_IMG = new Image();
-START1_IMG.src = PATH + "/assets/image/quiz/start1.png";
+START1_IMG.src = PATH + "/assets/images/quiz/start1.png";
 const START2_IMG = new Image();
-START2_IMG.src = PATH + "/assets/image/quiz/start2.png";
+START2_IMG.src = PATH + "/assets/images/quiz/start2.png";
 const RESULT_IMG = new Image();
-RESULT_IMG.src = PATH + "/assets/image/quiz/result.png";
+RESULT_IMG.src = PATH + "/assets/images/quiz/result.png";
 const LINK_IMG = new Image();
-LINK_IMG.src = PATH + "/assets/image/quiz/link.png";
+LINK_IMG.src = PATH + "/assets/images/quiz/link.png";
 const CLICK1_IMG = new Image();
-CLICK1_IMG.src = PATH + "/assets/image/quiz/click1.png";
+CLICK1_IMG.src = PATH + "/assets/images/quiz/click1.png";
 const CLICK2_IMG = new Image();
-CLICK2_IMG.src = PATH + "/assets/image/quiz/click2.png";
+CLICK2_IMG.src = PATH + "/assets/images/quiz/click2.png";
 
 //BGM
 const CORRECT_MP3 = new Audio(PATH + "/assets/audio/correct.mp3");

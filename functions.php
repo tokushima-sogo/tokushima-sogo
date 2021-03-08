@@ -51,13 +51,47 @@ function tokushima_sogo_document_title_parts($title)
 add_filter('document_title_parts', 'tokushima_sogo_document_title_parts');
 
 /**
- * cssスタイルの読み込み
+ * CSSの読み込み
  *
  * @return void
  */
 function add_tokushima_sogo_styles()
 {
+    // wp_enqueue_style('tokushima_sogo_reset_style', get_template_directory_uri() . '/assets/css/reset.css');
+    // wp_enqueue_style('tokushima_sogo_base_style', get_template_directory_uri() . '/assets/css/base.css');
 
+    //トップページ
+    if (is_front_page()) {
+        //固定ページ
+    } else if (is_page('contact')) {
+    } else if (is_page('privacy')) {
+    } else if (is_page('aboutsite')) {
+    } else if (is_page('quiz')) {
+    } else if (is_page('mapcreate')) {
+    } else if (is_page('tokushima')) {
+        //詳細？ページ
+    } else if (is_single('special')) {
+    } else if (is_single('spot')) {
+    } else if (is_single('gourmet')) {
+    } else if (is_single('shop')) {
+    } else if (is_single('famous')) {
+    } else if (is_single('event')) {
+    } else if (is_single('horror')) {
+        //アーカイブ（一覧）ページ
+        //間違ってたらこっち。is_post_type_archive()  カスタム投稿のアーカイブページが表示されている場合。
+    } else if (is_archive('special')) {
+    } else if (is_archive('famous')) {
+    } else if (is_archive('event')) {
+    } else if (is_archive('horror')) {
+        //タクソノミーは間違ってるかもis_tax( $taxonomy, $term )
+        //全て同じ場合は，is_tax( 'area', array( 'east', 'west', 'city', 'south') )
+    } else if (is_tax('area', 'east')) {
+    } else if (is_tax('area', 'west')) {
+    } else if (is_tax('area', 'city')) {
+    } else if (is_tax('area', 'south')) {
+        //タクソノミーページちょっと自信ない。
+    } else if (is_tax()) {
+    }
     // wp_enqueue_style('tokushima_sogo_reset_style', get_template_directory_uri() . '/assets/css/reset.css');
     // wp_enqueue_style('tokushima_sogo_base_style', get_template_directory_uri() . '/assets/css/base.css');
     // wp_enqueue_style('tokushima_sogo_project_style', get_template_directory_uri() . '/assets/css/project.css');
@@ -84,6 +118,10 @@ function add_tokushima_sogo_scripts()
 }
 add_action('wp_enqueue_scripts', 'add_tokushima_sogo_scripts');
 
+
+
+
+// 下記からは、絶対に編集しない！！！！！！！！！！！
 
 /**
  * ajaxの準備
