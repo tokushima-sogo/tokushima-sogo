@@ -7,7 +7,6 @@ CSSを消すこと。
 <link href="<?php echo get_template_directory_uri(); ?>/assets/css/archive-west.css " rel="stylesheet">
 
 
-<!-- /header -->
 <main class="l-main">
     <!-- チェックボックス -->
     <input type="checkbox" class="check fade" id="checked-fade" checked>
@@ -48,7 +47,7 @@ CSSを消すこと。
 
 
 
-        <!-- 西部の観光スポット記事を出力 -->
+        <!-- 西部の観光スポット記事のループ設定 -->
         <?php
         $args = array(
             'post_type'         => 'spot',      // カスタム投稿タイプ名
@@ -68,10 +67,10 @@ CSSを消すこと。
         <section class="l-articleList">
             <!-- タイトルの表示 -->
             <h3 class="c-subHeading u-center">
-                <img src="<?php echo get_template_directory_uri(); ?>assets/images/tl_archive_common_spot.png" alt="スポット">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_spot.png" alt="スポット">
             </h3>
 
-            <!-- spot -->
+            <!-- ループ開始 -->
             <?php $the_query = new WP_Query($args); ?>
             <?php if ($the_query->have_posts()) : ?>
                 <?php while ($the_query->have_posts()) : ?>
@@ -146,7 +145,7 @@ CSSを消すこと。
         <section class="l-articleList">
             <!-- タイトルの表示 -->
             <h3 class="c-subHeading u-center">
-                <img src="<?php echo get_template_directory_uri(); ?>assets/images/tl_archive_common_spot.png" alt="スポット">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_gourmet.png" alt="グルメ">
             </h3>
 
             <!-- spot -->
@@ -221,7 +220,7 @@ CSSを消すこと。
         <section class="l-articleList">
             <!-- タイトルの表示 -->
             <h3 class="c-subHeading u-center">
-                <img src="<?php echo get_template_directory_uri(); ?>assets/images/tl_archive_common_spot.png" alt="スポット">
+                <img src="<?php echo get_template_directory_uri(); ?>assets/images/tl_archive_common_shop.png" alt="ショップ">
             </h3>
 
             <!-- spot -->
