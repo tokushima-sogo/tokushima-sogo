@@ -7,17 +7,15 @@
 <!-- ヘッダーの読み込み -->
 <?php get_header(); ?>
 
-
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/single.css">
 
-
-<!-- パンくずリスト -->
 <main class="l-main">
+
     <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
             <!-- breadcrumbループstart -->
-            <span>トップ</span>
+            <a href="<?php home_url(); ?>"><span>HOME</span></a>
             <i class="fas fa-angle-right"></i>
             <span>エリア名</span>
             <i class="fas fa-angle-right"></i> <span>カテゴリ</span>
@@ -27,13 +25,11 @@
     </div>
     <!-- /breadCrumb -->
 
-
     <!-- 詳細記事の出力 -->
 
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : ?>
             <?php the_post(); ?>
-
 
             <!-- カスタムフィールドの値を取得 -->
             <?php
@@ -55,6 +51,7 @@
             $remarks4  = get_field('spot_remarks4');
             $remarks5  = get_field('spot_remarks5');
             ?>
+
             <!-- singleArticle -->
             <section class="l-singleArticle">
                 <!-- singleHeader -->
@@ -213,7 +210,7 @@
                                     <td class="c-singleTable__td">
                                         <!-- カスタムフィールドURL -->
                                         <?php if ($url) : ?>
-                                            <?php echo $url; ?>
+                                            <a href="<?php echo $url; ?>"><?php echo $url; ?></a>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
