@@ -182,24 +182,39 @@
                                 </li>
                             </ul>
                             <ul class="p-thumbSlider">
-                                <li><img src="assets/images/takenoko1.jpg" alt=""></li>
-                                <li><img src="assets/images/takenoko2.jpg" alt=""></li>
-                                <li><img src="assets/images/takenoko3.jpg" alt=""></li>
+                                <li>
+                                    <?php if ($picture1) : ?>
+                                        <?php echo '<img src=" ' . $picture1 . '">'; ?>
+                                    <?php endif; ?>
+                                    <!-- <img src="assets/images/takenoko1.jpg" alt=""> -->
+                                </li>
+                                <li>
+                                    <?php if ($picture2) : ?>
+                                        <?php echo '<img src=" ' . $picture2 . '">'; ?>
+                                    <?php endif; ?>
+                                    <!-- <img src="assets/images/takenoko2.jpg" alt=""> -->
+                                </li>
+                                <li>
+                                    <?php if ($picture3) : ?>
+                                        <?php echo '<img src=" ' . $picture3 . '">'; ?>
+                                    <?php endif; ?>
+                                    <!-- <img src="assets/images/takenoko3.jpg" alt=""> -->
+                                </li>
                             </ul>
                         </div>
 
                         <!-- カスタムフィールド写真 -->
-                        <?php if ($picture1) : ?>
+                        <!-- <?php if ($picture1) : ?>
                             <?php echo '<img src=" ' . $picture1 . '">'; ?>
-                        <?php endif; ?>
+                        <?php endif; ?> -->
 
-                        <?php if ($picture2) : ?>
+                        <!-- <?php if ($picture2) : ?>
                             <?php echo '<img src=" ' . $picture2 . '">'; ?>
-                        <?php endif; ?>
+                        <?php endif; ?> -->
 
-                        <?php if ($picture3) : ?>
+                        <!-- <?php if ($picture3) : ?>
                             <?php echo '<img src=" ' . $picture3 . '">'; ?>
-                        <?php endif; ?>
+                        <?php endif; ?> -->
 
 
 

@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/reset.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/base.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/project.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/compornent.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/utility.css">
@@ -142,6 +141,7 @@
                     <li><img id="c-elevatorOpen" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_burger3.png" alt="開くボタン"></li>
                 </ul>
             </div>
+<<<<<<< HEAD
         </div>
 
         <!-- 検索フォーム -->
@@ -154,6 +154,23 @@
             <?php echo do_shortcode('[searchandfilter fields="searcharea,contents"  types="radio,radio"  submit_label="検索" headings="エリアで探す,内容で探す"]'); ?>
         </div>
         <!-- 検索フォームここまで -->
+=======
+
+            <div class="p-search u-search--margin u-clearfix">
+                <!-- 検索ボタン -->
+                <button id="search">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/image/search.png" width="100px" alt="虫眼鏡">
+                </button>
+                <button id="close" class="close"><img src="<?php echo get_template_directory_uri(); ?>/assets/image/close.png" width="50px" alt="×"></button>
+            </div>
+            <!-- 検索フォーム -->
+            <div id="searchform">
+                <?php echo do_shortcode('[searchandfilter fields="search"]'); ?>
+            </div>
+            <div id="searchfilter">
+                <?php echo do_shortcode('[searchandfilter fields="searcharea"  types="radio"  submit_label="検索" headings="エリアで探す,内容で探す,タグ" operators="and"]'); ?>
+            </div>
+>>>>>>> afcad70541ba3fd14bd11727a5b7a9b060e5eb5c
 
         </div>
         <div id="p-header__contentsBurger">
@@ -263,20 +280,41 @@
         <!-- /header -->
 
 
+<<<<<<< HEAD
         <header>
 
 
+=======
+        <!-- <header>
+        <a href="<?php echo home_url(); ?>">Topへ</a> -->
+        <br>
+        <!-- <div class="p-search u-search--margin u-clearfix">
+            <!-- 検索ボタン -->
+        <button id="search">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/image/search.png" width="100px" alt="虫眼鏡">
+        </button>
+        <button id="close" class="close"><img src="<?php echo get_template_directory_uri(); ?>/assets/image/close.png" width="50px" alt="×"></button>
+        </div>
+>>>>>>> afcad70541ba3fd14bd11727a5b7a9b060e5eb5c
         <!-- 検索フォーム -->
         <!-- <div id="searchform">
             <?php echo do_shortcode('[searchandfilter fields="search"]'); ?>
         </div>
         <div id="searchfilter">
+<<<<<<< HEAD
             <?php echo do_shortcode('[searchandfilter fields="searcharea"  types="radio"  submit_label="検索" headings="エリアで探す,内容で探す,タグ" operators="and"]'); ?>
         </div> 
         <div>  
             <?php echo do_shortcode('[searchandfilter fields="searcharea,contents"  types="radio,radio"  submit_label="検索" headings="エリアで探す,内容で探す" operators="and"]'); ?>
         </div> -->
 
+=======
+            <<<<<<< HEAD <?php echo do_shortcode('[searchandfilter fields="searcharea"  types="radio"  submit_label="検索" headings="エリアで探す,内容で探す,タグ" operators="and"]'); ?> </div> -->
+                =======
+                <?php echo do_shortcode('[searchandfilter fields="searcharea,contents"  types="radio,radio"  submit_label="検索" headings="エリアで探す,内容で探す" operators="and"]'); ?>
+        </div>
+        >>>>>>> 916b0f0aa90a2841e0411087d29d7cfbec98165f
+>>>>>>> afcad70541ba3fd14bd11727a5b7a9b060e5eb5c
         <!-- ajaxの結果出力場所 -->
         <div id="result"></div>
         <p>taxoid <span id="span1"></span></p>

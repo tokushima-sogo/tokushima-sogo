@@ -1,0 +1,404 @@
+@charset "utf-8";
+
+/* =============
+    Layout
+================ */
+
+.l-articleList {
+    padding: 30px 0;
+}
+
+.l-moreBtn {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+/* =============
+    Project
+================ */
+
+/* エリア名と説明全体 */
+.p-description {
+        padding: 20px 0;
+    }
+    @media(min-width:768px) {
+    .p-description {
+        padding: 40px 0;
+    }
+}
+
+/* 地図の画像と説明 */
+.p-description__item {
+    padding: 14px;
+    margin: 0 auto;
+    flex-direction: column;
+    background: #f5f5f5;
+}
+@media(min-width:768px) {
+    .p-description__item {
+        padding: 28px;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+}
+
+/* グリッドの指定 */
+.p-articleList {
+    justify-content: center;
+    gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+/* pc用グリッドの幅指定 */
+@media(min-width:1025px){
+    .p-articleList {
+        width: 80%;
+    }
+}
+
+/* 一つの記事 */
+.p-article {
+    width: 280px;
+    height: 320px;
+    margin: 0 auto;
+}
+
+/* 額縁のクラス */
+.p-imgArea {
+    position: relative;
+    width: 280px;
+    height:200px;
+}
+
+/* 額縁の下全体 */
+.p-textArea {
+    height: 120px;
+    background-color:rgba(153,118,83,0.2);
+}
+
+/* いいねとタグ */
+.p-textContent {
+    padding: 16px 15px 10px;
+    justify-content: space-between;
+}
+
+/* タグ全体 */
+.p-tag {
+    color:#ffffff;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+/* =============
+    Compornent
+================ */
+
+/* メインビジュアル */
+.c-heroImg {
+    width: 100%;
+}
+
+/* エリア名 */
+.c-heading {
+    width: 100%;
+    height: 60px;
+    padding: 15px 0;
+    font-size: 3rem;
+    border:2px solid #707070;
+}
+
+/* エリアの説明 */
+.c-description__text {
+    width: 90%;
+    margin: 0 auto;
+    padding: 14px;
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+@media(min-width:768px) {
+.c-description__text{
+    width: 60%;
+    margin: 0;
+    padding: 20px;
+    font-size: 1.8rem;
+    line-height: 2;
+}
+}
+@media(min-width:1025px) {
+    .c-description__text{
+        width: 65%;
+        padding: 30px;
+    }
+}
+
+/* 地図の白背景の部分 */
+.c-description__map {
+    background-color: white;
+    position: relative;
+    text-align: center;
+    background-image: url("../images/flame_archive_common_map.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 0;
+    margin: 0 auto;
+    padding-top: calc(3624 / 5886 * 100%); /* calc(画像高さ ÷ 画像横幅 × 100%) */
+}
+@media(min-width:768px) {
+    .c-description__map {
+    width: 35%;
+    padding-top: calc(3624 / 5886 * 35%); /* calc(画像高さ ÷ 画像横幅 × 100%) */
+}
+}
+
+/* 地図の画像 */
+.c-map {
+    width:65%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 見出し画像 */
+.c-subHeading img {
+    height: 60px;
+}
+
+/* 額縁の画像 */
+.c-frame {
+    width: 280px;
+    height:200px;
+}
+
+/* サムネイル画像 */
+.c-thumbnail {
+    width: 240px;
+    height: 160px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+/* ハートのSVG */
+.c-icon__heart {
+    width: 32px;
+    height: 30px;
+    fill: #bd0000;
+    stroke: none;
+}
+
+/* いいねの文字 */
+.c-bookmark__text {
+    padding: 5px 2px;
+    font-size: 1.2rem;
+}
+
+/* いいねの数 */
+.c-bookmark__count {
+    padding: 0 2px;
+    font-size: 1.8rem;
+    font-family: 'mamelon5';
+}
+
+
+/* タグ */
+.c-tag {
+    display: inline-block;
+    padding: 8px;
+    background: #2D294F;
+    border: 1px solid #707070;
+    font-size: 1.2rem;
+}
+
+/* スポット名称 */
+.c-title {
+    font-size: 1.8rem;
+    font-family: 'mamelon5';
+}
+
+
+/*  moreボタン
+-------------------------------- */
+
+button.c-moreBtn {
+    width: 180px;
+    padding:7px;
+    border-radius: 30px;
+    color: #ffffff;
+    font-family: 'mamelon5';
+    font-size: 2.6rem;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* それぞれのmoreボタンを効かすためのもの */
+.c-more1,.c-more2,.c-more3{
+    overflow: hidden;
+    transition: all .4s ease 0s;
+}
+.c-more1.is-hidden,.c-more2.is-hidden,.c-more3.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    margin: 0 10px;
+    padding:0;
+}
+
+/* -------------------------------- */
+
+
+/*  doorAnimation
+-------------------------------- */
+
+.c-doorAnimation {
+    width: 100%;
+    height: 100%;
+}
+.c-doorAnimation::before,
+.c-doorAnimation::after {
+    content: '';
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(../images/img_archive_door.png) top center no-repeat;
+    background-size: cover;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    z-index: 3;
+}
+.c-doorAnimation::before {
+    left: 0;
+    clip: rect(0px 50vw 100vh 0px);
+}
+.c-doorAnimation::after {
+    right: 0;
+    clip: rect(0px 100vw 100vh 50vw);
+}
+.check {
+    display: none;
+}
+.switch.fade {
+    top: 30%;
+}
+.check.fade:checked ~ .switch.slide,
+.check.fade:checked ~ .switch.push,
+.check.fade:checked ~ .switch.pull{
+    visibility: hidden;
+    opacity: 0;
+}
+.check.fade:checked ~ .c-doorAnimation::before {
+    animation: open-before 3s;
+}
+.check.fade:checked ~ .c-doorAnimation::after {
+    animation: open-after 3s;
+}
+@keyframes open-before{
+    0%{
+    position: fixed;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    opacity: 1;
+    z-index: 2;
+    }
+    90%{
+    position: fixed;
+    -webkit-transform: translate3d(-300,0,0);
+    transform: translate3d(-300,0,0);
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
+    }
+    100%{
+    position: fixed;
+    -webkit-transform: translate3d(-550px,0,0);
+    transform: translate3d(-550px,0,0);
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    visibility: visible;
+    opacity: 0;
+    z-index: -10;
+    }
+}
+@keyframes open-after{
+    0%{
+    position: fixed;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    opacity: 1;
+    z-index: 2;
+    }
+    90%{
+    position: fixed;
+    -webkit-transform: translate3d(300,0,0);
+    transform: translate3d(300,0,0);
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
+    }
+    100%{
+    position: fixed;
+    -webkit-transform: translate3d(550px,0,0);
+    transform: translate3d(550px,0,0);
+    -webkit-transition: all .5st;
+    transition: all .5s;
+    visibility: visible;
+    opacity: 0;
+    z-index: -10;
+    }
+}
+
+/* -------------------------------- */
+
+
+/* =============
+    Utility
+================ */
+
+/* グリッドレイアウト */
+.u-grid{
+    display: grid;
+}
+
+/* flex-box指定 */
+.u-flex {
+    display: flex;
+}
+
+/* right */
+.u-right {
+    text-align: right;
+}
+
+/* margin */
+.u-mr15 {
+    margin-right: 15px;
+}
+
+/* 地域別カラー */
+.u-south {
+    background: #991f26;
+}
+.u-city {
+    background: #d1a429;
+}
+.u-west {
+    background: #004e3f;
+}
+.u-east {
+    background: #539199;
+}
