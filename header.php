@@ -133,7 +133,7 @@
             </nav>
             <div class="p-header__contentsList">
                 <ul>
-                    <li><a href="#"><img class="c-search u-mb5" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_seachOpen.png" alt="検索アイコン">
+                    <li><a href="#"><img id="btn_header_searchOpen" class="c-search u-mb5" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_searchOpen.png" alt="検索アイコン">
                             <div class="u-header__nav__white">検索</div>
                         </a></li>
                     <li><a href="mymap.html"><img class="c-mapIcon u-mb5" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_map.png" alt="マップアイコン">
@@ -142,6 +142,22 @@
                     <li><img id="c-elevatorOpen" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_burger3.png" alt="開くボタン"></li>
                 </ul>
             </div>
+
+            <div class="p-search u-search--margin u-clearfix">
+            <!-- 検索ボタン -->
+            <button id="search">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/image/search.png" width="100px" alt="虫眼鏡">
+            </button>
+            <button id="close" class="close"><img src="<?php echo get_template_directory_uri(); ?>/assets/image/close.png" width="50px" alt="×"></button>
+        </div>
+        <!-- 検索フォーム -->
+        <div id="searchform">
+            <?php echo do_shortcode('[searchandfilter fields="search"]'); ?>
+        </div>
+        <div id="searchfilter">
+            <?php echo do_shortcode('[searchandfilter fields="searcharea"  types="radio"  submit_label="検索" headings="エリアで探す,内容で探す,タグ" operators="and"]'); ?>
+        </div>
+
         </div>
         <div id="p-header__contentsBurger">
             <div class="p-header__contentsBurgerTop u-header__navListDetail__blue">
@@ -253,7 +269,7 @@
         <!-- <header>
         <a href="<?php echo home_url(); ?>">Topへ</a> -->
         <br>
-        <div class="p-search u-search--margin u-clearfix">
+        <!-- <div class="p-search u-search--margin u-clearfix">
             <!-- 検索ボタン -->
             <button id="search">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/image/search.png" width="100px" alt="虫眼鏡">
@@ -266,7 +282,7 @@
         </div>
         <div id="searchfilter">
             <?php echo do_shortcode('[searchandfilter fields="searcharea"  types="radio"  submit_label="検索" headings="エリアで探す,内容で探す,タグ" operators="and"]'); ?>
-        </div>
+        </div> -->
         <!-- ajaxの結果出力場所 -->
         <div id="result"></div>
         <p>taxoid <span id="span1"></span></p>
