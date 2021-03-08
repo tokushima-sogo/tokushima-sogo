@@ -2,6 +2,13 @@
 
 <main>
 
+
+
+
+
+
+
+
     <!-- 投稿記事の出力 -->
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : ?>
