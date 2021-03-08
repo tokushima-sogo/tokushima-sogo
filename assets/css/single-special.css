@@ -1,0 +1,166 @@
+@charset "utf-8";
+
+/* =============
+    Layout
+================ */
+
+.l-description {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.l-article {
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px 0 50px;
+}
+
+
+/* =============
+    Project
+================ */
+
+/* 説明 */
+.p-description {
+    margin: 0 auto;
+    padding: 30px 0;
+}
+.p-description__item {
+    padding: 20px 0;
+    margin: 0 auto;
+}
+
+
+/* =============
+    Compornent
+================ */
+
+/* バナー */
+.c-specialBanner {
+    width: 90%;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+/* 説明 */
+.c-description__text {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 1.8rem;
+    line-height: 1.5;
+}
+
+/* 記事テキスト */
+.c-text {
+    margin: 0 auto;
+    padding: 5px 0;
+    line-height: 1.5;
+    font-size: 1.4rem;
+}
+@media (min-width:768px) {
+    .c-text {
+        font-size: 1.8rem
+    }
+}
+
+/* 画像装飾 */
+.c-img {
+    position: relative;
+    width: 600px;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+.c-img::before,
+.c-img::after {
+    content: "";
+    position: absolute;
+    transform: rotate(-45deg);
+    width: 120px;
+    height: 90px;
+    background: #ffffff;
+    background-position: 0 0, 20px 20px;
+    background-size: 40px 40px;
+    padding: 1em;
+    z-index: 1;
+}
+.c-img::before {
+    top: -40px;
+    left: -58px;
+    border-bottom: solid 1px #555555;
+}
+.c-img::after {
+    bottom: -40px;
+    right: -58px;
+    border-top: solid 1px #555555;
+}
+
+/* 画像のサイズ */
+.c-specialImg img {
+    width: 100%;
+    border: 1px solid #555555;
+}
+/* 画像装飾 */
+
+/* =============
+    Utility
+================ */
+
+/* color */
+.u-white {
+    color: #ffffff;
+}
+
+/* bgcolor */
+/* 地域別 */
+.u-south {
+    background: #991f26;
+}
+.u-city {
+    background: #d1a429;
+}
+.u-west {
+    background: #004e3f;
+}
+.u-east {
+    background: #539199;
+}
+
+/* font-sizeを3倍の大きさにする */
+.u-3times {
+    font-size: 300%;
+}
+
+/* bold */
+.u-bold {
+    font-family: "mamelon5";
+}
+
+/* text-align */
+.u-left {
+    text-align: left;
+}
+
+.u-center {
+    text-align: center;
+}
+
+.u-right {
+    text-align: right;
+}
+
+/* marker */
+.u-marker {
+    display: inline-block;
+    font-size: 1.8rem;
+    margin: 5px;
+    padding-right: 3px;
+    background-image: linear-gradient(90deg, #cf7e7c,#ffffff);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 50%;
+}
+@media (min-width:768px) {
+    .u-marker {
+        font-size: 2.2rem
+    }
+}
