@@ -78,18 +78,18 @@ CSSを消すこと。
 
                     <div class="p-articleList u-grid">
                         <article class="p-article c-more1">
-                            <!-- サムネイルの表示 -->
-                            <a href="<?php the_permalink(); ?>">
-                                <div class="p-imgArea">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
+                            <!-- imgArea -->
+                            <div class="p-imgArea">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
+                                <!-- thumbnail -->
+                                <a href="<?php the_permalink(); ?>" class="c-thumbnail">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail('medium') ?>
                                     <?php else : ?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                        <img src=" <?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
                                     <?php endif; ?>
-                                    個別ページへ
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                             <!-- /imgArea -->
 
                             <div class="p-textArea">
@@ -150,24 +150,20 @@ CSSを消すこと。
                 <?php while ($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
 
-                    <?php echo esc_html(get_post_type_object(get_post_type())->label); ?>
-
-
-
                     <div class="p-articleList u-grid">
                         <article class="p-article c-more1">
-                            <!-- サムネイルの表示 -->
-                            <a href="<?php the_permalink(); ?>">
-                                <div class="p-imgArea">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
+                            <!-- imgArea -->
+                            <div class="p-imgArea">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
+                                <!-- thumbnail -->
+                                <a href="<?php the_permalink(); ?>" class="c-thumbnail">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail('medium') ?>
                                     <?php else : ?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                        <img src=" <?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
                                     <?php endif; ?>
-                                    個別ページへ
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                             <!-- /imgArea -->
 
                             <div class="p-textArea">
@@ -225,24 +221,20 @@ CSSを消すこと。
                 <?php while ($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
 
-                    <?php echo esc_html(get_post_type_object(get_post_type())->label); ?>
-
-
-
                     <div class="p-articleList u-grid">
                         <article class="p-article c-more1">
-                            <!-- サムネイルの表示 -->
-                            <a href="<?php the_permalink(); ?>">
-                                <div class="p-imgArea">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
+                            <!-- imgArea -->
+                            <div class="p-imgArea">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
+                                <!-- thumbnail -->
+                                <a href="<?php the_permalink(); ?>" class="c-thumbnail">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail('medium') ?>
                                     <?php else : ?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                        <img src=" <?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
                                     <?php endif; ?>
-                                    個別ページへ
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                             <!-- /imgArea -->
 
                             <div class="p-textArea">
