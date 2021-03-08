@@ -86,7 +86,7 @@ CSSを消すこと。
                             <!-- サムネイルの表示 -->
                             <a href="<?php the_permalink(); ?>">
                                 <div class="p-imgArea">
-                                    <!-- <img src="assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁"> -->
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail('medium') ?>
                                     <?php else : ?>
@@ -164,7 +164,7 @@ CSSを消すこと。
                             <!-- サムネイルの表示 -->
                             <a href="<?php the_permalink(); ?>">
                                 <div class="p-imgArea">
-                                    <!-- <img src="assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁"> -->
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail('medium') ?>
                                     <?php else : ?>
@@ -239,7 +239,7 @@ CSSを消すこと。
                             <!-- サムネイルの表示 -->
                             <a href="<?php the_permalink(); ?>">
                                 <div class="p-imgArea">
-                                    <!-- <img src="assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁"> -->
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail('medium') ?>
                                     <?php else : ?>
