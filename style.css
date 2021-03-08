@@ -7,3 +7,759 @@ Author URI: https://wordpress.org/
 Description: 最終制作発表に向けたサイト
 Version: 1.0
 */
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+nav ul,
+li {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color: #ff9;
+    color: #000;
+    text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color: #ff9;
+    color: #000;
+    font-style: italic;
+    font-weight: bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #CCCCCC;
+    margin: 1em 0;
+    padding: 0;
+}
+
+input,
+select {
+    vertical-align: middle;
+}
+
+img {
+    border: 0;
+    max-width: 100%;
+    height: auto;
+}
+
+/* フォント設定 */
+@font-face {
+    font-family: "mamelon3.5";
+    src: url("../fonts/mamelon-fonts3.5.woff") format("woff");
+}
+
+@font-face {
+    font-family: "mamelon5";
+    src: url("../fonts/mamelon-fonts5.woff") format("woff");
+}
+
+/* font-size指定 */
+html {
+    font-size: 62.5%;
+}
+
+/* 画像の下の余白を削除 */
+img {
+    vertical-align: bottom;
+}
+
+/* リンク設定 */
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    font-family: "mamelon5";
+    color: #8981ca;
+}
+
+body {
+    /* サイト全体のコンテンツ領域指定 */
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    color: #333333;
+    /* フォント指定 */
+    font-family: "mamelon3.5";
+}
+
+/* =============
+    Layout
+================ */
+
+.l-header {
+    position: relative;
+}
+
+.l-main {
+    padding-top: 70px;
+}
+
+@media (min-width:1025px) {
+    .l-main {
+        padding-top: 100px;
+    }
+}
+
+.l-footer {
+    position: relative;
+    padding: 40px 0;
+    z-index: 2;
+}
+
+/* =============
+    Project
+================ */
+
+/* パンくずナビゲーション
+----------------------------------- */
+.p-breadCrumb {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+}
+
+@media (min-width:768px) {
+    .p-breadCrumb {
+        padding: 20px;
+        font-size: 20px;
+    }
+}
+
+.p-breadCrumb__inner>span {
+    padding: 3px;
+    letter-spacing: 1px;
+}
+
+.p-breadCrumb__inner>i {
+    color: #cf7e7c;
+}
+
+/* -------------------------------- */
+
+/*  header
+----------------------------------- */
+
+/* ヘッダー固定 */
+.p-header__contents {
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 70px;
+    padding: 5px 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (min-width:1025px) {
+    .p-header__contents {
+        height: 100px;
+        padding: 10px 20px;
+    }
+}
+
+/* PC用グローバルナビ */
+.p-topNav {
+    display: none;
+}
+
+@media (min-width: 1025px) {
+    .p-topNav {
+        display: block;
+    }
+}
+
+
+.p-header__nav {
+    width: 70%;
+    justify-content: space-between;
+}
+
+.p-header__navList {
+    display: inline-block;
+    width: 110px;
+    cursor: pointer;
+}
+
+
+/* PC用アコーディオンメニュー7中身 */
+.p-header__navListDetail {
+    position: relative;
+    padding: 15px 0;
+    background: #e2e0ef;
+    border-radius: 0 0 15px 15px;
+    border: 1px solid #252f4d;
+}
+
+.p-header__navListDetail.u-1f,
+.p-header__navListDetail.u-6f {
+    /* 大事！！！ */
+    position: absolute;
+    display: block;
+    transform: translate(-35px, 8px);
+    opacity: .8;
+}
+
+/* 検索・マップ・ハンバーガーメニュー */
+.p-header__contentsList {
+    height: 100%;
+}
+
+.p-header__contentsList li {
+    height: 60px;
+    padding: 0 5px;
+    font-size: 1.3rem;
+}
+
+@media (min-width: 1025px) {
+    .p-header__contentsList li {
+        padding: 10px;
+        font-size: 1.6rem;
+    }
+}
+
+.p-header__contentsList li p {
+    padding: 5px 0;
+}
+
+@media (min-width: 1025px) {
+    .p-header__contentsList li p {
+        padding: 10px 0;
+    }
+}
+
+/* ハンバーガーメニュー */
+/* デバイス幅1025px以上で非表示 */
+@media screen and (min-width: 1025px) {
+    .p-header__contentsList li:nth-child(3) {
+        display: none;
+    }
+}
+
+/* -------------------------------- */
+
+
+/*  burger
+----------------------------------- */
+
+/* バーガー中身 */
+.p-header__contentsBurger {
+    transform: translateX(120%);
+    position: fixed;
+    width: 100%;
+    height: 1000px;
+    top: 0;
+    left: 0;
+    transition: .3s;
+    z-index: 4;
+}
+
+.p-header__contentsBurger.slide-in {
+    transform: translateX(0);
+}
+
+.p-header__contentsBurgerTop {
+    height: 70px;
+}
+
+/* メニュー中身 */
+.p-header__contentsBurgerNav {
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    background: rgba(234, 228, 173, 0.8);
+}
+
+.p-header__contentsBurgerNav ul li {
+    padding: 0 10%;
+}
+
+@media screen and (min-width: 768px) {
+    .p-header__contentsBurgerNav ul li {
+        padding: 0 20%;
+    }
+}
+
+.p-header__contentsBurgerNavDetail li {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #252f4d;
+}
+
+.p-BurgerNavDetail span {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1.8rem;
+}
+
+.p-BurgerNavDetail li a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid#252f4d;
+    color: #252f4d;
+    font-size: 1.6rem;
+}
+
+/* ----------------------------- */
+
+
+/*  footer
+-------------------------------- */
+
+/* footer__inner */
+.p-footer__inner {
+    flex-direction: column;
+}
+
+/* デバイス幅1000px以上で横並び */
+@media (min-width: 1000px) {
+    .p-footer__inner {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        padding: 20px;
+    }
+}
+
+.p-footer__contentsBlock {
+    flex-direction: column;
+}
+
+.p-footer__contentsPartsLast {
+    padding: 25px;
+}
+
+.p-footer__contentsPartsLast li a {
+    display: block;
+    padding: 12px 0;
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+
+@media (min-width:768px) {
+    .p-footer__contentsPartsLast li a {
+        font-size: 2.4rem;
+    }
+}
+
+/* SNSアイコンたち */
+.p-fab {
+    padding: 20px 0 50px;
+    justify-content: center;
+    font-size: 2.4rem;
+}
+
+@media (min-width:1000px) {
+    .p-fab {
+        padding-top: 120px;
+    }
+}
+
+/* -------------------------------- */
+
+
+
+/* =============
+    Compornent
+================ */
+
+/*  header
+----------------------------------- */
+
+/* サイトロゴ */
+.c-logo {
+    height: 50px;
+}
+
+@media (min-width:1025px) {
+    .c-logo {
+        height: 60px;
+    }
+}
+
+/* 検索・マップアイコンの高さ */
+.c-headerIcon {
+    height: 40px;
+}
+
+/* エレベーターボタン */
+.c-elevatorBtn {
+    display: inline-block;
+    width: 40px;
+    opacity: 0.3;
+}
+
+.c-elevatorBtn:hover {
+    opacity: 1;
+}
+
+/* PC用グローバルナビ文字 */
+.c-header__nav {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 2.2rem;
+}
+
+
+/* PC用アコーディオンメニュー */
+.c-header__navListDetail {
+    display: block;
+    width: 150px;
+    padding: 10px 15px;
+    font-size: 1.8rem;
+}
+
+a.c-header__navListDetail {
+    color: #252f4d;
+}
+
+
+/* -------------------------------- */
+
+
+/*  burger
+----------------------------------- */
+
+/* ハンバーガーボタン */
+/* 開く */
+.c-burgerBtn.u-open {
+    height: 60px;
+}
+
+/* 閉じる */
+.c-burgerBtn.u-close {
+    position: absolute;
+    height: 50px;
+    top: 10px;
+    right: 15px;
+}
+
+/* バーガー用アコーディオンメニュー */
+.c-header__contentsBurgerNavBtn {
+    display: block;
+    padding: 12px 0;
+}
+
+.c-header__contentsBurgerNavBtn span {
+    display: inline-block;
+    width: 120px;
+    padding: 8px 0;
+    font-size: 2.4rem;
+}
+
+
+/* -------------------------------- */
+
+/*  footer
+----------------------------------- */
+
+
+/* アコーディオンのボタン */
+.c-footer__contentsPartsBtn {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    padding: 17px 0;
+    border-bottom: 1px solid#ffffff;
+    font-size: 1.6rem;
+    z-index: 1;
+}
+
+@media (min-width:768px) {
+    .c-footer__contentsPartsBtn {
+        font-size: 2.4rem;
+    }
+}
+
+/* ▼つける */
+.c-footer__contentsPartsBtn::before {
+    content: "\f0d7";
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: "Font Awesome 5 Free";
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 900;
+}
+
+/* フッターメニュー文字 */
+.c-footer__contentsPartsBtn span {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    padding-left: 25px;
+    text-align: left;
+}
+
+
+/* アコーディオンメニュー中身 */
+.c-footer__contentsDetail {
+    display: none;
+    padding-bottom: 20px;
+}
+
+/* デバイス幅1000px以上で最初から表示 */
+@media (min-width: 1000px) {
+    .c-footer__contentsDetail {
+        display: block;
+    }
+}
+
+/* 1階だけpadding-bottom稼ぐ */
+@media (min-width: 1000px) {
+    .c-footer__contentsDetail.u-1f {
+        margin-bottom: 88px;
+    }
+}
+
+.c-footer__contentsDetail li a {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    color: #ffffff;
+    font-size: 1.6rem;
+}
+
+/* SNSアイコン */
+.c-fab {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+/* コピーライト */
+.c-copyRight {
+    font-size: 1rem;
+}
+
+/* -------------------------------- */
+
+
+/* =============
+    Utility
+================ */
+
+/* color */
+.u-white {
+    color: #ffffff;
+}
+
+.u-calmBlue {
+    color: #252F4D;
+}
+
+/* bgcolor */
+.u-bgWhite {
+    background-color: #ffffff;
+}
+
+.u-bgIndigo {
+    background: #2d294f;
+}
+
+.u-bgCalmBlue {
+    background: #252F4D;
+}
+
+.u-bgPurple {
+    background-color: #8981ca;
+}
+
+.u-searchLabel__change {
+    background-color: #8981ca;
+}
+
+/* margin */
+.u-mb10 {
+    margin-bottom: 10px;
+}
+
+.u-mb40 {
+    margin-bottom: 40px;
+}
+
+/* center */
+.u-center {
+    text-align: center;
+}
+
+/* bold */
+.u-bold:hover {
+    font-family: "mamelon5";
+}
+
+/* flex */
+.u-flex {
+    display: flex;
+}
+
+/* column-reverse */
+@media (min-width: 1000px) {
+    .u-cr {
+        flex-direction: column-reverse;
+    }
+}
+
+/* order */
+@media (min-width: 1000px) {
+    .u-o1 {
+        order: 1;
+    }
+
+    .u-o2 {
+        order: 2;
+    }
+
+    .u-o3 {
+        order: 3;
+    }
+
+    .u-o4 {
+        order: 4;
+    }
+}

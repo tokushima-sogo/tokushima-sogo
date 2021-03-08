@@ -35,7 +35,7 @@
 /* 検索フォームページ */
 
 /* 検索フォーム閉じるボタン */
-.c-button__seachForm__close {
+.c-button__searchForm__close {
   display: block;
   border: 0px;
   height: 25px;
@@ -48,7 +48,7 @@
 }
 
 @media screen and (min-width: 1025px) {
-  .c-button__seachForm__close {
+  .c-button__searchForm__close {
     display: block;
     border: 0px;
     height: 25px;
