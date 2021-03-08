@@ -57,8 +57,9 @@ add_filter('document_title_parts', 'tokushima_sogo_document_title_parts');
  */
 function add_tokushima_sogo_styles()
 {
-    wp_enqueue_style('tokushima_sogo_reset_style', get_template_directory_uri() . '/assets/css/reset.css');
-    wp_enqueue_style('tokushima_sogo_base_style', get_template_directory_uri() . '/assets/css/reset.css');
+    // wp_enqueue_style('tokushima_sogo_reset_style', get_template_directory_uri() . '/assets/css/reset.css');
+    // wp_enqueue_style('tokushima_sogo_base_style', get_template_directory_uri() . '/assets/css/base.css');
+
     //トップページ
     if (is_front_page()) {
         //固定ページ
