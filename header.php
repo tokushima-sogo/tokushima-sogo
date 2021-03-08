@@ -265,7 +265,7 @@
             <?php echo do_shortcode('[searchandfilter fields="search"]'); ?>
         </div>
         <div id="searchfilter">
-            <?php echo do_shortcode('[searchandfilter fields="searcharea"  types="radio"  submit_label="検索" headings="エリアで探す,内容で探す,タグ" operators="and"]'); ?>
+            <?php echo do_shortcode('[searchandfilter fields="searcharea,contents"  types="radio,radio"  submit_label="検索" headings="エリアで探す,内容で探す" operators="and"]'); ?>
         </div>
         <!-- ajaxの結果出力場所 -->
         <div id="result"></div>

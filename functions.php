@@ -85,6 +85,10 @@ function add_tokushima_sogo_scripts()
 add_action('wp_enqueue_scripts', 'add_tokushima_sogo_scripts');
 
 
+
+
+// 下記からは、絶対に編集しない！！！！！！！！！！！
+
 /**
  * ajaxの準備
  */
