@@ -79,16 +79,12 @@
                         <!-- imgArea -->
                         <div class="p-imgArea">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_horror_thmbFlame.png" class="c-frame" alt="額縁">
-
-                            <!-- サムネイルの表示 -->
-                            <a href="<?php the_permalink(); ?>">
-                                <!-- ↓サムネイル入れたら消す -->
-                                <!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_single_horror_hatikura4.jpeg" class="c-thumbnail" alt="スポット写真"> -->
-
+                            <!-- thumbnail -->
+                            <a href="<?php the_permalink(); ?>" class="c-thumbnail">
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('medium') ?>
                                 <?php else : ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                    <img src=" <?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
                                 <?php endif; ?>
                             </a>
                         </div>
@@ -151,16 +147,12 @@
                         <!-- imgArea -->
                         <div class="p-imgArea">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_horror_thmbFlame.png" class="c-frame" alt="額縁">
-
-                            <!-- サムネイルの表示 -->
-                            <a href="<?php the_permalink(); ?>">
-                                <!-- ↓サムネイル入れたら消す -->
-                                <!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_single_horror_hatikura4.jpeg" class="c-thumbnail" alt="スポット写真"> -->
-
+                            <!-- thumbnail -->
+                            <a href="<?php the_permalink(); ?>" class="c-thumbnail">
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('medium') ?>
                                 <?php else : ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                    <img src=" <?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
                                 <?php endif; ?>
                             </a>
                         </div>
