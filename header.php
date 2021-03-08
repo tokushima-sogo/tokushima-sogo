@@ -281,8 +281,13 @@
             <?php echo do_shortcode('[searchandfilter fields="search"]'); ?>
         </div>
         <div id="searchfilter">
+<<<<<<< HEAD
             <?php echo do_shortcode('[searchandfilter fields="searcharea"  types="radio"  submit_label="検索" headings="エリアで探す,内容で探す,タグ" operators="and"]'); ?>
         </div> -->
+=======
+            <?php echo do_shortcode('[searchandfilter fields="searcharea,contents"  types="radio,radio"  submit_label="検索" headings="エリアで探す,内容で探す" operators="and"]'); ?>
+        </div>
+>>>>>>> 916b0f0aa90a2841e0411087d29d7cfbec98165f
         <!-- ajaxの結果出力場所 -->
         <div id="result"></div>
         <p>taxoid <span id="span1"></span></p>
