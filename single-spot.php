@@ -163,6 +163,13 @@
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1651.3821720249434!2d134.5495951999572!3d34.12678224624143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35536e006b61c58b%3A0xa1102dc23699b67!2z44Od44OD44OX44Kz44O844Oz!5e0!3m2!1sja!2sjp!4v1614947813235!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                             </div>
                         </div>
+                        <?php
+                        $location = get_field('location');
+                        if ($location) : ?>
+                            <div class="acf-map" data-zoom="16">
+                                <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
+                            </div>
+                        <?php endif; ?>
                         <!-- /singleMap -->
 
 
@@ -420,7 +427,8 @@
     </section>
     <!-- /articleList -->
 
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNNbWvrL46SW-8K-D0w6Haff4Vbcc4rRQ"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/assets/js/googlemap.js"></script>
 </main>
 <!-- /main -->
 
