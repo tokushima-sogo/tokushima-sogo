@@ -6,7 +6,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/googlemap.js"></script>
 <main class="l-main">
 
-<!-- breadCrumb -->
+    <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
             <!-- breadcrumbループstart -->
@@ -155,7 +155,7 @@
                         <?php
                         $location = get_field('location');
                         if ($location) : ?>
-                            <div class="l-singleMap" data-zoom="16">
+                            <div class="l-singleMap acf-map" data-zoom="16">
                                 <div class="p-singleMap marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>">
                                 </div>
                             </div>
