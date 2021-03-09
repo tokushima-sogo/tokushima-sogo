@@ -1,20 +1,15 @@
-<!-- 引継ぎ事項
-1,breadCrumbの部分ヘッダーにある。どうするか，バックエンドで相談した後処理する。
-２.画像がないときの画像。
--->
-
 <?php get_header(); ?>
 <link href="<?php echo get_template_directory_uri(); ?>/assets/css/archive-special.css " rel="stylesheet">
 
 
 
-<!-- breadCrumb 処理を忘れないでえええええええええええええええええええええええええええええええええええええええええ-->
+<!-- breadCrumb-->
 <main class="l-main">
     <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
             <!-- breadcrumbループstart -->
-            <span>HOME</span>
+            <a href="<?php home_url(); ?>"><span>HOME</span></a>
             <i class="fas fa-angle-right"></i>
             <span>特集</span>
             <!-- breadcrumbループend -->
