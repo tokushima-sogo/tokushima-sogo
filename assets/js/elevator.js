@@ -3,7 +3,7 @@
 // let w_height = $(window).height();
 // console.log(w_height);
 let currentY = 0; //スクロールしたY座標を補完する
-let elevator = document.getElementById('elevator');
+let elevator = document.getElementById('elevator'); //front-page.phpの７１行目付近
 // これいる？
 window.onload = function () {
     elevator.classList.add('lift6');

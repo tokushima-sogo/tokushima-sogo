@@ -29,6 +29,18 @@ jQuery(document).on('click', function (e) {
         jQuery('.p-header__navList').next('.p-header__navListDetail').slideUp();
     }
 });
+
+// ハンバーガーボタン
+$(function () {
+    $('.c-burgerBtn').click(function () {
+        $(this).toggleClass("slide-in");
+        if ($(this).hasClass('slide-in')) {
+            $('.c-burgerBtn , .p-header__contentsBurger').addClass('slide-in');
+        } else {
+            $('.c-burgerBtn , .p-header__contentsBurger').removeClass('slide-in');
+        }
+    });
+});
 // バーガーメニュー
 jQuery(function () {
     jQuery('.p-BurgerNavDetail').hide();
@@ -42,6 +54,7 @@ jQuery(document).on('click', function (e) {
         jQuery('.c-header__contentsBurgerNavBtn').next('.p-BurgerNavDetail').slideUp();
     }
 });
+
 //フッター
 jQuery(window).on('load resize', function () {
     var w_width = jQuery(window).width();
