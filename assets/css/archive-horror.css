@@ -1,414 +1,323 @@
 @charset "utf-8";
-body{
-    background-color: #777035;
+
+/* =============
+    Layout
+================ */
+/* 一つのカテゴリーのレイアウト */
+.l-articleList {
+    padding: 30px 0;
 }
 
-.pcImg{
-    display: none;
-}
-a{
-    display: block;
-
-}
-a:hover{
-
-    opacity: 0.7;
+/* moreボタンのレイアウト */
+.l-moreBtn {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
 }
 
 
 
 
-.c-spotnameLarge{
-     display: inline-block;
-    color: black;
-    width: 100%;
-    font-size: 30px;
-    background-color: #85476E;
-    padding: 10px ;
-    border:2px solid #707070;
-    text-align: center;
-}
- .p-articleArea{
-        padding-top: 24px ;
+/* =============
+    Project
+================ */
+
+/* エリア名と説明全体 */
+.p-description {
+        padding: 20px 0;
     }
-
-
-
-.p-articleArea__textImg{
-    background-color: #C2A062;
-    padding: 14px;
-
+    @media(min-width:768px) {
+    .p-description {
+        padding: 40px 0;
+    }
 }
 
-.c-textLarge{
+/* 地図の画像と説明 */
+.p-description__item {
+    padding: 14px;
+    margin: 0 auto;
+    flex-direction: column;
+    background: #f5f5f5;
+}
+@media(min-width:768px) {
+    .p-description__item {
+        padding: 28px;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+}
 
-    padding-bottom:14px;
-    line-height: 20px;
+/* グリッドの指定 */
+.p-articleList {
+    justify-content: center;
+    gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+/* pc用グリッドの幅指定 */
+@media(min-width:1025px){
+    .p-articleList {
+        width: 80%;
+    }
+}
+
+/* 一つの記事 */
+.p-article {
+    width: 280px;
+    height: 320px;
     margin: 0 auto;
 }
 
-.c-hand,.c-hand__under{
-  display: none;
-}
-
-.c-spotType{
-    padding: 30px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-@media(min-width:768px){
-    .spImg{
-        display: none;
-    }
-    .pcImg{
-        display: block;
-    }
-
-    .u-flex{
-        display: flex;
-    }
-
-    .p-articleArea{
-        padding-top: 40px;
-    }
-
-
-    .p-articleArea__img{
-
-
-    width: 300px;
-    height: 188px;
-    text-align: center;
-}
-
-.c-textLarge{
-
-    font-size: 20px;
-    padding:20px;
-    line-height: 20px;
-}
-.c-spotnameLarge{
-    font-size: 50px;
-}
-.c-hand{
-    display: block;
-    text-align: right;
-    height: 200px;
-}
-    .c-handImg{
-    height: 350px;
-     transform: scale(1, -1);
-    }
-
-    .c-hand__under{
-        display: block;
-    text-align: left;
-}
-    .c-handImg__under{
-    height: 350px;
-
-    }
-
-      .c-spotType{
-
-        text-align: center;
-        padding: 100px;
-    }
-    .c-spotType__img{
-        height: 100px;
-
-
-    }
-
-
-}
-
-@media(min-width:1025px){
-    .p-articleArea__img{
-
-
-    width: 350px;
-    height: 215px;
-
-}
-
-    .c-textLarge{
-        width: 65%;
-        font-size: 24px;
-        line-height: 1;
-        padding:40px;
-    }
-
-
-    .c-spotType{
-
-        text-align: center;
-    }
-    .c-spotType__img{
-        height: 100px;
-
-
-    }
-
-    .c-handImg{
-    height: 350px;
-     transform: scale(1, -1);
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.p-articleList{
-      width: 280px;
-      height: 320px;
-      margin: 0 auto;
-      /* overflow: hidden;
-      transition: all .4s ease 0s; */
-
-}
-.more1,.more2{
-    overflow: hidden;
-      transition: all .4s ease 0s;
-
-}
-/* .p-articleList.is-hidden{
-    visibility: hidden;
-  opacity: 0;
-  height: 0;
-  margin: 0 10px;
-  padding:0;
-} */
-.more1.is-hidden,.more2.is-hidden{
-      visibility: hidden;
-  opacity: 0;
-  height: 0;
-  margin: 0 10px;
-  padding:0;
-}
-.p-gakuImg{
-
-       position: relative;
-         width: 280px;
-         height:200px;
-
-
-}
-
-.c-imgGaku{
-          width: 280px;
+/* 額縁のクラス */
+.p-imgArea {
+    position: relative;
+    width: 280px;
     height:200px;
+}
 
+/* 額縁の下全体 */
+.p-textArea {
+    height: 120px;
+    background-color:rgba(153,118,83,0.2);
+}
 
+/* いいねとタグ */
+.p-textContent {
+    padding: 16px 15px 10px;
+    justify-content: space-between;
+}
 
-
-
+/* タグ全体 */
+.p-tag {
+    color:#FEF9F9;
+    justify-content: space-around;
+    align-items: center;
 }
 
 
 
-.c-imgArea{
+/* =============
+    Compornent
+================ */
+
+/* メインビジュアル */
+.c-heroImg {
+    width: 100%;
+}
+
+/* エリア名 */
+.c-heading {
+    width: 100%;
+    height: 60px;
+    padding: 15px 0;
+    font-size: 3rem;
+    border:2px solid #707070;
+}
+
+/* エリアの説明 */
+.c-description__text {
+    width: 90%;
+    margin: 0 auto;
+    padding: 14px;
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+@media(min-width:768px) {
+.c-description__text{
+    width: 80%;
+
+     margin: 0 auto;
+    padding: 20px;
+    font-size: 1.8rem;
+    line-height: 2;
+}
+}
+@media(min-width:1025px) {
+    .c-description__text{
+        /* width: 65%; */
+        padding: 30px;
+    }
+}
+
+/* 地図の白背景の部分 */
+.c-description__map {
+    background-color: white;
+    position: relative;
+    text-align: center;
+    background-image: url("../images/flame_archive_common_map.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 0;
+    margin: 0 auto;
+    padding-top: calc(3624 / 5886 * 100%); /* calc(画像高さ ÷ 画像横幅 × 100%) */
+}
+@media(min-width:768px) {
+    .c-description__map {
+    width: 35%;
+    padding-top: calc(3624 / 5886 * 35%); /* calc(画像高さ ÷ 画像横幅 × 100%) */
+}
+}
+
+/* 地図の画像 */
+.c-map {
+    width:65%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 見出し画像 */
+.c-subHeading img {
+    height: 60px;
+}
+
+/* 額縁の画像 */
+.c-frame {
+    width: 280px;
+    height:200px;
+}
+
+/* サムネイル画像 */
+.c-thumbnail {
     width: 240px;
     height: 160px;
     position: absolute;
-
     transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-
-
-
-
-
-}
-.c-imgArea:hover{
-     position: absolute;
-
-    transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-
-
-
+    top: 50%;
+    left: 50%;
 }
 
-
-
-.u-grid{
-        display: grid;
-
-
-    }
-    .p-spotList{
-
-        justify-content: center;
-        gap: 50px;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
-        width: 90%;
-        margin: 0 auto;
-
-
-
-
-    }
-
-
-
-
-
-.p-textArea{
-    height: 120px;
-     background-color:#928C52;
-
+/* ハートのSVG */
+.c-icon__heart {
+    width: 32px;
+    height: 30px;
+    fill: #bd0000;
+    stroke: none;
 }
 
-.icon__heart {
-  width: 32px;
-  height: 30px;
-  fill: #85476E;
-  stroke: none;
+/* いいねの文字 */
+.c-bookmark__text {
+    padding: 5px 2px;
+    font-size: 1.2rem;
 }
 
-
-.u-flex{
-    display: flex;
-}
-
-.c-bookmark__count{
-    font-size: 18px;
+/* いいねの数 */
+.c-bookmark__count {
+    padding: 0 2px;
+    font-size: 1.8rem;
     font-family: 'mamelon5';
-    padding-top: 10px;
-
-}
-.c-bookmark__text{
-    font-size: 8px;
-    padding-top: 15px;
 }
 
-.p-textContent{
-    display: flex;
-    justify-content: space-between;
-    padding: 16px 15px 10px 15px;
-}
 
-.p-tag{
-
-    font-size: 13px;
-    color:#FEF9F9;
-    align-items: center;
-
-
-}
-
-.c-tag__areaName{
+/* タグ */
+.c-tag {
     display: inline-block;
-    margin-right: 15px;
-
-
-    background-color: #990000;
-    padding: 8px ;
-    border:2px solid #707070;
-
-}
-.c-tag__spotName{
-    background-color: #330000;
-    padding: 8px ;
-    border:1px solid #707070;
+    padding: 8px;
+    background: #2D294F;
+    border: 1px solid #707070;
+    font-size: 1.2rem;
 }
 
-
-.c-spotName{
-    font-size: 18px;
+/* スポット名称 */
+.c-title {
+    font-size: 1.8rem;
     font-family: 'mamelon5';
-
-    text-align: center;
-
 }
 
 
+/*  moreボタン
+-------------------------------- */
 
-
-
-
-
-
-
-
-
-
-/* moreボタン */
-.c-moreButton{
-
-
-
-
-
-
-    width: 180px;
-    padding-top:30px;
-
-    text-align: center;
-
-    border-radius: 30px 30px 30px 30px;
-    margin: 0 auto;
-
-}
-button{
-      color: #303030;
-    font-family: 'mamelon5';
-    font-size: 26px;
+button.c-moreBtn {
     width: 180px;
     padding:7px;
-
-    text-align: center;
-    background-color: #85476E;
-    border-radius: 30px 30px 30px 30px;
-    border: none;
-    cursor: pointer;
-    outline: none;
-
-}
-
-button:hover{
-    opacity: 0.7;
-}
-
-@media(min-width:768px){
-    .c-moreButton{
-
-
-
+    border-radius: 30px;
+    color: #ffffff;
     font-family: 'mamelon5';
-    font-size: 30px;
-    width: 200px;
-    padding:15px;
-    border-radius: 30px 30px 30px 30px;
-    margin-left: auto;
-    margin-right: 30px;
+    font-size: 2.6rem;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
+
+/* それぞれのmoreボタンを効かすためのもの */
+.c-more1,.c-more2,.c-more3{
+    overflow: hidden;
+    transition: all .4s ease 0s;
+}
+.c-more1.is-hidden,.c-more2.is-hidden{
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    margin: 0 10px;
+    padding:0;
+}
+
+
+
+
+
+
+
+/* =============
+    Utility
+================ */
+
+/* グリッドレイアウト */
+.u-grid{
+    display: grid;
+}
+
+/* flex-box指定 */
+.u-flex {
+    display: flex;
+}
+
+/* right */
+.u-right {
+    text-align: right;
+}
+
+/* margin */
+.u-mr15 {
+    margin-right: 15px;
+}
+
+
+
+.u-horror {
+    background: #990000;
+}
+
+/* 都市伝説のパンクズリストの色 */
+.u-panHorror{
+    color: white;
+}
+.u-panHorror>i{
+    color: white;
+}
+
+/* 都市伝説の背景カラー */
+.u-bgHorror{
+    background-color: black;
+}
+
+/* 都市伝説の赤 */
+.u-horrorRed{
+    background-color: #990000;
+}
+
+/* 都市伝説のfontの色 */
+.u-fontHorror{
+    color: white;
+}
+
+
+.u-moreHover:hover{
+    opacity: 0.8;
 }
