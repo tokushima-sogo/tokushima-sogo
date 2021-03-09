@@ -20,7 +20,7 @@ CSSを消すこと。
                 <!-- breadcrumbループstart -->
                 <a href="<?php home_url(); ?>"><span>HOME</span></a>
                 <i class="fas fa-angle-right"></i>
-                <span>エリア名</span>
+                <span>県西部</span>
                 <!-- breadcrumbループend -->
             </div>
         </div>

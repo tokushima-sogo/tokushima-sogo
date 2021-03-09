@@ -20,7 +20,7 @@ CSSを消すこと。
                 <!-- breadcrumbループstart -->
                 <a href="<?php home_url(); ?>"><span>HOME</span></a>
                 <i class="fas fa-angle-right"></i>
-                <span>エリア名</span>
+                <span>県市内</span>
                 <!-- breadcrumbループend -->
             </div>
         </div>
@@ -31,12 +31,10 @@ CSSを消すこと。
             <!-- エリア名と説明全体  -->
             <div class="p-description">
                 <!-- エリア名  -->
-                <h2 class="c-heading u-center u-white u-west">徳島西部</h2>
+                <h2 class="c-heading u-center u-white u-west">徳島市内</h2>
                 <div class="p-description__item u-flex">
                     <div class="c-description__text">
-                        徳島市は江戸時代に徳島藩の城下町として栄え、幕末には藍産業の発展で国内で人口が上位10位に入る城下町となった。徳島県の政治・経済・文化の中心都市であり、古来近畿地方との繋がりが深く現在でも神戸淡路鳴門自動車道や関西地方のテレビ、ラジオを通じて人的・物的・経済的な交流が盛んである。地理的には「四国三郎」と呼ばれる吉野川の河口に位置し、紀伊水道に面している。
-
-                        毎年8月のお盆期間に開催される当市の阿波踊り（徳島市阿波おどり）は江戸時代より約400年の歴史がある日本の著名な伝統芸能の一つであり、阿波踊り期間中の4日間に日本国内外から約130万人の観光客が訪れる。
+                        テキストはまだ
                     </div>
                     <div class="c-description__map">
                         <img src="assets/images/img_archive_west_map.png" class="c-map" alt="徳島西部">
