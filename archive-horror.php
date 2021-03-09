@@ -15,9 +15,8 @@
         <!-- breadcrumbループstart -->
         <span>トップ</span>
         <i class="fas fa-angle-right"></i>
-        <span>エリア名</span>
-        <i class="fas fa-angle-right"></i> <span>カテゴリ</span>
-        <i class="fas fa-angle-right"></i> <span>記事タイトル</span>
+        <a href="<?php home_url(); ?>"><span>HOME</span></a>
+        <span>都市伝説</span>
         <!-- breadcrumbループend -->
     </div>
 </div>
