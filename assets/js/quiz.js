@@ -47,6 +47,9 @@ const CORRECT_MP3 = new Audio(PATH + "/assets/audio/correct.mp3");
 CORRECT_MP3.loop = false;
 const MISTAKE_MP3 = new Audio(PATH + "/assets/audio/mistake.mp3");
 MISTAKE_MP3.loop = false;
+const BGM_MP3 = new Audio(PATH + "/assets/audio/bgm.mp3");
+BGM_MP3.loop = true;
+BGM_MP3.volume = 0.4;
 
 //重要なパラメーター
 const FPS = 10;
@@ -229,11 +232,17 @@ function onClick(e) {
     }
     if (mode == 2) {
         window.addEventListener("click", function () {
-            mode == 3;
+            mode = 3;
             clearInterval(resultAnime);
             setTimeout(() => {
                 DRAW.linkDraw();
             }, 200);
+        })
+    }
+    if (mode == 3) {
+        window.addEventListener("click", function () {
+            //都市伝説のページへ移動
+            location.href = "http://localhost/sogo/horror/";
         })
     }
 }
@@ -771,7 +780,6 @@ window.addEventListener("load", function () {
     QUIZ.createQuestion();
     QUIZ.createAnswer();
     MOBILE.isSmartPhone();
-    DRAW.commentDraw()
     //スタート画面
     start = setInterval(function () {
         setTimeout(function () {
@@ -814,6 +822,7 @@ window.addEventListener("click", function () {
     //スタートボタンを押した時間を保管
     let sTime = new Date();
     startTime = sTime.getTime();
+    BGM_MP3.play();
     gameRound = setInterval(gameCycle, FPS)
 
 }, { once: true });
