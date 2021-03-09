@@ -173,3 +173,13 @@ function my_acf_google_map_api($api)
     return $api;
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+
+//クッキーを付与する（都市伝説解除キー）
+function my_setcookie()
+{
+    if (is_archive('horror')) {
+        setcookie('legend', 1, time() + 86400 * 30, "/");
+    }
+}
+add_action('get_header', 'my_setcookie');

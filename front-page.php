@@ -1,3 +1,9 @@
+<!-- 【要相談】
+都市伝説ページクリックしたら，
+クリックイベントでページ遷移するため，
+aタグ削除しなければいけない。
+レイアウト修正 -->
+
 <?php get_header(); ?>
 
 
@@ -138,12 +144,15 @@
         <!-- /elevatorArea -->
         <!-- B1 -->
         <section id="js_basement" class="p-departmentFloor u-b1">
-            <a href="<?php echo get_post_type_archive_link('horror'); ?>" class="c-horrorLink">
-                <div class="p-floorBlock">
+
+            <!-- <a href="<?php echo get_post_type_archive_link('horror'); ?>" class="c-horrorLink" id="c-horrorLink"> -->
+            <span class="c-horrorLink">
+                <div class="p-floorBlock c-horrorLink">
                     <h2 class="u-mb10"><span class="c-floorNumber">地下1階</span>徳島の都市伝説</h2>
                     6階のゲームをクリアすれば 都市伝説へご案内
                 </div>
-            </a>
+                <!-- </a> -->
+            </span>
         </section>
     </div>
     <!-- /department -->
@@ -159,7 +168,22 @@
     </section>
 </main>
 
+<script>
+    const LEGEND_LINK = document.getElementById("js_basement");
+</script>
 
+
+<script>
+    <?php if ($_COOKIE['legend'] == 1) : ?>
+        LEGEND_LINK.addEventListener("click", function() {
+            location.href = "http://localhost/sogo/horror/";
+        });
+    <?php else : ?>
+        LEGEND_LINK.addEventListener("click", function() {
+            alert("クイズゲームをクリアーしてくださいね。");
+        });
+    <?php endif; ?>
+</script>
 
 
 <?php get_footer(); ?>
