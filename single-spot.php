@@ -1,14 +1,9 @@
-<!-- 【引継ぎ事項】
-１,クラス名は適当，命名ルールに合わせて直す必要あり。
-２,スポットの写真表示の部分は仮です。jQueryのslickで書き直してください。
-４,cssは作っていない。
- -->
-
 <!-- ヘッダーの読み込み -->
 <?php get_header(); ?>
 
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/single.css">
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNNbWvrL46SW-8K-D0w6Haff4Vbcc4rRQ"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/googlemap.js"></script>
 <main class="l-main">
 
     <!-- breadCrumb -->
@@ -135,7 +130,6 @@
                                     ハートのsvg
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 792 637.038" preserveAspectRatio="none">
                                         <path class="1e6ff1b7-abfa-4d80-a212-8e109273a368" d="M896,512c0,212.077-384,384-384,384S128,724.077,128,512,384,192,512,384C640,192,896,299.923,896,512Z" transform="translate(-116 -272.11)" />
-
                                     </svg><span class="c-favCount">10</span>いいね！
                                 </a> -->
                                 <!-- Myスポット -->
@@ -158,116 +152,126 @@
                     <!-- singleArticle__info -->
                     <div class="p-singleArticle__info u-flex">
                         <!-- singleMap -->
-                        <div class="l-singleMap">
-                            <div class="p-singleMap">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1651.3821720249434!2d134.5495951999572!3d34.12678224624143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35536e006b61c58b%3A0xa1102dc23699b67!2z44Od44OD44OX44Kz44O844Oz!5e0!3m2!1sja!2sjp!4v1614947813235!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                            </div>
-                        </div>
                         <?php
                         $location = get_field('location');
                         if ($location) : ?>
-                            <div class="acf-map" data-zoom="16">
-                                <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
+                            <div class="l-singleMap" data-zoom="16">
+                                <div class="p-singleMap marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>">
+                                </div>
                             </div>
                         <?php endif; ?>
-                        <!-- /singleMap -->
-
-
-                        <!-- singleTable -->
-                        <div class="l-singleTable">
-                            <table class="p-singleTable">
-                                <tr class="c-singleTable__tr">
-                                    <th class="c-singleTable__th">所在地</th>
-                                    <td class="c-singleTable__td">
-                                        <!-- カスタムフィールド住所 -->
-                                        <?php if ($address) : ?>
-                                            <?php echo $address; ?>
-                                        <?php endif; ?>
-                                    </td>
-                                </tr>
-                                <tr class="c-singleTable__tr">
-                                    <th class="c-singleTable__th">TEL</th>
-                                    <td class="c-singleTable__td">
-                                        <!-- カスタムフィールド電話 -->
-                                        <?php if ($tel) : ?>
-                                            <?php echo $tel; ?>
-                                        <?php endif; ?>
-                                    </td>
-                                </tr>
-                                <tr class="c-singleTable__tr">
-                                    <th class="c-singleTable__th">営業時間</th>
-                                    <td class="c-singleTable__td">
-                                        <!-- カスタムフィールド営業時間 -->
-                                        <?php if ($opentime) : ?>
-                                            <?php echo $opentime; ?>
-                                        <?php endif; ?>
-                                    </td>
-                                </tr>
-                                <tr class="c-singleTable__tr">
-                                    <th class="c-singleTable__th">定休日</th>
-                                    <td class="c-singleTable__td">
-                                        <!-- カスタムフィールド定休日 -->
-                                        <?php if ($closetime) : ?>
-                                            <?php echo $closetime; ?>
-                                        <?php endif; ?>
-                                    </td>
-                                </tr>
-                                <tr class="c-singleTable__tr">
-                                    <th class="c-singleTable__th">URL</th>
-                                    <td class="c-singleTable__td">
-                                        <!-- カスタムフィールドURL -->
-                                        <?php if ($url) : ?>
-                                            <a href="<?php echo $url; ?>"><?php echo $url; ?></a>
-                                        <?php endif; ?>
-                                    </td>
-                                </tr>
-                                <tr class="c-singleTable__tr">
-                                    <!-- カスタムフィールドsns -->
-                                    <th class="c-singleTable__th">SNS</th>
-                                    <td class="c-singleTable__td">
-                                        <?php if ($facebook) : ?>
-                                            <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
-                                        <?php endif; ?>
-                                        <?php if ($instagram) : ?>
-                                            <a href="<?php echo $instagram; ?>"><i class="fab fa-instagram-square"></i></a>
-                                        <?php endif; ?>
-                                        <?php if ($twitter) : ?>
-                                            <a href="<?php echo $twitter; ?>"><i class="fab fa-twitter-square"></i></a>
-                                        <?php endif; ?>
-                                    </td>
-
-
-                                </tr>
-                                <tr class="c-singleTable__tr">
-                                    <!-- カスタムフィールド備考 -->
-                                    <th class="c-singleTable__th">備考</th>
-                                    <td class="c-singleTable__td">
-                                        <?php if ($remarks1) : ?>
-                                            <?php echo $remarks1; ?>
-                                        <?php endif; ?>
-
-                                        <?php if ($remarks2) : ?>
-                                            <?php echo $remarks2; ?>
-                                        <?php endif; ?>
-
-                                        <?php if ($remarks3) : ?>
-                                            <?php echo $remarks3; ?>
-                                        <?php endif; ?>
-
-                                        <?php if ($remarks4) : ?>
-                                            <?php echo $remarks4; ?>
-                                        <?php endif; ?>
-
-                                        <?php if ($remarks5) : ?>
-                                            <?php echo $remarks5; ?>
-                                        <?php endif; ?>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                        <!-- /singleTable -->
                     </div>
-                    <!-- /singleArticle__info -->
+
+
+                    <!--  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1651.3821720249434!2d134.5495951999572!3d34.12678224624143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35536e006b61c58b%3A0xa1102dc23699b67!2z44Od44OD44OX44Kz44O844Oz!5e0!3m2!1sja!2sjp!4v1614947813235!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+
+
+
+                    <!--  <?php
+                            $location = get_field('location');
+                            if ($location) : ?>
+                    <div class="acf-map" data-zoom="16">
+                        <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
+                    </div>
+                <?php endif; ?> -->
+                    <!-- /singleMap -->
+
+
+                    <!-- singleTable -->
+                    <div class="l-singleTable">
+                        <table class="p-singleTable">
+                            <tr class="c-singleTable__tr">
+                                <th class="c-singleTable__th">所在地</th>
+                                <td class="c-singleTable__td">
+                                    <!-- カスタムフィールド住所 -->
+                                    <?php if ($address) : ?>
+                                        <?php echo $address; ?>
+                                    <?php endif; ?>
+                                </td>
+                            </tr>
+                            <tr class="c-singleTable__tr">
+                                <th class="c-singleTable__th">TEL</th>
+                                <td class="c-singleTable__td">
+                                    <!-- カスタムフィールド電話 -->
+                                    <?php if ($tel) : ?>
+                                        <?php echo $tel; ?>
+                                    <?php endif; ?>
+                                </td>
+                            </tr>
+                            <tr class="c-singleTable__tr">
+                                <th class="c-singleTable__th">営業時間</th>
+                                <td class="c-singleTable__td">
+                                    <!-- カスタムフィールド営業時間 -->
+                                    <?php if ($opentime) : ?>
+                                        <?php echo $opentime; ?>
+                                    <?php endif; ?>
+                                </td>
+                            </tr>
+                            <tr class="c-singleTable__tr">
+                                <th class="c-singleTable__th">定休日</th>
+                                <td class="c-singleTable__td">
+                                    <!-- カスタムフィールド定休日 -->
+                                    <?php if ($closetime) : ?>
+                                        <?php echo $closetime; ?>
+                                    <?php endif; ?>
+                                </td>
+                            </tr>
+                            <tr class="c-singleTable__tr">
+                                <th class="c-singleTable__th">URL</th>
+                                <td class="c-singleTable__td">
+                                    <!-- カスタムフィールドURL -->
+                                    <?php if ($url) : ?>
+                                        <a href="<?php echo $url; ?>"><?php echo $url; ?></a>
+                                    <?php endif; ?>
+                                </td>
+                            </tr>
+                            <tr class="c-singleTable__tr">
+                                <!-- カスタムフィールドsns -->
+                                <th class="c-singleTable__th">SNS</th>
+                                <td class="c-singleTable__td">
+                                    <?php if ($facebook) : ?>
+                                        <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
+                                    <?php endif; ?>
+                                    <?php if ($instagram) : ?>
+                                        <a href="<?php echo $instagram; ?>"><i class="fab fa-instagram-square"></i></a>
+                                    <?php endif; ?>
+                                    <?php if ($twitter) : ?>
+                                        <a href="<?php echo $twitter; ?>"><i class="fab fa-twitter-square"></i></a>
+                                    <?php endif; ?>
+                                </td>
+
+
+                            </tr>
+                            <tr class="c-singleTable__tr">
+                                <!-- カスタムフィールド備考 -->
+                                <th class="c-singleTable__th">備考</th>
+                                <td class="c-singleTable__td">
+                                    <?php if ($remarks1) : ?>
+                                        <?php echo $remarks1; ?>
+                                    <?php endif; ?>
+
+                                    <?php if ($remarks2) : ?>
+                                        <?php echo $remarks2; ?>
+                                    <?php endif; ?>
+
+                                    <?php if ($remarks3) : ?>
+                                        <?php echo $remarks3; ?>
+                                    <?php endif; ?>
+
+                                    <?php if ($remarks4) : ?>
+                                        <?php echo $remarks4; ?>
+                                    <?php endif; ?>
+
+                                    <?php if ($remarks5) : ?>
+                                        <?php echo $remarks5; ?>
+                                    <?php endif; ?>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- /singleTable -->
+                </div>
+                <!-- /singleArticle__info -->
                 </div>
                 <!-- /singleBody -->
 
@@ -427,8 +431,7 @@
     </section>
     <!-- /articleList -->
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNNbWvrL46SW-8K-D0w6Haff4Vbcc4rRQ"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/assets/js/googlemap.js"></script>
+
 </main>
 <!-- /main -->
 
