@@ -1,23 +1,3 @@
-//スライドさせるボタンのID
-const SLIDE_IN_BUTTON = document.getElementById("c-elevatorOpen");
-//スライドを閉じるボタンのID
-const SLIDE_OFF_BUTTON = document.getElementById("c-elevatorClose");
-//アニメーションを追加する場所のID
-const BURGER = document.getElementById("p-header__contentsBurger");
-//スライドさせる。（クラス名「slide-in」を追加する。）
-SLIDE_IN_BUTTON.addEventListener("click", function () {
-    //クラスを切り替える
-    BURGER.classList.remove("slide-off");
-    BURGER.classList.add("slide-in");
-});
-//スライドを閉じる。クラス名「slide-off」を追加する。
-SLIDE_OFF_BUTTON.addEventListener("click", function () {
-    //クラスを切り替える
-    BURGER.classList.remove("slide-in");
-    BURGER.classList.add("slide-off");
-});
-
-
 // PC用アコーディオンメニュー
 $(function () {
     $('.p-header__navListDetail').hide();

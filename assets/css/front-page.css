@@ -1,16 +1,15 @@
-@charset "utf-8";
-
-/* l */
-.l-main {
-    padding-top: 70px;
-}
-
+/* =============
+    Layout
+================ */
 
 .l-department {
     position: relative;
 }
 
-/* project */
+/* =============
+    Project
+================ */
+
 .p-departmentFloor {
     position: relative;
 }
@@ -45,7 +44,12 @@
     width: 90%;
     height: 100%;
     margin: 0 auto;
-    padding: 5px 0;
+    padding: 15px 0;
+}
+@media (min-width:1025px) {
+    .p-floorBlock {
+        padding: 20px 0;
+}
 }
 
 /* 6F用 */
@@ -65,7 +69,7 @@
 @media (min-width:768px) {
     .p-special {
         width: 80%;
-        height: 70%;
+        height: 480px;
     }
 }
 
@@ -157,7 +161,31 @@
     z-index: 2;
 }
 
-/* c */
+/* insta用 */
+.p-instaArea {
+    position: relative;
+    z-index: 2;
+    height: 270px;
+    background: #eae4ad;
+    background-image:url(../images/line_footer_lace.png),
+	url(../images/line_footer_lace.png);
+
+	background-repeat:repeat-x,
+					repeat-x;
+
+	background-position:left top,
+						right bottom;
+}
+@media (min-width:1025px) {
+    .p-instaArea {
+        height: 200px;
+    }
+}
+
+/* =============
+    Compornent
+================ */
+
 /* 6Fリンク */
 a.c-specialLink {
     display: block;
@@ -391,11 +419,219 @@ a.c-horrorLink {
     }
 }
 
-/* u */
-/* flex */
-.u-flex {
-    display: flex;
+/* エレベーター
+----------------------------------- */
+
+.p-main__liftGroup__parts{
+    position: fixed;
+    height: 100vh;
+    top: 70px;
+    right: 0px;
+    width: 80px;
+    background-image: url(../images/img_front_liftLine03.png);
+    z-index: 1;
 }
+.c-main__liftBodyImg{
+    position: absolute;
+    top: 25px;
+}
+.lift6{
+    top: 25px;
+}
+.lift6::before{
+    content: '6階';
+    background-color: #CF7E7C;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.lift5{
+    top: 15vh;
+}
+.lift5::before{
+    content: '5階';
+    background-color: #CF7E7C;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.lift4{
+    top: 27vh;
+}
+.lift4::before{
+    content: '4階';
+    background-color: #CF7E7C;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.lift3{
+    top: 39vh;
+}
+.lift3::before{
+    content: '3階';
+    background-color: #CF7E7C;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.lift2{
+    top: 51vh;
+}
+.lift2::before{
+    content: '2階';
+    background-color: #CF7E7C;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.lift1{
+    top: 63vh;
+}
+.lift1::before{
+    content: '1階';
+    background-color: #CF7E7C;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.liftbasement{
+    top: 72vh;
+}
+.liftbasement::before{
+    content: '地下';
+    background-color: #CF7E7C;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.c-main__liftTopImg{
+    position: absolute;
+}
+@media screen and (min-width: 768px){
+    .p-main__liftGroup__parts{
+        position: fixed;
+        width: 100px;
+}
+.c-main__liftBodyImg{
+    position: absolute;
+    top: 33px;
+}
+.lift6{
+    top: 30px;
+}
+.lift6::before{
+    content: '6階';
+    background-color: #CF7E7C;
+    display: inline-block;
+    width: 100%;
+    height: 26px;
+    padding-top: 6px;
+    text-align: center;
+}
+.lift5{
+    top: 15vh;
+}
+.lift5::before{
+    content: '5階';
+    background-color: #CF7E7C;
+    display: inline-block;
+    width: 100%;
+    height: 26px;
+    padding-top: 6px;
+    text-align: center;
+}
+.lift4{
+    top: 27vh;
+}
+.lift4::before{
+    content: '4階';
+    background-color: #CF7E7C;
+    display: inline-block;
+    width: 100%;
+    height: 26px;
+    padding-top: 6px;
+    text-align: center;
+}
+.lift3{
+    top: 39vh;
+}
+.lift3::before{
+    content: '3階';
+    background-color: #CF7E7C;
+    display: inline-block;
+    width: 100%;
+    height: 26px;
+    padding-top: 6px;
+    text-align: center;
+}
+.lift2{
+    top: 49vh;
+}
+.lift2::before{
+    content: '2階';
+    background-color: #CF7E7C;
+    display: inline-block;
+    width: 100%;
+    height: 26px;
+    padding-top: 6px;
+    text-align: center;
+}
+.lift1{
+    top: 58vh;
+}
+.lift1::before{
+    content: '1階';
+    background-color: #CF7E7C;
+    display: inline-block;
+    width: 100%;
+    height: 26px;
+    padding-top: 6px;
+    text-align: center;
+}
+.liftbasement{
+    top: 68vh;
+}
+.liftbasement::before{
+    content: '地下';
+    background-color: #CF7E7C;
+    display: inline-block;
+    width: 100%;
+    height: 26px;
+    padding-top: 6px;
+    text-align: center;
+}
+}
+@media screen and (min-width: 1025px){
+    .p-main__liftGroup__parts{
+    position: fixed;
+    top: 100px;
+}
+}
+/* -------------------------------- */
+
+/* 雲のアニメーション */
+#js_6f{
+    background-image: url(../images/img_front_cloud.png);
+    background-repeat: no-repeat;
+    background-size: 400px;
+    animation: cloudMove 50s linear infinite ;
+    background-position: 150% 5%;
+}
+@keyframes cloudMove{
+    0%{
+        background-position: 150% 5%;
+    }
+    100%{
+        background-position: -45% 5%;
+    }
+}
+
+
+
+/* =============
+    Utility
+================ */
 
 /* margin */
 .u-mb10 {
@@ -448,13 +684,13 @@ a.c-horrorLink {
 
 /* 6F */
 .u-6f {
-    padding-top: 25px;
-    height: 390px;
+    padding-top: 200px;
+    height: 620px;
 }
 @media (min-width:768px) {
     .u-6f {
-        padding-top: 250px;
-        height: 1100px;
+        padding-top: 100px;
+        height: 1000px;
     }
 }
 
@@ -472,6 +708,17 @@ a.c-horrorLink {
     .u-specialName {
         width: 220px;
         font-size: 2.4rem;
+    }
+}
+
+
+/* 5F */
+.u-5f {
+    padding-top: 25px;
+}
+@media (min-width:768px) {
+    .u-5f {
+        padding-top: 35px;
     }
 }
 
@@ -497,131 +744,4 @@ a.c-horrorLink {
 }
 .u-lightPurple{
     color: #e2e0ef;
-}
-
-#wrap {
-    overflow: hidden;
-}
-
-/*
-/* animation中はスクロールさせない */
-body {
-    animation: disableScroll .7s linear 8.8s both;
-    }
-
-    @keyframes
-    disableScroll {
-    0%{
-    overflow: hidden;
-    }
-    100%{
-    overflow: auto;
-    }
-}
-
-/* ファーストビューアニメーション */
-#clock {
-    position: relative;
-    width: 50vw;
-    height: 100vh;
-    margin: auto;
-    -webkit-backface-visibility:hidden;
-    backface-visibility:hidden;
-    overflow:hidden;
-
-}
-
-#clock img {
-    position: absolute;
-    width: 90%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-}
-
-
-/* 時針 */
-#minute-hand{
-    animation: rotation-h 0.8s linear infinite; /* 0.8秒、12時間かけて一周 */
-        transform: rotate(0deg);
-        animation-iteration-count:5;
-}
-
-/* 時針の回転アニメーション */
-@keyframes rotation-h {
-    0% {transform: rotate(0deg)} /* 初期位置0時の位置 */
-    100% {transform: rotate(-1035deg)} /* 初期位置 + 360deg で一周 */
-}
-
-/* 分針 */
-#hour-hand{
-    animation: rotation-h 0.5s linear infinite; /* 0.5秒、12時間かけて一周 */
-        transform: rotate(0deg);
-        animation-iteration-count:7;
-}
-
-/* 時針の回転アニメーション */
-@keyframes rotation-h {
-    0% {transform: rotate(0deg)} /* 初期位置 0時の位置 */
-    100% {transform: rotate(-360deg)} /* 初期位置 + 360deg で一周 */
-}
-
-/* 針が止まったら消える */
-.p-loadClock {
-    -webkit-animation: seconds 0.1s forwards;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-delay: 5s;
-    animation: seconds 0.1s forwards;
-    animation-iteration-count: 1;
-    animation-delay: 4.1s;
-}
-
-/* @-webkit-keyframes seconds {
-    0% {
-    opacity: 1;
-    }
-    100% {
-    opacity: 0;
-    left: -9999px;
-    }
-} */
-
-/* 0時の状態の時計 */
-#back-clock {
-    position: absolute;
-    z-index: -1;
-    width: 50vw;
-    height: 100vh;
-    animation: animationZoom1 5s ease-in-out forwards;
-    animation-delay: 5s;
-}
-
-@keyframes animationZoom1 {
-100% { transform: scale(0)}
-}
-
-/* 最後フェードアウトして消える */
-#Firstview{
-
-    position: fixed;
-    z-index: 100;
-    width: 100vw;
-    height: 100vh;
-    background-color: white;
-    animation: fadein-keyframes 7s ease 0s 1 forwards;
-    animation-delay: 5s;
-}
-
-@keyframes fadein-keyframes {
-    0% {
-    opacity: 1;
-    }
-
-    100% {
-    opacity: 0;
-    z-index: -2;
-
-    }
 }
