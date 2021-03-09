@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+/* =============
+    Layout
+================ */
+
+.l-description {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.l-specialArticle {
+    width: 100%;
+    padding: 30px 0;
+    justify-content: center;
+    flex-direction: column;
+}
+@media (min-width: 768px){
+    .l-specialArticle {
+        width: 90%;
+        margin: 0 auto;
+        padding: 30px 0 50px;
+        flex-direction: row;
+    }
+}
+
+/* =============
+    Project
+================ */
+
+/* 説明 */
+.p-description {
+    margin: 0 auto;
+    padding: 30px 0;
+}
+.p-description__item {
+    padding: 30px 0;
+    margin: 0 auto;
+    background: #f9e1e1;
+}
+
+/* 特集記事 */
+.p-specialArticle {
+    width: 90%;
+    margin: 0 auto;
+    padding: 15px 5px;
+}
+@media (min-width: 768px){
+    .p-specialArticle {
+        width: 33%;
+        padding: 0 10px;
+    }
+}
+
+/* =============
+    Compornent
+================ */
+
+/* メインビジュアル */
+.c-heroImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 説明 */
+.c-description__text {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+/* バナー */
+.c-specialBanner {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+/* 特集記事テキスト */
+.c-specialArticle__description {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+
+
+/* =============
+    Utility
+================ */
+
+/* flex-box指定 */
+.u-flex {
+    display: flex;
+}
+
+/* color */
+.u-black {
+    color: #333333;
+}
