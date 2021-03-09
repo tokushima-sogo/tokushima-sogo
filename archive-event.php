@@ -7,14 +7,42 @@
 
 <?php get_header(); ?>
 
-<main>
-    <h1>徳島のイベント</h1>
-    <p>紹介文</p><br><br>
+<main class="l-main">
 
-    <section>
-        <h2>見学体験</h2>​
+    <!-- breadCrumb -->
+    <div class="p-breadCrumb">
+        <div class="p-breadCrumb__inner">
+            <!-- breadcrumbループstart -->
+            <span>トップ</span>
+            <i class="fas fa-angle-right"></i>
+            <span>エリア名</span>
+            <i class="fas fa-angle-right"></i> <span>カテゴリ</span>
+            <i class="fas fa-angle-right"></i> <span>記事タイトル</span>
+            <!-- breadcrumbループend -->
+        </div>
+    </div>
+    <!-- /breadCrumb -->
 
-        <!-- 見学・体験の記事を出力するループ -->
+
+    <!-- description -->
+    <section class="l-description">
+        <h2 class="c-heroImg"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_archive_event_web.jpg" alt="徳島のイベント"></h2>
+        <div class="p-description">
+            <div class="p-description__item">
+                <p class="c-description__text u-center">
+                    徳島県内各地で行われているイベントを紹介します。</p>
+            </div>
+        </div>
+    </section>
+    <!-- description -->
+
+    <!--  1  -->
+    <section class="l-articleList">
+        <h3 class="c-subHeading u-center">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_event_look.png" alt="展示・見学">
+        </h3>
+
+        <!-- 展示・体験の記事を出力するループ -->
         <?php
         $args = array(
             'post_type'         => 'event',     // カスタム投稿タイプ名
@@ -34,64 +62,126 @@
             <?php while ($the_query->have_posts()) : ?>
                 <?php $the_query->the_post(); ?>
 
-                <!-- サムネイルの表示 -->
-                <div class="pic">
-                    <a href="<?php the_permalink(); ?>">
-
-                        <?php if (has_post_thumbnail()) : ?>
-                            <?php the_post_thumbnail('medium') ?>
-                        <?php else : ?>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
-                        <?php endif; ?>
-
-                    </a>
+                <!-- articleList -->
+                <div class="p-articleList u-grid">
+                    <!-- article -->
+                    <article class="p-article c-more1">
+                        <!-- imgArea -->
+                        <div class="p-imgArea">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
+                            <!-- thumbnail -->
+                            <a href="<?php the_permalink(); ?>" class="c-thumbnail">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <?php the_post_thumbnail('medium') ?>
+                                <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                <?php endif; ?>
+                            </a>
+                        </div>
+                        <!-- /imgArea -->
+                        <!-- textArea -->
+                        <div class="p-textArea">
+                            <div class="p-textContent u-flex">
+                                <div class="p-bookmark u-flex">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
+                                    <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
+                                </div>
+                                <div class="p-tag u-flex">
+                                    <div class="c-tag u-west u-mr15">
+                                        <?php
+                                        echo get_the_term_list($post->ID, 'area');
+                                        ?>
+                                    </div>
+                                    <div class="c-tag">
+                                        <?php
+                                        echo esc_html(get_post_type_object(get_post_type())->label);
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="c-title u-center"><?php the_title(); ?></div>
+                        </div>
+                        <!-- /textArea -->
+                    </article>
+                    <!-- /article -->
+                    <!-- article -->
+                    <!-- <article class="p-article c-more1"> -->
+                    <!-- imgArea -->
+                    <!-- <div class="p-imgArea">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁"> -->
+                    <!-- thumbnail -->
+                    <!-- <a href="single.html">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/takenoko1.jpg" class="c-thumbnail" alt="スポット写真">
+                            </a>
+                        </div> -->
+                    <!-- /imgArea -->
+                    <!-- textArea -->
+                    <!-- <div class="p-textArea">
+                            <div class="p-textContent u-flex">
+                                <div class="p-bookmark u-flex">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
+                                    <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
+                                </div>
+                                <div class="p-tag u-flex">
+                                    <div class="c-tag u-west u-mr15">県西部</div>
+                                    <div class="c-tag">スポット</div>
+                                </div>
+                            </div>
+                            <div class="c-title u-center">たけのこおいしい</div>
+                        </div> -->
+                    <!-- /textArea -->
+                    <!-- </article> -->
+                    <!-- /article -->
+                    <!-- article -->
+                    <!-- <article class="p-article c-more1"> -->
+                    <!-- imgArea -->
+                    <!-- <div class="p-imgArea">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁"> -->
+                    <!-- thumbnail -->
+                    <!-- <a href="single.html">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/takenoko1.jpg" class="c-thumbnail" alt="スポット写真">
+                            </a>
+                        </div> -->
+                    <!-- /imgArea -->
+                    <!-- textArea -->
+                    <!-- <div class="p-textArea">
+                            <div class="p-textContent u-flex">
+                                <div class="p-bookmark u-flex">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
+                                    <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
+                                </div>
+                                <div class="p-tag u-flex">
+                                    <div class="c-tag u-west u-mr15">県西部</div>
+                                    <div class="c-tag">スポット</div>
+                                </div>
+                            </div>
+                            <div class="c-title u-center">たけのこおいしい</div>
+                        </div> -->
+                    <!-- /textArea -->
+                    <!-- </article> -->
+                    <!-- /article -->
                 </div>
-                ​
-                <!-- ターム表示といいね -->
-                <div class="flex">
-                    <?php the_tags(); ?>
-                    <!-- タグの表示 -->
-                    <div class="term">
+                <!-- /articleList -->
 
-
-                        <!-- タグ検索できない -->
-                        <?php
-                        echo $term_slug;
-                        $tags = get_the_tags();
-                        if (!empty($tags)) {
-                            $echoTag = '';
-                            $separator = '<span> ♯ </span>';
-                        } else {
-                            echo "タグがありません";
-                        }
-                        foreach ($tags as $tag) {
-                            echo $tag->name;
-                            $echoTag .= $separator . '<span>' . $tag->name . '</span>';
-                        }
-                        //$echoTag = rtrim($html, $separator);
-                        echo $echoTag; ?>
-
-                    </div>
-
-                    <!-- カスタム投稿タイプのスラッグ表示 ダメならhttps://www.nxworld.net/wp-get-current-post-type.htmlで-->
-                    <div class="slug">
-                        <!-- タクソノミー(area)のターム -->
-                        <?php echo get_post_type(); ?>
-                    </div>
-                    <!-- wpulikeのショートコード 記入場所-->
+                <!-- moreBtn -->
+                <div class="l-moreBtn u-right">
+                    <button class="c-moreBtn one u-center u-west">more</button>
                 </div>
-                ​
-                <!-- コンテンツ文章の抜粋 -->
-                <?php the_excerpt(); ?>
+                <!-- /moreBtn -->
 
             <?php endwhile; ?>
             <?php wp_reset_postdata(); ?>
-            <?php endif; ?>​
+        <?php endif; ?>
+
     </section>
+    <!-- /1 -->
 
 
-    <section>
-        <h2>レジャー</h2>​
+    <!-- 2 -->
+    <section class="l-articleList">
+        <h3 class="c-subHeading u-center">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_event_play.png" alt="体験・レジャー">
+        </h3>
 
         <!-- レジャーの記事を出力するループ -->
         <?php
@@ -113,65 +203,101 @@
             <?php while ($the_query->have_posts()) : ?>
                 <?php $the_query->the_post(); ?>
 
-                <!-- サムネイルの表示 -->
-                <div class="pic">
-                    <a href="<?php the_permalink(); ?>">
+                <!-- articleList -->
+                <div class="p-articleList u-grid">
+                    <!-- article -->
+                    <article class="p-article c-more2">
+                        <!-- imgArea -->
+                        <div class="p-imgArea">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
+                            <!-- thumbnail -->
+                            <a href="<?php the_permalink(); ?>" class="c-thumbnail">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <?php the_post_thumbnail('medium') ?>
+                                <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                <?php endif; ?>
+                            </a>
+                        </div>
+                        <!-- /imgArea -->
 
-                        <?php if (has_post_thumbnail()) : ?>
-                            <?php the_post_thumbnail('medium') ?>
-                        <?php else : ?>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
-                        <?php endif; ?>
-
-                    </a>
+                        <!-- textArea -->
+                        <div class="p-textArea">
+                            <div class="p-textContent u-flex">
+                                <div class="p-bookmark u-flex">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
+                                    <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
+                                </div>
+                                <div class="p-tag u-flex">
+                                    <div class="c-tag u-west u-mr15">
+                                        <?php
+                                        echo get_the_term_list($post->ID, 'area');
+                                        ?>
+                                    </div>
+                                    <div class="c-tag">
+                                        <?php
+                                        echo esc_html(get_post_type_object(get_post_type())->label);
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="c-title u-center"><?php the_title(); ?></div>
+                        </div>
+                        <!-- /textArea -->
+                    </article>
+                    <!-- /article -->
+                    <!-- article -->
+                    <!-- <article class="p-article c-more2"> -->
+                    <!-- imgArea -->
+                    <!-- <div class="p-imgArea">
+                            <img src="assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁"> -->
+                    <!-- thumbnail -->
+                    <!-- <a href="single.html">
+                                <img src="assets/images/takenoko1.jpg" class="c-thumbnail" alt="スポット写真">
+                            </a>
+                        </div> -->
+                    <!-- /imgArea -->
+                    <!-- textArea -->
+                    <!-- <div class="p-textArea">
+                            <div class="p-textContent u-flex">
+                                <div class="p-bookmark u-flex">
+                                    <img src="assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
+                                    <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
+                                </div>
+                                <div class="p-tag u-flex">
+                                    <div class="c-tag u-west u-mr15">県西部</div>
+                                    <div class="c-tag">スポット</div>
+                                </div>
+                            </div>
+                            <div class="c-title u-center">たけのこおいしい</div>
+                        </div> -->
+                    <!-- /textArea -->
+                    <!-- </article> -->
+                    <!-- /article -->
                 </div>
-                ​
-                <!-- ターム表示といいね -->
-                <div class="flex">
-                    <?php the_tags(); ?>
-                    <!-- タグの表示 -->
-                    <div class="term">
+                <!-- /articleList -->
 
-
-                        <!-- タグ検索できない -->
-                        <?php
-                        echo $term_slug;
-                        $tags = get_the_tags();
-                        if (!empty($tags)) {
-                            $echoTag = '';
-                            $separator = '<span> ♯ </span>';
-                        } else {
-                            echo "タグがありません";
-                        }
-                        foreach ($tags as $tag) {
-                            echo $tag->name;
-                            $echoTag .= $separator . '<span>' . $tag->name . '</span>';
-                        }
-                        //$echoTag = rtrim($html, $separator);
-                        echo $echoTag; ?>
-
-                    </div>
-
-                    <!-- カスタム投稿タイプのスラッグ表示 ダメならhttps://www.nxworld.net/wp-get-current-post-type.htmlで-->
-                    <div class="slug">
-                        <!-- タクソノミー(area)のターム -->
-                        <?php echo get_post_type(); ?>
-                    </div>
-                    <!-- wpulikeのショートコード 記入場所-->
+                <!-- moreBtn -->
+                <div class="l-moreBtn u-right">
+                    <button class="c-moreBtn two u-center u-west">more</button>
                 </div>
-                ​
-                <!-- コンテンツ文章の抜粋 -->
-                <?php the_excerpt(); ?>
+                <!-- /moreBtn -->
+
 
             <?php endwhile; ?>
             <?php wp_reset_postdata(); ?>
-            <?php endif; ?>​
+        <?php endif; ?>
+
     </section>
+    <!-- /2 -->
 
 
 
-    <section>
-        <h2>お祭り</h2>​
+    <!-- 3 -->
+    <section class="l-articleList">
+        <h3 class="c-subHeading u-center">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_event_festival.png" alt="お祭り">
+        </h3>
 
         <!-- お祭りの記事を出力するループ -->
         <?php
@@ -193,60 +319,64 @@
             <?php while ($the_query->have_posts()) : ?>
                 <?php $the_query->the_post(); ?>
 
-                <!-- サムネイルの表示 -->
-                <div class="pic">
-                    <a href="<?php the_permalink(); ?>">
 
-                        <?php if (has_post_thumbnail()) : ?>
-                            <?php the_post_thumbnail('medium') ?>
-                        <?php else : ?>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
-                        <?php endif; ?>
-
-                    </a>
+                <!-- articleList -->
+                <div class="p-articleList u-grid">
+                    <!-- article -->
+                    <article class="p-article c-more3">
+                        <!-- imgArea -->
+                        <div class="p-imgArea">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
+                            <!-- thumbnail -->
+                            <a href="<?php the_permalink(); ?>" class="c-thumbnail">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <?php the_post_thumbnail('medium') ?>
+                                <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                <?php endif; ?>
+                            </a>
+                        </div>
+                        <!-- /imgArea -->
+                        <!-- textArea -->
+                        <div class="p-textArea">
+                            <div class="p-textContent u-flex">
+                                <div class="p-bookmark u-flex">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
+                                    <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
+                                </div>
+                                <div class="p-tag u-flex">
+                                    <div class="c-tag u-west u-mr15">
+                                        <?php
+                                        echo get_the_term_list($post->ID, 'area');
+                                        ?>
+                                    </div>
+                                    <div class="c-tag">
+                                        <?php
+                                        echo esc_html(get_post_type_object(get_post_type())->label);
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="c-title u-center"><?php the_title(); ?></div>
+                        </div>
+                        <!-- /textArea -->
+                    </article>
+                    <!-- /article -->
                 </div>
-                ​
-                <!-- ターム表示といいね -->
-                <div class="flex">
-                    <?php the_tags(); ?>
-                    <!-- タグの表示 -->
-                    <div class="term">
+                <!-- /articleList -->
 
-
-                        <!-- タグ検索できない -->
-                        <?php
-                        echo $term_slug;
-                        $tags = get_the_tags();
-                        if (!empty($tags)) {
-                            $echoTag = '';
-                            $separator = '<span> ♯ </span>';
-                        } else {
-                            echo "タグがありません";
-                        }
-                        foreach ($tags as $tag) {
-                            echo $tag->name;
-                            $echoTag .= $separator . '<span>' . $tag->name . '</span>';
-                        }
-                        //$echoTag = rtrim($html, $separator);
-                        echo $echoTag; ?>
-
-                    </div>
-
-                    <!-- カスタム投稿タイプのスラッグ表示 ダメならhttps://www.nxworld.net/wp-get-current-post-type.htmlで-->
-                    <div class="slug">
-                        <!-- タクソノミー(area)のターム -->
-                        <?php echo get_post_type(); ?>
-                    </div>
-                    <!-- wpulikeのショートコード 記入場所-->
+                <!-- moreBtn -->
+                <div class="l-moreBtn u-right">
+                    <button class="c-moreBtn three u-center u-west">more</button>
                 </div>
-                ​
-                <!-- コンテンツ文章の抜粋 -->
-                <?php the_excerpt(); ?>
+                <!-- /moreBtn -->
 
             <?php endwhile; ?>
             <?php wp_reset_postdata(); ?>
-            <?php endif; ?>​
+        <?php endif; ?>
+
     </section>
+    <!-- /3 -->
 
 </main>
 <?php get_footer(); ?>
