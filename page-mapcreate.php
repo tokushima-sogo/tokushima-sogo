@@ -1,6 +1,21 @@
 <?php get_header(); ?>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/mapcreate.css">
 
+<!-- ３月８日参考 -->
+<!-- <main class="p-conceptBase__main">
+    <section id="p-mymap__main">
+        <div class="p-conceptBase__heading ">
+            <h2 class="p-conceptBase__heading__title u-color-indigo">MYマップ</h2>
+        </div>
+        <div class="l-mymap__map ">
+            <div class="p-mymap__map ">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.8158505320475!2d134.54896931521557!3d34.074234580599935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35536d61bee2c28b%3A0xd51dc9f056ace58d!2z5b6z5bO26aeF!5e0!3m2!1sja!2sjp!4v1614751955570!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+</main> -->
+
+
 <main>
     <div class="map_wrapper">
         <p>徳島駅から</p>

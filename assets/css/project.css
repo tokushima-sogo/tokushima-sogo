@@ -31,7 +31,7 @@
 
 /* 検索フォームページ */
 
-.p-seachArea {
+.p-searchArea {
   width: 84vw;
   right: 0;
   padding-top: 70px;
@@ -40,12 +40,13 @@
 }
 
 @media screen and (min-width: 1025px) {
-  .p-seachArea {
+  .p-searchArea {
     width: 45vw;
     right: 0;
-    padding-top: 70px;
-    position: absolute;
-    margin: 0 5vw 0 0;
+    padding-top: 20px;
+    position: fixed;
+    margin: 100px 5vw 0 0;
+    z-index: 5;
   }
 }
 
@@ -80,9 +81,9 @@ input[type="text"] {
 }
 
 /* ラジオボタン */
-input[type="radio"] {
+/* input[type="radio"] {
   display: none;
-}
+} */
 
 .p-radio__area {
   display: flex;
@@ -115,9 +116,9 @@ input[type="radio"] {
   }
 }
 
-input[type="submit"] {
+/* input[type="submit"] {
   display: none;
-}
+} */
 
 .p-submit__radio {
   display: flex;

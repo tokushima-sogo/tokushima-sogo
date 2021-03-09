@@ -57,9 +57,6 @@ add_filter('document_title_parts', 'tokushima_sogo_document_title_parts');
  */
 function add_tokushima_sogo_styles()
 {
-    // wp_enqueue_style('tokushima_sogo_reset_style', get_template_directory_uri() . '/assets/css/reset.css');
-    // wp_enqueue_style('tokushima_sogo_base_style', get_template_directory_uri() . '/assets/css/base.css');
-
     //トップページ
     if (is_front_page()) {
         //固定ページ
@@ -114,7 +111,8 @@ function add_tokushima_sogo_scripts()
     wp_enqueue_script('slick_carousel_js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js');
     wp_enqueue_script('slick_setting_js', get_template_directory_uri() . '/assets/js/slick.setting.js');
     wp_enqueue_script('common_js', get_template_directory_uri() . '/assets/js/common.js', '', '', true);
-    wp_enqueue_script('serchForm_js', get_template_directory_uri() . '/assets/js/seachForm.js', '', '', true);
+    // wp_enqueue_script('serchForm_js', get_template_directory_uri() . '/assets/js/searchForm.js', '', '', true);
+    wp_enqueue_script('searchandfilter', get_template_directory_uri() . '/assets/js/searchandfilter.js', '', '', true);
 }
 add_action('wp_enqueue_scripts', 'add_tokushima_sogo_scripts');
 
