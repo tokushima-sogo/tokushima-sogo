@@ -213,6 +213,10 @@
         <?php echo do_shortcode('[ditty_news_ticker id="219"]'); ?>
     </section>
     <!-- /news -->
+    <section class="p-instaArea">
+        <!-- instagram表示 ショートコード -->
+        <?php echo do_shortcode('[instagram-feed]'); ?>
+    </section>
 </main>
 
 

@@ -11,10 +11,7 @@
 <!-- </footer> -->
 
 <!-- footer -->
-<section class="p-instaArea">
-    <!-- instagram表示 ショートコード -->
-    <?php echo do_shortcode('[instagram-feed]'); ?>
-</section>
+
 <footer class="l-footer u-cWhite">
     <ul class="p-footer__contentsBlock1">
         <li class="p-footer__contentsParts">
