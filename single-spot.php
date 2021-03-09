@@ -7,17 +7,15 @@
 <!-- ヘッダーの読み込み -->
 <?php get_header(); ?>
 
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/single.css">
 
-
-
-
-<!-- パンくずリスト -->
 <main class="l-main">
+
     <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
             <!-- breadcrumbループstart -->
-            <span>トップ</span>
+            <a href="<?php home_url(); ?>"><span>HOME</span></a>
             <i class="fas fa-angle-right"></i>
             <span>エリア名</span>
             <i class="fas fa-angle-right"></i> <span>カテゴリ</span>
@@ -27,9 +25,8 @@
     </div>
     <!-- /breadCrumb -->
 
+    <!-- 詳細記事の出力 -->
 
-
-    <!-- 投稿記事の出力 -->
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : ?>
             <?php the_post(); ?>
@@ -54,98 +51,6 @@
             $remarks4  = get_field('spot_remarks4');
             $remarks5  = get_field('spot_remarks5');
             ?>
-
-
-
-            <!-- 本文 -->
-            <?php the_content(); ?>
-
-            <!-- スポットの名称 -->
-            <?php if ($spotname) : ?>
-                <?php echo $spotname; ?>
-            <?php endif; ?>
-
-            <!-- 緯度経度 -->
-            <?php
-            get_field('spot_lat');
-            get_field('spot_lag');
-            ?>
-
-
-            <!-- カスタムフィールド住所 -->
-            <?php if ($address) : ?>
-                <?php echo $address; ?>
-            <?php endif; ?>
-
-            <!-- カスタムフィールド電話 -->
-            <?php if ($tel) : ?>
-                <?php echo $tel; ?>
-            <?php endif; ?>
-
-            <!-- カスタムフィールド営業時間 -->
-            <?php if ($opentime) : ?>
-                <?php echo $opentime; ?>
-            <?php endif; ?>
-
-            <!-- カスタムフィールド定休日 -->
-            <?php if ($closetime) : ?>
-                <?php echo $closetime; ?>
-            <?php endif; ?>
-
-            <!-- カスタムフィールドURL -->
-            <?php if ($url) : ?>
-                <?php echo $url; ?>
-            <?php endif; ?>
-
-            <!-- カスタムフィールドsns -->
-            <?php if ($facebook) : ?>
-                <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
-            <?php endif; ?>
-
-            <?php if ($instagram) : ?>
-                <a href="<?php echo $instagram; ?>"><i class="fab fa-instagram-square"></i></a>
-            <?php endif; ?>
-
-            <?php if ($twitter) : ?>
-                <a href="<?php echo $twitter; ?>"><i class="fab fa-twitter-square"></i></a>
-            <?php endif; ?>
-
-            <!-- カスタムフィールド備考 -->
-            <?php if ($remarks1) : ?>
-                <?php echo $remarks1; ?>
-            <?php endif; ?>
-
-            <?php if ($remarks2) : ?>
-                <?php echo $remarks2; ?>
-            <?php endif; ?>
-
-            <?php if ($remarks3) : ?>
-                <?php echo $remarks3; ?>
-            <?php endif; ?>
-
-            <?php if ($remarks4) : ?>
-                <?php echo $remarks4; ?>
-            <?php endif; ?>
-
-            <?php if ($remarks5) : ?>
-                <?php echo $remarks5; ?>
-            <?php endif; ?>
-
-            <!-- いいねぼたん -->
-            <?php echo do_shortcode('[wp_ulike]'); ?>
-
-            <!-- いいねボタン -->
-            <?php if (function_exists('the_ratings')) {
-                the_ratings();
-            }
-            ?>
-
-            <!-- タグを持ってくる -->
-            <?php
-            echo get_the_term_list($post->ID, 'taxotag', 'タグ:', '|');
-            ?>
-            <!-- タグを持ってくる -->
-            <!-- <?php the_taxonomies(); ?> -->
 
             <!-- singleArticle -->
             <section class="l-singleArticle">
@@ -203,36 +108,22 @@
                             </ul>
                         </div>
 
-                        <!-- カスタムフィールド写真 -->
-                        <!-- <?php if ($picture1) : ?>
-                            <?php echo '<img src=" ' . $picture1 . '">'; ?>
-                        <?php endif; ?> -->
-
-                        <!-- <?php if ($picture2) : ?>
-                            <?php echo '<img src=" ' . $picture2 . '">'; ?>
-                        <?php endif; ?> -->
-
-                        <!-- <?php if ($picture3) : ?>
-                            <?php echo '<img src=" ' . $picture3 . '">'; ?>
-                        <?php endif; ?> -->
-
-
-
                         <!-- /slickSlider -->
                         <!-- singleArticle__description -->
                         <div class="p-singleArticle__description u-flex">
                             <!-- singleArticle__text -->
-                            <p class="c-singleArticle__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります！！</p>
+                            <p class="c-singleArticle__text"><?php the_content(); ?></p>
                             <!-- /singleArticle__text -->
                             <!-- singleTag -->
                             <div class="p-singleTag u-flex">
                                 <div class="c-singleTag__text u-center">登録タグ</div>
                                 <!-- /singleTag__text -->
                                 <!-- singleTagList -->
+
                                 <ul class="p-singleTagList__ul u-flex">
-                                    <li class="c-singleTagList__li">#タグ名</li>
-                                    <li class="c-singleTagList__li">#タグ名</li>
-                                    <li class="c-singleTagList__li">#タグ名</li>
+                                    <?php
+                                    echo get_the_term_list($post->ID, 'taxotag', '＃<li class="c-singleTagList__li>', '</li>＃<li class="c-singleTagList__li>', '</li>');
+                                    ?>
                                 </ul>
                                 <!-- /singleTagList -->
                             </div>
@@ -240,22 +131,23 @@
                             <!-- singleBtns -->
                             <div class="p-singleBtns u-center u-flex">
                                 <!-- いいね！ -->
-                                <a href="#" class="p-singleBtn c-btnTag u-center u-btnTag--fav">
-                                    <!-- ハートのsvg -->
+                                <!-- <a href="#" class="p-singleBtn c-btnTag u-center u-btnTag--fav">
+                                    ハートのsvg
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 792 637.038" preserveAspectRatio="none">
                                         <path class="1e6ff1b7-abfa-4d80-a212-8e109273a368" d="M896,512c0,212.077-384,384-384,384S128,724.077,128,512,384,192,512,384C640,192,896,299.923,896,512Z" transform="translate(-116 -272.11)" />
 
                                     </svg><span class="c-favCount">10</span>いいね！
-                                </a>
-                                <!-- /いいね！ -->
+                                </a> -->
                                 <!-- Myスポット -->
-                                <a href="#" class="p-singleBtn c-btnTag u-center u-btnTag--spot">
+                                <div class="p-singleBtn c-btnTag u-center u-btnTag--spot">
+                                    <!-- map登録ボタン -->
+                                    <?php echo do_shortcode('[wp_ulike]'); ?>
                                     <!-- スポットピンのSVG画像 -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.84 567.95" preserveAspectRatio="none">
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.84 567.95" preserveAspectRatio="none">
                                         <path class="cls-1" d="M209.92,0h0C94,0,0,94,0,209.92a209.25,209.25,0,0,0,17.11,83.15c5.09,11.79,19.24,35.19,19.75,36C80.14,399,126.26,470.6,171.2,542.22,182,559.37,196,568,209.92,568h0c14,0,27.94-8.58,38.72-25.73C293.58,470.6,339.7,399,383,329.08c.51-.82,14.65-24.22,19.74-36a209.08,209.08,0,0,0,17.12-83.15C419.84,94,325.85,0,209.92,0Zm0,300.64A89.65,89.65,0,1,1,299.56,211,89.64,89.64,0,0,1,209.92,300.64Z" />
-                                    </svg>
+                                    </svg> -->
                                     Myスポットに追加
-                                </a>
+                                </div>
                                 <!-- /Myスポット -->
                             </div>
                             <!-- /singleBtns -->
@@ -271,37 +163,104 @@
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1651.3821720249434!2d134.5495951999572!3d34.12678224624143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35536e006b61c58b%3A0xa1102dc23699b67!2z44Od44OD44OX44Kz44O844Oz!5e0!3m2!1sja!2sjp!4v1614947813235!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                             </div>
                         </div>
+                        <?php
+                        $location = get_field('location');
+                        if ($location) : ?>
+                            <div class="acf-map" data-zoom="16">
+                                <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
+                            </div>
+                        <?php endif; ?>
                         <!-- /singleMap -->
+
+
                         <!-- singleTable -->
                         <div class="l-singleTable">
                             <table class="p-singleTable">
                                 <tr class="c-singleTable__tr">
                                     <th class="c-singleTable__th">所在地</th>
-                                    <td class="c-singleTable__td">板野郡北島町中村宮北裏１２</td>
+                                    <td class="c-singleTable__td">
+                                        <!-- カスタムフィールド住所 -->
+                                        <?php if ($address) : ?>
+                                            <?php echo $address; ?>
+                                        <?php endif; ?>
+                                    </td>
                                 </tr>
                                 <tr class="c-singleTable__tr">
                                     <th class="c-singleTable__th">TEL</th>
-                                    <td class="c-singleTable__td">0120-333-333</td>
+                                    <td class="c-singleTable__td">
+                                        <!-- カスタムフィールド電話 -->
+                                        <?php if ($tel) : ?>
+                                            <?php echo $tel; ?>
+                                        <?php endif; ?>
+                                    </td>
                                 </tr>
                                 <tr class="c-singleTable__tr">
                                     <th class="c-singleTable__th">営業時間</th>
-                                    <td class="c-singleTable__td">10:00～19：00</td>
+                                    <td class="c-singleTable__td">
+                                        <!-- カスタムフィールド営業時間 -->
+                                        <?php if ($opentime) : ?>
+                                            <?php echo $opentime; ?>
+                                        <?php endif; ?>
+                                    </td>
                                 </tr>
                                 <tr class="c-singleTable__tr">
                                     <th class="c-singleTable__th">定休日</th>
-                                    <td class="c-singleTable__td">毎週日曜日</td>
+                                    <td class="c-singleTable__td">
+                                        <!-- カスタムフィールド定休日 -->
+                                        <?php if ($closetime) : ?>
+                                            <?php echo $closetime; ?>
+                                        <?php endif; ?>
+                                    </td>
                                 </tr>
                                 <tr class="c-singleTable__tr">
                                     <th class="c-singleTable__th">URL</th>
-                                    <td class="c-singleTable__td"><a href="#">http://www.yahoo.co.jp</a></td>
+                                    <td class="c-singleTable__td">
+                                        <!-- カスタムフィールドURL -->
+                                        <?php if ($url) : ?>
+                                            <a href="<?php echo $url; ?>"><?php echo $url; ?></a>
+                                        <?php endif; ?>
+                                    </td>
                                 </tr>
                                 <tr class="c-singleTable__tr">
+                                    <!-- カスタムフィールドsns -->
                                     <th class="c-singleTable__th">SNS</th>
-                                    <td class="c-singleTable__td"><a href="#">Twitter</a>・<a href="#">Facebook</a></td>
+                                    <td class="c-singleTable__td">
+                                        <?php if ($facebook) : ?>
+                                            <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
+                                        <?php endif; ?>
+                                        <?php if ($instagram) : ?>
+                                            <a href="<?php echo $instagram; ?>"><i class="fab fa-instagram-square"></i></a>
+                                        <?php endif; ?>
+                                        <?php if ($twitter) : ?>
+                                            <a href="<?php echo $twitter; ?>"><i class="fab fa-twitter-square"></i></a>
+                                        <?php endif; ?>
+                                    </td>
+
+
                                 </tr>
                                 <tr class="c-singleTable__tr">
+                                    <!-- カスタムフィールド備考 -->
                                     <th class="c-singleTable__th">備考</th>
-                                    <td class="c-singleTable__td"><i class="fas fa-parking"></i>
+                                    <td class="c-singleTable__td">
+                                        <?php if ($remarks1) : ?>
+                                            <?php echo $remarks1; ?>
+                                        <?php endif; ?>
+
+                                        <?php if ($remarks2) : ?>
+                                            <?php echo $remarks2; ?>
+                                        <?php endif; ?>
+
+                                        <?php if ($remarks3) : ?>
+                                            <?php echo $remarks3; ?>
+                                        <?php endif; ?>
+
+                                        <?php if ($remarks4) : ?>
+                                            <?php echo $remarks4; ?>
+                                        <?php endif; ?>
+
+                                        <?php if ($remarks5) : ?>
+                                            <?php echo $remarks5; ?>
+                                        <?php endif; ?>
                                     </td>
                                 </tr>
                             </table>
@@ -311,28 +270,19 @@
                     <!-- /singleArticle__info -->
                 </div>
                 <!-- /singleBody -->
+
+
             </section>
             <!-- /singleArticle -->
-
-
         <?php endwhile; ?>
     <?php endif; ?>
 
 
+    <!-- 関連記事の出力 -->
+    <!-- articleList -->
+    <section class="l-articleList">
+        <h3 class="c-subHeading u-center"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_single_common_related.png" alt="関連記事"></h3>
 
-
-
-
-
-
-
-
-    <section>
-        <h2>関連記事</h2>
-        ​
-        <!-- 関連記事のサブループ設定 -->
-        <!-- 表示されている記事の投稿タイプでターム記事をランダムで表示するループ -->
-        <!-- 【https://cotodama.co/get_posts_sub_loop/#i-8】 -->
         <?php
         global $post;
         $post_id = $post->ID;                         //投稿記事を取得する。
@@ -360,134 +310,125 @@
             <?php while ($the_query->have_posts()) : ?>
                 <?php $the_query->the_post(); ?>
 
-                <!-- サムネイルの表示 -->
-                <div class="pic">
-                    <a href="<?php the_permalink(); ?>">
-                        <?php if (has_post_thumbnail()) : ?>
-                            <?php the_post_thumbnail('medium') ?>
-                        <?php else : ?>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
-                        <?php endif; ?>
-                    </a>
-                </div>
-                ​
-                <!-- ターム表示といいね -->
-                <div class="flex">
+                <!-- articleList -->
+                <div class="p-articleList u-grid">
+                    <!-- article -->
+                    <article class="p-article">
+                        <!-- imgArea -->
+                        <div class="p-imgArea">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
+                            <!-- thumbnail -->
+                            <!-- <a href="single.html"> -->
+                            <!-- <img src="assets/images/takenoko1.jpg" class="c-thumbnail" alt="スポット写真"> -->
+                            <a href="<?php the_permalink(); ?>" class="c-thumbnail">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <?php the_post_thumbnail('medium') ?>
+                                <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                <?php endif; ?>
+                            </a>
+                            <!-- </a> -->
+                        </div>
+                        <!-- /imgArea -->
+                        <!-- textArea -->
+                        <div class="p-textArea">
+                            <div class="p-textContent u-flex">
+                                <div class="p-bookmark u-flex">
+                                    <img src="assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
+                                    <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
+                                </div>
 
-                    <!-- タクソノミースラッグ（ターム）の表示 -->
-                    <div class="term">
-                        <?php echo $term_slug; ?>
-                    </div>
+                                <div class="p-tag u-flex">
+                                    <div class="c-tag u-west u-mr15">
+                                        <?php
+                                        echo get_the_term_list($post->ID, 'area');
+                                        ?>
+                                    </div>
+                                    <div class="c-tag">
+                                        <?php
+                                        echo esc_html(get_post_type_object(get_post_type())->label);
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="c-title u-center"><?php the_title(); ?></div>
+                        </div>
+                        <!-- /textArea -->
+                    </article>
+                    <!-- /article -->
 
-                    <!-- カスタム投稿タイプのスラッグ表示 get_post_typeの方？-->
-                    <div class="slug">
-                        <!-- タクソノミー(area)のターム -->
-                        <?php echo $post_type; ?>
-                    </div>
+
+                    <!-- article -->
+                    <!-- <article class="p-article"> -->
+                    <!-- imgArea -->
+                    <!-- <div class="p-imgArea">
+                            <img src="assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁"> -->
+                    <!-- thumbnail -->
+                    <!-- <a href="single.html">
+                                <img src="assets/images/takenoko1.jpg" class="c-thumbnail" alt="スポット写真">
+                            </a>
+                        </div> -->
+                    <!-- /imgArea -->
+                    <!-- textArea -->
+                    <!-- <div class="p-textArea">
+                            <div class="p-textContent u-flex">
+                                <div class="p-bookmark u-flex">
+                                    <img src="assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
+                                    <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
+                                </div>
+                                <div class="p-tag u-flex">
+                                    <div class="c-tag u-west u-mr15">県西部</div>
+                                    <div class="c-tag">スポット</div>
+                                </div>
+                            </div>
+                            <div class="c-title u-center">たけのこおいしい</div>
+                        </div> -->
+                    <!-- /textArea -->
+                    <!-- </article> -->
+                    <!-- /article -->
+
+
+                    <!-- article -->
+                    <!-- <article class="p-article"> -->
+                    <!-- imgArea -->
+                    <!-- <div class="p-imgArea">
+                            <img src="assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁"> -->
+                    <!-- thumbnail -->
+                    <!-- <a href="single.html">
+                                <img src="assets/images/takenoko1.jpg" class="c-thumbnail" alt="スポット写真">
+                            </a>
+                        </div> -->
+                    <!-- /imgArea -->
+                    <!-- textArea -->
+                    <!-- <div class="p-textArea">
+                            <div class="p-textContent u-flex">
+                                <div class="p-bookmark u-flex">
+                                    <img src="assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
+                                    <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
+                                </div>
+                                <div class="p-tag u-flex">
+                                    <div class="c-tag u-west u-mr15">県西部</div>
+                                    <div class="c-tag">スポット</div>
+                                </div>
+                            </div>
+                            <div class="c-title u-center">たけのこおいしい</div>
+                        </div> -->
+                    <!-- /textArea -->
+                    <!-- </article> -->
+                    <!-- /article -->
+
                 </div>
-                ​
-                <!-- コンテンツ文章の抜粋 -->
-                <?php the_excerpt(); ?>
+                <!-- /articleList -->
+
+            <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
+        <?php endif; ?>
+
     </section>
-
-<?php endwhile; ?>
-<?php wp_reset_postdata(); ?>
-<?php endif; ?>
-
-
-<!-- articleList -->
-<section class="l-articleList">
-    <h3 class="c-subHeading u-center"><img src="assets/images/tl_single_common_related.png" alt="関連記事"></h3>
-    <!-- articleList -->
-    <div class="p-articleList u-grid">
-        <!-- article -->
-        <article class="p-article">
-            <!-- imgArea -->
-            <div class="p-imgArea">
-                <img src="assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
-                <!-- thumbnail -->
-                <a href="single.html">
-                    <img src="assets/images/takenoko1.jpg" class="c-thumbnail" alt="スポット写真">
-                </a>
-            </div>
-            <!-- /imgArea -->
-            <!-- textArea -->
-            <div class="p-textArea">
-                <div class="p-textContent u-flex">
-                    <div class="p-bookmark u-flex">
-                        <img src="assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
-                        <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
-                    </div>
-                    <div class="p-tag u-flex">
-                        <div class="c-tag u-west u-mr15">県西部</div>
-                        <div class="c-tag">スポット</div>
-                    </div>
-                </div>
-                <div class="c-title u-center">たけのこおいしい</div>
-            </div>
-            <!-- /textArea -->
-        </article>
-        <!-- /article -->
-        <!-- article -->
-        <article class="p-article">
-            <!-- imgArea -->
-            <div class="p-imgArea">
-                <img src="assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
-                <!-- thumbnail -->
-                <a href="single.html">
-                    <img src="assets/images/takenoko1.jpg" class="c-thumbnail" alt="スポット写真">
-                </a>
-            </div>
-            <!-- /imgArea -->
-            <!-- textArea -->
-            <div class="p-textArea">
-                <div class="p-textContent u-flex">
-                    <div class="p-bookmark u-flex">
-                        <img src="assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
-                        <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
-                    </div>
-                    <div class="p-tag u-flex">
-                        <div class="c-tag u-west u-mr15">県西部</div>
-                        <div class="c-tag">スポット</div>
-                    </div>
-                </div>
-                <div class="c-title u-center">たけのこおいしい</div>
-            </div>
-            <!-- /textArea -->
-        </article>
-        <!-- /article -->
-        <!-- article -->
-        <article class="p-article">
-            <!-- imgArea -->
-            <div class="p-imgArea">
-                <img src="assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
-                <!-- thumbnail -->
-                <a href="single.html">
-                    <img src="assets/images/takenoko1.jpg" class="c-thumbnail" alt="スポット写真">
-                </a>
-            </div>
-            <!-- /imgArea -->
-            <!-- textArea -->
-            <div class="p-textArea">
-                <div class="p-textContent u-flex">
-                    <div class="p-bookmark u-flex">
-                        <img src="assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
-                        <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
-                    </div>
-                    <div class="p-tag u-flex">
-                        <div class="c-tag u-west u-mr15">県西部</div>
-                        <div class="c-tag">スポット</div>
-                    </div>
-                </div>
-                <div class="c-title u-center">たけのこおいしい</div>
-            </div>
-            <!-- /textArea -->
-        </article>
-        <!-- /article -->
-    </div>
     <!-- /articleList -->
-</section>
-<!-- /articleList -->
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNNbWvrL46SW-8K-D0w6Haff4Vbcc4rRQ"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/assets/js/googlemap.js"></script>
 </main>
 <!-- /main -->
 

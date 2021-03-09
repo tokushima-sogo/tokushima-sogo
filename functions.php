@@ -154,3 +154,11 @@ function map_test_do()
 }
 add_action('wp_ajax_map_test_do', 'map_test_do');
 add_action('wp_ajax_nopriv_map_test_do', 'map_test_do');
+
+//カスタムフィールドgooglemapのAPIキー取得に関するコード
+function my_acf_google_map_api($api)
+{
+    $api['key'] = 'AIzaSyDNNbWvrL46SW-8K-D0w6Haff4Vbcc4rRQ';
+    return $api;
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');

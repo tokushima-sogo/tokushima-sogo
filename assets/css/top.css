@@ -578,7 +578,7 @@ body {
     animation-delay: 4.1s;
 }
 
-@-webkit-keyframes seconds {
+/* @-webkit-keyframes seconds {
     0% {
     opacity: 1;
     }
@@ -586,7 +586,7 @@ body {
     opacity: 0;
     left: -9999px;
     }
-}
+} */
 
 /* 0時の状態の時計 */
 #back-clock {
