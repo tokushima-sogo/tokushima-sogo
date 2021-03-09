@@ -6,15 +6,15 @@
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/googlemap.js"></script>
 <main class="l-main">
 
-    <!-- breadCrumb -->
+<!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
             <!-- breadcrumbループstart -->
             <a href="<?php home_url(); ?>"><span>HOME</span></a>
             <i class="fas fa-angle-right"></i>
-            <span>エリア名</span>
-            <i class="fas fa-angle-right"></i> <span>カテゴリ</span>
-            <i class="fas fa-angle-right"></i> <span>記事タイトル</span>
+            <span><?php echo get_the_term_list($post->ID, 'area') ?></span>
+            <i class="fas fa-angle-right"></i> <span><?php echo esc_html(get_post_type_object(get_post_type())->label); ?></span>
+            <i class="fas fa-angle-right"></i> <span><?php echo get_post()->post_title ?></span>
             <!-- breadcrumbループend -->
         </div>
     </div>
