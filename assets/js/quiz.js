@@ -8,10 +8,7 @@ draw
 */
 //スマホの画面直したとき，画面のみ再リロードさせる。
 
-
-
-
-// const PATH = "http://localhost/wp-content/themes/sogo/";
+// const PATH = "http://localhost/wp-content/themes/sogo/"; phpの中でパスをGETしている。
 //canvas設定
 const CANVAS = document.getElementById("canvas");
 const CTX = CANVAS.getContext("2d");
@@ -54,7 +51,8 @@ BGM_MP3.volume = 0.4;
 //重要なパラメーター
 const FPS = 10;
 let nextSwitchTime = 1000;      //次の問題までの時間
-let totalQuestionNumber = 10;   //総問題数【10個デフォルト】
+let totalQuestionNumber = 10;   //総問題数【10個がデフォルト】
+
 //[問題文,正解,不正解,不正解,不正解]
 let protoQuestions = [
     ["アジアで初めてベートーヴェンの交響曲第九番が演奏された地域はどこ？", "鳴門市", "徳島市", "小松島市", "吉野川市"],
