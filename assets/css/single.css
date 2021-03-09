@@ -1,29 +1,25 @@
-/* 【お願い】
-googlemapのサイズ指定は
-.acf-mapでお願いします。 */
-
-
 @charset "utf-8";
 
 /* =============
     Layout
 ================ */
 
-.acf-map {
+.l-singleArticle {
     width: 100%;
-    height: 400px;
-}
-.acf-map img {
-   max-width: inherit !important;
+    margin: 0 auto;
+    background: #fdfdfd;
 }
 
-.l-singleArticle {
+.l-singleHeader {
+    width: 90%;
     margin: 0 auto;
-    background: #ffffff;
 }
 
 .l-singleBody {
+    width: 90%;
+    margin: 0 auto;
     padding: 0;
+
 }
 
 /* slider */
@@ -41,7 +37,6 @@ googlemapのサイズ指定は
 /* マップ */
 .l-singleMap {
     width: 100%;
-    height:400px;
     margin: 0 auto;
     padding: 15px 0;
 }
@@ -125,7 +120,7 @@ googlemapのサイズ指定は
 }
 @media (min-width:1025px) {
     .p-singleTag {
-        padding: 30px 0;
+        padding: 30px 0 15px;
     }
 }
 
@@ -144,6 +139,7 @@ googlemapのサイズ指定は
 /* ボタンたち */
 .p-singleBtns {
     display: inline-block;
+    margin: 0 auto;
     width: 70%;
 }
 @media (min-width:400px) {
@@ -155,7 +151,7 @@ googlemapのサイズ指定は
 }
 @media (min-width:768px) {
     .p-singleBtns {
-        padding: 30px 0;
+        padding: 15px 0;
     }
 }
 
@@ -191,10 +187,17 @@ button.p-singleBtn {
         font-size: 1.8rem;
     }
 }
+@media (min-width:1025px) {
+    .p-singleBtn,
+    a.p-singleBtn,
+    button.p-singleBtn {
+        margin: 5px;
+    }
+}
 
 /* マップ～テーブル */
 .p-singleArticle__info {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     justify-content: center;
     flex-direction: column;
@@ -234,7 +237,7 @@ button.p-singleBtn {
 /* テーブル */
 .p-singleTable {
     width: 100%;
-    border: 1px solid #2d294f;
+    border: 1px solid #333333;
     border-collapse: collapse;
     vertical-align: middle;
 }
@@ -261,6 +264,7 @@ button.p-singleBtn {
     width: 280px;
     height: 320px;
     margin: 0 auto;
+    box-shadow: 0 0 3px #707070;
 }
 
 /* 額縁のクラス */
@@ -273,7 +277,7 @@ button.p-singleBtn {
 /* 額縁の下全体 */
 .p-textArea {
     height: 120px;
-    background-color:rgba(153,118,83,0.2);
+    background:#efebe8;
 }
 
 /* いいねとタグ */
@@ -295,32 +299,46 @@ button.p-singleBtn {
 ================ */
 
 /* 記事タイトル */
-.c-singleArticle__title {
+.c-heading {
     height: 30px;
     padding: 6px 0;
-    background: #2d294f;
-    color: #ffffff;
     font-size: 1.8rem;
     letter-spacing: 2px;
+    justify-content: center;
+    align-items: center;
 }
 @media (min-width:768px) {
-    .c-singleArticle__title {
+    .c-heading {
         height: 60px;
         font-size: 2.8rem;
         padding: 16px 0;
     }
 }
+.c-heading::before,
+.c-heading::after {
+    content: '';
+    width: 10%;
+    height: 4px;
+    border-radius: 2px;
+    background: #a7170b;
+}
+.c-heading::before {
+    margin-right: 20px;
+}
+.c-heading::after {
+    margin-left: 20px;
+}
 
 /* 記事テキスト */
 .c-singleArticle__text {
     margin: 0 auto;
-    padding: 10px 0;
+    padding: 20px 0;
     line-height: 1.5;
     font-size: 1.4rem;
 }
 @media (min-width:768px) {
     .c-singleArticle__text {
-        padding: 20px 0;
+        padding: 25px 0;
         font-size: 1.8rem
     }
 }
@@ -358,7 +376,7 @@ button.p-singleBtn {
 .c-singleTagList__li {
     padding: 5px;
     letter-spacing: 1px;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 }
 @media (min-width:400px) {
     .c-singleTagList__li {
@@ -368,7 +386,7 @@ button.p-singleBtn {
 @media (min-width:768px) {
     .c-singleTagList__li {
         padding: 14px;
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
 }
 
@@ -429,40 +447,32 @@ a.c-btnTag:hover svg {
 
 /* tableここから */
 .c-singleTable__tr {
-    height: 30px;
-    border: 1px solid #2d294f;
+    height: 60px;
 }
-@media (min-width:768px) {
-    .c-singleTable__tr {
-        height: 60px;
-    }
-}
+
 
 .c-singleTable__th,
 .c-singleTable__td {
-    padding: 8px;
-    font-size: 1.4rem;
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.6rem;
 }
 @media (min-width:768px) {
     .c-singleTable__th,
-    .c-singleTable__td{
-        padding: 21px;
+    .c-singleTable__td {
+        display: inline-block;
+        padding: 20px;
         font-size: 1.8rem;
     }
 }
 
 .c-singleTable__th {
-    width: 80px;
-    background: #2d294f;
-    color: #ffffff;
+    background: #f6f4ec;
+    border: 1px solid #707070;
     letter-spacing: 1px;
 }
 @media (min-width:768px) {
-    .c-singleTable__th {
-        width: 160px;
-    }
-}
-@media (min-width:1025px) {
     .c-singleTable__th {
         width: 25%;
     }
@@ -470,16 +480,17 @@ a.c-btnTag:hover svg {
 
 .c-singleTable__td {
     background: #ffffff;
+    border: 1px solid #707070;
+    font-size: 1.6rem;
 }
 @media (min-width:768px) {
     .c-singleTable__td {
+        width: 75%;
         font-size: 1.8rem;
     }
 }
-@media (min-width:1025px) {
-    .c-singleTable__td {
-        width: 75%;
-    }
+.c-singleTable__td a {
+    color: #cf7e7c;
 }
 /* tableここまで */
 
@@ -502,7 +513,7 @@ a.c-btnTag:hover svg {
     height: 160px;
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 50%;
+    top: 54%;
     left: 50%;
 }
 

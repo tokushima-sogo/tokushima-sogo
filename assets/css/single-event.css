@@ -1,20 +1,28 @@
 @charset "utf-8";
 
-/* l */
-.l-main {
-    padding-top: 70px;
-}
-@media (min-width:1025px) {
-    .l-main {
-        padding-top: 100px;
-    }
-}
+/* =============
+    Layout
+================ */
 
 .l-singleArticle {
+    width: 100%;
     margin: 0 auto;
-    background: #eae4ad;
+    background: #fdfdfd;
 }
 
+.l-singleHeader {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.l-singleBody {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+
+}
+
+/* slider */
 .l-slickSlider {
     width: 100%;
     margin: 0 auto;
@@ -26,14 +34,9 @@
     }
 }
 
-/* 記事文字部分 */
-.l-singleBody {
-    padding: 0;
-}
-
 /* テーブル */
 .l-singleTable {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     padding: 10px 0 30px;
 }
@@ -43,29 +46,12 @@
     }
 }
 
-/* project */
-/* パンくずナビゲーション */
-.p-breadCrumb {
-    width: 100%;
-    padding: 10px;
-    font-size: 10px;
-}
-@media (min-width:768px) {
-    .p-breadCrumb {
-        padding: 20px;
-        font-size: 20px;
-    }
-}
-.p-breadCrumb__inner>span {
-    padding: 3px;
-    letter-spacing: 1px;
-}
-.fa-angle-right {
-    color: #2d294f;
-}
-/* /パンくずナビゲーション */
 
-/* slider～タグまで */
+/* =============
+    Project
+================ */
+
+/* slider～タグ */
 .p-singleArticle__item {
     width: 100%;
     margin: 0 auto;
@@ -110,7 +96,7 @@
 }
 @media (min-width:1025px) {
     .p-singleTag {
-        padding: 30px 0;
+        padding: 30px 0 15px;
     }
 }
 
@@ -129,19 +115,15 @@
 /* ボタンたち */
 .p-singleBtns {
     display: inline-block;
+    width: 100%;
     padding: 10px 0;
-    justify-content: center;
 }
 @media (min-width:768px) {
     .p-singleBtns {
-        padding: 30px 0;
+        padding: 15px 0;
     }
 }
-@media (min-width:1025px) {
-    .p-singleBtns {
-        justify-content: flex-end;
-    }
-}
+
 
 /* ボタン単体 */
 .p-singleBtn,
@@ -155,18 +137,17 @@ button.p-singleBtn {
     -ms-user-select: none;
     user-select: none;
     -webkit-transition: all 0.3s;
-    font-size: 12px;
+    font-size: 1.2rem;
     transition: all 0.3s;
     letter-spacing: 1px;
     border-radius: 13px;
-    text-align: center;
     vertical-align: middle;
 }
 @media (min-width:768px) {
     .p-singleBtn,
     a.p-singleBtn,
     button.p-singleBtn {
-        font-size: 18px;
+        font-size: 1.8rem;
     }
 }
 
@@ -174,8 +155,9 @@ button.p-singleBtn {
 /* テーブル */
 .p-singleTable {
     width: 100%;
-    border: 1px solid #000000;
+    border: 1px solid #333333;
     border-collapse: collapse;
+    vertical-align: middle;
 }
 @media (min-width:1025px) {
     .p-singleTable {
@@ -184,36 +166,55 @@ button.p-singleBtn {
 }
 }
 
-/* c */
+
+/* =============
+    Compornent
+================ */
+
 /* 記事タイトル */
-.c-singleArticle__title {
+.c-heading {
     height: 30px;
     padding: 6px 0;
-    background: #2d294f;
-    color: #f8efef;
-    text-align: center;
-    font-size: 18px;
+    font-size: 1.8rem;
     letter-spacing: 2px;
+    justify-content: center;
+    align-items: center;
 }
 @media (min-width:768px) {
-    .c-singleArticle__title {
+    .c-heading {
         height: 60px;
-        font-size: 28px;
+        font-size: 2.8rem;
         padding: 16px 0;
     }
 }
+.c-heading::before,
+.c-heading::after {
+    content: '';
+    width: 10%;
+    height: 4px;
+    border-radius: 2px;
+    background: #a7170b;
+}
+.c-heading::before {
+    margin-right: 20px;
+}
+.c-heading::after {
+    margin-left: 20px;
+}
+
+
 
 /* 記事テキスト */
 .c-singleArticle__text {
     margin: 0 auto;
     padding: 10px 0;
     line-height: 1.5;
-    font-size: 14px;
+    font-size: 1.4rem;
 }
 @media (min-width:768px) {
     .c-singleArticle__text {
         padding: 20px 0;
-        font-size: 18px
+        font-size: 1.8rem
     }
 }
 @media (min-width:1025px) {
@@ -230,10 +231,9 @@ button.p-singleBtn {
     margin: 0 auto;
     padding: 6px 12px;
     border-radius: 20px;
-    border: 1px solid #000000;
+    border: 1px solid #333333;
     font-size: 1.6rem;
     letter-spacing: 1px;
-    text-align: center;
 }
 @media (min-width:400px) {
     .c-singleTag__text {
@@ -244,7 +244,7 @@ button.p-singleBtn {
     .c-singleTag__text {
         width: 155px;
         padding: 14px;
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
 }
 
@@ -262,14 +262,14 @@ button.p-singleBtn {
 @media (min-width:768px) {
     .c-singleTagList__li {
         padding: 14px;
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
 }
 
 /* ボタンのタグ */
 a.c-btnTag {
     padding: 14px 14px 13px 50px;
-    color: #000000;
+    color: #333333;
     background: #f5f5f5;
 }
 @media (min-width:768px) {
@@ -312,79 +312,68 @@ a.c-btnTag:hover svg {
 
 /* いいねカウント数 */
 .c-favCount {
-    padding: 2px;
-    font-size: 18px;
-}
-
-/* 基本情報テーブル */
-.c-singleTable__tr {
-    height: 30px;
-    border: 1px solid #2d294f;
+    padding: 1px;
 }
 @media (min-width:768px) {
-    .c-singleTable__tr {
-        height: 60px;
-    }
+    .c-favCount {
+    padding: 2px;
 }
+}
+
+/* tableここから */
+.c-singleTable__tr {
+    height: 60px;
+}
+
 
 .c-singleTable__th,
 .c-singleTable__td {
-    padding: 8px;
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.6rem;
 }
 @media (min-width:768px) {
     .c-singleTable__th,
-    .c-singleTable__td{
-        padding: 21px;
+    .c-singleTable__td {
+        display: inline-block;
+        padding: 20px;
+        font-size: 1.8rem;
     }
 }
 
 .c-singleTable__th {
-    width: 80px;
-    background: #2d294f;
-    color: #f8efef;
-    font-size: 1.4rem;
+    background: #f6f4ec;
+    border: 1px solid #707070;
     letter-spacing: 1px;
 }
 @media (min-width:768px) {
-    .c-singleTable__th {
-        width: 160px;
-        font-size: 1.8rem;
-    }
-}
-@media (min-width:1025px) {
     .c-singleTable__th {
         width: 25%;
     }
 }
 
 .c-singleTable__td {
-    background: #f8efef;
-    font-size: 1.4rem;
+    background: #ffffff;
+    border: 1px solid #707070;
+    font-size: 1.6rem;
 }
 @media (min-width:768px) {
-    .c-singleTable__td{
+    .c-singleTable__td {
+        width: 75%;
         font-size: 1.8rem;
     }
 }
-@media (min-width:1025px) {
-    .c-singleTable__td {
-        width: 75%;
-    }
+.c-singleTable__td a {
+    color: #cf7e7c;
 }
-/* テーブルend */
+/* tableここまで */
 
-/* u */
-/* flex */
-.u-flex {
-    display: flex;
-}
 
-/* margin */
-.u-mb10 {
-    margin-bottom: 10px;
-}
+/* =============
+    Utility
+================ */
 
-/* ボタン */
 /* いいね！アイコン */
 a.u-btnTag--fav svg {
     fill: #d37b6a;
