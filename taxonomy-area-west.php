@@ -71,7 +71,6 @@
                     <?php while ($the_query->have_posts()) : ?>
                         <?php $the_query->the_post(); ?>
 
-
                         <article class="p-article c-more1">
                             <!-- imgArea -->
                             <div class="p-imgArea">

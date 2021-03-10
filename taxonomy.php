@@ -4,7 +4,7 @@
     <section class="l-description">
         <div class="p-description">
             <h2 class="c-subHeading u-center">
-                <img src="./assets/images/tl_taxonomy_seachResult.png" alt="検索結果">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_taxonomy_seachResult.png" alt="検索結果">
             </h2>
         </div>
     </section>
@@ -14,6 +14,7 @@
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : ?>
             <?php the_post(); ?>
+
             <section class="l-articleList">
                 <!-- articleList -->
                 <div class="p-articleList u-grid">
@@ -35,10 +36,6 @@
                         <!-- textArea -->
                         <div class="p-textArea">
                             <div class="p-textContent u-flex">
-                                <div class="p-bookmark u-flex">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
-                                    <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
-                                </div>
                                 <div class="p-tag u-flex">
                                     <div class="c-tag u-west u-mr15">
                                         <?php
@@ -61,7 +58,12 @@
                         <button class="c-moreBtn one u-center u-west">more</button>
                     </div>
                     <!-- /moreBtn -->
-                <?php endwhile; ?>
-            <?php endif; ?>
+                </div>
+            </section>
+
+        <?php endwhile; ?>
+    <?php endif; ?>
+
 </main>
+
 <?php get_footer(); ?>

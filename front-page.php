@@ -5,18 +5,13 @@
 <main class="l-main">
 
     <!-- リフト部分 -->
-
-
     <div class="p-main__liftGroup__parts">
         <div><img class="c-main__liftLineImg u-bgWhite" src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_liftLine03.png" alt=""></div>
         <div id="elevator" class="c-main__liftBodyImg">
             <img class="c-ropeway" src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_ropeway.png" alt="">
         </div>
     </div>
-
     <!-- リフト部分 -->
-
-
 
     <!-- department -->
     <div class="l-department">
@@ -26,8 +21,8 @@
             <img class="c-buildingTablet" src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_front_tablet.jpg" alt="建物">
             <img class="c-buildingPc u-m0A" src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_front_web.png" alt="建物">
             <!-- <img src="assets/images/img_front_catchCopy.png" class="c-catchCopy" alt="＼定員無制限／エレベーターに乗って見つけよう！あ・わくわくする徳島"> -->
-            <!-- 6F -->
 
+            <!-- 6F -->
             <section id="js_6f" class="p-departmentFloor u-m0A">
                 <div class="p-floorBlock6">
                     <h2 class="c-floorName u-bg2d294f u-mb10 u-white">特設会場</h2>
@@ -48,19 +43,17 @@
                     </div>
                 </div>
             </section>
-            <!-- 5F -->
 
+            <!-- 5F -->
             <section id="js_5f" class="p-departmentFloor u-m0A">
                 <div class="p-floorBlock5">
                     <div class="p-floorLink">
                         <a href="<?php echo home_url('area/east') ?>">
                             <h2 class="c-floorName u-bg2d294f u-mb10 u-white">県東部</h2>
-
                             <div class="p-floorImg ">
                                 <img class="c-satomusume" src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_east01.png" class="c-floorSpot" alt="里むすめ">
                                 <img class="c-beer" src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_east02.png" class="c-floorSpot u-floorSpot--2nd" alt="上勝ビール">
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_map_east.png" class="c-floorMapHigasi" alt="県東部">
-
                             </div>
                         </a>
                     </div>
@@ -72,20 +65,17 @@
                 <div class="p-floorBlock4">
                     <div class="p-floorLink ">
                         <a href="<?php echo home_url('area/west') ?>">
-
                             <h2 class="c-floorName c-floorNameRight u-bg2d294f u-mb10 u-white ">県西部</h2>
-
                             <div class="p-floorImgNisi">
                                 <img class="c-soba" src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_west01.png" class="c-floorSpot" alt="祖谷そば">
                                 <img class="c-tutuji" src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_west02.png" class="c-floorSpot u-floorSpot--2nd" alt="オンツツジ">
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_map_west.png" class="c-floorMapNisi" alt="県西部">
-
-
                             </div>
                         </a>
                     </div>
                 </div>
             </section>
+
             <!-- 3F -->
             <section id="js_3f" class="p-departmentFloor u-m0A">
                 <div class="p-floorBlock3">
@@ -103,6 +93,7 @@
                     </div>
                 </div>
             </section>
+
             <!-- 2F -->
             <section id="js_2f" class="p-departmentFloor u-m0A">
                 <div class="p-floorBlock2">
@@ -119,6 +110,7 @@
                 </div>
             </section>
         </div>
+
         <!-- 1F -->
         <section id="js_1f" class="p-departmentFloor u-m0A u-bgEAE4AD">
             <div class="p-floorBlock1">
@@ -140,8 +132,8 @@
                 </div>
             </div>
         </section>
-
         <!-- /elevatorArea -->
+
         <!-- B1 -->
         <section id="page-link" class="p-departmentFloor u-bgblack u-red">
             <a href="#js_6f" class="c-horrorLink">
@@ -154,6 +146,7 @@
         </section>
     </div>
     <!-- /department -->
+
     <!-- news -->
     <section class="p-newsArea u-bgWhite">
         <div class="c-newsArea">
@@ -178,8 +171,6 @@
         </ul> -->
         <div class="c-footerImg"></div>
     </section>
-
-
 
 </main>
 <!-- ここからフッター -->

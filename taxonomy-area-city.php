@@ -78,7 +78,7 @@
                         <!-- /imgArea -->
 
                         <div class="p-textArea">
-                            <div class="p-textContent u-flex">
+                            <div class="p-textContent">
                                 <div class="p-tag u-flex">
                                     <div class="c-tag u-city u-mr15">
                                         <?php echo get_the_term_list($post->ID, 'area') ?>
@@ -156,7 +156,7 @@
                         <!-- /imgArea -->
 
                         <div class="p-textArea">
-                            <div class="p-textContent u-flex">
+                            <div class="p-textContent">
                                 <div class="p-tag u-flex">
                                     <div class="c-tag u-city u-mr15">
                                         <?php echo get_the_term_list($post->ID, 'area') ?>
@@ -235,7 +235,7 @@
                         <!-- /imgArea -->
 
                         <div class="p-textArea">
-                            <div class="p-textContent u-flex">
+                            <div class="p-textContent">
                                 <div class="p-tag u-flex">
                                     <div class="c-tag u-city u-mr15">
                                         <?php echo get_the_term_list($post->ID, 'area') ?>

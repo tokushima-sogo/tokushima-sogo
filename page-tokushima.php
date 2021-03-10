@@ -26,7 +26,7 @@
                 </p>
                 <div class="p-img u-flex">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/img_page_tokushima_otaniyaki01.jpg" class="c-img" alt="大谷焼">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/img_page_tokushima_aizome01.jpg" class="c-img" alt="" 藍染め>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/img_page_tokushima_aizome01.jpg" class="c-img" alt="藍染め">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/img_page_tokushima_shijiraori01.jpg" class="c-img" alt="しじら織">
                 </div>
                 <p class="c-description__text">
@@ -40,7 +40,5 @@
     <!-- /page -->
 </main>
 <!-- /main -->
-
-
 
 <?php get_footer(); ?>

@@ -132,6 +132,8 @@ function add_tokushima_sogo_styles()
 
     } else if (is_tax()) {
         wp_enqueue_style('tokushima_sogo_taxonomy_style', get_template_directory_uri() . '/assets/css/taxonomy.css');
+    } else if (is_404()) {
+        wp_enqueue_style('tokushima_sogo_404', get_template_directory_uri() . '/assets/css/404.css');
     }
 }
 add_action('wp_enqueue_scripts', 'add_tokushima_sogo_styles');
