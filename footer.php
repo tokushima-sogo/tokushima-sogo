@@ -91,7 +91,7 @@
                     <li><a href="<?php echo esc_url(home_url('/aboutsite')); ?>">このサイトについて</a></li>
                     <li><a href="<?php echo esc_url(home_url('/privacy')); ?>">プライバシーポリシー</a></li>
                     <li><a href="<?php echo esc_url(home_url('/contact')); ?>">お問い合わせ</a></li>
-                    <li><a href="#">サイトの使い方</a></li>
+                    <li><a href="<?php echo esc_url(home_url()); ?>#front_info">サイトの使い方</a></li>
                     <li><a href="<?php echo esc_url(home_url('/tokushima')); ?>">徳島県について</a></li>
                 </ul>
                 <!-- /このサイトについてなど -->
@@ -115,6 +115,8 @@
     <!-- /copyRight -->
 </footer>
 <!-- /footer -->
+
+<?php wp_footer(); ?>
 </body>
 
 </html>

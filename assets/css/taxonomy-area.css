@@ -77,9 +77,10 @@
 }
 
 /* 額縁の下全体 */
+/* 額縁の下全体 */
 .p-textArea {
     height: 120px;
-    background:#efebe8;
+    background: #efebe8;
 }
 
 /* いいねとタグ */
@@ -181,7 +182,7 @@
 }
 
 /* サムネイル画像 */
-.c-thumbnail {
+.wp-post-image {
     width: 240px;
     height: 160px;
     position: absolute;
@@ -218,6 +219,9 @@
     background: #2D294F;
     border: 1px solid #707070;
     font-size: 1.2rem;
+}
+.c-tag a {
+    color: #FFFFFF;
 }
 
 /* スポット名称 */

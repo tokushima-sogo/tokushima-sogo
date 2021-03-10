@@ -1,10 +1,4 @@
-<!-- 引継ぎ
-CSSを消すこと。
-いいねのプラグインコード
-サムネイルのクラスをどうするか -->
-
 <?php get_header(); ?>
-<link href="<?php echo get_template_directory_uri(); ?>/assets/css/archive-west.css " rel="stylesheet">
 
 
 <main class="l-main">
@@ -66,21 +60,22 @@ CSSを消すこと。
 
         <section class="l-articleList">
             <!-- タイトルの表示 -->
-            <h3 id="west_spot" class="c-subHeading u-center">
+            <span id="west_spot"></span>
+            <h3 class="c-subHeading u-center">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_spot.png" alt="スポット">
             </h3>
+            <div class="p-articleList u-grid">
+                <!-- ループ開始 -->
+                <?php $the_query = new WP_Query($args); ?>
+                <?php if ($the_query->have_posts()) : ?>
+                    <?php while ($the_query->have_posts()) : ?>
+                        <?php $the_query->the_post(); ?>
 
-            <!-- ループ開始 -->
-            <?php $the_query = new WP_Query($args); ?>
-            <?php if ($the_query->have_posts()) : ?>
-                <?php while ($the_query->have_posts()) : ?>
-                    <?php $the_query->the_post(); ?>
 
-                    <div class="p-articleList u-grid">
                         <article class="p-article c-more1">
                             <!-- imgArea -->
                             <div class="p-imgArea">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/frame_archive_common_thumbFrame.png" class="c-frame" alt="額縁">
                                 <!-- thumbnail -->
                                 <a href="<?php the_permalink(); ?>" class="c-thumbnail">
                                     <?php if (has_post_thumbnail()) : ?>
@@ -93,16 +88,17 @@ CSSを消すこと。
                             <!-- /imgArea -->
 
                             <div class="p-textArea">
-                                <div class="p-textContent u-flex">
-                                    <div class="p-bookmark u-flex">
-                                        <img src="assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
-                                        <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
-                                    </div>
+                                <div class="p-textContent">
                                     <div class="p-tag u-flex">
-                                        <div class="c-tag u-west u-mr15"><?php echo get_the_term_list($post->ID, 'area') ?></div>
-                                        <div class="c-tag"><?php echo get_post_type(); ?></div>
+                                        <div class="c-tag u-west u-mr15">
+                                            <?php echo get_the_term_list($post->ID, 'area') ?>
+                                        </div>
+                                        <div class="c-tag">
+                                            <?php echo esc_html(get_post_type_object(get_post_type())->label); ?>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="c-title u-center"><?php the_title(); ?></div>
                             </div>
                             <!-- articleList -->
 
@@ -113,11 +109,13 @@ CSSを消すこと。
                                 <?php the_excerpt(); ?>
                             </div>
                         </article>
-                    </div>
-
-                <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?>
-            <?php endif; ?>
+                    <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                <?php endif; ?>
+            </div>
+            <div class="l-moreBtn u-right">
+                <button class="c-moreBtn one u-center u-west">more</button>
+            </div>
         </section>
 
 
@@ -140,21 +138,21 @@ CSSを消すこと。
 
         <section class="l-articleList">
             <!-- タイトルの表示 -->
-            <h3 id="west_gourmet" class="c-subHeading u-center">
+            <span id="west_gourmet"></span>
+            <h3 class="c-subHeading u-center">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_gourmet.png" alt="グルメ">
             </h3>
+            <div class="p-articleList u-grid">
+                <!-- spot -->
+                <?php $the_query = new WP_Query($args); ?>
+                <?php if ($the_query->have_posts()) : ?>
+                    <?php while ($the_query->have_posts()) : ?>
+                        <?php $the_query->the_post(); ?>
 
-            <!-- spot -->
-            <?php $the_query = new WP_Query($args); ?>
-            <?php if ($the_query->have_posts()) : ?>
-                <?php while ($the_query->have_posts()) : ?>
-                    <?php $the_query->the_post(); ?>
-
-                    <div class="p-articleList u-grid">
-                        <article class="p-article c-more1">
+                        <article class="p-article c-more2">
                             <!-- imgArea -->
                             <div class="p-imgArea">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/frame_archive_common_thumbFrame.png" class="c-frame" alt="額縁">
                                 <!-- thumbnail -->
                                 <a href="<?php the_permalink(); ?>" class="c-thumbnail">
                                     <?php if (has_post_thumbnail()) : ?>
@@ -167,16 +165,17 @@ CSSを消すこと。
                             <!-- /imgArea -->
 
                             <div class="p-textArea">
-                                <div class="p-textContent u-flex">
-                                    <div class="p-bookmark u-flex">
-                                        <img src="assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
-                                        <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
-                                    </div>
+                                <div class="p-textContent">
                                     <div class="p-tag u-flex">
-                                        <div class="c-tag u-west u-mr15"><?php echo get_the_term_list($post->ID, 'area') ?></div>
-                                        <div class="c-tag"><?php echo get_post_type(); ?></div>
+                                        <div class="c-tag u-west u-mr15">
+                                            <?php echo get_the_term_list($post->ID, 'area') ?>
+                                        </div>
+                                        <div class="c-tag">
+                                            <?php echo esc_html(get_post_type_object(get_post_type())->label); ?>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="c-title u-center"><?php the_title(); ?></div>
                             </div>
                             <!-- articleList -->
 
@@ -187,11 +186,13 @@ CSSを消すこと。
                                 <?php the_excerpt(); ?>
                             </div>
                         </article>
-                    </div>
-
-                <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?>
-            <?php endif; ?>
+                    <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                <?php endif; ?>
+            </div>
+            <div class="l-moreBtn u-right">
+                <button class="c-moreBtn two u-center u-west">more</button>
+            </div>
         </section>
 
         <!-- 西部のお土産記事を出力 -->
@@ -211,21 +212,22 @@ CSSを消すこと。
         ?>
         <section class="l-articleList">
             <!-- タイトルの表示 -->
-            <h3 id="west_shop" class="c-subHeading u-center">
+            <span id="west_shop"></span>
+            <h3 class="c-subHeading u-center">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_shop.png" alt="ショップ">
             </h3>
+            <div class="p-articleList u-grid">
+                <!-- spot -->
+                <?php $the_query = new WP_Query($args); ?>
+                <?php if ($the_query->have_posts()) : ?>
+                    <?php while ($the_query->have_posts()) : ?>
+                        <?php $the_query->the_post(); ?>
 
-            <!-- spot -->
-            <?php $the_query = new WP_Query($args); ?>
-            <?php if ($the_query->have_posts()) : ?>
-                <?php while ($the_query->have_posts()) : ?>
-                    <?php $the_query->the_post(); ?>
 
-                    <div class="p-articleList u-grid">
-                        <article class="p-article c-more1">
+                        <article class="p-article c-more3">
                             <!-- imgArea -->
                             <div class="p-imgArea">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/frame_archive_common_thumbFrame.png" class="c-frame" alt="額縁">
                                 <!-- thumbnail -->
                                 <a href="<?php the_permalink(); ?>" class="c-thumbnail">
                                     <?php if (has_post_thumbnail()) : ?>
@@ -238,16 +240,17 @@ CSSを消すこと。
                             <!-- /imgArea -->
 
                             <div class="p-textArea">
-                                <div class="p-textContent u-flex">
-                                    <div class="p-bookmark u-flex">
-                                        <img src="assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
-                                        <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
-                                    </div>
+                                <div class="p-textContent">
                                     <div class="p-tag u-flex">
-                                        <div class="c-tag u-west u-mr15"><?php echo get_the_term_list($post->ID, 'area') ?></div>
-                                        <div class="c-tag"><?php echo get_post_type(); ?></div>
+                                        <div class="c-tag u-west u-mr15">
+                                            <?php echo get_the_term_list($post->ID, 'area') ?>
+                                        </div>
+                                        <div class="c-tag">
+                                            <?php echo esc_html(get_post_type_object(get_post_type())->label); ?>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="c-title u-center"><?php the_title(); ?></div>
                             </div>
                             <!-- articleList -->
 
@@ -258,11 +261,15 @@ CSSを消すこと。
                                 <?php the_excerpt(); ?>
                             </div>
                         </article>
-                    </div>
 
-                <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?>
-            <?php endif; ?>
+
+                    <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                <?php endif; ?>
+            </div>
+            <div class="l-moreBtn u-right">
+                <button class="c-moreBtn three u-center u-west">more</button>
+            </div>
         </section>
 </main>
 

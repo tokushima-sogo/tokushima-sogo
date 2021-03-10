@@ -304,7 +304,7 @@
                     <article class="p-article">
                         <!-- imgArea -->
                         <div class="p-imgArea">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/frame_archive_common_thumbFrame.png" class="c-frame" alt="額縁">
                             <!-- thumbnail -->
                             <!-- <a href="single.html"> -->
                             <!-- <img src="assets/images/takenoko1.jpg" class="c-thumbnail" alt="スポット写真"> -->

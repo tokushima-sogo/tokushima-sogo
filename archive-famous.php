@@ -1,10 +1,3 @@
-<!-- 【引継ぎ事項】
-１,クラス名は適当，命名ルールに合わせて直す必要あり。
-２,cssは作っていない。
-３,wpulinkのショートコードは埋め込んでいない。
-４，タグ検索ができない！小川さん助けて！！
--->
-
 <?php get_header(); ?>
 
 <main class="l-main">
@@ -66,7 +59,7 @@
                     <article class="p-article c-more1">
                         <!-- imgArea -->
                         <div class="p-imgArea">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ frame_archive_common_thumbFrame.png" class="c-frame" alt="額縁">
                             <!-- thumbnail -->
                             <a href="<?php the_permalink(); ?>" class="c-thumbnail">
                                 <?php if (has_post_thumbnail()) : ?>
@@ -148,7 +141,7 @@
                     <article class="p-article c-more3">
                         <!-- imgArea -->
                         <div class="p-imgArea">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ frame_archive_common_thumbFrame.png" class="c-frame" alt="額縁">
                             <!-- thumbnail -->
                             <a href="<?php the_permalink(); ?>" class="c-thumbnail">
                                 <?php if (has_post_thumbnail()) : ?>
@@ -161,11 +154,7 @@
                         <!-- /imgArea -->
                         <!-- textArea -->
                         <div class="p-textArea">
-                            <div class="p-textContent u-flex">
-                                <div class="p-bookmark u-flex">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
-                                    <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
-                                </div>
+                            <div class="p-textContent">
                                 <div class="p-tag u-flex">
                                     <div class="c-tag u-west u-mr15">
                                         <?php
@@ -233,7 +222,7 @@
                     <article class="p-article c-more3">
                         <!-- imgArea -->
                         <div class="p-imgArea">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ frame_archive_common_thumbFrame.png" class="c-frame" alt="額縁">
                             <!-- thumbnail -->
                             <a href="<?php the_permalink(); ?>" class="c-thumbnail">
                                 <?php if (has_post_thumbnail()) : ?>
@@ -246,11 +235,7 @@
                         <!-- /imgArea -->
                         <!-- textArea -->
                         <div class="p-textArea">
-                            <div class="p-textContent u-flex">
-                                <div class="p-bookmark u-flex">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
-                                    <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
-                                </div>
+                            <div class="p-textContent">
                                 <div class="p-tag u-flex">
                                     <div class="c-tag u-west u-mr15">
                                         <?php

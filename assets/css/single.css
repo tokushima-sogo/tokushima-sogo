@@ -257,7 +257,7 @@
 
 /* いいねとタグ */
 .p-textContent {
-    padding: 16px 15px 10px;
+    padding: 16px 15px;
     justify-content: space-between;
 }
 
@@ -521,7 +521,7 @@ button .wp_ulike_btn span {
 }
 
 /* サムネイル画像 */
-.c-thumbnail {
+.wp-post-image {
     width: 240px;
     height: 160px;
     position: absolute;
@@ -530,35 +530,14 @@ button .wp_ulike_btn span {
     left: 50%;
 }
 
-/* ハートのSVG */
-.c-icon__heart {
-    width: 32px;
-    height: 30px;
-    fill: #bd0000;
-    stroke: none;
-}
-
-/* いいねの文字 */
-.c-bookmark__text {
-    padding: 5px 2px;
-    font-size: 1.2rem;
-}
-
-/* いいねの数 */
-.c-bookmark__count {
-    padding: 0 2px;
-    font-size: 1.8rem;
-    font-family: 'mamelon5';
-}
-
-
 /* タグ */
 .c-tag {
     display: inline-block;
-    padding: 8px;
+    padding: 10px 15px;
     background: #2D294F;
     border: 1px solid #707070;
-    font-size: 1.2rem;
+    border-radius: 12px;
+    font-size: 1.4rem;
 }
 
 .c-tag a {
@@ -569,6 +548,7 @@ button .wp_ulike_btn span {
 .c-title {
     font-size: 1.8rem;
     font-family: 'mamelon5';
+    letter-spacing: 1px;
 }
 
 /* 関連記事ここまで */

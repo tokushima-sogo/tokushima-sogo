@@ -31,13 +31,13 @@ jQuery(document).on('click', function (e) {
 });
 
 // ハンバーガーボタン
-$(function () {
-    $('.c-burgerBtn').click(function () {
-        $(this).toggleClass("slide-in");
-        if ($(this).hasClass('slide-in')) {
-            $('.c-burgerBtn , .p-header__contentsBurger').addClass('slide-in');
+jQuery(function () {
+    jQuery('.c-burgerBtn').click(function () {
+        jQuery(this).toggleClass("slide-in");
+        if (jQuery(this).hasClass('slide-in')) {
+            jQuery('.c-burgerBtn , .p-header__contentsBurger').addClass('slide-in');
         } else {
-            $('.c-burgerBtn , .p-header__contentsBurger').removeClass('slide-in');
+            jQuery('.c-burgerBtn , .p-header__contentsBurger').removeClass('slide-in');
         }
     });
 });

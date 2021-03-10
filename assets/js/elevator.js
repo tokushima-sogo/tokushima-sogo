@@ -18,7 +18,7 @@ window.addEventListener("scroll", function () {
     let FloorThree = document.getElementById('js_3f').offsetTop;
     let FloorTwo = document.getElementById('js_2f').offsetTop;
     let FloorOne = document.getElementById('js_1f').offsetTop;
-    let Floorbasement = document.getElementById('js_basement').offsetTop;
+    let Floorbasement = document.getElementById('page-link').offsetTop;
     if (currentY == FloorSix) {
         elevator.classList.remove('lift5', 'lift4', 'lift3', 'lift2', 'lift1', 'liftbasement');
         elevator.classList.add('lift6');

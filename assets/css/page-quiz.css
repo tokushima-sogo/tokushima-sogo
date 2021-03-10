@@ -1,26 +1,16 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-#canvas{
-background-color:black;
-width:100%;
-position:absolute;
+#canvas {
+    background-color: black;
+    width: 100%;
+    height: 90vh;
+    margin-top: 9.5vh;
 }
 
-#startButton{
-    position:relative;
-    width:100vw;
-    height:100vh;
-    margin:0;
-    opacity:0.5;
-    z-index:20;
-}
-
-@font-face
-{
-font-family: PixelMplus10-Regular;
-src: url('http://localhost/sogo/wp-content/themes/tokushima-sogo/assets/font/PixelMplus10-Regular.ttf')
-    format("woff2");
+@font-face {
+    font-family: PixelMplus10-Regular;
+    src: url('http://localhost/sogo/wp-content/themes/tokushima-sogo/assets/font/PixelMplus10-Regular.ttf') format("woff2");
 }

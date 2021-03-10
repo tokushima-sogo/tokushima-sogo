@@ -297,3 +297,44 @@ button.c-moreBtn {
 .u-east {
     background: #539199;
 }
+
+/* 地区別コンテンツ見出しの隠し領域 */
+/* 徳島市内 */
+span[id="city_spot"],
+span[id="city_gourmet"],
+span[id="city_shop"] {
+    display: block;
+    height: 120px;
+    margin-top: -120px;
+    content: "";
+}
+
+/* 西部 */
+span[id="west_spot"],
+span[id="west_gourmet"],
+span[id="west_shop"] {
+    display: block;
+    height: 120px;
+    margin-top: -120px;
+    content: "";
+}
+
+/* 東部 */
+span[id="east_spot"],
+span[id="east_gourmet"],
+span[id="east_shop"] {
+    display: block;
+    height: 120px;
+    margin-top: -120px;
+    content: "";
+}
+
+/* 南部 */
+span[id="south_spot"],
+span[id="south_gourmet"],
+span[id="south_shop"] {
+    display: block;
+    height: 120px;
+    margin-top: -120px;
+    content: "";
+}

@@ -1,54 +1,54 @@
 // PC用アコーディオンメニュー
-$(function () {
-    $('.p-header__navListDetail').hide();
-    $('.p-header__navList').click(function () {
-        $(this).next('.p-header__navListDetail').slideToggle();
-        $('.p-header__navList').not($(this)).next('.p-header__navListDetail').slideUp();
+jQuery(function () {
+    jQuery('.p-header__navListDetail').hide();
+    jQuery('.p-header__navList').click(function () {
+        jQuery(this).next('.p-header__navListDetail').slideToggle();
+        jQuery('.p-header__navList').not(jQuery(this)).next('.p-header__navListDetail').slideUp();
     });
 });
-$(document).on('click', function (e) {
-    if (!$(e.target).closest('.p-header__navList').length) {
-        $('.p-header__navList').next('.p-header__navListDetail').slideUp();
+jQuery(document).on('click', function (e) {
+    if (!jQuery(e.target).closest('.p-header__navList').length) {
+        jQuery('.p-header__navList').next('.p-header__navListDetail').slideUp();
     }
 });
 
 // ハンバーガーボタン
-$(function () {
-    $('.c-burgerBtn').click(function () {
-        $(this).toggleClass("slide-in");
-        if ($(this).hasClass('slide-in')) {
-            $('.c-burgerBtn , .p-header__contentsBurger').addClass('slide-in');
+jQuery(function () {
+    jQuery('.c-burgerBtn').click(function () {
+        jQuery(this).toggleClass("slide-in");
+        if (jQuery(this).hasClass('slide-in')) {
+            jQuery('.c-burgerBtn , .p-header__contentsBurger').addClass('slide-in');
         } else {
-            $('.c-burgerBtn , .p-header__contentsBurger').removeClass('slide-in');
+            jQuery('.c-burgerBtn , .p-header__contentsBurger').removeClass('slide-in');
         }
     });
 });
 
 // バーガー用アコーディオンメニュー
-$(function () {
-    $('.p-BurgerNavDetail').hide();
-    $('.c-header__contentsBurgerNavBtn').click(function () {
-        $(this).next().slideToggle();
-        $('.c-header__contentsBurgerNavBtn').not($(this)).next().slideUp();
+jQuery(function () {
+    jQuery('.p-BurgerNavDetail').hide();
+    jQuery('.c-header__contentsBurgerNavBtn').click(function () {
+        jQuery(this).next().slideToggle();
+        jQuery('.c-header__contentsBurgerNavBtn').not(jQuery(this)).next().slideUp();
     });
 });
-$(document).on('click', function (e) {
-    if (!$(e.target).closest('.c-header__contentsBurgerNavBtn').length) {
-        $('.c-header__contentsBurgerNavBtn').next('.p-BurgerNavDetail').slideUp();
+jQuery(document).on('click', function (e) {
+    if (!jQuery(e.target).closest('.c-header__contentsBurgerNavBtn').length) {
+        jQuery('.c-header__contentsBurgerNavBtn').next('.p-BurgerNavDetail').slideUp();
     }
 });
 
 
 // フッターアコーディオンメニュー
-$(window).on('load resize', function () {
-    var w_width = $(window).width();
-    $('.c-footer__contentsPartsBtn').on("click", function () {
+jQuery(window).on('load resize', function () {
+    var w_width = jQuery(window).width();
+    jQuery('.c-footer__contentsPartsBtn').on("click", function () {
         if (w_width < 1025) {
-            $(this).next().slideToggle();
-            $('.c-footer__contentsPartsBtn').not($(this)).next().slideUp();
-            $(document).on('click', function (e) {
-                if (!$(e.target).closest('.c-footer__contentsPartsBtn').length) {
-                    $('.c-footer__contentsPartsBtn').next('.c-footer__contentsDetail').slideUp();
+            jQuery(this).next().slideToggle();
+            jQuery('.c-footer__contentsPartsBtn').not(jQuery(this)).next().slideUp();
+            jQuery(document).on('click', function (e) {
+                if (!jQuery(e.target).closest('.c-footer__contentsPartsBtn').length) {
+                    jQuery('.c-footer__contentsPartsBtn').next('.c-footer__contentsDetail').slideUp();
                 }
             })
         }

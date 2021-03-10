@@ -1,7 +1,7 @@
 // 最初のアニメーション
-$('body').append(
+jQuery('body').append(
     '<style>body{display:none;}'
 );
-$(window).on("load", function () {
-    $('body').delay(1000).fadeIn("slow");
+jQuery(window).on("load", function () {
+    jQuery('body').delay(1000).fadeIn("slow");
 });

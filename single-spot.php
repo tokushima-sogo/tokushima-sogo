@@ -38,7 +38,7 @@
                 <div class="p-breadCrumb">
                     <div class="p-breadCrumb__inner">
                         <!-- breadcrumbループstart -->
-                        <a href="<?php home_url(); ?>"><span>HOME</span></a>
+                        <a href="<?php echo home_url(); ?>"><span>HOME</span></a>
                         <i class="fas fa-angle-right"></i>
                         <span><?php echo get_the_term_list($post->ID, 'area') ?></span>
                         <i class="fas fa-angle-right"></i> <span><?php echo esc_html(get_post_type_object(get_post_type())->label); ?></span>
@@ -107,7 +107,7 @@
 
                                 <ul class="p-singleTagList__ul u-flex">
                                     <?php
-                                    echo get_the_term_list($post->ID, 'taxotag', '＃<li class="c-singleTagList__li>', '</li>＃<li class="c-singleTagList__li>', '</li>');
+                                    echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li>', '</li><li class="c-singleTagList__li>', '</li>');
                                     ?>
                                 </ul>
                                 <!-- /singleTagList -->
@@ -236,14 +236,6 @@
                 <!-- /singleArticle__info -->
                 </div>
                 <!-- /singleBody -->
-                <!--  <?php
-                        $location = get_field('location');
-                        if ($location) : ?>
-                    <div class="acf-map" data-zoom="16">
-                        <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
-                    </div>
-                <?php endif; ?> -->
-                <!-- /singleMap -->
             </section>
             <!-- /singleArticle -->
         <?php endwhile; ?>
@@ -254,44 +246,41 @@
     <!-- articleList -->
     <section class="l-articleList">
         <h3 class="c-subHeading u-center"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_single_common_related.png" alt="関連記事"></h3>
-
-        <?php
-        global $post;
-        $post_id = $post->ID;                         //投稿記事を取得する。
-        $post_type = get_post_type($post_id);         //投稿タイプを取得
-        $taxonomy = 'area';                           //タクソノミーを指定
-        $terms = get_the_terms($post_id, $taxonomy);  //タームデータを取得する。
-        $term_slug =  $terms[0]->slug;                //タームを指定する。
-        ?>
-        <?php $args = array(
-            'post_type'        => $post_type,         //カスタム投稿タイプ名
-            'posts_per_page'   => 3,                  // 取得する投稿数
-            'orderby'          => 'rand',             //ランダムで表示
-            'exclude'          => $post_id,           // 表示中の投稿を除外
-            'tax_query'        => array(
-                array(
-                    'taxonomy' => $taxonomy,          // タクソノミースラッグを指定
-                    'field'    => 'slug',             // termsで使用する種類指定
-                    'terms'    => $term_slug,         // タームスラッグを指定
+        <!-- articleList -->
+        <div class="p-articleList u-grid">
+            <?php
+            global $post;
+            $post_id = $post->ID;                         //投稿記事を取得する。
+            $post_type = get_post_type($post_id);         //投稿タイプを取得
+            $taxonomy = 'area';                           //タクソノミーを指定
+            $terms = get_the_terms($post_id, $taxonomy);  //タームデータを取得する。
+            $term_slug =  $terms[0]->slug;                //タームを指定する。
+            ?>
+            <?php $args = array(
+                'post_type'        => $post_type,         //カスタム投稿タイプ名
+                'posts_per_page'   => 3,                  // 取得する投稿数
+                'orderby'          => 'rand',             //ランダムで表示
+                'exclude'          => $post_id,           // 表示中の投稿を除外
+                'tax_query'        => array(
+                    array(
+                        'taxonomy' => $taxonomy,          // タクソノミースラッグを指定
+                        'field'    => 'slug',             // termsで使用する種類指定
+                        'terms'    => $term_slug,         // タームスラッグを指定
+                    ),
                 ),
-            ),
-        );
-        ?>
-        <?php $the_query = new WP_Query($args); ?>
-        <?php if ($the_query->have_posts()) : ?>
-            <?php while ($the_query->have_posts()) : ?>
-                <?php $the_query->the_post(); ?>
+            );
+            ?>
+            <?php $the_query = new WP_Query($args); ?>
+            <?php if ($the_query->have_posts()) : ?>
+                <?php while ($the_query->have_posts()) : ?>
+                    <?php $the_query->the_post(); ?>
 
-                <!-- articleList -->
-                <div class="p-articleList u-grid">
+
                     <!-- article -->
                     <article class="p-article">
                         <!-- imgArea -->
                         <div class="p-imgArea">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
-                            <!-- thumbnail -->
-                            <!-- <a href="single.html"> -->
-                            <!-- <img src="assets/images/takenoko1.jpg" class="c-thumbnail" alt="スポット写真"> -->
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/frame_archive_common_thumbFrame.png" class="c-frame" alt="額縁">
                             <a href="<?php the_permalink(); ?>" class="c-thumbnail">
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('medium') ?>
@@ -304,12 +293,7 @@
                         <!-- /imgArea -->
                         <!-- textArea -->
                         <div class="p-textArea">
-                            <div class="p-textContent u-flex">
-                                <div class="p-bookmark u-flex">
-                                    <img src="assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
-                                    <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
-                                </div>
-
+                            <div class="p-textContent">
                                 <div class="p-tag u-flex">
                                     <div class="c-tag u-west u-mr15">
                                         <?php
@@ -328,78 +312,13 @@
                         <!-- /textArea -->
                     </article>
                     <!-- /article -->
-
-
-                    <!-- article -->
-                    <!-- <article class="p-article"> -->
-                    <!-- imgArea -->
-                    <!-- <div class="p-imgArea">
-                            <img src="assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁"> -->
-                    <!-- thumbnail -->
-                    <!-- <a href="single.html">
-                                <img src="assets/images/takenoko1.jpg" class="c-thumbnail" alt="スポット写真">
-                            </a>
-                        </div> -->
-                    <!-- /imgArea -->
-                    <!-- textArea -->
-                    <!-- <div class="p-textArea">
-                            <div class="p-textContent u-flex">
-                                <div class="p-bookmark u-flex">
-                                    <img src="assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
-                                    <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
-                                </div>
-                                <div class="p-tag u-flex">
-                                    <div class="c-tag u-west u-mr15">県西部</div>
-                                    <div class="c-tag">スポット</div>
-                                </div>
-                            </div>
-                            <div class="c-title u-center">たけのこおいしい</div>
-                        </div> -->
-                    <!-- /textArea -->
-                    <!-- </article> -->
-                    <!-- /article -->
-
-
-                    <!-- article -->
-                    <!-- <article class="p-article"> -->
-                    <!-- imgArea -->
-                    <!-- <div class="p-imgArea">
-                            <img src="assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁"> -->
-                    <!-- thumbnail -->
-                    <!-- <a href="single.html">
-                                <img src="assets/images/takenoko1.jpg" class="c-thumbnail" alt="スポット写真">
-                            </a>
-                        </div> -->
-                    <!-- /imgArea -->
-                    <!-- textArea -->
-                    <!-- <div class="p-textArea">
-                            <div class="p-textContent u-flex">
-                                <div class="p-bookmark u-flex">
-                                    <img src="assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
-                                    <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
-                                </div>
-                                <div class="p-tag u-flex">
-                                    <div class="c-tag u-west u-mr15">県西部</div>
-                                    <div class="c-tag">スポット</div>
-                                </div>
-                            </div>
-                            <div class="c-title u-center">たけのこおいしい</div>
-                        </div> -->
-                    <!-- /textArea -->
-                    <!-- </article> -->
-                    <!-- /article -->
-
-                </div>
-                <!-- /articleList -->
-
-            <?php endwhile; ?>
-            <?php wp_reset_postdata(); ?>
-        <?php endif; ?>
-
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
+        </div>
+        <!-- /articleList -->
     </section>
     <!-- /articleList -->
-
-
 </main>
 <!-- /main -->
 

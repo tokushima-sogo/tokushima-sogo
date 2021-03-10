@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/single-horror.css">
 ​
 <main class="l-main u-bgHorror">
     ​
@@ -60,10 +62,6 @@
                         <!-- imgArea -->
                         <div class="p-imgArea">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_horror_thmbFlame.png" class="c-frame" alt="額縁">
-                            <!-- thumbnail -->
-                            <!-- <a href="single.html">
-                                <img src="assets/images/mv_single_horror_hatikura4.jpeg" class="c-thumbnail" alt="スポット写真">
-                            </a> -->
                             <a href="<?php the_permalink(); ?>" class="c-thumbnail">
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('medium') ?>
@@ -76,10 +74,6 @@
                         <!-- textArea -->
                         <div class="p-textArea u-horrorRed">
                             <div class="p-textContent u-flex">
-                                <div class="p-bookmark u-flex">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon_archive_common_icon_heart.svg" class="c-icon__heart">
-                                    <div class="c-bookmark__text u-fontHorror"><span class="c-bookmark__count">10</span>いいね！</div>
-                                </div>
                                 <div class="p-tag u-flex">
                                     <!-- <div class="c-tag u-bgHorror u-mr15">市内</div> -->
                                     <div class="c-tag u-bgHorror">
