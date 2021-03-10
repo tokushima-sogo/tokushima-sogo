@@ -22,9 +22,9 @@
                     $east_link = get_term_link($east, 'area');
                     ?>
                     <li><a href="<?php echo $east_link; ?>">トップ</a></li>
-                    <li><a href="#">スポット</a></li>
-                    <li><a href="#">グルメ</a></li>
-                    <li><a href="#">ショップ</a></li>
+                    <li><a href="<?php echo $east_link; ?>#east_spot">スポット</a></li>
+                    <li><a href="<?php echo $east_link; ?>#east_gourmet">グルメ</a></li>
+                    <li><a href="<?php echo $east_link; ?>#east_shop">ショップ</a></li>
                 </ul>
             </li>
         </ul>
@@ -39,9 +39,9 @@
                     $west_link = get_term_link($west, 'area');
                     ?>
                     <li><a href="<?php echo $west_link; ?>">トップ</a></li>
-                    <li><a href="#">スポット</a></li>
-                    <li><a href="#">グルメ</a></li>
-                    <li><a href="#">ショップ</a></li>
+                    <li><a href="<?php echo $west_link; ?>#west_spot">スポット</a></li>
+                    <li><a href="<?php echo $west_link; ?>#west_gourmet">グルメ</a></li>
+                    <li><a href="<?php echo $west_link; ?>#west_shop">ショップ</a></li>
                 </ul>
             </li>
             <li class="p-footer__contentsParts">
@@ -52,9 +52,9 @@
                     $city_link = get_term_link($city, 'area');
                     ?>
                     <li><a href="<?php echo $city_link; ?>">トップ</a></li>
-                    <li><a href="#">スポット</a></li>
-                    <li><a href="#">グルメ</a></li>
-                    <li><a href="#">ショップ</a></li>
+                    <li><a href="<?php echo $city_link; ?>#city_spot">スポット</a></li>
+                    <li><a href="<?php echo $city_link; ?>#city_gourmet">グルメ</a></li>
+                    <li><a href="<?php echo $city_link; ?>#city_shop">ショップ</a></li>
                 </ul>
             </li>
         </ul>
@@ -69,9 +69,9 @@
                     $south_link = get_term_link($south, 'area');
                     ?>
                     <li><a href="<?php echo $south_link; ?>">トップ</a></li>
-                    <li><a href="#">スポット</a></li>
-                    <li><a href="#">グルメ</a></li>
-                    <li><a href="#">ショップ</a></li>
+                    <li><a href="<?php echo $south_link; ?>#south_spot">スポット</a></li>
+                    <li><a href="<?php echo $south_link; ?>#south_gourmet">グルメ</a></li>
+                    <li><a href="<?php echo $south_link; ?>#south_shop">ショップ</a></li>
                 </ul>
             </li>
             <li class="p-footer__contentsParts">

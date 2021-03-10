@@ -27,6 +27,7 @@
     width: 100%;
     margin: 0 auto;
 }
+
 @media (min-width:1025px) {
     .l-slickSlider {
         width: 40%;
@@ -40,6 +41,7 @@
     margin: 0 auto;
     padding: 15px 0;
 }
+
 @media (min-width:1025px) {
     .l-singleMap {
         display: inline-block;
@@ -53,11 +55,13 @@
     margin: 0 auto;
     padding: 15px 0 30px;
 }
+
 @media (min-width:768px) {
     .l-singleTable {
         padding: 30px 0 50px;
     }
 }
+
 @media (min-width:1025px) {
     .l-singleTable {
         display: inline-block;
@@ -82,6 +86,7 @@
     padding: 0;
     flex-direction: column;
 }
+
 /* flexレイアウト用 */
 @media (min-width:1025px) {
     .p-singleArticle__item {
@@ -98,6 +103,7 @@
     padding: 0;
     flex-direction: column;
 }
+
 @media (min-width:1025px) {
     .p-singleArticle__description {
         width: 50%;
@@ -110,14 +116,16 @@
     box-sizing: border-box;
     width: 100%;
     max-width: 100%;
-    padding: 0;
+    padding: 20px 0;
     flex-direction: column;
 }
+
 @media (min-width:400px) {
     .p-singleTag {
         flex-direction: row;
     }
 }
+
 @media (min-width:1025px) {
     .p-singleTag {
         padding: 30px 0 15px;
@@ -129,6 +137,7 @@
     margin: 0 auto;
     padding: 5px 0;
 }
+
 @media (min-width:400px) {
     .p-singleTagList__ul {
         margin: 0;
@@ -142,6 +151,7 @@
     margin: 0 auto;
     width: 70%;
 }
+
 @media (min-width:400px) {
     .p-singleBtns {
         width: 100%;
@@ -149,51 +159,13 @@
         flex-direction: row;
     }
 }
+
 @media (min-width:768px) {
     .p-singleBtns {
         padding: 15px 0;
     }
 }
 
-/* ボタン単体 */
-.p-singleBtn,
-a.p-singleBtn,
-button.p-singleBtn {
-    position: relative;
-    display: inline-block;
-    margin: 5px 0;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-transition: all 0.3s;
-    font-size: 1.2rem;
-    transition: all 0.3s;
-    letter-spacing: 1px;
-    border-radius: 13px;
-    vertical-align: middle;
-}
-@media (min-width:400px) {
-    .p-singleBtn,
-    a.p-singleBtn,
-    button.p-singleBtn {
-        margin: 0 5px;
-    }
-}
-@media (min-width:768px) {
-    .p-singleBtn,
-    a.p-singleBtn,
-    button.p-singleBtn {
-        font-size: 1.8rem;
-    }
-}
-@media (min-width:1025px) {
-    .p-singleBtn,
-    a.p-singleBtn,
-    button.p-singleBtn {
-        margin: 5px;
-    }
-}
 
 /* マップ～テーブル */
 .p-singleArticle__info {
@@ -202,6 +174,7 @@ button.p-singleBtn {
     justify-content: center;
     flex-direction: column;
 }
+
 @media (min-width:1025px) {
     .p-singleArticle__info {
         justify-content: space-between;
@@ -219,10 +192,11 @@ button.p-singleBtn {
     margin: 0 auto;
     overflow: hidden;
 }
+
 @media (min-width:768px) {
     .p-singleMap {
-    height: 400px;
-}
+        height: 400px;
+    }
 }
 
 /* マップのiframe */
@@ -252,8 +226,9 @@ button.p-singleBtn {
     margin: 0 auto;
     padding: 30px 0;
 }
+
 /* pc用グリッドの幅指定 */
-@media(min-width:1025px){
+@media(min-width:1025px) {
     .p-articleList {
         width: 80%;
     }
@@ -271,13 +246,13 @@ button.p-singleBtn {
 .p-imgArea {
     position: relative;
     width: 280px;
-    height:200px;
+    height: 200px;
 }
 
 /* 額縁の下全体 */
 .p-textArea {
     height: 120px;
-    background:#efebe8;
+    background: #efebe8;
 }
 
 /* いいねとタグ */
@@ -288,10 +263,11 @@ button.p-singleBtn {
 
 /* タグ全体 */
 .p-tag {
-    color:#ffffff;
+    color: #ffffff;
     justify-content: space-around;
     align-items: center;
 }
+
 /* 関連記事ここまで */
 
 /* =============
@@ -307,6 +283,7 @@ button.p-singleBtn {
     justify-content: center;
     align-items: center;
 }
+
 @media (min-width:768px) {
     .c-heading {
         height: 60px;
@@ -314,6 +291,7 @@ button.p-singleBtn {
         padding: 16px 0;
     }
 }
+
 .c-heading::before,
 .c-heading::after {
     content: '';
@@ -322,28 +300,32 @@ button.p-singleBtn {
     border-radius: 2px;
     background: #a7170b;
 }
+
 .c-heading::before {
     margin-right: 20px;
 }
+
 .c-heading::after {
     margin-left: 20px;
 }
 
 /* 記事テキスト */
-.c-singleArticle__text {
+.c-singleArticle__text p {
     margin: 0 auto;
     padding: 20px 0;
     line-height: 1.5;
     font-size: 1.4rem;
 }
+
 @media (min-width:768px) {
-    .c-singleArticle__text {
+    .c-singleArticle__text p {
         padding: 25px 0;
         font-size: 1.8rem
     }
 }
+
 @media (min-width:1025px) {
-    .c-singleArticle__text {
+    .c-singleArticle__text p {
         padding: 0;
     }
 }
@@ -359,11 +341,13 @@ button.p-singleBtn {
     font-size: 1.6rem;
     letter-spacing: 1px;
 }
+
 @media (min-width:400px) {
     .c-singleTag__text {
         margin: 0;
     }
 }
+
 @media (min-width:768px) {
     .c-singleTag__text {
         width: 155px;
@@ -373,125 +357,154 @@ button.p-singleBtn {
 }
 
 /* タグ名 */
-.c-singleTagList__li {
+.p-singleTagList__ul li {
     padding: 5px;
     letter-spacing: 1px;
     font-size: 1.8rem;
 }
+
 @media (min-width:400px) {
-    .c-singleTagList__li {
+    .p-singleTagList__ul li {
         padding: 7px;
     }
 }
+
 @media (min-width:768px) {
-    .c-singleTagList__li {
+    .p-singleTagList__ul li {
         padding: 14px;
         font-size: 1.8rem;
     }
 }
 
-/* ボタンタグ */
-a.c-btnTag {
-    padding: 14px 14px 13px 50px;
-    color: #333333;
-    background: #f5f5f5;
+/* いいねボタン */
+.wp1_like_like,
+a.wp1_like_like {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    margin: 15px auto;
+    padding: 30px 150px 30px;
+    -webkit-transition: all 0.3s;
+    font-size: 1.8rem;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+    border-radius: 13px;
+    text-align: center;
+    cursor: pointer;
 }
-@media (min-width:768px) {
-    a.c-btnTag {
-        padding: 26px 18px 24px 95px;
-    }
-}
-/* アイコンを表示するところ */
-a.c-btnTag::before {
+
+
+/* いいねボタンのアイコンを表示するところ */
+a.wp1_like_like::before {
     position: absolute;
     top: 0;
     left: 0;
-    width: 40px;
+    width: 60px;
     height: 100%;
     content: "";
     border-radius: 13px 0 0 13px;
     background: #cccccc;
     opacity: 0.5;
 }
-@media (min-width:768px) {
-    a.c-btnTag::before {
-        width: 80px;
-    }
-}
 
-/* ボタンのsvg */
-a.c-btnTag svg {
+/* いいねボタンのアイコン */
+a.wp1_like_like i::before {
     position: absolute;
+    top: 16px;
+    left: 13px;
     padding: 0;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-    opacity: 0.3;
+    color: #d37b6a;
+    font-size: 3.5rem;
 }
 
-/* hoverしたら1.2倍 */
-a.c-btnTag:hover svg {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-    opacity: 1;
+/* ボタンのspan */
+a.wp1_like_like span {
+    display: inline-block;
+    padding: 20px 0 20px 60px;
+    color: #333333;
 }
 
-/* いいねカウント数 */
-.c-favCount {
-    padding: 1px;
+/* Myスポットに追加 */
+.wp_ulike_btn,
+button .wp_ulike_btn {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    margin: 15px auto;
+    padding: 30px 150px 30px;
+    -webkit-transition: all 0.3s;
+    font-size: 1.8rem;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+    border-radius: 13px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    background: #f5f5f5;
 }
-@media (min-width:768px) {
-    .c-favCount {
-    padding: 2px;
+
+/* ボタンのspan */
+button .wp_ulike_btn span {
+    display: inline-block;
+    padding: 20px 0 20px 60px;
+    color: #333333;
 }
-}
+
 
 /* tableここから */
-.c-singleTable__tr {
-    height: 60px;
-}
-
-
 .c-singleTable__th,
 .c-singleTable__td {
     display: block;
     width: 100%;
-    padding: 12px;
-    font-size: 1.6rem;
 }
+
 @media (min-width:768px) {
+
     .c-singleTable__th,
     .c-singleTable__td {
         display: inline-block;
-        padding: 20px;
-        font-size: 1.8rem;
     }
 }
 
 .c-singleTable__th {
     background: #f6f4ec;
     border: 1px solid #707070;
+    padding: 22px 10px 21px;
+    font-size: 1.4rem;
     letter-spacing: 1px;
 }
+
 @media (min-width:768px) {
     .c-singleTable__th {
-        width: 25%;
+        width: 20%;
+        font-size: 1.5rem;
     }
 }
 
 .c-singleTable__td {
     background: #ffffff;
+    padding: 22px 10px 21px;
     border: 1px solid #707070;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 }
+
 @media (min-width:768px) {
     .c-singleTable__td {
-        width: 75%;
-        font-size: 1.8rem;
+        width: 80%;
+        font-size: 1.5rem;
     }
 }
+
 .c-singleTable__td a {
+    font-size: 1.1rem;
     color: #cf7e7c;
 }
+
 /* tableここまで */
 
 
@@ -504,7 +517,7 @@ a.c-btnTag:hover svg {
 /* 額縁の画像 */
 .c-frame {
     width: 280px;
-    height:200px;
+    height: 200px;
 }
 
 /* サムネイル画像 */
@@ -548,11 +561,16 @@ a.c-btnTag:hover svg {
     font-size: 1.2rem;
 }
 
+.c-tag a {
+    color: #ffffff;
+}
+
 /* スポット名称 */
 .c-title {
     font-size: 1.8rem;
     font-family: 'mamelon5';
 }
+
 /* 関連記事ここまで */
 
 /* =============
@@ -560,7 +578,7 @@ a.c-btnTag:hover svg {
 ================ */
 
 /* グリッドレイアウト */
-.u-grid{
+.u-grid {
     display: grid;
 }
 
@@ -573,31 +591,19 @@ a.c-btnTag:hover svg {
 .u-south {
     background: #991f26;
 }
+
 .u-city {
     background: #d1a429;
 }
+
 .u-west {
     background: #004e3f;
 }
+
 .u-east {
     background: #539199;
 }
 
-/* いいね！アイコン */
-a.u-btnTag--fav svg {
-    fill: #d37b6a;
-    stroke: none;
-    top: 12px;
-    left: 8px;
-    width: 24px;
-}
-@media (min-width:768px) {
-    a.u-btnTag--fav svg {
-        top: 16px;
-        left: 16px;
-        width: 48px;
-    }
-}
 
 /* スポットピンアイコン */
 a.u-btnTag--spot svg {
@@ -606,6 +612,7 @@ a.u-btnTag--spot svg {
     left: 10px;
     width: 20px;
 }
+
 @media (min-width:768px) {
     a.u-btnTag--spot svg {
         top: 10px;

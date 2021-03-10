@@ -13,7 +13,7 @@
         <div class="p-breadCrumb">
             <div class="p-breadCrumb__inner">
                 <!-- breadcrumbループstart -->
-                <a href="<?php home_url(); ?>"><span>HOME</span></a>
+                <a href="<?php echo home_url(); ?>"><span>HOME</span></a>
                 <i class="fas fa-angle-right"></i>
                 <span>県東部</span>
                 <!-- breadcrumbループend -->
@@ -22,7 +22,7 @@
         <!-- /breadCrumb -->
 
         <section class="l-description">
-            <div class="c-heroImg"><img src="./assets/images/mv_archive_west_web.jpg" alt="県西部"></div>
+            <div class="c-heroImg"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_archive_east_web.jpg" alt="徳島東部"></div>
             <!-- エリア名と説明全体  -->
             <div class="p-description">
                 <!-- エリア名  -->
@@ -32,7 +32,7 @@
                         テキストはまだ
                     </div>
                     <div class="c-description__map">
-                        <img src="assets/images/img_archive_west_map.png" class="c-map" alt="徳島西部">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/img_archive_east_map02.png" class="c-map" alt="徳島東部">
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@
 
         <section class="l-articleList">
             <!-- タイトルの表示 -->
-            <h3 class="c-subHeading u-center">
+            <h3 id="east_spot" class="c-subHeading u-center">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_spot.png" alt="スポット">
             </h3>
 
@@ -127,7 +127,7 @@
         ?>
         <section class="l-articleList">
             <!-- タイトルの表示 -->
-            <h3 class="c-subHeading u-center">
+            <h3 id="east_gourmet" class="c-subHeading u-center">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_gourmet.png" alt="グルメ">
             </h3>
 
@@ -198,7 +198,7 @@
         ?>
         <section class="l-articleList">
             <!-- タイトルの表示 -->
-            <h3 class="c-subHeading u-center">
+            <h3 id="east_shop" class="c-subHeading u-center">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_shop.png" alt="ショップ">
             </h3>
 

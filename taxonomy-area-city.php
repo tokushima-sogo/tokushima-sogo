@@ -1,9 +1,5 @@
-<!-- 引継ぎ
-CSSを消すこと。
-いいねのプラグインコード
-サムネイルのクラスをどうするか -->
-
 <?php get_header(); ?>
+
 <link href="<?php echo get_template_directory_uri(); ?>/assets/css/archive-west.css " rel="stylesheet">
 
 
@@ -18,7 +14,7 @@ CSSを消すこと。
         <div class="p-breadCrumb">
             <div class="p-breadCrumb__inner">
                 <!-- breadcrumbループstart -->
-                <a href="<?php home_url(); ?>"><span>HOME</span></a>
+                <a href="<?php echo home_url('/'); ?>"><span>HOME</span></a>
                 <i class="fas fa-angle-right"></i>
                 <span>県市内</span>
                 <!-- breadcrumbループend -->
@@ -27,7 +23,7 @@ CSSを消すこと。
         <!-- /breadCrumb -->
 
         <section class="l-description">
-            <div class="c-heroImg"><img src="./assets/images/mv_archive_west_web.jpg" alt="県西部"></div>
+            <div class="c-heroImg"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_archive_city_web.jpg" alt="徳島市内"></div>
             <!-- エリア名と説明全体  -->
             <div class="p-description">
                 <!-- エリア名  -->
@@ -37,7 +33,7 @@ CSSを消すこと。
                         テキストはまだ
                     </div>
                     <div class="c-description__map">
-                        <img src="assets/images/img_archive_west_map.png" class="c-map" alt="徳島西部">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/img_archive_city_map02.png" class="c-map" alt="徳島市内">
                     </div>
                 </div>
             </div>
@@ -66,8 +62,8 @@ CSSを消すこと。
 
         <section class="l-articleList">
             <!-- タイトルの表示 -->
-            <h3 class="c-subHeading u-center">
-                <img src="<?php echo get_template_directory_uri(); ?>assets/images/tl_archive_common_spot.png" alt="スポット">
+            <h3 id="city_spot" class="c-subHeading u-center">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_spot.png" alt="スポット">
             </h3>
 
             <!-- ループ開始 -->
@@ -138,7 +134,7 @@ CSSを消すこと。
 
         <section class="l-articleList">
             <!-- タイトルの表示 -->
-            <h3 class="c-subHeading u-center">
+            <h3 id="city_gourmet" class="c-subHeading u-center">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_gourmet.png" alt="グルメ">
             </h3>
 
@@ -210,8 +206,8 @@ CSSを消すこと。
 
         <section class="l-articleList">
             <!-- タイトルの表示 -->
-            <h3 class="c-subHeading u-center">
-                <img src="<?php echo get_template_directory_uri(); ?>assets/images/tl_archive_common_shop.png" alt="ショップ">
+            <h3 id="city_shop" class="c-subHeading u-center">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_shop.png" alt="ショップ">
             </h3>
 
             <!-- spot -->

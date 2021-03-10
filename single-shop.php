@@ -1,12 +1,6 @@
-<!-- 【引継ぎ事項】
-１,クラス名は適当，命名ルールに合わせて直す必要あり。
-２,スポットの写真表示の部分は仮です。jQueryのslickで書き直してください。
-４,cssは作っていない。
- -->
-
 <?php get_header(); ?>
 
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/single.css">
+<!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/single.css"> -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNNbWvrL46SW-8K-D0w6Haff4Vbcc4rRQ"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/googlemap.js"></script>
 <main class="l-main">

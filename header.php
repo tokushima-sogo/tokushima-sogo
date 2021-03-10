@@ -1,7 +1,3 @@
-<!-- 引継ぎ
-78行目検索のリンク先112行のあんなにについてのリンク先分からず
-リンクのテストはまだ。 -->
-
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -9,12 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>トクシマSo Go！</title>
-    <link rel="stylesheet" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="./assets/css/base.css">
     <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
-    <link rel="icon" href="./assets/images/favicon_tokushima_sogo.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon_tokushima_sogo.png">
+    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon_tokushima_sogo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon_tokushima_sogo.png">
 </head>
 
 <body>
@@ -33,9 +26,9 @@
                             <p class="c-header__nav u-bold u-white">ご案内</p>
                         </div>
                         <ul class="p-header__navListDetail u-info u-center">
-                            <li><a class="c-header__navListDetail" href="#">徳島県の名物
+                            <li><a class="c-header__navListDetail" href="<?php echo get_post_type_archive_link('famous'); ?>">徳島県の名物
                                 </a></li>
-                            <li><a class="c-header__navListDetail" href="#">徳島県のイベント</a></li>
+                            <li><a class="c-header__navListDetail" href="<?php echo get_post_type_archive_link('event'); ?>">徳島県のイベント</a></li>
                         </ul>
                     </li>
                     <li>

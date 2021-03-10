@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * カレントテンプレートの表示
+ */
+add_filter('show_admin_bar', '__return_true');
+
+/**
  * body要素直後に何かを挿入する場合 htmlタグを挿入するものではない！
  *
  * @return void
@@ -44,7 +49,7 @@ function tokushima_sogo_document_title_parts($title)
 {
     if (is_home()) {
         unset($title['tagline']);
-        $title['title'] = "";
+        $title['title'] = "トクシマSOGO";
     }
     return $title;
 }
@@ -63,14 +68,16 @@ function add_tokushima_sogo_styles()
     //トップページ
     if (is_front_page()) {
         wp_enqueue_style('tokushima_sogo_front_page_style', get_template_directory_uri() . '/assets/css/front-page.css');
+
         //固定ページ
-    } else if (is_page('contact')) {
+        // } else if (is_page('contact')) {
     } else if (is_page('quiz')) {
         wp_enqueue_style('tokushima_sogo_quiz_style', get_template_directory_uri() . '/assets/css/page-quiz.css');
     } else if (is_page('mapcreate')) {
         wp_enqueue_style('tokushima_sogo_mapcreate_style', get_template_directory_uri() . '/assets/css/page-mapcreate.css');
     } else if (is_page()) {
         wp_enqueue_style('tokushima_sogo_page_style', get_template_directory_uri() . '/assets/css/page.css');
+
         //詳細？ページ
     } else if (is_single('special')) {
         wp_enqueue_style('tokushima_sogo_single_special_style', get_template_directory_uri() . '/assets/css/single-special.css');
@@ -80,10 +87,14 @@ function add_tokushima_sogo_styles()
     } else if (is_single('horror')) {
         wp_enqueue_style('tokushima_sogo_single_horror_style', get_template_directory_uri() . '/assets/css/single-horror.css');
     } else if (is_single()) {
-        wp_enqueue_style('tokushima_sogo_single_style', get_template_directory_uri() . '/assets/css/single.css');
-        wp_enqueue_style('tokushima_sogo_slick_style', get_template_directory_uri() . '/assets/css/slick.css');
+        // wp_enqueue_style('tokushima_sogo_single_style', get_template_directory_uri() . '/assets/css/single.css');
+        // wp_enqueue_style('tokushima_sogo_slick_style', get_template_directory_uri() . '/assets/css/slick.css', false);
+        wp_enqueue_style('tokushima_sogo_single_style', get_template_directory_uri() . '/assets/css/single.css', false);
+        wp_enqueue_style('tokushima_sogo_slick_style', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', false);
+        wp_enqueue_style('tokushima_sogo_slick_set', get_template_directory_uri() . '/assets/css/slick.css', false);
         //アーカイブ（一覧）ページ
         //間違ってたらこっち。is_post_type_archive()  カスタム投稿のアーカイブページが表示されている場合。
+
     } else if (is_archive('special')) {
         wp_enqueue_style('tokushima_sogo_archive_special_style', get_template_directory_uri() . '/assets/css/archive-special.css');
     } else if (is_archive('horror')) {
@@ -92,6 +103,7 @@ function add_tokushima_sogo_styles()
         wp_enqueue_style('tokushima_sogo_archive_event_style', get_template_directory_uri() . '/assets/css/archive-event.css');
         //タクソノミーは間違ってるかもis_tax( $taxonomy, $term )
         //全て同じ場合は，is_tax( 'area', array( 'east', 'west', 'city', 'south') )
+
     } else if (is_tax('area', array('east', 'west', 'city', 'south'))) {
         wp_enqueue_style('tokushima_sogo_taxonomy_area_style', get_template_directory_uri() . '/assets/css/taxonomy-area.css');
         // } else if (is_tax('area', 'east')) {
@@ -99,13 +111,10 @@ function add_tokushima_sogo_styles()
         // } else if (is_tax('area', 'city')) {
         // } else if (is_tax('area', 'south')) {
         //タクソノミーページちょっと自信ない。
+
     } else if (is_tax()) {
         wp_enqueue_style('tokushima_sogo_taxonomy_style', get_template_directory_uri() . '/assets/css/taxonomy.css');
     }
-    // wp_enqueue_style('tokushima_sogo_project_style', get_template_directory_uri() . '/assets/css/project.css');
-    // wp_enqueue_style('tokushima_sogo_compornent_style', get_template_directory_uri() . '/assets/css/compornent.css');
-    // wp_enqueue_style('tokushima_sogo_utility_style', get_template_directory_uri() . '/assets/css/utility.css');
-    // wp_enqueue_style('tokushima_sogo_compornent_style', get_template_directory_uri() . '/assets/css/top.css');
 }
 add_action('wp_enqueue_scripts', 'add_tokushima_sogo_styles');
 
@@ -119,9 +128,12 @@ function add_tokushima_sogo_scripts()
     // jqueryの利用
     wp_enqueue_script('jquery');
     // slickの利用
-    wp_enqueue_script('slick_carousel_js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js');
-    wp_enqueue_script('slick_setting_js', get_template_directory_uri() . '/assets/js/slick.setting.js');
-    wp_enqueue_script('common_js', get_template_directory_uri() . '/assets/js/common.js', '', '', true);
+    wp_enqueue_script('slick_carousel_js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', '', '', true);
+    if (is_single()) {
+        wp_enqueue_script('slick_setting_js', get_template_directory_uri() . '/assets/js/slicksetting.js', '', '', true);
+        // wp_enqueue_script('slick_setting_js', get_template_directory_uri() . '/assets/js/slicksetting.js', '', '', true);
+    }
+    wp_enqueue_script('menu_js', get_template_directory_uri() . '/assets/js/menu.js', '', '', true);
     // wp_enqueue_script('serchForm_js', get_template_directory_uri() . '/assets/js/searchForm.js', '', '', true);
     wp_enqueue_script('searchandfilter', get_template_directory_uri() . '/assets/js/searchandfilter.js', '', '', true);
 }

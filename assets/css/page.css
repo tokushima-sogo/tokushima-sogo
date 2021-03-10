@@ -1,8 +1,9 @@
 @charset "utf-8";
-
+​
 /* =============
     Layout
 ================ */
+​
 
 /* 共通 */
 .l-page {
@@ -11,18 +12,24 @@
   padding: 30px 0 50px;
 }
 
+​
+
 /* このサイトについて */
 .l-reference {
   margin: 0 auto;
-  padding: 30px 15px;
+  padding: 15px;
 }
+
+​
 
 /* テーブル */
 .l-pageTable {
   width: 90%;
   margin: 0 auto;
-  padding: 40px 15px 20px;
+  padding: 20px 15px;
 }
+
+​
 
 /* map */
 .l-myMap {
@@ -31,15 +38,35 @@
   padding: 30px 0 50px;
 }
 
+​
 /* =============
     Project
 ================ */
+​
 
 /* 説明 */
 .p-description {
-    margin: 0 auto;
-    padding: 40px 0;
+  margin: 0 auto;
+  padding: 40px 0;
 }
+
+​
+
+/* 画像 */
+.p-img {
+  width: 100%;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+@media (min-width:768px) {
+  .p-img {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+​
 
 /* table */
 .p-pageTable {
@@ -49,6 +76,8 @@
   color: #333333;
 }
 
+​
+
 /* map */
 .p-myMap {
   position: relative;
@@ -56,6 +85,7 @@
   height: 0;
   overflow: hidden;
 }
+
 /* iframe */
 .p-myMap iframe {
   position: absolute;
@@ -66,42 +96,56 @@
   width: 100%;
 }
 
+​
 /* =============
     Compornent
 ================ */
+​
 
 /* h2 */
-/* 記事タイトル */
-.c-heading {
-    height: 30px;
-    padding: 6px 0;
-    font-size: 1.8rem;
-    letter-spacing: 2px;
-    justify-content: center;
-    align-items: center;
-}
-@media (min-width:768px) {
-    .c-heading {
-        height: 60px;
-        font-size: 2.8rem;
-        padding: 16px 0;
-    }
-}
-.c-heading::before,
-.c-heading::after {
-    content: '';
-    width: 10%;
-    height: 4px;
-    border-radius: 2px;
-    background: #a7170b;
-}
-.c-heading::before {
-    margin-right: 20px;
-}
-.c-heading::after {
-    margin-left: 20px;
+/* 画像タイトル */
+.c-imgHeading img {
+  height: 80px;
 }
 
+​
+
+/* 記事タイトル */
+.c-heading {
+  height: 30px;
+  padding: 6px 0;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width:768px) {
+  .c-heading {
+    height: 60px;
+    font-size: 2.8rem;
+    padding: 16px 0;
+  }
+}
+
+.c-heading::before,
+.c-heading::after {
+  content: '';
+  width: 10%;
+  height: 4px;
+  border-radius: 2px;
+  background: #a7170b;
+}
+
+.c-heading::before {
+  margin-right: 20px;
+}
+
+.c-heading::after {
+  margin-left: 20px;
+}
+
+​ ​
 
 /* h3 */
 .c-subHeading {
@@ -111,24 +155,38 @@
   letter-spacing: 1px;
 }
 
+​
+
 /* 説明 */
 .c-description__text {
-    width: 90%;
-    margin: 0 auto;
-    padding: 30px 0;
-    font-size: 1.8rem;
-    line-height: 1.5;
+  width: 90%;
+  margin: 0 auto;
+  padding: 30px 0;
+  font-size: 1.8rem;
+  line-height: 1.5;
 }
+
 @media (min-width:400px) {
   .c-description__text {
     width: 80%;
   }
 }
+
 @media (min-width:1025px) {
   .c-description__text {
     width: 70%;
   }
 }
+
+​ ​
+
+/* 画像 */
+.c-img {
+  height: 150px;
+  padding: 0 10px;
+}
+
+​ ​ ​
 
 /* table */
 .c-pageTable__th {
@@ -136,19 +194,21 @@
   width: 100%;
   padding: 20px 10px;
   vertical-align: middle;
-  background:#f6f4ec;
-;
+  background: #f6f4ec;
+  ;
   border: 1px solid #707070;
   font-size: 1.8rem;
   line-height: 1.5;
   letter-spacing: 1px;
 }
+
 @media (min-width: 768px) {
   .c-pageTable__th {
     display: table-cell;
     width: 40%;
   }
 }
+
 .c-pageTable__td {
   display: block;
   width: 100%;
@@ -158,22 +218,28 @@
   font-size: 1.6rem;
   line-height: 1.5;
 }
+
 @media (min-width: 768px) {
   .c-pageTable__td {
     display: table-cell;
     width: 60%;
   }
 }
+
 .c-pageTable__td a {
   color: #cf7e7c;
 }
+
 /* table */
+​
 
 /* お問い合わせフォーム */
 /* paddingを0に */
 .c-pageTable__td.u-contact {
   padding: 5px;
 }
+
+​
 
 /* 入力エリア */
 .c-pageTable__td input,
@@ -191,9 +257,12 @@
   background: #ffffff;
   font-size: 150%;
 }
+
 .c-pageTable__td textarea {
   font-size: 200%;
 }
+
+​
 
 /* フォーカス時 */
 .c-pageTable__td input:focus,
@@ -203,11 +272,15 @@
   background: rgba(226, 224, 239, 0.3);
 }
 
+​
+
 /* select */
 .c-select {
   overflow: hidden;
   width: 100%;
 }
+
+​
 
 /* リセット・送信ボタン */
 .c-contactBtn {
@@ -222,45 +295,54 @@
   letter-spacing: 1px;
   cursor: pointer;
 }
+
 @media (min-width:400px) {
   .c-contactBtn {
     width: 150px;
   }
 }
+
 @media (min-width:768px) {
   .c-contactBtn {
     width: 200px;
   }
 }
+
 /* お問い合わせフォーム */
-
-
+​ ​
 /* =============
     Utility
 ================ */
+​
 
 /* color */
 .u-white {
   color: #ffffff;
 }
 
-.u-indigo {
+​ .u-indigo {
   color: #2d294f;
 }
+
+​
 
 /* bgcolor */
 .u-bgWhite {
   background: #ffffff;
 }
 
-.u-bgIndigo {
+​ .u-bgIndigo {
   background: #2d294f;
 }
+
+​
 
 /* margin */
 .u-mr30 {
   margin-right: 30px;
 }
+
+​
 
 /* 必須 */
 .u-must {

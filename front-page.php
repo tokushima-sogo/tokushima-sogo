@@ -1,9 +1,3 @@
-<!-- 【要相談】
-都市伝説ページクリックしたら，
-クリックイベントでページ遷移するため，
-aタグ削除しなければいけない。
-レイアウト修正 -->
-
 <?php get_header(); ?>
 
 
@@ -145,13 +139,13 @@ aタグ削除しなければいけない。
         <!-- B1 -->
         <section id="js_basement" class="p-departmentFloor u-b1">
 
-            <!-- <a href="<?php echo get_post_type_archive_link('horror'); ?>" class="c-horrorLink" id="c-horrorLink"> -->
-            <span class="c-horrorLink">
-                <div class="p-floorBlock c-horrorLink">
-                    <h2 class="u-mb10"><span class="c-floorNumber">地下1階</span>徳島の都市伝説</h2>
-                    6階のゲームをクリアすれば 都市伝説へご案内
-                </div>
-                <!-- </a> -->
+            <a href="<?php echo get_post_type_archive_link('horror'); ?>" class="c-horrorLink" id="c-horrorLink">
+                <span class="c-horrorLink">
+                    <div class="p-floorBlock c-horrorLink">
+                        <h2 class="u-mb10"><span class="c-floorNumber">地下1階</span>徳島の都市伝説</h2>
+                        6階のゲームをクリアすれば 都市伝説へご案内
+                    </div>
+            </a>
             </span>
         </section>
     </div>

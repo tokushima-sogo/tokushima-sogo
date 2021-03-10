@@ -18,7 +18,7 @@ CSSを消すこと。
         <div class="p-breadCrumb">
             <div class="p-breadCrumb__inner">
                 <!-- breadcrumbループstart -->
-                <a href="<?php home_url(); ?>"><span>HOME</span></a>
+                <a href="<?php echo home_url(); ?>"><span>HOME</span></a>
                 <i class="fas fa-angle-right"></i>
                 <span>県西部</span>
                 <!-- breadcrumbループend -->
@@ -27,7 +27,7 @@ CSSを消すこと。
         <!-- /breadCrumb -->
 
         <section class="l-description">
-            <div class="c-heroImg"><img src="./assets/images/mv_archive_west_web.jpg" alt="県西部"></div>
+            <div class="c-heroImg"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_archive_west_web.jpg" alt="徳島西部"></div>
             <!-- エリア名と説明全体  -->
             <div class="p-description">
                 <!-- エリア名  -->
@@ -39,7 +39,7 @@ CSSを消すこと。
                         毎年8月のお盆期間に開催される当市の阿波踊り（徳島市阿波おどり）は江戸時代より約400年の歴史がある日本の著名な伝統芸能の一つであり、阿波踊り期間中の4日間に日本国内外から約130万人の観光客が訪れる。
                     </div>
                     <div class="c-description__map">
-                        <img src="assets/images/img_archive_west_map.png" class="c-map" alt="徳島西部">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/img_archive_west_map02.png" class="c-map" alt="徳島西部">
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@ CSSを消すこと。
 
         <section class="l-articleList">
             <!-- タイトルの表示 -->
-            <h3 class="c-subHeading u-center">
+            <h3 id="west_spot" class="c-subHeading u-center">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_spot.png" alt="スポット">
             </h3>
 
@@ -140,7 +140,7 @@ CSSを消すこと。
 
         <section class="l-articleList">
             <!-- タイトルの表示 -->
-            <h3 class="c-subHeading u-center">
+            <h3 id="west_gourmet" class="c-subHeading u-center">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_gourmet.png" alt="グルメ">
             </h3>
 
@@ -211,8 +211,8 @@ CSSを消すこと。
         ?>
         <section class="l-articleList">
             <!-- タイトルの表示 -->
-            <h3 class="c-subHeading u-center">
-                <img src="<?php echo get_template_directory_uri(); ?>assets/images/tl_archive_common_shop.png" alt="ショップ">
+            <h3 id="west_shop" class="c-subHeading u-center">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_shop.png" alt="ショップ">
             </h3>
 
             <!-- spot -->
