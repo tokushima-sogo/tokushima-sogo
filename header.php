@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
-    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon_tokushima_sogo.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon_tokushima_sogo.png">
 </head>
 
 <body>
@@ -16,7 +14,7 @@
         <!-- header__contents -->
         <div class="p-header__contents u-flex u-bgCalmBlue">
             <!-- logo -->
-            <h1><a href="<?php echo home_url(); ?>"><img class="c-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_header.png" alt="トクシマSo Go！"></a></h1>
+            <h1><a href="<?php echo home_url(); ?>"><img class="c-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_tokushima_sogokan.png" alt="トクシマSo Go！"></a></h1>
             <!-- /logo -->
             <!-- topNav -->
             <nav class="p-topNav">

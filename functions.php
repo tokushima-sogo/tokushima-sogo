@@ -55,6 +55,22 @@ function tokushima_sogo_document_title_parts($title)
 }
 add_filter('document_title_parts', 'tokushima_sogo_document_title_parts');
 
+
+/**
+ * メディアフォルダのパスを取得するショートコード
+ *
+ * @param [type] $atts
+ * @param [type] $content
+ * @return void
+ */
+function getmediaurl($atts, $content = null)
+{
+    $wp_upload_dir = wp_upload_dir();
+    return $wp_upload_dir['baseurl'];
+}
+add_shortcode('mediaurl', 'getmediaurl');
+
+
 /**
  * CSSの読み込み
  *

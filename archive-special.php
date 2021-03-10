@@ -31,20 +31,15 @@
     </section>
     <!-- description -->
 
-
-
-    <!-- specialList -->
+    <!-- specialArticle -->
     <section class="l-specialArticle u-flex">
-
         <!-- メインループ開始 -->
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : ?>
                 <?php the_post(); ?>
-
                 <!-- specialArticle -->
                 <article class="p-specialArticle">
                     <a href="<?php the_permalink(); ?>">
-
                         <!-- サムネイルの表示 -->
                         <div class="c-specialBanner">
                             <?php if (has_post_thumbnail()) : ?>
@@ -53,19 +48,16 @@
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="画像がありません">
                             <?php endif; ?>
                         </div>
-
                         <!-- コンテンツ文章の抜粋 -->
-                        <div class="c-balloon">
-                            <p class="c-specialArticle__description u-black">
-                                <?php the_excerpt(); ?>
-                            </p>
+                        <div class="c-specialArticle__description u-black">
+                            <?php the_excerpt(); ?>
                         </div>
                     </a>
                 </article>
             <?php endwhile; ?>
         <?php endif; ?>
     </section>
-    <!-- /specialList -->
+    <!-- /specialArticle -->
 
 </main>
 

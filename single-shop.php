@@ -135,9 +135,7 @@
                                     <!-- map登録ボタン -->
                                     <?php echo do_shortcode('[wp_ulike]'); ?>
                                     <!-- スポットピンのSVG画像 -->
-                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.84 567.95" preserveAspectRatio="none">
-                                        <path class="cls-1" d="M209.92,0h0C94,0,0,94,0,209.92a209.25,209.25,0,0,0,17.11,83.15c5.09,11.79,19.24,35.19,19.75,36C80.14,399,126.26,470.6,171.2,542.22,182,559.37,196,568,209.92,568h0c14,0,27.94-8.58,38.72-25.73C293.58,470.6,339.7,399,383,329.08c.51-.82,14.65-24.22,19.74-36a209.08,209.08,0,0,0,17.12-83.15C419.84,94,325.85,0,209.92,0Zm0,300.64A89.65,89.65,0,1,1,299.56,211,89.64,89.64,0,0,1,209.92,300.64Z" />
-                                    </svg> -->
+
                                     Myスポットに追加
                                 </div>
                                 <!-- /Myスポット -->
@@ -158,103 +156,104 @@
                                 </div>
                             </div>
                         <?php endif; ?>
+
+                        <!-- /singleMap -->
+
+
+                        <!-- singleTable -->
+                        <div class="l-singleTable">
+                            <table class="p-singleTable">
+                                <tr class="c-singleTable__tr">
+                                    <th class="c-singleTable__th">所在地</th>
+                                    <td class="c-singleTable__td">
+                                        <!-- カスタムフィールド住所 -->
+                                        <?php if ($address) : ?>
+                                            <?php echo $address; ?>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                                <tr class="c-singleTable__tr">
+                                    <th class="c-singleTable__th">TEL</th>
+                                    <td class="c-singleTable__td">
+                                        <!-- カスタムフィールド電話 -->
+                                        <?php if ($tel) : ?>
+                                            <?php echo $tel; ?>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                                <tr class="c-singleTable__tr">
+                                    <th class="c-singleTable__th">営業時間</th>
+                                    <td class="c-singleTable__td">
+                                        <!-- カスタムフィールド営業時間 -->
+                                        <?php if ($opentime) : ?>
+                                            <?php echo $opentime; ?>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                                <tr class="c-singleTable__tr">
+                                    <th class="c-singleTable__th">定休日</th>
+                                    <td class="c-singleTable__td">
+                                        <!-- カスタムフィールド定休日 -->
+                                        <?php if ($closetime) : ?>
+                                            <?php echo $closetime; ?>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                                <tr class="c-singleTable__tr">
+                                    <th class="c-singleTable__th">URL</th>
+                                    <td class="c-singleTable__td">
+                                        <!-- カスタムフィールドURL -->
+                                        <?php if ($url) : ?>
+                                            <a href="<?php echo $url; ?>"><?php echo $url; ?></a>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                                <tr class="c-singleTable__tr">
+                                    <!-- カスタムフィールドsns -->
+                                    <th class="c-singleTable__th">SNS</th>
+                                    <td class="c-singleTable__td">
+                                        <?php if ($facebook) : ?>
+                                            <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
+                                        <?php endif; ?>
+                                        <?php if ($instagram) : ?>
+                                            <a href="<?php echo $instagram; ?>"><i class="fab fa-instagram-square"></i></a>
+                                        <?php endif; ?>
+                                        <?php if ($twitter) : ?>
+                                            <a href="<?php echo $twitter; ?>"><i class="fab fa-twitter-square"></i></a>
+                                        <?php endif; ?>
+                                    </td>
+
+
+                                </tr>
+                                <tr class="c-singleTable__tr">
+                                    <!-- カスタムフィールド備考 -->
+                                    <th class="c-singleTable__th">備考</th>
+                                    <td class="c-singleTable__td">
+                                        <?php if ($remarks1) : ?>
+                                            <?php echo $remarks1; ?>
+                                        <?php endif; ?>
+
+                                        <?php if ($remarks2) : ?>
+                                            <?php echo $remarks2; ?>
+                                        <?php endif; ?>
+
+                                        <?php if ($remarks3) : ?>
+                                            <?php echo $remarks3; ?>
+                                        <?php endif; ?>
+
+                                        <?php if ($remarks4) : ?>
+                                            <?php echo $remarks4; ?>
+                                        <?php endif; ?>
+
+                                        <?php if ($remarks5) : ?>
+                                            <?php echo $remarks5; ?>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- /singleTable -->
                     </div>
-                    <!-- /singleMap -->
-
-
-                    <!-- singleTable -->
-                    <div class="l-singleTable">
-                        <table class="p-singleTable">
-                            <tr class="c-singleTable__tr">
-                                <th class="c-singleTable__th">所在地</th>
-                                <td class="c-singleTable__td">
-                                    <!-- カスタムフィールド住所 -->
-                                    <?php if ($address) : ?>
-                                        <?php echo $address; ?>
-                                    <?php endif; ?>
-                                </td>
-                            </tr>
-                            <tr class="c-singleTable__tr">
-                                <th class="c-singleTable__th">TEL</th>
-                                <td class="c-singleTable__td">
-                                    <!-- カスタムフィールド電話 -->
-                                    <?php if ($tel) : ?>
-                                        <?php echo $tel; ?>
-                                    <?php endif; ?>
-                                </td>
-                            </tr>
-                            <tr class="c-singleTable__tr">
-                                <th class="c-singleTable__th">営業時間</th>
-                                <td class="c-singleTable__td">
-                                    <!-- カスタムフィールド営業時間 -->
-                                    <?php if ($opentime) : ?>
-                                        <?php echo $opentime; ?>
-                                    <?php endif; ?>
-                                </td>
-                            </tr>
-                            <tr class="c-singleTable__tr">
-                                <th class="c-singleTable__th">定休日</th>
-                                <td class="c-singleTable__td">
-                                    <!-- カスタムフィールド定休日 -->
-                                    <?php if ($closetime) : ?>
-                                        <?php echo $closetime; ?>
-                                    <?php endif; ?>
-                                </td>
-                            </tr>
-                            <tr class="c-singleTable__tr">
-                                <th class="c-singleTable__th">URL</th>
-                                <td class="c-singleTable__td">
-                                    <!-- カスタムフィールドURL -->
-                                    <?php if ($url) : ?>
-                                        <a href="<?php echo $url; ?>"><?php echo $url; ?></a>
-                                    <?php endif; ?>
-                                </td>
-                            </tr>
-                            <tr class="c-singleTable__tr">
-                                <!-- カスタムフィールドsns -->
-                                <th class="c-singleTable__th">SNS</th>
-                                <td class="c-singleTable__td">
-                                    <?php if ($facebook) : ?>
-                                        <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
-                                    <?php endif; ?>
-                                    <?php if ($instagram) : ?>
-                                        <a href="<?php echo $instagram; ?>"><i class="fab fa-instagram-square"></i></a>
-                                    <?php endif; ?>
-                                    <?php if ($twitter) : ?>
-                                        <a href="<?php echo $twitter; ?>"><i class="fab fa-twitter-square"></i></a>
-                                    <?php endif; ?>
-                                </td>
-
-
-                            </tr>
-                            <tr class="c-singleTable__tr">
-                                <!-- カスタムフィールド備考 -->
-                                <th class="c-singleTable__th">備考</th>
-                                <td class="c-singleTable__td">
-                                    <?php if ($remarks1) : ?>
-                                        <?php echo $remarks1; ?>
-                                    <?php endif; ?>
-
-                                    <?php if ($remarks2) : ?>
-                                        <?php echo $remarks2; ?>
-                                    <?php endif; ?>
-
-                                    <?php if ($remarks3) : ?>
-                                        <?php echo $remarks3; ?>
-                                    <?php endif; ?>
-
-                                    <?php if ($remarks4) : ?>
-                                        <?php echo $remarks4; ?>
-                                    <?php endif; ?>
-
-                                    <?php if ($remarks5) : ?>
-                                        <?php echo $remarks5; ?>
-                                    <?php endif; ?>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <!-- /singleTable -->
                 </div>
                 <!-- /singleArticle__info -->
                 </div>
