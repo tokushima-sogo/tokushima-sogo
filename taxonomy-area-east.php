@@ -1,8 +1,7 @@
 <?php get_header(); ?>
-<link href="<?php echo get_template_directory_uri(); ?>/assets/css/archive-west.css " rel="stylesheet">
-
 
 <main class="l-main">
+
     <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
@@ -32,22 +31,6 @@
         </div>
     </section>
 
-    <!-- 東部の観光スポット記事を出力 -->
-    <?php
-    $args = array(
-        'post_type'         => 'spot',      // カスタム投稿タイプ名
-        'orderby'           => 'modified',  // 更新日で表示
-        'tax_query'         => array(
-            'relation'      => 'AND',
-            array(
-                'taxonomy'  => 'area',      // タクソノミースラッグを指定
-                'field'     => 'slug',      // termsで使用する種類指定
-                'terms'     => 'east',      // タームスラッグを指定
-            ),
-        ),
-    );
-    ?>
-
     <section class="l-articleList">
         <!-- タイトルの表示 -->
         <span id="east_spot"></span>
@@ -56,6 +39,22 @@
         </h3>
 
         <div class="p-articleList u-grid">
+
+            <!-- 東部の観光スポット記事を出力 -->
+            <?php
+            $args = array(
+                'post_type'         => 'spot',      // カスタム投稿タイプ名
+                'orderby'           => 'modified',  // 更新日で表示
+                'tax_query'         => array(
+                    'relation'      => 'AND',
+                    array(
+                        'taxonomy'  => 'area',      // タクソノミースラッグを指定
+                        'field'     => 'slug',      // termsで使用する種類指定
+                        'terms'     => 'east',      // タームスラッグを指定
+                    ),
+                ),
+            );
+            ?>
             <!-- ループ開始 -->
             <?php $the_query = new WP_Query($args); ?>
             <?php if ($the_query->have_posts()) : ?>
@@ -93,7 +92,6 @@
                         <!-- articleList -->
 
                         <!-- article -->
-
                         <div class="c-title u-center">
                             <!-- コンテンツの抜粋 -->
                             <?php the_excerpt(); ?>
@@ -108,21 +106,6 @@
         </div>
     </section>
 
-    <!-- 東部のグルメ記事を出力 -->
-    <?php
-    $args = array(
-        'post_type'         => 'gourmet',   // カスタム投稿タイプ名
-        'orderby'           => 'modified',  // 更新日で表示
-        'tax_query'         => array(
-            'relation'      => 'AND',
-            array(
-                'taxonomy'  => 'area',      // タクソノミースラッグを指定
-                'field'     => 'slug',      // termsで使用する種類指定
-                'terms'     => 'east',      // タームスラッグを指定
-            ),
-        ),
-    );
-    ?>
     <section class="l-articleList">
         <!-- タイトルの表示 -->
         <span id="east_gourmet"></span>
@@ -131,6 +114,23 @@
         </h3>
         <div class="p-articleList u-grid">
             <!-- spot -->
+
+            <!-- 東部のグルメ記事を出力 -->
+            <?php
+            $args = array(
+                'post_type'         => 'gourmet',   // カスタム投稿タイプ名
+                'orderby'           => 'modified',  // 更新日で表示
+                'tax_query'         => array(
+                    'relation'      => 'AND',
+                    array(
+                        'taxonomy'  => 'area',      // タクソノミースラッグを指定
+                        'field'     => 'slug',      // termsで使用する種類指定
+                        'terms'     => 'east',      // タームスラッグを指定
+                    ),
+                ),
+            );
+            ?>
+
             <?php $the_query = new WP_Query($args); ?>
             <?php if ($the_query->have_posts()) : ?>
                 <?php while ($the_query->have_posts()) : ?>
@@ -184,21 +184,6 @@
         </div>
     </section>
 
-    <!-- 東部のお土産記事を出力 -->
-    <?php
-    $args = array(
-        'post_type'         => 'shop',      // カスタム投稿タイプ名
-        'orderby'           => 'modified',  // 更新日で表示
-        'tax_query'         => array(
-            'relation'      => 'AND',
-            array(
-                'taxonomy'  => 'area',      // タクソノミースラッグを指定
-                'field'     => 'slug',      // termsで使用する種類指定
-                'terms'     => 'east',      // タームスラッグを指定
-            ),
-        ),
-    );
-    ?>
     <section class="l-articleList">
         <!-- タイトルの表示 -->
         <span id="east_shop"></span>
@@ -207,11 +192,26 @@
         </h3>
         <div class="p-articleList u-grid">
             <!-- spot -->
+            <!-- 東部のお土産記事を出力 -->
+            <?php
+            $args = array(
+                'post_type'         => 'shop',      // カスタム投稿タイプ名
+                'orderby'           => 'modified',  // 更新日で表示
+                'tax_query'         => array(
+                    'relation'      => 'AND',
+                    array(
+                        'taxonomy'  => 'area',      // タクソノミースラッグを指定
+                        'field'     => 'slug',      // termsで使用する種類指定
+                        'terms'     => 'east',      // タームスラッグを指定
+                    ),
+                ),
+            );
+            ?>
+
             <?php $the_query = new WP_Query($args); ?>
             <?php if ($the_query->have_posts()) : ?>
                 <?php while ($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
-
 
                     <article class="p-article c-more3">
                         <!-- imgArea -->
@@ -244,7 +244,6 @@
                         <!-- articleList -->
 
                         <!-- article -->
-
                         <div class="c-title u-center">
                             <!-- コンテンツの抜粋 -->
                             <?php the_excerpt(); ?>

@@ -4,6 +4,7 @@
 <!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/single.css"> -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNNbWvrL46SW-8K-D0w6Haff4Vbcc4rRQ"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/googlemap.js"></script>
+
 <main class="l-main">
 
     <!-- breadCrumb -->
@@ -21,40 +22,42 @@
     <!-- /breadCrumb -->
 
     <!-- 詳細記事の出力 -->
+    <!-- singleArticle -->
+    <section class="l-singleArticle">
 
-    <?php if (have_posts()) : ?>
-        <?php while (have_posts()) : ?>
-            <?php the_post(); ?>
+        <?php if (have_posts()) : ?>
+            <?php while (have_posts()) : ?>
+                <?php the_post(); ?>
 
-            <!-- カスタムフィールドの値を取得 -->
-            <?php
-            $spotname  = get_field('spot_name');
-            $picture1  = get_field('gourmet_pic1');
-            $picture2  = get_field('gourmet_pic2');
-            $picture3  = get_field('gourmet_pic3');
-            $address   = get_field('gourmet_address');
-            $tel       = get_field('gourmet_tel');
-            $opentime  = get_field('gourmet_open_time');
-            $closetime = get_field('gourmet_close');
-            $url       = get_field('gourmet_url');
-            $facebook  = get_field('gourmet_facebook');
-            $instagram = get_field('gourmet_instagram');
-            $twitter   = get_field('gourmet_twitter');
-            $remarks1   = get_field('gourmet_remarks1');
-            $remarks2   = get_field('gourmet_remarks2');
-            $remarks3   = get_field('gourmet_remarks3');
-            $remarks4   = get_field('gourmet_remarks4');
-            $remarks5   = get_field('gourmet_remarks5');
-            ?>
+                <!-- カスタムフィールドの値を取得 -->
+                <?php
+                $spotname  = get_field('spot_name');
+                $picture1  = get_field('gourmet_pic1');
+                $picture2  = get_field('gourmet_pic2');
+                $picture3  = get_field('gourmet_pic3');
+                $address   = get_field('gourmet_address');
+                $tel       = get_field('gourmet_tel');
+                $opentime  = get_field('gourmet_open_time');
+                $closetime = get_field('gourmet_close');
+                $url       = get_field('gourmet_url');
+                $facebook  = get_field('gourmet_facebook');
+                $instagram = get_field('gourmet_instagram');
+                $twitter   = get_field('gourmet_twitter');
+                $remarks1   = get_field('gourmet_remarks1');
+                $remarks2   = get_field('gourmet_remarks2');
+                $remarks3   = get_field('gourmet_remarks3');
+                $remarks4   = get_field('gourmet_remarks4');
+                $remarks5   = get_field('gourmet_remarks5');
+                ?>
 
-            <!-- singleArticle -->
-            <section class="l-singleArticle">
+
                 <!-- singleHeader -->
                 <div class="l-singleHeader">
-                    <h2 class="c-singleArticle__title u-center"><?php the_title(); ?></h2>
+                    <h2 class="c-heading u-flex"><?php the_title(); ?></h2>
                     <!-- /singleArticle__title -->
                 </div>
                 <!-- /singleHeader -->
+
                 <!-- singleBody -->
                 <div class="l-singleBody">
                     <!-- singleArticle__item -->
@@ -107,7 +110,7 @@
                         <!-- singleArticle__description -->
                         <div class="p-singleArticle__description u-flex">
                             <!-- singleArticle__text -->
-                            <p class="c-singleArticle__text"><?php the_content(); ?></p>
+                            <div class="c-singleArticle__text"><?php the_content(); ?></div>
                             <!-- /singleArticle__text -->
                             <!-- singleTag -->
                             <div class="p-singleTag u-flex">
@@ -126,7 +129,7 @@
                             <!-- singleBtns -->
                             <div class="p-singleBtns u-center u-flex">
                                 <!-- Myスポット -->
-                                <div class="p-singleBtn c-btnTag u-center u-btnTag--spot">
+                                <div class="p-singleBtn c-btnTag u-center">
                                     <!-- map登録ボタン -->
                                     <?php echo do_shortcode('[wp_ulike]'); ?>
                                     <!-- Myスポットに追加 -->
@@ -138,6 +141,7 @@
                         <!-- /singleArticle__description -->
                     </div>
                     <!-- /singleArticle__item -->
+
                     <!-- singleArticle__info -->
                     <div class="p-singleArticle__info u-flex">
                         <!-- singleMap -->
@@ -150,11 +154,10 @@
                             </div>
                         <?php endif; ?>
 
-
-
                         <!-- singleTable -->
                         <div class="l-singleTable">
                             <table class="p-singleTable">
+
                                 <tr class="c-singleTable__tr">
                                     <th class="c-singleTable__th">所在地</th>
                                     <td class="c-singleTable__td">
@@ -162,10 +165,11 @@
                                         <?php if ($address) : ?>
                                             <?php echo $address; ?>
                                         <?php else : ?>
-                                            <p>-</p>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
+
                                 <tr class="c-singleTable__tr">
                                     <th class="c-singleTable__th">TEL</th>
                                     <td class="c-singleTable__td">
@@ -173,10 +177,11 @@
                                         <?php if ($tel) : ?>
                                             <?php echo $tel; ?>
                                         <?php else : ?>
-                                            <p>-</p>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
+
                                 <tr class="c-singleTable__tr">
                                     <th class="c-singleTable__th">営業時間</th>
                                     <td class="c-singleTable__td">
@@ -184,10 +189,11 @@
                                         <?php if ($opentime) : ?>
                                             <?php echo $opentime; ?>
                                         <?php else : ?>
-                                            <p>-</p>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
+
                                 <tr class="c-singleTable__tr">
                                     <th class="c-singleTable__th">定休日</th>
                                     <td class="c-singleTable__td">
@@ -195,80 +201,71 @@
                                         <?php if ($closetime) : ?>
                                             <?php echo $closetime; ?>
                                         <?php else : ?>
-                                            <p>-</p>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
+
                                 <tr class="c-singleTable__tr">
                                     <th class="c-singleTable__th">URL</th>
                                     <td class="c-singleTable__td">
                                         <?php if ($url) : ?>
                                             <a href="<?php echo $url; ?>"><?php echo $url; ?></a>
                                         <?php else : ?>
-                                            <p>-</p>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
+
                                 <tr class="c-singleTable__tr">
                                     <!-- カスタムフィールドsns -->
                                     <th class="c-singleTable__th">SNS</th>
                                     <td class="c-singleTable__td">
                                         <?php if ($facebook) : ?>
                                             <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
-                                        <?php else : ?>
-                                            <p>-</p>
-                                        <?php endif; ?>
-                                        <?php if ($instagram) : ?>
+                                        <?php elseif ($instagram) : ?>
                                             <a href="<?php echo $instagram; ?>"><i class="fab fa-instagram-square"></i></a>
-                                        <?php endif; ?>
-                                        <?php if ($twitter) : ?>
+                                        <?php elseif ($twitter) : ?>
                                             <a href="<?php echo $twitter; ?>"><i class="fab fa-twitter-square"></i></a>
+                                        <?php else : ?>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
-
-
                                 </tr>
+
                                 <tr class="c-singleTable__tr">
                                     <!-- カスタムフィールド備考 -->
                                     <th class="c-singleTable__th">備考</th>
                                     <td class="c-singleTable__td">
                                         <?php if ($remarks1) : ?>
                                             <?php echo $remarks1; ?>
-                                        <?php else : ?>
-                                            <p>-</p>
-                                        <?php endif; ?>
-
-                                        <?php if ($remarks2) : ?>
+                                        <?php elseif ($remarks2) : ?>
                                             <?php echo $remarks2; ?>
-                                        <?php endif; ?>
-
-                                        <?php if ($remarks3) : ?>
+                                        <?php elseif ($remarks3) : ?>
                                             <?php echo $remarks3; ?>
-                                        <?php endif; ?>
-
-                                        <?php if ($remarks4) : ?>
+                                        <?php elseif ($remarks4) : ?>
                                             <?php echo $remarks4; ?>
-                                        <?php endif; ?>
-
-                                        <?php if ($remarks5) : ?>
+                                        <?php elseif ($remarks5) : ?>
                                             <?php echo $remarks5; ?>
+                                        <?php else : ?>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
+
                             </table>
                         </div>
                         <!-- /singleTable -->
                     </div>
-                </div>
-                <!-- /singleArticle__info -->
+                    <!-- /singleArticle__info -->
                 </div>
                 <!-- /singleBody -->
 
+            <?php endwhile; ?>
+        <?php endif; ?>
 
-            </section>
-            <!-- /singleArticle -->
-        <?php endwhile; ?>
-    <?php endif; ?>
+    </section>
+    <!-- /singleArticle -->
 
 
     <!-- 関連記事の出力 -->
@@ -352,7 +349,6 @@
 
     </section>
     <!-- /articleList -->
-
 
 </main>
 <!-- /main -->

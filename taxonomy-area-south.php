@@ -1,7 +1,7 @@
 <?php get_header(); ?>
-<link href="<?php echo get_template_directory_uri(); ?>/assets/css/archive-west.css " rel="stylesheet">
 
 <main class="l-main">
+
     <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
@@ -31,22 +31,6 @@
         </div>
     </section>
 
-
-    <!-- 南部の観光スポット記事を出力 -->
-    <?php
-    $args = array(
-        'post_type'         => 'spot',      // カスタム投稿タイプ名
-        'orderby'           => 'modified',  // 更新日で表示
-        'tax_query'         => array(
-            'relation'      => 'AND',
-            array(
-                'taxonomy'  => 'area',      // タクソノミースラッグを指定
-                'field'     => 'slug',      // termsで使用する種類指定
-                'terms'     => 'south',     // タームスラッグを指定
-            ),
-        ),
-    );
-    ?>
     <section class="l-articleList">
         <!-- タイトルの表示 -->
         <span id="south_spot"></span>
@@ -55,6 +39,21 @@
         </h3>
 
         <div class="p-articleList u-grid">
+            <!-- 南部の観光スポット記事を出力 -->
+            <?php
+            $args = array(
+                'post_type'         => 'spot',      // カスタム投稿タイプ名
+                'orderby'           => 'modified',  // 更新日で表示
+                'tax_query'         => array(
+                    'relation'      => 'AND',
+                    array(
+                        'taxonomy'  => 'area',      // タクソノミースラッグを指定
+                        'field'     => 'slug',      // termsで使用する種類指定
+                        'terms'     => 'south',     // タームスラッグを指定
+                    ),
+                ),
+            );
+            ?>
             <!-- ループ開始 -->
             <?php $the_query = new WP_Query($args); ?>
             <?php if ($the_query->have_posts()) : ?>
@@ -109,35 +108,32 @@
         </div>
     </section>
 
-
-    <!-- 南部のグルメ記事を出力 -->
-    <?php
-    $args = array(
-        'post_type'         => 'gourmet',   // カスタム投稿タイプ名
-        'orderby'           => 'modified',  // 更新日で表示
-        'tax_query'         => array(
-            'relation'      => 'AND',
-            array(
-                'taxonomy'  => 'area',      // タクソノミースラッグを指定
-                'field'     => 'slug',      // termsで使用する種類指定
-                'terms'     => 'south',     // タームスラッグを指定
-            ),
-        ),
-    );
-    ?>
     <section class="l-articleList">
         <!-- タイトルの表示 -->
         <span id="south_gourmet"></span>
         <h3 class="c-subHeading u-center">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_spot.png" alt="スポット">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_gourmet.png" alt="グルメ">
         </h3>
         <div class="p-articleList u-grid">
-            <!-- ループ開始 -->
+            <!-- 南部のグルメ記事を出力 -->
+            <?php
+            $args = array(
+                'post_type'         => 'gourmet',   // カスタム投稿タイプ名
+                'orderby'           => 'modified',  // 更新日で表示
+                'tax_query'         => array(
+                    'relation'      => 'AND',
+                    array(
+                        'taxonomy'  => 'area',      // タクソノミースラッグを指定
+                        'field'     => 'slug',      // termsで使用する種類指定
+                        'terms'     => 'south',     // タームスラッグを指定
+                    ),
+                ),
+            );
+            ?>
             <?php $the_query = new WP_Query($args); ?>
             <?php if ($the_query->have_posts()) : ?>
                 <?php while ($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
-
 
                     <article class="p-article c-more2">
                         <!-- imgArea -->
@@ -177,7 +173,6 @@
                         </div>
                     </article>
 
-
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
@@ -187,35 +182,34 @@
         </div>
     </section>
 
-
-    <!-- 南部のお土産記事を出力 -->
-    <?php
-    $args = array(
-        'post_type'         => 'shop',      // カスタム投稿タイプ名
-        'orderby'           => 'modified',  // 更新日で表示
-        'tax_query'         => array(
-            'relation'      => 'AND',
-            array(
-                'taxonomy'  => 'area',      // タクソノミースラッグを指定
-                'field'     => 'slug',      // termsで使用する種類指定
-                'terms'     => 'south',     // タームスラッグを指定
-            ),
-        ),
-    );
-    ?>
     <section class="l-articleList">
         <!-- タイトルの表示 -->
         <span id="south_shop"></span>
         <h3 class="c-subHeading u-center">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_shop.png" alt="ショップ">
         </h3>
+
         <div class="p-articleList u-grid">
+            <!-- 南部のお土産記事を出力 -->
+            <?php
+            $args = array(
+                'post_type'         => 'shop',      // カスタム投稿タイプ名
+                'orderby'           => 'modified',  // 更新日で表示
+                'tax_query'         => array(
+                    'relation'      => 'AND',
+                    array(
+                        'taxonomy'  => 'area',      // タクソノミースラッグを指定
+                        'field'     => 'slug',      // termsで使用する種類指定
+                        'terms'     => 'south',     // タームスラッグを指定
+                    ),
+                ),
+            );
+            ?>
             <!-- ループ開始 -->
             <?php $the_query = new WP_Query($args); ?>
             <?php if ($the_query->have_posts()) : ?>
                 <?php while ($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
-
 
                     <article class="p-article c-more3">
                         <!-- imgArea -->

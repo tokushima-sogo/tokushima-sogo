@@ -3,6 +3,13 @@
 /* =============
     Layout
 ================ */
+/* メイン写真と都市伝説の説明 */
+.l-description {
+    width: 90%;
+    margin: 0 auto;
+
+}
+
 /* 一つのカテゴリーのレイアウト */
 .l-articleList {
     padding: 30px 0;
@@ -21,17 +28,6 @@
 /* =============
     Project
 ================ */
-
-/* エリア名と説明全体 */
-.p-description {
-    padding: 20px 0;
-}
-
-@media(min-width:768px) {
-    .p-description {
-        padding: 40px 0;
-    }
-}
 
 /* 地図の画像と説明 */
 .p-description__item {
@@ -89,13 +85,13 @@
 /* いいねとタグ */
 .p-textContent {
     padding: 16px 15px 10px;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 /* タグ全体 */
 .p-tag {
     color: #FEF9F9;
-    justify-content: space-around;
+    justify-content: start;
     align-items: center;
 }
 
@@ -110,6 +106,16 @@
     width: 100%;
 }
 
+@media(min-width:1025px) {
+    .c-heroImg img {
+        height: 70vh;
+        width: 100%;
+
+    }
+
+}
+
+
 /* エリア名 */
 .c-heading {
     width: 100%;
@@ -123,7 +129,7 @@
 .c-description__text {
     width: 90%;
     margin: 0 auto;
-    padding: 14px;
+    padding: 10px;
     font-size: 1.4rem;
     line-height: 1.5;
 }
@@ -133,7 +139,7 @@
         width: 80%;
 
         margin: 0 auto;
-        padding: 20px;
+        padding: 0;
         font-size: 1.8rem;
         line-height: 2;
     }
@@ -142,7 +148,7 @@
 @media(min-width:1025px) {
     .c-description__text {
         /* width: 65%; */
-        padding: 30px;
+        padding: 0px;
     }
 }
 
@@ -207,26 +213,7 @@
 }
 
 
-/* ハートのSVG */
-.c-icon__heart {
-    width: 32px;
-    height: 30px;
-    fill: #bd0000;
-    stroke: none;
-}
 
-/* いいねの文字 */
-.c-bookmark__text {
-    padding: 5px 2px;
-    font-size: 1.2rem;
-}
-
-/* いいねの数 */
-.c-bookmark__count {
-    padding: 0 2px;
-    font-size: 1.8rem;
-    font-family: 'mamelon5';
-}
 
 
 /* タグ */
@@ -236,12 +223,24 @@
     background: #2D294F;
     border: 1px solid #707070;
     font-size: 1.2rem;
+
+}
+
+.c-tag a {
+    color: white;
 }
 
 /* スポット名称 */
 .c-title {
     font-size: 1.8rem;
     font-family: 'mamelon5';
+    padding: 8px;
+}
+
+.c-date {
+    font-size: 1.4rem;
+    font-family: 'mamelon5';
+    padding: 8px;
 }
 
 

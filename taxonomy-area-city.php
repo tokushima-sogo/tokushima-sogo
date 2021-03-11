@@ -1,15 +1,14 @@
 <?php get_header(); ?>
 
-<link href="<?php echo get_template_directory_uri(); ?>/assets/css/archive-west.css " rel="stylesheet">
-
 <main class="l-main">
+
     <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
             <!-- breadcrumbループstart -->
             <a href="<?php echo home_url('/'); ?>"><span>HOME</span></a>
             <i class="fas fa-angle-right"></i>
-            <span>県市内</span>
+            <span>徳島市内</span>
             <!-- breadcrumbループend -->
         </div>
     </div>
@@ -32,22 +31,6 @@
         </div>
     </section>
 
-    <!-- 市内の観光スポット記事のループ設定 -->
-    <?php
-    $args = array(
-        'post_type'         => 'spot',      // カスタム投稿タイプ名
-        'orderby'           => 'modified',  // 更新日で表示
-        'tax_query'         => array(
-            'relation'      => 'AND',
-            array(
-                'taxonomy'  => 'area',      // タクソノミースラッグを指定
-                'field'     => 'slug',      // termsで使用する種類指定
-                'terms'     => 'city',      // タームスラッグを指定
-            ),
-        ),
-    );
-    ?>
-
     <section class="l-articleList">
         <!-- タイトルの表示 -->
         <span id="city_spot"></span>
@@ -56,6 +39,21 @@
         </h3>
 
         <div class="p-articleList u-grid">
+            <!-- 市内の観光スポット記事のループ設定 -->
+            <?php
+            $args = array(
+                'post_type'         => 'spot',      // カスタム投稿タイプ名
+                'orderby'           => 'modified',  // 更新日で表示
+                'tax_query'         => array(
+                    'relation'      => 'AND',
+                    array(
+                        'taxonomy'  => 'area',      // タクソノミースラッグを指定
+                        'field'     => 'slug',      // termsで使用する種類指定
+                        'terms'     => 'city',      // タームスラッグを指定
+                    ),
+                ),
+            );
+            ?>
             <!-- ループ開始 -->
             <?php $the_query = new WP_Query($args); ?>
             <?php if ($the_query->have_posts()) : ?>
@@ -110,22 +108,6 @@
         </div>
     </section>
 
-    <!-- 市内のグルメ記事を出力 -->
-    <?php
-    $args = array(
-        'post_type'         => 'gourmet',   // カスタム投稿タイプ名
-        'orderby'           => 'modified',  // 更新日で表示
-        'tax_query'         => array(
-            'relation'      => 'AND',
-            array(
-                'taxonomy'  => 'area',      // タクソノミースラッグを指定
-                'field'     => 'slug',      // termsで使用する種類指定
-                'terms'     => 'city',      // タームスラッグを指定
-            ),
-        ),
-    );
-    ?>
-
     <section class="l-articleList">
         <!-- タイトルの表示 -->
         <span id="city_gourmet"></span>
@@ -134,6 +116,21 @@
         </h3>
 
         <div class="p-articleList u-grid">
+            <!-- 市内のグルメ記事を出力 -->
+            <?php
+            $args = array(
+                'post_type'         => 'gourmet',   // カスタム投稿タイプ名
+                'orderby'           => 'modified',  // 更新日で表示
+                'tax_query'         => array(
+                    'relation'      => 'AND',
+                    array(
+                        'taxonomy'  => 'area',      // タクソノミースラッグを指定
+                        'field'     => 'slug',      // termsで使用する種類指定
+                        'terms'     => 'city',      // タームスラッグを指定
+                    ),
+                ),
+            );
+            ?>
             <?php $the_query = new WP_Query($args); ?>
             <?php if ($the_query->have_posts()) : ?>
                 <?php while ($the_query->have_posts()) : ?>
@@ -188,22 +185,6 @@
         </div>
     </section>
 
-    <!-- 市内のお土産記事を出力 -->
-    <?php
-    $args = array(
-        'post_type'         => 'shop',      // カスタム投稿タイプ名
-        'orderby'           => 'modified',  // 更新日で表示
-        'tax_query'         => array(
-            'relation'      => 'AND',
-            array(
-                'taxonomy'  => 'area',      // タクソノミースラッグを指定
-                'field'     => 'slug',      // termsで使用する種類指定
-                'terms'     => 'city',      // タームスラッグを指定
-            ),
-        ),
-    );
-    ?>
-
     <section class="l-articleList">
         <!-- タイトルの表示 -->
         <span id="city_shop"></span>
@@ -211,7 +192,22 @@
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_shop.png" alt="ショップ">
         </h3>
         <div class="p-articleList u-grid">
-            <!-- spot -->
+
+            <!-- 市内のお土産記事を出力 -->
+            <?php
+            $args = array(
+                'post_type'         => 'shop',      // カスタム投稿タイプ名
+                'orderby'           => 'modified',  // 更新日で表示
+                'tax_query'         => array(
+                    'relation'      => 'AND',
+                    array(
+                        'taxonomy'  => 'area',      // タクソノミースラッグを指定
+                        'field'     => 'slug',      // termsで使用する種類指定
+                        'terms'     => 'city',      // タームスラッグを指定
+                    ),
+                ),
+            );
+            ?>
             <?php $the_query = new WP_Query($args); ?>
             <?php if ($the_query->have_posts()) : ?>
                 <?php while ($the_query->have_posts()) : ?>

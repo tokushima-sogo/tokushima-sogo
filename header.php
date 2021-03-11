@@ -18,7 +18,7 @@
         <!-- header__contents -->
         <div class="p-header__contents u-flex u-bgCalmBlue">
             <!-- logo -->
-            <h1><a href="<?php echo home_url(); ?>"><img class="c-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_tokushima_sogokan.png" alt="トクシマSo Go！"></a></h1>
+            <h1><a href="<?php echo home_url(); ?>"><img id="header_size" class="c-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_tokushima_sogokan.png" alt="トクシマSo Go！"></a></h1>
             <!-- /logo -->
             <!-- topNav -->
             <nav class="p-topNav">
@@ -89,7 +89,7 @@
                 <nav class="p-header__contentsBurgerNav u-center">
                     <ul>
                         <li>
-                            <a class="c-header__contentsBurgerNavBtn" href=" <?php echo home_url('special') ?>"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_special.png" alt="6階"><span class="u-bold u-calmBlue">特設会場</span></a>
+                            <div class="c-header__contentsBurgerNavBtn"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_special.png" alt="6階"><span class="u-bold u-calmBlue">特設会場</span></div>
                             <ul class="p-BurgerNavDetail">
                                 <li><a href="<?php echo home_url('quiz') ?>">クイズ</a></li>
                                 <li><a href="<?php echo home_url('special') ?>">特集</a></li>
@@ -103,7 +103,8 @@
                         </li>
                         <li><a href="<?php echo home_url('area/south') ?>" class="c-header__contentsBurgerNavBtn"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_south.png" alt="県南部"><span class="u-bold u-calmBlue">県南部</span></a>
                         </li>
-                        <li><a class="c-header__contentsBurgerNavBtn" href="<?php echo esc_url(home_url()); ?>#front_info"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_info.png" alt="ご案内"><span class="u-bold u-calmBlue">ご案内</span></a>
+                        <li>
+                            <div class="c-header__contentsBurgerNavBtn"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_info.png" alt="ご案内"><span class="u-bold u-calmBlue">ご案内</span></div>
                             <ul class="p-BurgerNavDetail">
                                 <li><a href="<?php echo home_url('famous') ?>">徳島の名物</a></li>
                                 <li><a href="<?php echo home_url('event') ?>">徳島県のイベント</a></li>

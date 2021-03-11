@@ -3,7 +3,7 @@
 /**
  * カレントテンプレートの表示
  */
-// add_filter('show_admin_bar', '__return_true');
+add_filter('show_admin_bar', '__return_false');
 
 /**
  * body要素直後に何かを挿入する場合 htmlタグを挿入するものではない！
@@ -87,7 +87,6 @@ function add_tokushima_sogo_styles()
         wp_enqueue_style('tokushima_sogo_front_before_style', get_template_directory_uri() . '/assets/css/basebefo.css');
 
         //固定ページ
-        // } else if (is_page('contact')) {
     } else if (is_page('quiz')) {
         wp_enqueue_style('tokushima_sogo_quiz_style', get_template_directory_uri() . '/assets/css/page-quiz.css');
     } else if (is_page('mapcreate')) {
@@ -98,9 +97,10 @@ function add_tokushima_sogo_styles()
         //詳細？ページ
     } else if (is_singular('special')) {
         wp_enqueue_style('tokushima_sogo_single_special_style', get_template_directory_uri() . '/assets/css/single-special.css');
-    } else if (is_singular('event')) {
+    } else if (is_singular('event') || is_singular('famous')) {
+        wp_enqueue_style('tokushima_sogo_slick_style', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', false);
         wp_enqueue_style('tokushima_sogo_single_event_style', get_template_directory_uri() . '/assets/css/single-event.css');
-        wp_enqueue_style('tokushima_sogo_slick_style', get_template_directory_uri() . '/assets/css/slick.css');
+        wp_enqueue_style('tokushima_sogo_slick_set', get_template_directory_uri() . '/assets/css/slick.css', false);
     } else if (is_singular('horror')) {
         wp_enqueue_style('tokushima_sogo_single_horror_style', get_template_directory_uri() . '/assets/css/single-horror.css');
     } else if (is_singular()) {
@@ -116,20 +116,10 @@ function add_tokushima_sogo_styles()
         wp_enqueue_style('tokushima_sogo_archive_special_style', get_template_directory_uri() . '/assets/css/archive-special.css');
     } else if (is_post_type_archive('horror')) {
         wp_enqueue_style('tokushima_sogo_archive_horror_style', get_template_directory_uri() . '/assets/css/archive-horror.css');
-    } else if (is_post_type_archive('event')) {
+    } else if (is_post_type_archive('event') || is_post_type_archive('famous')) {
         wp_enqueue_style('tokushima_sogo_archive_event_style', get_template_directory_uri() . '/assets/css/archive-event.css');
-        //タクソノミーは間違ってるかもis_tax( $taxonomy, $term )
-        //全て同じ場合は，is_tax( 'area', array( 'east', 'west', 'city', 'south') )
-
     } else if (is_tax('area', array('east', 'west', 'city', 'south'))) {
         wp_enqueue_style('tokushima_sogo_taxonomy_area_style', get_template_directory_uri() . '/assets/css/taxonomy-area.css');
-        // wp_enqueue_style('tokushima_sogo_taxonomy_area_style', get_template_directory_uri() . '/assets/css/archive-west.css');
-        // } else if (is_tax('area', 'east')) {
-        // } else if (is_tax('area', 'west')) {
-        // } else if (is_tax('area', 'city')) {
-        // } else if (is_tax('area', 'south')) {
-        //タクソノミーページちょっと自信ない。
-
     } else if (is_tax()) {
         wp_enqueue_style('tokushima_sogo_taxonomy_style', get_template_directory_uri() . '/assets/css/taxonomy.css');
     } else if (is_404()) {
@@ -159,10 +149,10 @@ function add_tokushima_sogo_scripts()
     } else if (is_tax('area', array('east', 'west', 'city', 'south'))) {
         wp_enqueue_script('horro_js', get_template_directory_uri() . '/assets/js/more.js', '', '', true);
     }
-    wp_enqueue_script('menu_js', get_template_directory_uri() . '/assets/js/menu.js', '', '', true);
+    // wp_enqueue_script('menu_js', get_template_directory_uri() . '/assets/js/menu.js', '', '', true);
     // wp_enqueue_script('serchForm_js', get_template_directory_uri() . '/assets/js/searchForm.js', '', '', true);
     // wp_enqueue_script('searchandfilter', get_template_directory_uri() . '/assets/js/searchandfilter.js', '', '', true);
-    wp_enqueue_script('common', get_template_directory_uri() . '/assets/js/common.js', '', '', true);
+    wp_enqueue_script('sogo_common', get_template_directory_uri() . '/assets/js/sogo_common.js', '', '', true);
 }
 add_action('wp_enqueue_scripts', 'add_tokushima_sogo_scripts');
 

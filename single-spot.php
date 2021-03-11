@@ -4,49 +4,54 @@
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"> -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNNbWvrL46SW-8K-D0w6Haff4Vbcc4rRQ"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/googlemap.js"></script>
+
 <main class="l-main">
     <!-- 詳細記事の出力 -->
 
-    <?php if (have_posts()) : ?>
-        <?php while (have_posts()) : ?>
-            <?php the_post(); ?>
+    <!-- breadCrumb -->
+    <div class="p-breadCrumb">
+        <div class="p-breadCrumb__inner">
+            <!-- breadcrumbループstart -->
+            <a href="<?php echo home_url(); ?>"><span>HOME</span></a>
+            <i class="fas fa-angle-right"></i>
+            <span><?php echo get_the_term_list($post->ID, 'area') ?></span>
+            <i class="fas fa-angle-right"></i> <span><?php echo esc_html(get_post_type_object(get_post_type())->label); ?></span>
+            <i class="fas fa-angle-right"></i> <span><?php echo get_post()->post_title ?></span>
+            <!-- breadcrumbループend -->
+        </div>
+    </div>
+    <!-- /breadCrumb -->
 
-            <!-- カスタムフィールドの値を取得 -->
-            <?php
-            $spotname  = get_field('spot_name');
-            $picture1  = get_field('spot_pic1');
-            $picture2  = get_field('spot_pic2');
-            $picture3  = get_field('spot_pic3');
-            $address   = get_field('spot_address');
-            $tel       = get_field('spot_tel');
-            $opentime  = get_field('spot_open_time');
-            $closetime = get_field('spot_close');
-            $url       = get_field('spot_url');
-            $facebook  = get_field('spot_facebook');
-            $instagram = get_field('spot_instagram');
-            $twitter   = get_field('spot_twitter');
-            $remarks1  = get_field('spot_remarks1');
-            $remarks2  = get_field('spot_remarks2');
-            $remarks3  = get_field('spot_remarks3');
-            $remarks4  = get_field('spot_remarks4');
-            $remarks5  = get_field('spot_remarks5');
-            ?>
+    <!-- singleArticle -->
+    <section class="l-singleArticle">
 
-            <!-- singleArticle -->
-            <section class="l-singleArticle">
-                <!-- breadCrumb -->
-                <div class="p-breadCrumb">
-                    <div class="p-breadCrumb__inner">
-                        <!-- breadcrumbループstart -->
-                        <a href="<?php echo home_url(); ?>"><span>HOME</span></a>
-                        <i class="fas fa-angle-right"></i>
-                        <span><?php echo get_the_term_list($post->ID, 'area') ?></span>
-                        <i class="fas fa-angle-right"></i> <span><?php echo esc_html(get_post_type_object(get_post_type())->label); ?></span>
-                        <i class="fas fa-angle-right"></i> <span><?php echo get_post()->post_title ?></span>
-                        <!-- breadcrumbループend -->
-                    </div>
-                </div>
-                <!-- /breadCrumb -->
+        <?php if (have_posts()) : ?>
+            <?php while (have_posts()) : ?>
+                <?php the_post(); ?>
+
+                <!-- カスタムフィールドの値を取得 -->
+                <?php
+                $spotname  = get_field('spot_name');
+                $picture1  = get_field('spot_pic1');
+                $picture2  = get_field('spot_pic2');
+                $picture3  = get_field('spot_pic3');
+                $address   = get_field('spot_address');
+                $tel       = get_field('spot_tel');
+                $opentime  = get_field('spot_open_time');
+                $closetime = get_field('spot_close');
+                $url       = get_field('spot_url');
+                $facebook  = get_field('spot_facebook');
+                $instagram = get_field('spot_instagram');
+                $twitter   = get_field('spot_twitter');
+                $remarks1  = get_field('spot_remarks1');
+                $remarks2  = get_field('spot_remarks2');
+                $remarks3  = get_field('spot_remarks3');
+                $remarks4  = get_field('spot_remarks4');
+                $remarks5  = get_field('spot_remarks5');
+                ?>
+
+
+
                 <!-- singleHeader -->
                 <div class="l-singleHeader">
                     <h2 class="c-heading u-flex"><?php the_title(); ?></h2>
@@ -147,7 +152,7 @@
                                         <?php if ($address) : ?>
                                             <?php echo $address; ?>
                                         <?php else : ?>
-                                            <p>-</p>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -158,7 +163,7 @@
                                         <?php if ($tel) : ?>
                                             <?php echo $tel; ?>
                                         <?php else : ?>
-                                            <p>-</p>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -169,7 +174,7 @@
                                         <?php if ($opentime) : ?>
                                             <?php echo $opentime; ?>
                                         <?php else : ?>
-                                            <p>-</p>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -180,7 +185,7 @@
                                         <?php if ($closetime) : ?>
                                             <?php echo $closetime; ?>
                                         <?php else : ?>
-                                            <p>-</p>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -191,7 +196,7 @@
                                         <?php if ($url) : ?>
                                             <a href="<?php echo $url; ?>"><?php echo $url; ?></a>
                                         <?php else : ?>
-                                            <p>-</p>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -201,18 +206,14 @@
                                     <td class="c-singleTable__td">
                                         <?php if ($facebook) : ?>
                                             <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
-                                        <?php else : ?>
-                                            <p>-</p>
-                                        <?php endif; ?>
-                                        <?php if ($instagram) : ?>
+                                        <?php elseif ($instagram) : ?>
                                             <a href="<?php echo $instagram; ?>"><i class="fab fa-instagram-square"></i></a>
-                                        <?php endif; ?>
-                                        <?php if ($twitter) : ?>
+                                        <?php elseif ($twitter) : ?>
                                             <a href="<?php echo $twitter; ?>"><i class="fab fa-twitter-square"></i></a>
+                                        <?php else : ?>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
-
-
                                 </tr>
                                 <tr class="c-singleTable__tr">
                                     <!-- カスタムフィールド備考 -->
@@ -220,24 +221,16 @@
                                     <td class="c-singleTable__td">
                                         <?php if ($remarks1) : ?>
                                             <?php echo $remarks1; ?>
-                                        <?php else : ?>
-                                            <p>-</p>
-                                        <?php endif; ?>
-
-                                        <?php if ($remarks2) : ?>
+                                        <?php elseif ($remarks2) : ?>
                                             <?php echo $remarks2; ?>
-                                        <?php endif; ?>
-
-                                        <?php if ($remarks3) : ?>
+                                        <?php elseif ($remarks3) : ?>
                                             <?php echo $remarks3; ?>
-                                        <?php endif; ?>
-
-                                        <?php if ($remarks4) : ?>
+                                        <?php elseif ($remarks4) : ?>
                                             <?php echo $remarks4; ?>
-                                        <?php endif; ?>
-
-                                        <?php if ($remarks5) : ?>
+                                        <?php elseif ($remarks5) : ?>
                                             <?php echo $remarks5; ?>
+                                        <?php else : ?>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -248,12 +241,11 @@
 
                 </div>
                 <!-- /singleArticle__info -->
-                </div>
                 <!-- /singleBody -->
-            </section>
-            <!-- /singleArticle -->
-        <?php endwhile; ?>
-    <?php endif; ?>
+            <?php endwhile; ?>
+        <?php endif; ?>
+    </section>
+    <!-- /singleArticle -->
 
 
     <!-- 関連記事の出力 -->

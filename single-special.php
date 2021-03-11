@@ -21,6 +21,19 @@
     </div>
     <!-- /breadCrumb -->
 
+    <section class="l-description">
+        <div class="p-description u-center">
+            <!-- 特集一覧のバナー -->
+            <div class="c-specialBanner"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bn_archive_special.png" alt="特集"></div>
+            <div class="p-description__item">
+                <!-- 特集一覧のテキスト(概要？) -->
+                <p class="c-description__text">
+                    徳島ラーメンと言えば！な、茶系×生卵な王道徳島ラーメンから、飲んだ後にもう一杯！汁まで飲み干せるあっさり〆のラーメンまで。みんな大好きラーメン特集！</p>
+            </div>
+        </div>
+    </section>
+    <!-- /description -->
+
     <!-- 投稿記事の出力 -->
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : ?>
@@ -28,20 +41,6 @@
 
             <!-- タイトル -->
             <?php the_title(); ?>
-
-            <section class="l-description">
-                <div class="p-description u-center">
-                    <!-- 特集一覧のバナー -->
-                    <div class="c-specialBanner"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bn_archive_special_ramen.png" alt="ラーメン特集"></div>
-                    <div class="p-description__item">
-                        <!-- 特集一覧のテキスト(概要？) -->
-                        <p class="c-description__text">
-                            徳島ラーメンと言えば！な、茶系×生卵な王道徳島ラーメンから、飲んだ後にもう一杯！汁まで飲み干せるあっさり〆のラーメンまで。みんな大好きラーメン特集！</p>
-                    </div>
-                </div>
-            </section>
-            <!-- /description -->
-
             <!-- 本文 -->
             <?php the_content(); ?>
 

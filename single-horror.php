@@ -10,8 +10,7 @@
                 bcn_display();
             } ?>
         </div>
-    </div>
-    ​
+    </div>​
     ​
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : ?>
@@ -50,13 +49,14 @@
             ),
         );
         ?>
-        <?php $the_query = new WP_Query($args); ?>
-        <?php if ($the_query->have_posts()) : ?>
-            <?php while ($the_query->have_posts()) : ?>
-                <?php $the_query->the_post(); ?>
-                ​
-                <!-- articleList -->
-                <div class="p-articleList u-grid">
+
+        <!-- articleList -->
+        <div class="p-articleList u-grid">
+            <?php $the_query = new WP_Query($args); ?>
+            <?php if ($the_query->have_posts()) : ?>
+                <?php while ($the_query->have_posts()) : ?>
+                    <?php $the_query->the_post(); ?>​
+
                     <!-- article -->
                     <article class="p-article c-more1">
                         <!-- imgArea -->
@@ -73,7 +73,10 @@
                         <!-- /imgArea -->
                         <!-- textArea -->
                         <div class="p-textArea u-horrorRed">
-                            <div class="p-textContent u-flex">
+
+                            <div class="p-textContent">
+                                <div class="c-title u-center u-fontHorror"><?php the_title(); ?></div>
+                                <div class="c-date u-center u-fontHorror">公開日：<?php the_time(get_option('date_format')); ?></div>
                                 <div class="p-tag u-flex">
                                     <div class="c-tag u-bgHorror">
                                         <?php echo get_the_term_list($post->ID, 'taxotag');
@@ -81,22 +84,23 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="c-title u-center u-fontHorror"><?php the_title(); ?></div>
+
                         </div>
                         <!-- /textArea -->
                     </article>
                     <!-- /article -->
-                </div>
-                <!-- /articleList -->
-                ​
-            <?php endwhile; ?>
-            <?php wp_reset_postdata(); ?>
-        <?php endif; ?>
+                    ​
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
+
+        </div>
+        <!-- /articleList -->
         ​
     </section>
     <!-- /spot -->
     ​
 </main>
 <!-- /main -->
-​
+
 <?php get_footer(); ?>

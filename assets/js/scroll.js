@@ -6,5 +6,5 @@ jQuery(function () {
     // 一番上から始まる指定
     jQuery('html,head').animate({ scrollTop: top }, 'slow').delay
         // 秒数はあとで変更する。スクロールしたい位置の指定
-        (3000).animate({ scrollTop: targetOffset }, 'slow');
+        (3000).animate({ scrollTop: targetOffset -500}, 'slow');
 });

@@ -18,40 +18,40 @@
         </div>
     </div>
     <!-- /breadCrumb -->
+    <!-- singleArticle -->
+    <section class="l-singleArticle">
+        <!-- 投稿記事の出力 -->
+        <?php if (have_posts()) : ?>
+            <?php while (have_posts()) : ?>
+                <?php the_post(); ?>
 
-    <!-- 投稿記事の出力 -->
-    <?php if (have_posts()) : ?>
-        <?php while (have_posts()) : ?>
-            <?php the_post(); ?>
+                <?php
+                $spotname  = get_field('spot_name');
+                $picture1  = get_field('shop_pic1');
+                $picture2  = get_field('shop_pic2');
+                $picture3  = get_field('shop_pic3');
+                $address   = get_field('shop_address');
+                $tel       = get_field('shop_tel');
+                $opentime  = get_field('shop_open_time');
+                $closetime = get_field('shop_close');
+                $url       = get_field('shop_url');
+                $facebook  = get_field('shop_facebook');
+                $instagram = get_field('shop_instagram');
+                $twitter   = get_field('shop_twitter');
+                $remarks1  = get_field('shop_remarks1');
+                $remarks2  = get_field('shop_remarks2');
+                $remarks3  = get_field('shop_remarks3');
+                $remarks4  = get_field('shop_remarks4');
+                $remarks5  = get_field('shop_remarks5');
+                ?>
 
-            <?php
-            $spotname  = get_field('spot_name');
-            $picture1  = get_field('shop_pic1');
-            $picture2  = get_field('shop_pic2');
-            $picture3  = get_field('shop_pic3');
-            $address   = get_field('shop_address');
-            $tel       = get_field('shop_tel');
-            $opentime  = get_field('shop_open_time');
-            $closetime = get_field('shop_close');
-            $url       = get_field('shop_url');
-            $facebook  = get_field('shop_facebook');
-            $instagram = get_field('shop_instagram');
-            $twitter   = get_field('shop_twitter');
-            $remarks1  = get_field('shop_remarks1');
-            $remarks2  = get_field('shop_remarks2');
-            $remarks3  = get_field('shop_remarks3');
-            $remarks4  = get_field('shop_remarks4');
-            $remarks5  = get_field('shop_remarks5');
-            ?>
-
-            <!-- singleArticle -->
-            <section class="l-singleArticle">
                 <!-- singleHeader -->
                 <div class="l-singleHeader">
-                    <h2 class="c-singleArticle__title u-center"><?php the_title(); ?></h2>
+                    <h2 class="c-heading u-flex"><?php the_title(); ?></h2>
                     <!-- /singleArticle__title -->
                 </div>
                 <!-- /singleHeader -->
+
                 <!-- singleBody -->
                 <div class="l-singleBody">
                     <!-- singleArticle__item -->
@@ -98,7 +98,7 @@
                         <!-- singleArticle__description -->
                         <div class="p-singleArticle__description u-flex">
                             <!-- singleArticle__text -->
-                            <p class="c-singleArticle__text"><?php the_content(); ?></p>
+                            <div class="c-singleArticle__text"><?php the_content(); ?></div>
                             <!-- /singleArticle__text -->
                             <!-- singleTag -->
                             <div class="p-singleTag u-flex">
@@ -152,7 +152,7 @@
                                         <?php if ($address) : ?>
                                             <?php echo $address; ?>
                                         <?php else : ?>
-                                            <p>-</p>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -163,7 +163,7 @@
                                         <?php if ($tel) : ?>
                                             <?php echo $tel; ?>
                                         <?php else : ?>
-                                            <p>-</p>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -174,7 +174,7 @@
                                         <?php if ($opentime) : ?>
                                             <?php echo $opentime; ?>
                                         <?php else : ?>
-                                            <p>-</p>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -185,7 +185,7 @@
                                         <?php if ($closetime) : ?>
                                             <?php echo $closetime; ?>
                                         <?php else : ?>
-                                            <p>-</p>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -196,7 +196,7 @@
                                         <?php if ($url) : ?>
                                             <a href="<?php echo $url; ?>"><?php echo $url; ?></a>
                                         <?php else : ?>
-                                            <p>-</p>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -206,14 +206,12 @@
                                     <td class="c-singleTable__td">
                                         <?php if ($facebook) : ?>
                                             <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
-                                        <?php else : ?>
-                                            <p>-</p>
-                                        <?php endif; ?>
-                                        <?php if ($instagram) : ?>
+                                        <?php elseif ($instagram) : ?>
                                             <a href="<?php echo $instagram; ?>"><i class="fab fa-instagram-square"></i></a>
-                                        <?php endif; ?>
-                                        <?php if ($twitter) : ?>
+                                        <?php elseif ($twitter) : ?>
                                             <a href="<?php echo $twitter; ?>"><i class="fab fa-twitter-square"></i></a>
+                                        <?php else : ?>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
 
@@ -225,24 +223,16 @@
                                     <td class="c-singleTable__td">
                                         <?php if ($remarks1) : ?>
                                             <?php echo $remarks1; ?>
-                                        <?php else : ?>
-                                            <p>-</p>
-                                        <?php endif; ?>
-
-                                        <?php if ($remarks2) : ?>
+                                        <?php elseif ($remarks2) : ?>
                                             <?php echo $remarks2; ?>
-                                        <?php endif; ?>
-
-                                        <?php if ($remarks3) : ?>
+                                        <?php elseif ($remarks3) : ?>
                                             <?php echo $remarks3; ?>
-                                        <?php endif; ?>
-
-                                        <?php if ($remarks4) : ?>
+                                        <?php elseif ($remarks4) : ?>
                                             <?php echo $remarks4; ?>
-                                        <?php endif; ?>
-
-                                        <?php if ($remarks5) : ?>
+                                        <?php elseif ($remarks5) : ?>
                                             <?php echo $remarks5; ?>
+                                        <?php else : ?>
+                                            <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -250,16 +240,15 @@
                         </div>
                         <!-- /singleTable -->
                     </div>
-                </div>
-                <!-- /singleArticle__info -->
+                    <!-- /singleArticle__info -->
                 </div>
                 <!-- /singleBody -->
 
+            <?php endwhile; ?>
+        <?php endif; ?>
 
-            </section>
-            <!-- /singleArticle -->
-        <?php endwhile; ?>
-    <?php endif; ?>
+    </section>
+    <!-- /singleArticle -->
 
 
     <!-- 関連記事の出力 -->
@@ -342,7 +331,6 @@
 
     </section>
     <!-- /articleList -->
-
 
 </main>
 <!-- /main -->

@@ -479,7 +479,7 @@ img.c-game {
 .p-special {
     justify-content: space-around;
     padding: 2% 10% 0 10%;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 .p-specialLink {
@@ -487,7 +487,7 @@ img.c-game {
 }
 
 .p-guideArea {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: 1.2;
 }
 
@@ -522,7 +522,14 @@ img.c-game {
 }
 
 .c-floorNameBasementP {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    padding: 1.5rem;
+}
+
+@media (min-width: 1025px) {
+    .c-floorNameBasementP {
+        font-size: 1.6rem;
+    }
 }
 
 /* ご案内見出しの隠し領域 */

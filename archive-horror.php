@@ -10,8 +10,7 @@
             } ?>
         </div>
     </div>
-    <!-- /breadCrumb -->
-    ​
+    <!-- /breadCrumb -->​
     <section class="l-description">
         <div class="c-heroImg">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_archive_horror_web.png" alt="都市伝説">
@@ -28,14 +27,14 @@
                 </div>​
             </div>
         </div>
-    </section>
-    ​
+    </section>​
+
     <!-- 歴史の記事 -->
     <section class="l-articleList">
         <h3 class="c-subHeading u-center">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_horror_history02.png" alt="歴史">
         </h3>
-        ​
+
         <!-- 歴史の記事を出力するループの設定 -->
         <?php
         $args = array(
@@ -51,21 +50,19 @@
             ),
         );
         ?>
-        ​
-        ​
-        <!-- サブループ開始 -->
-        <?php $the_query = new WP_Query($args); ?>
-        <?php if ($the_query->have_posts()) : ?>
-            <?php while ($the_query->have_posts()) : ?>
-                <?php $the_query->the_post(); ?>
-                ​
-                ​
-                ​
-                <!-- articleList -->
-                <div class="p-articleList u-grid">
+        <!-- articleList -->
+        <div class="p-articleList u-grid">
+
+
+            <!-- サブループ開始 -->
+            <?php $the_query = new WP_Query($args); ?>
+            <?php if ($the_query->have_posts()) : ?>
+                <?php while ($the_query->have_posts()) : ?>
+                    <?php $the_query->the_post(); ?>
+
                     <!-- article -->
                     <article class="p-article c-more1">
-                        ​
+
                         <!-- imgArea -->
                         <div class="p-imgArea">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_horror_thmbFlame.png" class="c-frame" alt="額縁">
@@ -79,37 +76,38 @@
                             </a>
                         </div>
                         <!-- /imgArea -->
-                        ​
+
                         <!-- textArea -->
                         <div class="p-textArea u-horrorRed">
-                            <div class="p-textContent u-flex">
+                            <div class="p-textContent">
+                                <div class="c-title u-center u-fontHorror"><?php the_title(); ?></div>
+                                <div class="c-date u-center u-fontHorror">公開日：<?php the_time('Y-m-d'); ?></div>
                                 <div class="p-tag u-flex">
-                                    <!-- <div class="c-tag u-bgHorror u-mr15"><?php echo $term_slug; ?></div> -->
                                     <div class="c-tag u-bgHorror">
                                         <?php echo get_the_term_list($post->ID, 'taxotag'); ?>
                                     </div>
                                 </div>
                             </div>
-                            <div class="c-title u-center u-fontHorror"><?php the_title(); ?></div>
+
                         </div>
                         <!-- /textArea -->
                     </article>
-                </div>
-            <?php endwhile; ?>
-            <?php wp_reset_postdata(); ?>
-        <?php endif; ?> ​
+
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
+        </div>
+        <!-- moreBtn -->
+        <div class="l-moreBtn u-right">
+            <button class="c-moreBtn one u-center u-horrorRed u-moreHover">more</button>
+        </div>
+        <!-- /moreBtn -->​
     </section>
-    <!-- moreBtn -->
-    <div class="l-moreBtn u-right">
-        <button class="c-moreBtn one u-center u-horrorRed u-moreHover">more</button>
-    </div>
-    <!-- /moreBtn -->
-    ​
-    ​
+
     <!-- 妖怪の記事 -->
     <section class="l-articleList">
         <h3 class="c-subHeading u-center">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_horror_yokai02.png" alt="歴史">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_horror_yokai02.png" alt="妖怪">
         </h3>
         <!-- 妖怪の記事を出力するループ -->
         <?php
@@ -126,17 +124,15 @@
             ),
         );
         ?>
-        <!-- サブループ開始 -->
-        <?php $the_query = new WP_Query($args); ?>
-        <?php if ($the_query->have_posts()) : ?>
-            <?php while ($the_query->have_posts()) : ?>
-                <?php $the_query->the_post(); ?>
-                ​
-                <!-- articleList -->
-                <div class="p-articleList u-grid">
+        <!-- articleList -->
+        <div class="p-articleList u-grid">
+            <!-- サブループ開始 -->
+            <?php $the_query = new WP_Query($args); ?>
+            <?php if ($the_query->have_posts()) : ?>
+                <?php while ($the_query->have_posts()) : ?>
+                    <?php $the_query->the_post(); ?>
                     <!-- article -->
                     <article class="p-article c-more2">
-                        ​
                         <!-- imgArea -->
                         <div class="p-imgArea">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_horror_thmbFlame.png" class="c-frame" alt="額縁">
@@ -150,34 +146,32 @@
                             </a>
                         </div>
                         <!-- /imgArea -->
-                        ​
                         <!-- textArea -->
                         <div class="p-textArea u-horrorRed">
-                            <div class="p-textContent u-flex">
+                            <div class="p-textContent">
+                                <div class="c-title u-center u-fontHorror">
+                                    <?php the_title(); ?>
+                                </div>
+                                <div class="c-date u-center u-fontHorror">公開日：<?php the_time('Y-m-d'); ?></div>
                                 <div class="p-tag u-flex">
-                                    <div class="c-tag u-bgHorror u-mr15">
-                                        <?php echo get_the_term_list($post->ID, 'taxotag');
-                                        ?>
+                                    <div class="c-tag u-bgHorror">
+                                        <?php echo get_the_term_list($post->ID, 'taxotag'); ?>
                                     </div>
                                 </div>
                             </div>
-                            <div class="c-title u-center u-fontHorror"><?php the_title(); ?></div>
                         </div>
                         <!-- /textArea -->
                     </article>
-                    ​
-                </div>
-                ​
-            <?php endwhile; ?>
-            <?php wp_reset_postdata(); ?>
-        <?php endif; ?>
 
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
+        </div>
         <!-- moreBtn -->
         <div class="l-moreBtn u-right">
             <button class="c-moreBtn two u-center u-horrorRed u-moreHover">more</button>
         </div>
         <!-- /moreBtn -->​
-        ​
     </section>​
     ​
 </main>

@@ -59,7 +59,7 @@ main {
 }
 
 /* ここからヘッダー */
-.c-logo {
+/* .c-logo {
     height: 60px;
     padding-left: 11%;
 }
@@ -75,7 +75,7 @@ main {
 }
 .c-elevatorBtn:hover{
     opacity: 1;
-}
+} */
 .p-header__contentsList ul div{
     font-size: 13px;
 }
@@ -97,7 +97,6 @@ main {
 }
 
 .c-header__navListDetail{
-    font-size: 2rem;
     padding-top: 1rem;
 }
 
@@ -109,32 +108,7 @@ main {
     text-decoration: none;
 }
 
-.p-header__navListDetail1,.p-header__navListDetail2,.p-header__navListDetail3,.p-header__navListDetail4,.p-header__navListDetail5,.p-header__navListDetail6{
-    /* 大事！！！ */
-    position: absolute;
-    display: block;
-    text-align: center;
-    transform: translate(8px, 0px);
-    opacity: .8;
-    padding: 1rem 0.5rem;
-}
-.u-header__navListDetail__blue{
-    background-color: #252F4D;
-}
 
-.p-header__navListDetail1{
-    transform: translate(-30px, 0px);
-}
-
-.p-header__navListDetail6{
-    transform: translate(18px, 0px);
-}
-
-.p-header__navListDetail li a{
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-}
 
 
 .c-header__nav{
@@ -176,7 +150,7 @@ main {
 }
 
 .p-header__contentsList li{
-    padding-right: 20px;
+    padding-right: 10px;
     text-align: center;
     vertical-align: middle;
 }
@@ -188,17 +162,14 @@ main {
     .p-header__contentsList li{
     padding-right: 6px;
 }
-.c-logo {
+/* .c-logo {
     height: 50px;
     padding-left: 11%;
-}
+} */
 }
 @media screen and (min-width: 1025px){
     .p-header__contents{
         height: 100px;
-    }
-    .c-header__nav {
-        font-size: 22px;
     }
     .p-header__contentsList ul div{
         font-size: 16px;
@@ -208,408 +179,29 @@ main {
     }
 }
 
-
-/* ここからバーガーメニュー */
-.p-header__contentsBurgerTop{
-    height: 70px;
-    width: 100vw;
-}
-
-/* 高さもう少し */
-.p-header__contentsBurgerNav{
-    /*外すと空白の高さ生じる*/
-    position: absolute;
-    width: 100vw;
-    height: 600px;
-    padding-top: 30px;
-    text-align: center;
-    background: rgba(234, 228, 173, 0.8);
-}
-
-#p-header__contentsBurger ul li{
-    padding: 0 20%;
-}
-
-.p-header__contentsBurgerNavDetail li{
-    padding-bottom: 20px;
-    border-bottom: 1px #252F4D solid;
-}
-
-.p-BurgerNavDetail li{
-    height: 3rem;
-}
-.p-BurgerNavDetail a{
-    display: inline-block;
-    text-decoration: none;
-    border-bottom: #252F4D 1px solid;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-}
-
-.p-BurgerNavDetail a:hover{
-    font-weight: bold;
-}
-
-.p-BurgerNavDetail span{
-    font-size: 1.8rem;
-    display: inline-block;
-    padding-top: 10px;
-    width: 100%;
-}
-
-#p-header__contentsBurger{
-    transform: translateX(100%);
-    position: fixed;
-    z-index: 4;
-}
-
-#p-header__contentsBurger.slide-in{
-    transform: translateX(0);
-    transition: .3s;
-    height: 1000px;
-}
-
-#p-header__contentsBurger.slide-off{
-    transform: translateX(100%);
-    transition: .3s;
-}
-#p-header__contentsBurger ul li{
-    padding: 0 10%;
-}
-
-@media screen and (min-width: 768px){
-#p-header__contentsBurger ul li{
-    padding: 0 20%;
-}
-}
-
-
-
-@media screen and (max-width: 1024px){
-    .p-topNav{
-        display: none;
-    }
-}
-@media screen and (min-width: 1025px){
-    .p-header__contentsList li:nth-child(3){
-        display: none;
-    }
-}
-
-.c-elevatorBtn{
-    width: 40px;
-}
-#c-elevatorClose{
-    position: absolute;
-    height: 50px;
-    right: 40px;
-    top: 10px;
-}
-@media screen and (max-width: 767px){
-    #c-elevatorClose{
-    position: absolute;
-    right: 17px;
-    top: 10px;
-    }
-}
-
-.c-header__contentsBurgerNavBtn{
-    display: block;
-    padding: 12px 10% 0;
-    height: 52px;
-}
-
-.c-header__contentsBurgerNavBtn img {
-    vertical-align: bottom;
-}
-
-.c-header__contentsBurgerNavBtn:hover{
-    font-weight: bold;
-}
-
-.c-elevatorBtn{
-    /* 浮いている要素には効かない */
-    vertical-align: bottom;
-}
-
-.c-header__contentsBurgerNavBtn span{
-    width: 120px;
-    height: 25px;
-    font-size: 2.5rem;
-    display: inline-block;
-    padding-left: 10px;
-}
-
-
-
-/* ここからフッター */
-/* .c-fab{
-    text-align: center;
-    padding: 23px 30px;
-}
-
-.fa-instagram-square{
-    padding-right: 15px;
-}
-
-.fa-twitter-square{
-    padding-left: 15px;
-}
-
-.c-copyRight{
-    position: relative;
-    font-size: 1rem;
-    text-align: center;
-    padding-bottom: 40px;
-    background-color: #252F4D;
-    z-index: 2;
-}
-
-.l-footer{
-    position: relative;
-    width: 100%;
-    padding: 23px 0 35px 0;
-    z-index: 2;
-}
-
-.p-footer__contentsParts{
-    text-align: center;
-}
-.p-footer__contentsParts span{
-    display: inline-block;
-    width: 150px;
-    padding-left: 25px;
-    position: relative;
-    z-index: 1;
-}
-
-.p-footer__contentsParts span::after{
-    content: '';
-    border-top: 6px solid #fff;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid transparent;
-    border-left: 6px solid transparent;
-    position: absolute;
-    right: -8px;
-    top: 10px;
-}
-
-.c-footer__contentsDetail{
-    display: none;
-}
-
-.c-footer__contentsPartsBtn{
-    display: inline-block;
-    width: 200px;
-    padding: 17px 0;
-    border-bottom: #fff 1px solid;
-    text-align: left;
-}
-
-.p-footer__contentsPartsLast a{
-    text-align: center;
-}
-
-.c-footer__contentsParts{
-    border-top: #fff 1px solid;
-}
-
-.l-footer a {
-    text-decoration: none;
-}
-
-.c-footer__contentsDetail li{
-    height: 44px;
-}
-.c-footer__contentsDetail li a{
-    width: 200px;
-}
-
-.c-footer__contentsDetail a:hover,
-.p-footer__contentsPartsLast a:hover {
-    font-weight: bold;
-}
-
-.p-footer__contentsPartsLast{
-    padding: 25px;
-}
-
-.p-footer__contentsPartsLast div{
-    padding: 10px 0;
-}
-
-.c-footer__contentsPartsBtnPC{
-    display: none;
-}
-
-.c-footer__contentsDetail a{
-    display: inline-block;
-    padding-top: 14px;
-    width: 100%;
-    height: 100%;
-}
-
-
-@media screen and (min-width: 1000px){
-.l-footer{
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 23px;
-}
-
-.p-footer__contentsBlock1{
-    order: 3;
-}
-
-.p-footer__contentsBlock2{
-    order: 2;
-}
-
-.p-footer__contentsBlock3{
-    order: 1;
-}
-
-.p-footer__contentsBlock4{
-    order: 4;
-}
-
-.p-footer__contentsBlock1,.p-footer__contentsBlock2,.p-footer__contentsBlock3{
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-}
-
-.c-footer__contentsDetail a{
-    border-bottom: none;
-    font-size: 14px;
-}
-
-.c-footer__contentsDetail a:hover{
-    font-weight: bold;
-}
-
-.c-footer__contentsDetail{
-    display: block;
-    padding-bottom: 20px;
-}
-
-.c-footer__contentsParts{
-    border-top: none;
-}
-
-.p-footer__contentsPartsLast a{
-    border-bottom: none;
-}
-
-.c-fab{
-    padding-top: 150px;
-}
-} */
-
-
 /* ここからエレベーター用 */
-.p-main__liftGroup__parts{
+
+.p-main__liftGroup__parts {
     position: fixed;
     height: 100vh;
-    top: 70px;
+    width: 100px;
+    top: 100px;
     right: 0px;
-    width: 80px;
-    background-image: url(../images/img_front_liftLine03.png);
     z-index: 1;
-}
-.c-main__liftBodyImg{
-    position: absolute;
-    top: 25px;
-}
-.lift6{
-    top: 25px;
-}
-.lift6::before{
-    content: '6階';
-    background-color: #CF7E7C;
-    display: inline-block;
-    width: 100%;
     text-align: center;
 }
-.lift5{
-    top: 15vh;
-}
-.lift5::before{
-    content: '5階';
-    background-color: #CF7E7C;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-}
-.lift4{
-    top: 27vh;
-}
-.lift4::before{
-    content: '4階';
-    background-color: #CF7E7C;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-}
-.lift3{
-    top: 39vh;
-}
-.lift3::before{
-    content: '3階';
-    background-color: #CF7E7C;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-}
-.lift2{
-    top: 51vh;
-}
-.lift2::before{
-    content: '2階';
-    background-color: #CF7E7C;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-}
-.lift1{
-    top: 63vh;
-}
-.lift1::before{
-    content: '1階';
-    background-color: #CF7E7C;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-}
-.liftbasement{
-    top: 72vh;
-}
-.liftbasement::before{
-    content: '地下';
-    background-color: #CF7E7C;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-}
-.c-main__liftTopImg{
-    position: absolute;
-}
-@media screen and (min-width: 768px){
-    .p-main__liftGroup__parts{
-        position: fixed;
-        width: 100px;
-}
-.c-main__liftBodyImg{
+
+.c-main__liftBodyImg {
     position: absolute;
     top: 33px;
 }
-.lift6{
-    top: 30px;
+
+.lift6 {
+    top: 0px;
 }
-.lift6::before{
-    content: '6階';
+
+.lift6::before {
+    content: '特設会場';
     background-color: #CF7E7C;
     display: inline-block;
     width: 100%;
@@ -617,11 +209,13 @@ main {
     padding-top: 6px;
     text-align: center;
 }
-.lift5{
+
+.lift5 {
     top: 15vh;
 }
-.lift5::before{
-    content: '5階';
+
+.lift5::before {
+    content: '県東部';
     background-color: #CF7E7C;
     display: inline-block;
     width: 100%;
@@ -629,11 +223,13 @@ main {
     padding-top: 6px;
     text-align: center;
 }
-.lift4{
+
+.lift4 {
     top: 27vh;
 }
-.lift4::before{
-    content: '4階';
+
+.lift4::before {
+    content: '県西部';
     background-color: #CF7E7C;
     display: inline-block;
     width: 100%;
@@ -641,11 +237,13 @@ main {
     padding-top: 6px;
     text-align: center;
 }
-.lift3{
+
+.lift3 {
     top: 39vh;
 }
-.lift3::before{
-    content: '3階';
+
+.lift3::before {
+    content: '徳島市';
     background-color: #CF7E7C;
     display: inline-block;
     width: 100%;
@@ -653,11 +251,13 @@ main {
     padding-top: 6px;
     text-align: center;
 }
-.lift2{
+
+.lift2 {
     top: 49vh;
 }
-.lift2::before{
-    content: '2階';
+
+.lift2::before {
+    content: '県南部';
     background-color: #CF7E7C;
     display: inline-block;
     width: 100%;
@@ -665,11 +265,13 @@ main {
     padding-top: 6px;
     text-align: center;
 }
-.lift1{
+
+.lift1 {
     top: 58vh;
 }
-.lift1::before{
-    content: '1階';
+
+.lift1::before {
+    content: 'ご案内';
     background-color: #CF7E7C;
     display: inline-block;
     width: 100%;
@@ -677,26 +279,7 @@ main {
     padding-top: 6px;
     text-align: center;
 }
-.liftbasement{
-    top: 68vh;
-}
-.liftbasement::before{
-    content: '地下';
-    background-color: #CF7E7C;
-    display: inline-block;
-    width: 100%;
-    height: 26px;
-    padding-top: 6px;
-    text-align: center;
-}
-}
-@media screen and (min-width: 1025px){
-    .p-main__liftGroup__parts{
-    position: fixed;
-    top: 100px;
-    text-align: center;
-}
-}
+
 
 
 .p-instaArea {

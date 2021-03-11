@@ -1,8 +1,6 @@
 <?php get_header(); ?>
 <link href="<?php echo get_template_directory_uri(); ?>/assets/css/archive-special.css " rel="stylesheet">
 
-
-
 <!-- breadCrumb-->
 <main class="l-main">
     <!-- breadCrumb -->
@@ -17,11 +15,9 @@
     </div>
     <!-- /breadCrumb -->
 
-
-
     <!-- description -->
     <section class="l-description">
-        <h2 class="c-heroImg"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_archive_special_web.jpg" alt="特集一覧"></h2>
+        <h2 class="c-heroImg"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_archive_special_web.png" alt="特集一覧"></h2>
         <div class="p-description">
             <div class="p-description__item">
                 <p class="c-description__text">

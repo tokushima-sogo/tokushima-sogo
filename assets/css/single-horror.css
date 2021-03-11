@@ -3,7 +3,8 @@
 /* いいねの所 */
 .wp1_like_like {
     margin-left: 200px;
-    background-color: white;
+
+
 
 
 
@@ -163,7 +164,7 @@ button.p-singleBtn {
 /* タグ全体 */
 .p-tag {
     color: #FEF9F9;
-    justify-content: space-around;
+    justify-content: start;
     align-items: center;
 }
 
@@ -343,6 +344,12 @@ a.c-btnTag:hover img {
     left: 50%;
 }
 
+.c-thumbnail img {
+    width: 240px;
+    height: 160px;
+
+}
+
 /* ハートのSVG */
 .c-icon__heart {
     width: 32px;
@@ -384,6 +391,12 @@ a.c-btnTag:hover img {
 .c-title {
     font-size: 1.8rem;
     font-family: 'mamelon5';
+}
+
+.c-date {
+    font-size: 1.4rem;
+    font-family: 'mamelon5';
+    padding: 8px;
 }
 
 
