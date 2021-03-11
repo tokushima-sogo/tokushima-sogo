@@ -1,30 +1,30 @@
 var show = 3; //最初に表示する件数
 var num = 20;  //clickごとに表示したい件数
-var first__contents = '.more1'; // 対象の記事 １つ目のカテゴリー
-var secound__contents = '.more2'; //対象の記事 2つ目のカテゴリー
-var third__contents = '.more3';  //対象の記事 3つ目のカテゴリー
+var first__contents = '.c-more1'; // 対象の記事 １つ目のカテゴリー
+var secound__contents = '.c-more2'; //対象の記事 2つ目のカテゴリー
+var third__contents = '.c-more3';  //対象の記事 3つ目のカテゴリー
 
 
-$(first__contents + ':nth-child(n + ' + (show + 1) + ')').addClass('is-hidden');
-$('.one').on('click', function () {
-    $(first__contents + '.is-hidden').slice(0, num).removeClass('is-hidden');
-    if ($(first__contents + '.is-hidden').length == 0) {
-        $('.one').fadeOut();
+jQuery(first__contents + ':nth-child(n + ' + (show + 1) + ')').addClass('is-hidden');
+jQuery('.one').on('click', function () {
+    jQuery(first__contents + '.is-hidden').slice(0, num).removeClass('is-hidden');
+    if (jQuery(first__contents + '.is-hidden').length == 0) {
+        jQuery('.one').fadeOut();
     }
 });
 
-$(secound__contents + ':nth-child(n + ' + (show + 1) + ')').addClass('is-hidden');
-$('.two').on('click', function () {
-    $(secound__contents + '.is-hidden').slice(0, num).removeClass('is-hidden');
-    if ($(secound__contents + '.is-hidden').length == 0) {
-        $('.two').fadeOut();
+jQuery(secound__contents + ':nth-child(n + ' + (show + 1) + ')').addClass('is-hidden');
+jQuery('.two').on('click', function () {
+    jQuery(secound__contents + '.is-hidden').slice(0, num).removeClass('is-hidden');
+    if (jQuery(secound__contents + '.is-hidden').length == 0) {
+        jQuery('.two').fadeOut();
     }
 });
 
-$(third__contents + ':nth-child(n + ' + (show + 1) + ')').addClass('is-hidden');
-$('.three').on('click', function () {
-    $(third__contents + '.is-hidden').slice(0, num).removeClass('is-hidden');
-    if ($(third__contents + '.is-hidden').length == 0) {
-        $('.three').fadeOut();
+jQuery(third__contents + ':nth-child(n + ' + (show + 1) + ')').addClass('is-hidden');
+jQuery('.three').on('click', function () {
+    jQuery(third__contents + '.is-hidden').slice(0, num).removeClass('is-hidden');
+    if (jQuery(third__contents + '.is-hidden').length == 0) {
+        jQuery('.three').fadeOut();
     }
 });

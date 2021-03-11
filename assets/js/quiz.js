@@ -1,28 +1,32 @@
 //【残り工程】
 /*
 →阿波度のコメントをどうするか
-if文作る
-draw
-都市伝説の画面
-//BGM
 */
 //スマホの画面直したとき，画面のみ再リロードさせる。
 
-
-
-
-// const PATH = "http://localhost/wp-content/themes/sogo/";
+// const PATH = "http://localhost/wp-content/themes/sogo/"; phpの中でパスをGETしている。
 //canvas設定
 const CANVAS = document.getElementById("canvas");
 const CTX = CANVAS.getContext("2d");
+const HEADER = document.getElementById("header_size");
 
 //運用時のキャンバスの大きさ
 CANVAS.width = window.innerWidth;
 CANVAS.height = window.innerHeight;
+//ヘッダーのサイズ分マージンにあてる。
+const HEADER_HEIGHT = HEADER.scrollHeight;
+const CANVAS_HEIGHT = CANVAS.scrollHeight;
+
+CANVAS.style.marginTop = HEADER_HEIGHT + "px";
 //CANVAS.width = 1600;開発時の初期画面サイズ
 //CANVAS.height = 900;開発時の初期画面サイズ
-console.log(CANVAS.width);
+
+//キャンバスサイズチェック（デバッグ用）
+/* console.log(CANVAS.width);
 console.log(CANVAS.height);
+console.log(HEADER.scrollHeight);
+console.log(CANVAS.offsetTop);
+console.log(HEADER.offsetTop); */
 
 //画像
 const CORRECT_IMG = new Image();
@@ -47,11 +51,15 @@ const CORRECT_MP3 = new Audio(PATH + "/assets/audio/correct.mp3");
 CORRECT_MP3.loop = false;
 const MISTAKE_MP3 = new Audio(PATH + "/assets/audio/mistake.mp3");
 MISTAKE_MP3.loop = false;
+const BGM_MP3 = new Audio(PATH + "/assets/audio/bgm.mp3");
+BGM_MP3.loop = true;
+BGM_MP3.volume = 0.4;
 
 //重要なパラメーター
 const FPS = 10;
 let nextSwitchTime = 1000;      //次の問題までの時間
-let totalQuestionNumber = 10;   //総問題数【10個デフォルト】
+let totalQuestionNumber = 10;   //総問題数【10個がデフォルト】
+
 //[問題文,正解,不正解,不正解,不正解]
 let protoQuestions = [
     ["アジアで初めてベートーヴェンの交響曲第九番が演奏された地域はどこ？", "鳴門市", "徳島市", "小松島市", "吉野川市"],
@@ -64,7 +72,16 @@ let protoQuestions = [
     ["アメリカのロッキー山脈、イタリアのチロル地方の土柱と並んで「世界三大奇勝」と称されている土柱がある地域は？", "阿波市", "吉野川市", "鳴門市", "三好市"],
     ["徳島発祥の妖怪は？", "こなきじじい", "ぬりかべ", "いったんもめん", "砂かけばばあ"],
     ["徳島発祥の企業でないものはどれ？", "キッコーマン", "日本ハム", "大塚製薬", "ジャストシステム"],
-    ["徳島県のゆるキャラでないのはどれ？", "くろしおくん", "ヨッピー", "秘境竜", "あいのすけ"]
+    ["徳島県のゆるキャラでないのはどれ？", "くろしおくん", "ヨッピー", "秘境竜", "あいのすけ"],
+    ["徳島の方言で「せこい」とは、どう意味？（例）「せこいなあ」", "しんどい", "いやらしい", "ずるい", "腹が立つ"],
+    ["徳島の方言で「むつごい」とは、どういう意味？（例）「むつごい味」", "味が濃い", "からい", "さっぱりしている", "甘い"],
+    ["徳島の方言で「めげる」とは、どういう意味？", "壊れる", "目をける", "あまやかす", "歩き回る"],
+    ["徳島の方言で「どくれる」とは、どういう意味？", "すねる", "隠れる", "夢中になる", "疲れる"],
+    ["徳島の方言で「あばばい」とは、どういう意味？", "まぶしい", "危ない", "うろたえる", "あわてる"],
+    ["徳島の方言で「かんまんかんまん！」とは、どういう意味？", "いいよいいよ！", "がまんがまん！", "落ち着いて落ち着いて！", "やめてやめて！"],
+    ["阿波踊りの歴史は何年？", "400年", "100年", "200年", "300年"],
+    ["阿波踊りの掛け声の「ヤットサー！」とは、どういう意味？", "久しぶり！", "がんばるぞ！", "はじめるぞ！", "やってられるか！"],
+    ["徳島で開かれるアニメイベント「マチ★アソビ」では、眉山に続くロープウェイのアナウンスが、イベント期間中、有名なアニメ声優によって吹き替えられます。その吹き替えをしたことがない声優は誰？（※2021年3月現在）", "杉田智和", "水樹奈々", "花澤香菜", "大塚明夫"]
 ];
 
 //その他
@@ -177,26 +194,39 @@ const MOBILE = new mobile();
 //let clickJudge = false;
 
 let clickNumber = 0;
-canvas.addEventListener("click", onClick, false);
+canvas.addEventListener("click", onClick, true);
 function onClick(e) {
     let clickX = 0;
     let clickY = 0;
 
     //clientXブラウザの端から+キャンバスからのクリック位置-offsetLeft：キャンバスまでの長さ＝正確なクリック位置【ボツ】
-    /*     clickX = e.clientX - CANVAS.offsetLeft;
-        clickY = e.clientY - CANVAS.offsetTop; */
+    /* clickX = e.clientX - CANVAS.offsetLeft;
+    clickY = e.clientY - CANVAS.offsetTop; */
 
     //キャンバスのクリック位置
-    let rect = e.currentTarget.getBoundingClientRect();
+    /* let rect = e.currentTarget.getBoundingClientRect(); */
+    let rect = e.target.getBoundingClientRect();
     clickX = e.clientX - rect.left;
     clickY = e.clientY - rect.top;
 
-    console.log(clickX);
-    console.log(clickY);
+    /*  clickX = e.offsetX;
+     clickY = e.offsetY; */
 
-    //デバッグ用消す
-    //CTX.fillStyle = "red";
-    //CTX.fillRect(clickX, clickY, DRAW.answerWidth, DRAW.answerHeight);
+    //クリックチェック（デバッグ用）
+    /*     console.log("クリックX" + clickX);
+        console.log("クリックY" + clickY);
+        console.log("1のｘ始点" + DRAW.answer1X);
+        console.log("1のY始点" + DRAW.answer1Y);
+        console.log("2のｘ始点" + DRAW.answer2X);
+        console.log("2のY始点" + DRAW.answer2Y);
+        console.log("3のｘ始点" + DRAW.answer3X);
+        console.log("3のY始点" + DRAW.answer3Y);
+        console.log("4のｘ始点" + DRAW.answer4X);
+        console.log("4のY始点" + DRAW.answer4Y); */
+
+    //クリック範囲表示（デバッグ用）
+    /*  CTX.fillStyle = "red";
+     CTX.fillRect(clickX, clickY, DRAW.answerWidth, DRAW.answerHeight); */
 
     //解答をクリックしたとき
     if (mode == 1 && clickEnable == true) {
@@ -229,11 +259,17 @@ function onClick(e) {
     }
     if (mode == 2) {
         window.addEventListener("click", function () {
-            mode == 3;
+            mode = 3;
             clearInterval(resultAnime);
             setTimeout(() => {
                 DRAW.linkDraw();
             }, 200);
+        })
+    }
+    if (mode == 3) {
+        window.addEventListener("click", function () {
+            //都市伝説のページへ移動
+            location.href = "http://localhost/sogo/horror/";
         })
     }
 }
@@ -771,7 +807,6 @@ window.addEventListener("load", function () {
     QUIZ.createQuestion();
     QUIZ.createAnswer();
     MOBILE.isSmartPhone();
-    DRAW.commentDraw()
     //スタート画面
     start = setInterval(function () {
         setTimeout(function () {
@@ -814,6 +849,7 @@ window.addEventListener("click", function () {
     //スタートボタンを押した時間を保管
     let sTime = new Date();
     startTime = sTime.getTime();
+    BGM_MP3.play();
     gameRound = setInterval(gameCycle, FPS)
 
 }, { once: true });

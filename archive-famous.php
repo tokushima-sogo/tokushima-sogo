@@ -1,255 +1,248 @@
-<!-- 【引継ぎ事項】
-１,クラス名は適当，命名ルールに合わせて直す必要あり。
-２,cssは作っていない。
-３,wpulinkのショートコードは埋め込んでいない。
-４，タグ検索ができない！小川さん助けて！！
--->
-
 <?php get_header(); ?>
 
-<main>
-    <h1>徳島の名物</h1>
-    <p>紹介文</p><br><br>
+<main class="l-main">
 
-    <section>
-        <h2>お菓子</h2>​
+    <!-- breadCrumb -->
+    <div class="p-breadCrumb">
+        <div class="p-breadCrumb__inner">
+            <!-- breadcrumbループstart -->
+            <span>トップ</span>
+            <i class="fas fa-angle-right"></i>
+            <span>エリア名</span>
+            <i class="fas fa-angle-right"></i><span>カテゴリ</span>
+            <i class="fas fa-angle-right"></i><span>記事タイトル</span>
+            <!-- breadcrumbループend -->
+        </div>
+    </div>
+    <!-- /breadCrumb -->
 
-        <!-- お菓子の記事を出力するループ -->
-        <?php
-        $args = array(
-            'post_type'         => 'famous',  // カスタム投稿タイプ名
-            'orderby'           => 'modified', // 更新日で表示
-            'tax_query'         => array(
-                'relation'      => 'AND',
-                array(
-                    'taxonomy'  => 'taxotag', // タクソノミースラッグを指定
-                    'field'     => 'slug',    // termsで使用する種類指定
-                    'terms'     => 'snack',   // タームスラッグを指定
-                ),
-            ),
-        );
-        ?>
-        <?php $the_query = new WP_Query($args); ?>
-        <?php if ($the_query->have_posts()) : ?>
-            <?php while ($the_query->have_posts()) : ?>
-                <?php $the_query->the_post(); ?>
-
-                <!-- サムネイルの表示 -->
-                <div class="pic">
-                    <a href="<?php the_permalink(); ?>">
-
-                        <?php if (has_post_thumbnail()) : ?>
-                            <?php the_post_thumbnail('medium') ?>
-                        <?php else : ?>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
-                        <?php endif; ?>
-
-                    </a>
-                </div>
-                ​
-                <!-- ターム表示といいね -->
-                <div class="flex">
-                    <?php the_tags(); ?>
-                    <!-- タグの表示 -->
-                    <div class="term">
-
-                        <!-- タグ検索できない -->
-                        <?php
-                        $slug_name = get_query_var('taxotag');
-                        $term = get_term_by('slug', '$slug_name', 'taxotag'); ?>
-                        <?php echo $term->name; ?>
-
-                        <?php
-                        echo $term_slug;
-                        $tags = get_the_tags();
-                        if (!empty($tags)) {
-                            $echoTag = '';
-                            $separator = '<span> ♯ </span>';
-                        } else {
-                            echo "タグがありません";
-                        }
-                        foreach ($tags as $tag) {
-                            echo $tag->name;
-                            $echoTag .= $separator . '<span>' . $tag->name . '</span>';
-                        }
-                        //$echoTag = rtrim($html, $separator);
-                        echo $echoTag; ?>
-
-                    </div>
-
-                    <!-- カスタム投稿タイプのスラッグ表示 ダメならhttps://www.nxworld.net/wp-get-current-post-type.htmlで-->
-                    <div class="slug">
-                        <!-- タクソノミー(area)のターム -->
-                        <?php echo get_post_type(); ?>
-                    </div>
-                    <!-- wpulikeのショートコード 記入場所-->
-                </div>
-                ​
-                <!-- コンテンツ文章の抜粋 -->
-                <?php the_excerpt(); ?>
-
-            <?php endwhile; ?>
-            <?php wp_reset_postdata(); ?>
-            <?php endif; ?>​
+    <!-- description -->
+    <section class="l-description">
+        <h2 class="c-heroImg"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_archive_famous_web.jpg" alt="徳島の名物"></h2>
+        <div class="p-description">
+            <div class="p-description__item">
+                <p class="c-description__text u-center">
+                    徳島県内の名物を紹介します。</p>
+            </div>
+        </div>
     </section>
+    <!-- description -->
 
+    <section class="l-articleList">
+        <h3 class="c-subHeading u-center">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_event_look.png" alt="展示・見学">
+        </h3>
+        <!-- articleList -->
+        <div class="p-articleList u-grid">​
 
-    <section>
-        <h2>おかず</h2>​
-
-        <!-- おかずの記事を出力するループ -->
-        <?php
-        $args = array(
-            'post_type'        => 'famous',    // カスタム投稿タイプ名
-            'orderby'          => 'modified',  // 更新日で表示
-            'tax_query'        => array(
-                'relation'     => 'AND',
-                array(
-                    'taxonomy' => 'taxotag',   // タクソノミースラッグを指定
-                    'field'    => 'slug',      // termsで使用する種類指定
-                    'terms'    => 'meal',      // タームスラッグを指定
+            <!-- お菓子の記事を出力するループ -->
+            <?php
+            $args = array(
+                'post_type'         => 'famous',  // カスタム投稿タイプ名
+                'orderby'           => 'modified', // 更新日で表示
+                'tax_query'         => array(
+                    'relation'      => 'AND',
+                    array(
+                        'taxonomy'  => 'taxotag', // タクソノミースラッグを指定
+                        'field'     => 'slug',    // termsで使用する種類指定
+                        'terms'     => 'snack',   // タームスラッグを指定
+                    ),
                 ),
-            ),
-        );
-        ?>
-        <?php $the_query = new WP_Query($args); ?>
-        <?php if ($the_query->have_posts()) : ?>
-            <?php while ($the_query->have_posts()) : ?>
-                <?php $the_query->the_post(); ?>
-
-                <!-- サムネイルの表示 -->
-                <div class="pic">
-                    <a href="<?php the_permalink(); ?>">
-
-                        <?php if (has_post_thumbnail()) : ?>
-                            <?php the_post_thumbnail('medium') ?>
-                        <?php else : ?>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
-                        <?php endif; ?>
-
-                    </a>
-                </div>
-                ​
-                <!-- ターム表示といいね -->
-                <div class="flex">
-                    <?php the_tags(); ?>
-                    <!-- タグの表示 -->
-                    <div class="term">
-
-                        <!-- タグ検索できない -->
-                        <?php
-                        echo $term_slug;
-                        $tags = get_the_tags();
-                        if (!empty($tags)) {
-                            $echoTag = '';
-                            $separator = '<span> ♯ </span>';
-                        } else {
-                            echo "タグがありません";
-                        }
-                        foreach ($tags as $tag) {
-                            echo $tag->name;
-                            $echoTag .= $separator . '<span>' . $tag->name . '</span>';
-                        }
-                        //$echoTag = rtrim($html, $separator);
-                        echo $echoTag; ?>
-
-                    </div>
-
-                    <!-- カスタム投稿タイプのスラッグ表示 ダメならhttps://www.nxworld.net/wp-get-current-post-type.htmlで-->
-                    <div class="slug">
-                        <!-- タクソノミー(area)のターム -->
-                        <?php echo get_post_type(); ?>
-                    </div>
-                    <!-- wpulikeのショートコード 記入場所-->
-                </div>
-                ​
-                <!-- コンテンツ文章の抜粋 -->
-                <?php the_excerpt(); ?>
-
-            <?php endwhile; ?>
-            <?php wp_reset_postdata(); //$postをグローバル変数に戻す
+            );
             ?>
-            <?php endif; ?>​
+            <?php $the_query = new WP_Query($args); ?>
+            <?php if ($the_query->have_posts()) : ?>
+                <?php while ($the_query->have_posts()) : ?>
+                    <?php $the_query->the_post(); ?>
+                    <!-- article -->
+                    <article class="p-article c-more1">
+                        <!-- imgArea -->
+                        <div class="p-imgArea">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/frame_archive_common_thumbFrame.png" class="c-frame" alt="額縁">
+                            <!-- thumbnail -->
+                            <a href="<?php the_permalink(); ?>" class="c-thumbnail">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <?php the_post_thumbnail('medium') ?>
+                                <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                <?php endif; ?>
+                            </a>
+                        </div>
+                        <!-- /imgArea -->
+                        <!-- textArea -->
+                        <div class="p-textArea">
+                            <div class="p-textContent">
+                                <ul class="p-singleTagList__ul u-flex">
+                                    <?php
+                                    echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li', '</li><li class="c-singleTagList__li>', '</li>');
+                                    ?>
+                                </ul>
+                                <!-- /singleTagList -->
+                            </div>
+                            <div class="c-title u-center"><?php the_title(); ?></div>
+                        </div>
+                        <!-- /textArea -->
+                    </article>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
+        </div>
+
+        <!-- moreBtn -->
+        <div class="l-moreBtn u-right">
+            <button class="c-moreBtn one u-center u-west">more</button>
+        </div>
+        <!-- /moreBtn -->
+
+    </section>
+    <!-- /1 -->
+
+    <!-- 2 -->
+    <section class="l-articleList">
+        <h3 class="c-subHeading u-center">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_event_play.png" alt="体験・レジャー">
+        </h3>​
+
+        <!-- articleList -->
+        <div class="p-articleList u-grid">
+            <!-- おかずの記事を出力するループ -->
+            <?php
+            $args = array(
+                'post_type'        => 'famous',    // カスタム投稿タイプ名
+                'orderby'          => 'modified',  // 更新日で表示
+                'tax_query'        => array(
+                    'relation'     => 'AND',
+                    array(
+                        'taxonomy' => 'taxotag',   // タクソノミースラッグを指定
+                        'field'    => 'slug',      // termsで使用する種類指定
+                        'terms'    => 'meal',      // タームスラッグを指定
+                    ),
+                ),
+            );
+            ?>
+            <?php $the_query = new WP_Query($args); ?>
+            <?php if ($the_query->have_posts()) : ?>
+                <?php while ($the_query->have_posts()) : ?>
+                    <?php $the_query->the_post(); ?>
+
+                    <!-- article -->
+                    <article class="p-article c-more3">
+                        <!-- imgArea -->
+                        <div class="p-imgArea">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/frame_archive_common_thumbFrame.png" class="c-frame" alt="額縁">
+                            <!-- thumbnail -->
+                            <a href="<?php the_permalink(); ?>" class="c-thumbnail">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <?php the_post_thumbnail('medium') ?>
+                                <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                <?php endif; ?>
+                            </a>
+                        </div>
+                        <!-- /imgArea -->
+                        <!-- textArea -->
+                        <div class="p-textArea">
+                            <div class="p-textContent">
+                                <ul class="p-singleTagList__ul u-flex">
+                                    <?php
+                                    echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li', '</li><li class="c-singleTagList__li>', '</li>');
+                                    ?>
+                                </ul>
+                                <!-- /singleTagList -->
+                            </div>
+                            <div class="c-title u-center"><?php the_title(); ?></div>
+                        </div>
+                        <!-- /textArea -->
+                    </article>
+                    <!-- /article -->
+
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
+        </div>
+        <!-- /articleList -->
+
+        <!-- moreBtn -->
+        <div class="l-moreBtn u-right">
+            <button class="c-moreBtn three u-center u-west">more</button>
+        </div>
+        <!-- /moreBtn -->​
     </section>
 
 
+    <!-- 3 -->
+    <section class="l-articleList">
+        <h3 class="c-subHeading u-center">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_event_festival.png" alt="お祭り">
+        </h3>
 
-    <section>
-        <h2>お酒</h2>
-        ​
-        <!-- お酒の記事を出力するループ -->
-        <?php
-        $args = array(
-            'post_type'         => 'famous',    // カスタム投稿タイプ名
-            'orderby'           => 'modified',  // 更新日で表示
-            'tax_query'         => array(
-                'relation'      => 'AND',
-                array(
-                    'taxonomy'  => 'taxotag',   // タクソノミースラッグを指定
-                    'field'     => 'slug',      // termsで使用する種類指定
-                    'terms'     => 'alcohol',   // タームスラッグを指定
+        <!-- articleList -->
+        <div class="p-articleList u-grid">
+            ​
+            <!-- お酒の記事を出力するループ -->
+            <?php
+            $args = array(
+                'post_type'         => 'famous',    // カスタム投稿タイプ名
+                'orderby'           => 'modified',  // 更新日で表示
+                'tax_query'         => array(
+                    'relation'      => 'AND',
+                    array(
+                        'taxonomy'  => 'taxotag',   // タクソノミースラッグを指定
+                        'field'     => 'slug',      // termsで使用する種類指定
+                        'terms'     => 'alcohol',   // タームスラッグを指定
+                    ),
                 ),
-            ),
-        );
-        ?>
-        <?php $the_query = new WP_Query($args); ?>
-        <?php if ($the_query->have_posts()) : ?>
-            <?php while ($the_query->have_posts()) : ?>
-                <?php $the_query->the_post(); ?>
-
-                <!-- サムネイルの表示 -->
-                <div class="pic">
-                    <a href="<?php the_permalink(); ?>">
-
-                        <?php if (has_post_thumbnail()) : ?>
-                            <?php the_post_thumbnail('medium') ?>
-                        <?php else : ?>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
-                        <?php endif; ?>
-
-                    </a>
-                </div>
-                ​
-                <!-- ターム表示といいね -->
-                <div class="flex">
-                    <?php the_tags(); ?>
-                    <!-- タグの表示 -->
-                    <div class="term">
+            );
+            ?>
+            <?php $the_query = new WP_Query($args); ?>
+            <?php if ($the_query->have_posts()) : ?>
+                <?php while ($the_query->have_posts()) : ?>
+                    <?php $the_query->the_post(); ?>
 
 
-                        <!-- タグ検索できない -->
-                        <?php
-                        echo $term_slug;
-                        $tags = get_the_tags();
-                        if (!empty($tags)) {
-                            $echoTag = '';
-                            $separator = '<span> ♯ </span>';
-                        } else {
-                            echo "タグがありません";
-                        }
-                        foreach ($tags as $tag) {
-                            echo $tag->name;
-                            $echoTag .= $separator . '<span>' . $tag->name . '</span>';
-                        }
-                        //$echoTag = rtrim($html, $separator);
-                        echo $echoTag; ?>
 
-                    </div>
+                    <!-- article -->
+                    <article class="p-article c-more3">
+                        <!-- imgArea -->
+                        <div class="p-imgArea">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/frame_archive_common_thumbFrame.png" class="c-frame" alt="額縁">
+                            <!-- thumbnail -->
+                            <a href="<?php the_permalink(); ?>" class="c-thumbnail">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <?php the_post_thumbnail('medium') ?>
+                                <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                <?php endif; ?>
+                            </a>
+                        </div>
+                        <!-- /imgArea -->
+                        <!-- textArea -->
+                        <div class="p-textArea">
+                            <div class="p-textContent">
+                                <ul class="p-singleTagList__ul u-flex">
+                                    <?php
+                                    echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li', '</li><li class="c-singleTagList__li>', '</li>');
+                                    ?>
+                                </ul>
+                                <!-- /singleTagList -->
+                            </div>
+                            <div class="c-title u-center"><?php the_title(); ?></div>
+                        </div>
+                        <!-- /textArea -->
+                    </article>
+                    <!-- /article -->
 
-                    <!-- カスタム投稿タイプのスラッグ表示 ダメならhttps://www.nxworld.net/wp-get-current-post-type.htmlで-->
-                    <div class="slug">
-                        <!-- タクソノミー(area)のターム -->
-                        <?php echo get_post_type(); ?>
-                    </div>
-                    <!-- wpulikeのショートコード 記入場所-->
-                </div>
-                ​
-                <!-- コンテンツ文章の抜粋 -->
-                <?php the_excerpt(); ?>
-
-            <?php endwhile; ?>
-            <?php wp_reset_postdata(); ?>
-            <?php endif; ?>​
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
+        </div>
+        <!-- /articleList -->
+        <!-- moreBtn -->
+        <div class="l-moreBtn u-right">
+            <button class="c-moreBtn three u-center u-west">more</button>
+        </div>
+        <!-- /moreBtn -->
+        ​
     </section>
 
 </main>

@@ -1,5 +1,5 @@
-<div class="breadcrumb">
-    <div class="breadcrumb_inner">
+<div class="p-breadcrumb">
+    <div class="p-breadcrumb_inner">
         <?php
         if (function_exists('bcn_display')) {
             bcn_display();

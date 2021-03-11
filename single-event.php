@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/single-event.css">
+<!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/single-event.css"> -->
 
 <main class="l-main">
 
@@ -11,8 +11,8 @@
             <span>トップ</span>
             <i class="fas fa-angle-right"></i>
             <span>エリア名</span>
-            <i class="fas fa-angle-right"></i> <span>カテゴリ</span>
-            <i class="fas fa-angle-right"></i> <span>記事タイトル</span>
+            <i class="fas fa-angle-right"></i><span>カテゴリ</span>
+            <i class="fas fa-angle-right"></i><span>記事タイトル</span>
             <!-- breadcrumbループend -->
         </div>
     </div>
@@ -40,12 +40,6 @@
 
             <!-- singleArticle -->
             <section class="l-singleArticle">
-                <!-- singleHeader -->
-                <div class="l-singleHeader">
-                    <h2 class="c-singleArticle__title u-center"><?php echo $eventname; ?></h2>
-                    <!-- /singleArticle__title -->
-                </div>
-                <!-- /singleHeader -->
 
                 <!-- singleBody -->
                 <div class="l-singleBody">
@@ -58,13 +52,11 @@
                                     <?php if ($picture1) : ?>
                                         <?php echo '<img src=" ' . $picture1 . '">'; ?>
                                     <?php endif; ?>
-                                    <!-- <img src="assets/images/takenoko1.jpg" alt=""> -->
                                 </li>
                                 <li>
                                     <?php if ($picture2) : ?>
                                         <?php echo '<img src=" ' . $picture2 . '">'; ?>
                                     <?php endif; ?>
-                                    <!-- <img src="assets/images/takenoko2.jpg" alt=""> -->
                                 </li>
                             </ul>
                             <ul class="p-thumbSlider">
@@ -72,13 +64,11 @@
                                     <?php if ($picture1) : ?>
                                         <?php echo '<img src=" ' . $picture1 . '">'; ?>
                                     <?php endif; ?>
-                                    <!-- <img src="assets/images/takenoko1.jpg" alt=""> -->
                                 </li>
                                 <li>
                                     <?php if ($picture2) : ?>
                                         <?php echo '<img src=" ' . $picture2 . '">'; ?>
                                     <?php endif; ?>
-                                    <!-- <img src="assets/images/takenoko2.jpg" alt=""> -->
                                 </li>
                             </ul>
                         </div>
@@ -87,38 +77,23 @@
                         <!-- singleArticle__description -->
                         <div class="p-singleArticle__description u-flex">
                             <!-- singleArticle__text -->
-                            <p class="c-singleArticle__text"><?php the_content(); ?></p>
+                            <h2 class="c-singleArticle__title u-center"><?php echo $eventname; ?></h2>
+                            <div class="c-singleArticle__text"><?php the_content(); ?></div>
                             <!-- /singleArticle__text -->
 
                             <!-- singleTag -->
                             <div class="p-singleTag u-flex">
-                                <div class="c-singleTag__text u-center">登録タグ</div>
+                                <div class="c-singleTag__text u-center">タグ</div>
                                 <!-- /singleTag__text -->
                                 <!-- singleTagList -->
                                 <ul class="p-singleTagList__ul u-flex">
                                     <?php
-                                    echo get_the_term_list($post->ID, 'taxotag', '＃<li class="c-singleTagList__li>', '</li>＃<li class="c-singleTagList__li>', '</li>');
+                                    echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li>', '</li><li class="c-singleTagList__li>', '</li>');
                                     ?>
-                                    <!-- <li class="c-singleTagList__li">#タグ名</li>
-                                    <li class="c-singleTagList__li">#タグ名</li>
-                                    <li class="c-singleTagList__li">#タグ名</li> -->
                                 </ul>
                                 <!-- /singleTagList -->
                             </div>
                             <!-- /singleTag -->
-
-                            <!-- singleBtns -->
-                            <div class="p-singleBtns u-center u-flex">
-                                <!-- いいね！ -->
-                                <a href="#" class="p-singleBtn c-btnTag u-center u-btnTag--fav">
-                                    <!-- ハートのsvg -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 792 637.038" preserveAspectRatio="none">
-                                        <path class="1e6ff1b7-abfa-4d80-a212-8e109273a368" d="M896,512c0,212.077-384,384-384,384S128,724.077,128,512,384,192,512,384C640,192,896,299.923,896,512Z" transform="translate(-116 -272.11)" />
-                                    </svg><span class="c-favCount">10</span>いいね！
-                                </a>
-                                <!-- /いいね！ -->
-                            </div>
-                            <!-- /singleBtns -->
                         </div>
                         <!-- /singleArticle__description -->
                     </div>
@@ -133,6 +108,8 @@
                                 <td class="c-singleTable__td">
                                     <?php if ($held) : ?>
                                         <?php echo $held; ?>
+                                    <?php else : ?>
+                                        <p>&nbsp;</p>
                                     <?php endif; ?>
                                 </td>
                             </tr>
@@ -142,6 +119,8 @@
                                 <td class="c-singleTable__td">
                                     <?php if ($place) : ?>
                                         <?php echo $place; ?>
+                                    <?php else : ?>
+                                        <p>&nbsp;</p>
                                     <?php endif; ?>
                                 </td>
                             </tr>
@@ -151,6 +130,8 @@
                                 <td class="c-singleTable__td">
                                     <?php if ($owner) : ?>
                                         <?php echo $owner; ?>
+                                    <?php else : ?>
+                                        <p>&nbsp;</p>
                                     <?php endif; ?>
                                 </td>
                             </tr>
@@ -160,6 +141,8 @@
                                 <td class="c-singleTable__td">
                                     <?php if ($url) : ?>
                                         <a href="<?php echo $url; ?>"><?php echo $url; ?></a>
+                                    <?php else : ?>
+                                        <p>&nbsp;</p>
                                     <?php endif; ?>
                                 </td>
                             </tr>
@@ -169,12 +152,12 @@
                                 <td class="c-singleTable__td">
                                     <?php if ($facebook) : ?>
                                         <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
-                                    <?php endif; ?>
-                                    <?php if ($instagram) : ?>
+                                    <?php elseif ($instagram) : ?>
                                         <a href="<?php echo $instagram; ?>"><i class="fab fa-instagram-square"></i></a>
-                                    <?php endif; ?>
-                                    <?php if ($twitter) : ?>
+                                    <?php elseif ($twitter) : ?>
                                         <a href="<?php echo $twitter; ?>"><i class="fab fa-twitter-square"></i></a>
+                                    <?php else : ?>
+                                        <p>&nbsp;</p>
                                     <?php endif; ?>
                                 </td>
                             </tr>
@@ -185,9 +168,10 @@
                 <!-- /singleBody -->
             </section>
             <!-- /singleArticle -->
-
         <?php endwhile; ?>
     <?php endif; ?>
+
+
 
 </main>
 <!-- /main -->

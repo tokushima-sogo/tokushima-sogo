@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#canvas {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+}
+
+@font-face {
+    font-family: PixelMplus10-Regular;
+    src: url('http://localhost/tokushima-sogo/wp-content/themes/tokushima-sogo/assets/fonts/PixelMplus10-Regular.ttf') format("woff2");
+    /* src: url('https://heroxs3v38.xsrv.jp/tokushima-sogo/wp-content/themes/tokushima-sogo/assets/fonts/PixelMplus10-Regular.ttf') format("woff2"); */
+
+}

@@ -18,8 +18,8 @@ window.addEventListener("scroll", function () {
     let FloorThree = document.getElementById('js_3f').offsetTop;
     let FloorTwo = document.getElementById('js_2f').offsetTop;
     let FloorOne = document.getElementById('js_1f').offsetTop;
-    let Floorbasement = document.getElementById('js_basement').offsetTop;
-    if (currentY == FloorSix) {
+    let Floorbasement = document.getElementsByClassName('p-departmentFloor').offsetTop;
+    if (currentY == 0) {
         elevator.classList.remove('lift5', 'lift4', 'lift3', 'lift2', 'lift1', 'liftbasement');
         elevator.classList.add('lift6');
     } else if (currentY > FloorSix && currentY < FloorFive) {
@@ -37,9 +37,6 @@ window.addEventListener("scroll", function () {
     } else if (currentY > FloorTwo && currentY < FloorOne) {
         elevator.classList.remove('lift6', 'lift5', 'lift4', 'lift3', 'lift2', 'liftbasement');
         elevator.classList.add('lift1');
-    } else if (currentY > FloorOne && currentY < Floorbasement) {
-        elevator.classList.remove('lift6', 'lift5', 'lift4', 'lift3', 'lift2', 'lift1');
-        elevator.classList.add('liftbasement');
-    };
+    } ;
     // console.log(currentY);
 });

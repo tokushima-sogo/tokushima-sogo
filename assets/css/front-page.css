@@ -1,0 +1,541 @@
+@charset "utf-8";
+
+.c-main__liftLineImg {
+    height: 100vh;
+}
+
+/* 建物表示切替 */
+.c-buildingPc {
+    display: none;
+}
+
+@media(min-width:768px) {
+    .c-buildingPc {
+        display: block;
+    }
+
+    .c-buildingTablet {
+        display: none;
+    }
+}
+
+
+/* ロープウェイ */
+/* 切り替え */
+.p-main__liftGroup__parts {
+    display: none;
+}
+
+@media(min-width:1025px) {
+    .p-main__liftGroup__parts {
+        display: block;
+    }
+
+    .c-ropeway {
+        width: 70%;
+    }
+}
+
+
+
+
+/* キャッチコピー */
+/* .c-catchCopy {
+} */
+
+
+/* ヘッダー分の高さ確保 */
+.l-main {
+    padding-top: 70px;
+}
+
+@media(min-width:1025px) {
+    .l-main {
+        padding-top: 100px;
+    }
+}
+
+/* 新着情報ここから*/
+.p-newsArea {
+    height: 70px;
+    position: relative;
+    z-index: 2;
+    display: table;
+    width: 100%;
+}
+
+.c-newsArea {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 1.4rem;
+}
+
+@media(min-width:1025px) {
+    .p-newsArea {
+        height: 100px;
+    }
+}
+
+/* 新着情報ここまで*/
+
+
+
+
+.p-floorBlock1 {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+/* トップ各階リンク */
+.p-floorLink a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+
+/* １階ご案内のリンク */
+.p-tokushimaLink {
+    padding-top: 10px;
+}
+
+/* 『このサイトの使い方』 */
+.c-guideTitle {
+    padding-bottom: 10px;
+}
+
+
+
+
+@media(min-width:768px) {
+
+    .c-guideTitle,
+    .c-floor__text,
+    .c-tokushimaLink {
+        font-size: 1.2rem;
+    }
+
+    /* .p-topIcon{
+    display: inline-block;
+    transform: translate(-200px, -50px);
+} */
+}
+
+
+
+.u-bg3ea5c8 {
+    background-color: #3ea5c8;
+}
+
+.l-department {
+    position: relative;
+}
+
+/* 各階のイラストたち */
+.p-floorImg {
+    position: relative;
+    top: -10px;
+}
+
+/* 各階のイラストの大きさ */
+.c-satomusume,
+.c-beer,
+.c-soba,
+.c-tutuji,
+.c-yakimoti,
+.c-sirasagi,
+.c-turtle,
+.c-surfing {
+    width: 20%;
+}
+
+/* 各階のマップの大きさ */
+.c-floorMapHigasi,
+.c-floorMapNisi,
+.c-floorMapTokusimacity,
+.c-floorMapMinami {
+    width: 15%;
+}
+
+
+/* 特設会場のイラスト二つ */
+.c-specialEvent {
+    width: 55%;
+}
+
+.c-specialEvent {
+    padding-top: 10px;
+}
+
+img.c-game {
+    width: 35%;
+    padding-top: 10px;
+
+}
+
+/* .c-wheel{
+    position: relative;
+    top: -10px;
+} */
+@media(min-width:768px) {
+    .c-wheel {
+        top: -25px;
+    }
+}
+
+@media(min-width:1025px) {
+    .c-wheel {
+        top: -5px;
+    }
+}
+
+
+/* 特設会場のイラストのリンク */
+.c-specialLink {
+    display: inline-block;
+    height: 80%;
+}
+
+.c-specialLink:hover {
+    transform: scale(1.3);
+}
+
+/* 都市伝説の階のリンク */
+.c-horrorLink {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* 6階部分 */
+#js_6f {
+    position: absolute;
+    top: .5%;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+
+/* 5階部分 */
+#js_5f {
+    position: absolute;
+    top: 17%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 2% 0%;
+}
+
+#js_5f:hover {
+    background-color: #539199;
+    transform: scale(1.3);
+}
+
+/* 4階部分 */
+#js_4f {
+    position: absolute;
+    top: 28%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 2% 0%;
+}
+
+#js_4f:hover {
+    background-color: #004e3f;
+    transform: scale(1.3);
+}
+
+/* 3階部分 */
+#js_3f {
+    position: absolute;
+    top: 38%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 2% 0%;
+}
+
+#js_3f:hover {
+    background-color: #d1a429;
+    transform: scale(1.3);
+}
+
+/* 2階部分 */
+#js_2f {
+    position: absolute;
+    top: 48%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 2% 0%;
+}
+
+#js_2f:hover {
+    background-color: #991f26;
+    transform: scale(1.3);
+}
+
+/* 1階部分 */
+#js_1f {
+    position: absolute;
+    width: 60%;
+    top: 64%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 2% 0%;
+}
+
+/* 都市伝説の階 */
+#page-link {
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+@media(min-width:768px) {
+    #js_6f {
+        position: absolute;
+        top: .5%;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    #js_5f {
+        position: absolute;
+        top: 17%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: 1% 0%;
+    }
+
+    #js_4f {
+        position: absolute;
+        top: 30%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: 1% 0%;
+    }
+
+    #js_3f {
+        position: absolute;
+        top: 43%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: 1% 0%;
+    }
+
+    #js_2f {
+        position: absolute;
+        top: 56%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: 1% 0%;
+    }
+
+    #js_1f {
+        position: absolute;
+        width: 80%;
+        top: 69%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        background-color: #EAE4AD;
+        font-size: 1.6rem;
+        padding: 1% 0%;
+    }
+
+    .c-satomusume,
+    .c-beer,
+    .c-soba,
+    .c-tutuji,
+    .c-yakimoti,
+    .c-sirasagi,
+    .c-turtle,
+    .c-surfing {
+        width: 15%;
+    }
+
+    .c-floorMapHigasi,
+    .c-floorMapNisi,
+    .c-floorMapTokusimacity,
+    .c-floorMapMinami {
+        width: 10%;
+    }
+}
+
+@media(min-width:1025px) {
+    #js_1f {
+        width: 60%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 都市伝説のところ */
+.p-floorBlock {
+    text-align: center;
+}
+
+
+
+
+/* インスタ一式ここから */
+.p-insta {
+    position: relative;
+    z-index: 2;
+}
+
+.p-instaPhotos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.p-instaPhotos li {
+    position: relative;
+    width: calc(100%/3);
+}
+
+.p-instaPhotos li::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.c-instaPhoto {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    object-fit: cover;
+}
+
+@media(min-width:768px) {
+    .p-instaPhotos li {
+        width: calc(100%/6);
+    }
+}
+
+/* インスタ一式ここまで */
+
+
+
+
+
+
+
+.u-mb10 {
+    margin-bottom: 10px;
+}
+
+.u-flex {
+    display: flex;
+}
+
+.u-m0A {
+    margin: 0 auto;
+}
+
+.u-white {
+    color: #fff;
+}
+
+.u-red {
+    color: red;
+}
+
+.u-bgblack {
+    background-color: #000;
+}
+
+.u-bgEAE4AD {
+    background-color: #EAE4AD;
+}
+
+
+
+.p-special {
+    justify-content: space-around;
+    padding: 2% 10% 0 10%;
+    font-size: 1.4rem;
+}
+
+.p-specialLink {
+    width: 40%;
+}
+
+.p-guideArea {
+    font-size: 1.4rem;
+    line-height: 1.2;
+}
+
+.u-bg2d294f {
+    background-color: #2d294f;
+}
+
+/* フロア見出し */
+.c-floorName {
+    font-size: 1.4rem;
+    display: inline-block;
+    text-align: center;
+    width: 100px;
+    padding: 5px 0px;
+    border-radius: 25px;
+}
+
+@media(min-width:768px) {
+    .c-floorName {
+        width: 140px;
+    }
+}
+
+
+.c-floorNameBasement {
+    font-size: 1.4rem;
+    display: inline-block;
+    text-align: center;
+    width: 150px;
+    padding: 5px 0px;
+    border-radius: 25px;
+}
+
+.c-floorNameBasementP {
+    font-size: 1.4rem;
+    padding: 1.5rem;
+}
+
+@media (min-width: 1025px) {
+    .c-floorNameBasementP {
+        font-size: 1.6rem;
+    }
+}
+
+/* ご案内見出しの隠し領域 */
+span[id="front_info"] {
+    display: block;
+    height: 120px;
+    margin-top: -120px;
+    content: "";
+}

@@ -1,27 +1,16 @@
-<!-- 【引継ぎ事項】
-１,84行目サムネイル仮入力。消すこと
-2,市内出せない
--->
-
 <?php get_header(); ?>
-<link href="<?php echo get_template_directory_uri(); ?>/assets/css/archive-horror.css " rel="stylesheet">
-
+​
 <main class="l-main u-bgHorror">
-
+    ​
     <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner u-panHorror">
-            <!-- breadcrumbループstart -->
-            <span>トップ</span>
-            <i class="fas fa-angle-right"></i>
-            <span>エリア名</span>
-            <i class="fas fa-angle-right"></i> <span>カテゴリ</span>
-            <i class="fas fa-angle-right"></i> <span>記事タイトル</span>
-            <!-- breadcrumbループend -->
+            <?php if (function_exists('bcn_display')) {
+                bcn_display();
+            } ?>
         </div>
     </div>
-    <!-- /breadCrumb -->
-
+    <!-- /breadCrumb -->​
     <section class="l-description">
         <div class="c-heroImg">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_archive_horror_web.png" alt="都市伝説">
@@ -35,13 +24,10 @@
                     徳島にまつわる都市伝説は数多くある。妖怪伝説、邪馬台国は徳島説、ユダヤ三種の神器が
                     入っているアークの場所は徳島にある説、本ページで紹介しきれない所もあるだろう。
                     実際に取材を行った所では興味深い話を聞けたり、いろんな体験をした。ネットだけで調べるよりも足を運んで行くことの重要性を知った。それを全てここに載せている。興味のある方はぜひ行って確かめて欲しい。あなたにも何か不思議な体験ができるかもしれない。
-                </div>
-
+                </div>​
             </div>
         </div>
-    </section>
-
-
+    </section>​
 
     <!-- 歴史の記事 -->
     <section class="l-articleList">
@@ -64,15 +50,16 @@
             ),
         );
         ?>
+        <!-- articleList -->
+        <div class="p-articleList u-grid">
 
-        <!-- サブループ開始 -->
-        <?php $the_query = new WP_Query($args); ?>
-        <?php if ($the_query->have_posts()) : ?>
-            <?php while ($the_query->have_posts()) : ?>
-                <?php $the_query->the_post(); ?>
 
-                <!-- articleList -->
-                <div class="p-articleList u-grid">
+            <!-- サブループ開始 -->
+            <?php $the_query = new WP_Query($args); ?>
+            <?php if ($the_query->have_posts()) : ?>
+                <?php while ($the_query->have_posts()) : ?>
+                    <?php $the_query->the_post(); ?>
+
                     <!-- article -->
                     <article class="p-article c-more1">
 
@@ -92,31 +79,35 @@
 
                         <!-- textArea -->
                         <div class="p-textArea u-horrorRed">
-                            <div class="p-textContent u-flex">
-                                <div class="p-bookmark u-flex">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon_archive_common_icon_heart.svg" class="c-icon__heart">
-                                    <div class="c-bookmark__text u-fontHorror"><span class="c-bookmark__count">10</span>いいね！</div>
-                                </div>
+                            <div class="p-textContent">
+                                <div class="c-title u-center u-fontHorror"><?php the_title(); ?></div>
+                                <div class="c-date u-center u-fontHorror">公開日：<?php the_time('Y-m-d'); ?></div>
                                 <div class="p-tag u-flex">
-                                    <!-- <div class="c-tag u-bgHorror u-mr15"><?php echo $term_slug; ?></div> -->
-                                    <div class="c-tag u-bgHorror"><?php echo esc_html(get_post_type_object(get_post_type())->label); ?></div>
+                                    <div class="c-tag u-bgHorror">
+                                        <?php echo get_the_term_list($post->ID, 'taxotag'); ?>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="c-title u-center u-fontHorror">八倉比売神社</div>
+
                         </div>
                         <!-- /textArea -->
                     </article>
-                </div>
-            <?php endwhile; ?>
-            <?php wp_reset_postdata(); ?>
-        <?php endif; ?> ​
+
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
+        </div>
+        <!-- moreBtn -->
+        <div class="l-moreBtn u-right">
+            <button class="c-moreBtn one u-center u-horrorRed u-moreHover">more</button>
+        </div>
+        <!-- /moreBtn -->​
     </section>
 
-
-    <!-- 歴史の記事 -->
+    <!-- 妖怪の記事 -->
     <section class="l-articleList">
         <h3 class="c-subHeading u-center">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_horror_history02.png" alt="歴史">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_horror_yokai02.png" alt="妖怪">
         </h3>
         <!-- 妖怪の記事を出力するループ -->
         <?php
@@ -133,17 +124,15 @@
             ),
         );
         ?>
-        <!-- サブループ開始 -->
-        <?php $the_query = new WP_Query($args); ?>
-        <?php if ($the_query->have_posts()) : ?>
-            <?php while ($the_query->have_posts()) : ?>
-                <?php $the_query->the_post(); ?>
-
-                <!-- articleList -->
-                <div class="p-articleList u-grid">
+        <!-- articleList -->
+        <div class="p-articleList u-grid">
+            <!-- サブループ開始 -->
+            <?php $the_query = new WP_Query($args); ?>
+            <?php if ($the_query->have_posts()) : ?>
+                <?php while ($the_query->have_posts()) : ?>
+                    <?php $the_query->the_post(); ?>
                     <!-- article -->
-                    <article class="p-article c-more1">
-
+                    <article class="p-article c-more2">
                         <!-- imgArea -->
                         <div class="p-imgArea">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_horror_thmbFlame.png" class="c-frame" alt="額縁">
@@ -157,29 +146,34 @@
                             </a>
                         </div>
                         <!-- /imgArea -->
-
                         <!-- textArea -->
                         <div class="p-textArea u-horrorRed">
-                            <div class="p-textContent u-flex">
-                                <div class="p-bookmark u-flex">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon_archive_common_icon_heart.svg" class="c-icon__heart">
-                                    <div class="c-bookmark__text u-fontHorror"><span class="c-bookmark__count">10</span>いいね！</div>
+                            <div class="p-textContent">
+                                <div class="c-title u-center u-fontHorror">
+                                    <?php the_title(); ?>
                                 </div>
+                                <div class="c-date u-center u-fontHorror">公開日：<?php the_time('Y-m-d'); ?></div>
                                 <div class="p-tag u-flex">
-                                    <!-- <div class="c-tag u-bgHorror u-mr15"><?php echo $term_slug; ?></div> -->
-                                    <div class="c-tag u-bgHorror"><?php echo esc_html(get_post_type_object(get_post_type())->label); ?></div>
+                                    <div class="c-tag u-bgHorror">
+                                        <?php echo get_the_term_list($post->ID, 'taxotag'); ?>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="c-title u-center u-fontHorror">八倉比売神社</div>
                         </div>
                         <!-- /textArea -->
                     </article>
-                </div>
-            <?php endwhile; ?>
-            <?php wp_reset_postdata(); ?>
-        <?php endif; ?> ​
-    </section>
 
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
+        </div>
+        <!-- moreBtn -->
+        <div class="l-moreBtn u-right">
+            <button class="c-moreBtn two u-center u-horrorRed u-moreHover">more</button>
+        </div>
+        <!-- /moreBtn -->​
+    </section>​
+    ​
 </main>
 
 <?php get_footer(); ?>
