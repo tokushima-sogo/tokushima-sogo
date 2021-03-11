@@ -694,6 +694,7 @@ main {
     .p-main__liftGroup__parts{
     position: fixed;
     top: 100px;
+    text-align: center;
 }
 }
 

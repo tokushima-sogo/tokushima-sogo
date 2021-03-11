@@ -1,7 +1,7 @@
 <!-- ヘッダーの読み込み -->
 <?php get_header(); ?>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"> -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNNbWvrL46SW-8K-D0w6Haff4Vbcc4rRQ"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/googlemap.js"></script>
 <main class="l-main">
@@ -146,6 +146,8 @@
                                         <!-- カスタムフィールド住所 -->
                                         <?php if ($address) : ?>
                                             <?php echo $address; ?>
+                                        <?php else : ?>
+                                            <p>-</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -155,6 +157,8 @@
                                         <!-- カスタムフィールド電話 -->
                                         <?php if ($tel) : ?>
                                             <?php echo $tel; ?>
+                                        <?php else : ?>
+                                            <p>-</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -164,6 +168,8 @@
                                         <!-- カスタムフィールド営業時間 -->
                                         <?php if ($opentime) : ?>
                                             <?php echo $opentime; ?>
+                                        <?php else : ?>
+                                            <p>-</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -173,6 +179,8 @@
                                         <!-- カスタムフィールド定休日 -->
                                         <?php if ($closetime) : ?>
                                             <?php echo $closetime; ?>
+                                        <?php else : ?>
+                                            <p>-</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -182,6 +190,8 @@
                                         <!-- カスタムフィールドURL -->
                                         <?php if ($url) : ?>
                                             <a href="<?php echo $url; ?>"><?php echo $url; ?></a>
+                                        <?php else : ?>
+                                            <p>-</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -191,6 +201,8 @@
                                     <td class="c-singleTable__td">
                                         <?php if ($facebook) : ?>
                                             <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
+                                        <?php else : ?>
+                                            <p>-</p>
                                         <?php endif; ?>
                                         <?php if ($instagram) : ?>
                                             <a href="<?php echo $instagram; ?>"><i class="fab fa-instagram-square"></i></a>
@@ -208,6 +220,8 @@
                                     <td class="c-singleTable__td">
                                         <?php if ($remarks1) : ?>
                                             <?php echo $remarks1; ?>
+                                        <?php else : ?>
+                                            <p>-</p>
                                         <?php endif; ?>
 
                                         <?php if ($remarks2) : ?>

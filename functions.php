@@ -149,9 +149,11 @@ function add_tokushima_sogo_scripts()
     wp_enqueue_script('jquery');
     // slickの利用
     wp_enqueue_script('slick_carousel_js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', '', '', true);
-    if (is_single()) {
+    if (is_front_page()) {
+        wp_enqueue_script('scroll_js', get_template_directory_uri() . '/assets/js/scroll.js', '', '', true);
+        wp_enqueue_script('elevator', get_template_directory_uri() . '/assets/js/elevator.js', '', '', true);
+    } else if (is_single()) {
         wp_enqueue_script('slick_setting_js', get_template_directory_uri() . '/assets/js/slicksetting.js', '', '', true);
-        // wp_enqueue_script('slick_setting_js', get_template_directory_uri() . '/assets/js/slicksetting.js', '', '', true);
     } else if (is_post_type_archive('horror')) {
         wp_enqueue_script('horro_js', get_template_directory_uri() . '/assets/js/more.js', '', '', true);
     } else if (is_tax('area', array('east', 'west', 'city', 'south'))) {
@@ -160,7 +162,6 @@ function add_tokushima_sogo_scripts()
     wp_enqueue_script('menu_js', get_template_directory_uri() . '/assets/js/menu.js', '', '', true);
     // wp_enqueue_script('serchForm_js', get_template_directory_uri() . '/assets/js/searchForm.js', '', '', true);
     // wp_enqueue_script('searchandfilter', get_template_directory_uri() . '/assets/js/searchandfilter.js', '', '', true);
-    wp_enqueue_script('elevator', get_template_directory_uri() . '/assets/js/elevator.js', '', '', true);
     wp_enqueue_script('common', get_template_directory_uri() . '/assets/js/common.js', '', '', true);
 }
 add_action('wp_enqueue_scripts', 'add_tokushima_sogo_scripts');

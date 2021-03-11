@@ -14,7 +14,7 @@
     <?php wp_body_open(); ?>
 
     <!-- header -->
-    <header class="l-header">
+    <header id="scroll" class="l-header">
         <!-- header__contents -->
         <div class="p-header__contents u-flex u-bgCalmBlue">
             <!-- logo -->

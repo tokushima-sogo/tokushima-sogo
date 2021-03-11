@@ -63,19 +63,16 @@
                                     <?php if ($picture1) : ?>
                                         <?php echo '<img src=" ' . $picture1 . '">'; ?>
                                     <?php endif; ?>
-                                    <!-- <img src="assets/images/takenoko1.jpg" alt=""> -->
                                 </li>
                                 <li>
                                     <?php if ($picture2) : ?>
                                         <?php echo '<img src=" ' . $picture2 . '">'; ?>
                                     <?php endif; ?>
-                                    <!-- <img src="assets/images/takenoko2.jpg" alt=""> -->
                                 </li>
                                 <li>
                                     <?php if ($picture3) : ?>
                                         <?php echo '<img src=" ' . $picture3 . '">'; ?>
                                     <?php endif; ?>
-                                    <!-- <img src="assets/images/takenoko3.jpg" alt=""> -->
                                 </li>
                             </ul>
                             <ul class="p-thumbSlider">
@@ -83,19 +80,16 @@
                                     <?php if ($picture1) : ?>
                                         <?php echo '<img src=" ' . $picture1 . '">'; ?>
                                     <?php endif; ?>
-                                    <!-- <img src="assets/images/takenoko1.jpg" alt=""> -->
                                 </li>
                                 <li>
                                     <?php if ($picture2) : ?>
                                         <?php echo '<img src=" ' . $picture2 . '">'; ?>
                                     <?php endif; ?>
-                                    <!-- <img src="assets/images/takenoko2.jpg" alt=""> -->
                                 </li>
                                 <li>
                                     <?php if ($picture3) : ?>
                                         <?php echo '<img src=" ' . $picture3 . '">'; ?>
                                     <?php endif; ?>
-                                    <!-- <img src="assets/images/takenoko3.jpg" alt=""> -->
                                 </li>
                             </ul>
                         </div>
@@ -111,10 +105,9 @@
                                 <div class="c-singleTag__text u-center">登録タグ</div>
                                 <!-- /singleTag__text -->
                                 <!-- singleTagList -->
-
                                 <ul class="p-singleTagList__ul u-flex">
                                     <?php
-                                    echo get_the_term_list($post->ID, 'taxotag', '＃<li class="c-singleTagList__li>', '</li>＃<li class="c-singleTagList__li>', '</li>');
+                                    echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li>', '</li><li class="c-singleTagList__li>', '</li>');
                                     ?>
                                 </ul>
                                 <!-- /singleTagList -->
@@ -122,21 +115,10 @@
                             <!-- /singleTag -->
                             <!-- singleBtns -->
                             <div class="p-singleBtns u-center u-flex">
-                                <!-- いいね！ -->
-                                <!-- <a href="#" class="p-singleBtn c-btnTag u-center u-btnTag--fav">
-                                    ハートのsvg
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 792 637.038" preserveAspectRatio="none">
-                                        <path class="1e6ff1b7-abfa-4d80-a212-8e109273a368" d="M896,512c0,212.077-384,384-384,384S128,724.077,128,512,384,192,512,384C640,192,896,299.923,896,512Z" transform="translate(-116 -272.11)" />
-
-                                    </svg><span class="c-favCount">10</span>いいね！
-                                </a> -->
                                 <!-- Myスポット -->
                                 <div class="p-singleBtn c-btnTag u-center u-btnTag--spot">
                                     <!-- map登録ボタン -->
                                     <?php echo do_shortcode('[wp_ulike]'); ?>
-                                    <!-- スポットピンのSVG画像 -->
-
-                                    Myスポットに追加
                                 </div>
                                 <!-- /Myスポット -->
                             </div>
@@ -169,6 +151,8 @@
                                         <!-- カスタムフィールド住所 -->
                                         <?php if ($address) : ?>
                                             <?php echo $address; ?>
+                                        <?php else : ?>
+                                            <p>-</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -178,6 +162,8 @@
                                         <!-- カスタムフィールド電話 -->
                                         <?php if ($tel) : ?>
                                             <?php echo $tel; ?>
+                                        <?php else : ?>
+                                            <p>-</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -187,6 +173,8 @@
                                         <!-- カスタムフィールド営業時間 -->
                                         <?php if ($opentime) : ?>
                                             <?php echo $opentime; ?>
+                                        <?php else : ?>
+                                            <p>-</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -196,6 +184,8 @@
                                         <!-- カスタムフィールド定休日 -->
                                         <?php if ($closetime) : ?>
                                             <?php echo $closetime; ?>
+                                        <?php else : ?>
+                                            <p>-</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -205,6 +195,8 @@
                                         <!-- カスタムフィールドURL -->
                                         <?php if ($url) : ?>
                                             <a href="<?php echo $url; ?>"><?php echo $url; ?></a>
+                                        <?php else : ?>
+                                            <p>-</p>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -214,6 +206,8 @@
                                     <td class="c-singleTable__td">
                                         <?php if ($facebook) : ?>
                                             <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
+                                        <?php else : ?>
+                                            <p>-</p>
                                         <?php endif; ?>
                                         <?php if ($instagram) : ?>
                                             <a href="<?php echo $instagram; ?>"><i class="fab fa-instagram-square"></i></a>
@@ -231,6 +225,8 @@
                                     <td class="c-singleTable__td">
                                         <?php if ($remarks1) : ?>
                                             <?php echo $remarks1; ?>
+                                        <?php else : ?>
+                                            <p>-</p>
                                         <?php endif; ?>
 
                                         <?php if ($remarks2) : ?>
@@ -306,8 +302,6 @@
                         <div class="p-imgArea">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/frame_archive_common_thumbFrame.png" class="c-frame" alt="額縁">
                             <!-- thumbnail -->
-                            <!-- <a href="single.html"> -->
-                            <!-- <img src="assets/images/takenoko1.jpg" class="c-thumbnail" alt="スポット写真"> -->
                             <a href="<?php the_permalink(); ?>" class="c-thumbnail">
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('medium') ?>
@@ -320,12 +314,7 @@
                         <!-- /imgArea -->
                         <!-- textArea -->
                         <div class="p-textArea">
-                            <div class="p-textContent u-flex">
-                                <div class="p-bookmark u-flex">
-                                    <img src="assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
-                                    <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
-                                </div>
-
+                            <div class="p-textContent">
                                 <div class="p-tag u-flex">
                                     <div class="c-tag u-west u-mr15">
                                         <?php
@@ -344,67 +333,6 @@
                         <!-- /textArea -->
                     </article>
                     <!-- /article -->
-
-
-                    <!-- article -->
-                    <!-- <article class="p-article"> -->
-                    <!-- imgArea -->
-                    <!-- <div class="p-imgArea">
-                            <img src="assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁"> -->
-                    <!-- thumbnail -->
-                    <!-- <a href="single.html">
-                                <img src="assets/images/takenoko1.jpg" class="c-thumbnail" alt="スポット写真">
-                            </a>
-                        </div> -->
-                    <!-- /imgArea -->
-                    <!-- textArea -->
-                    <!-- <div class="p-textArea">
-                            <div class="p-textContent u-flex">
-                                <div class="p-bookmark u-flex">
-                                    <img src="assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
-                                    <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
-                                </div>
-                                <div class="p-tag u-flex">
-                                    <div class="c-tag u-west u-mr15">県西部</div>
-                                    <div class="c-tag">スポット</div>
-                                </div>
-                            </div>
-                            <div class="c-title u-center">たけのこおいしい</div>
-                        </div> -->
-                    <!-- /textArea -->
-                    <!-- </article> -->
-                    <!-- /article -->
-
-
-                    <!-- article -->
-                    <!-- <article class="p-article"> -->
-                    <!-- imgArea -->
-                    <!-- <div class="p-imgArea">
-                            <img src="assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁"> -->
-                    <!-- thumbnail -->
-                    <!-- <a href="single.html">
-                                <img src="assets/images/takenoko1.jpg" class="c-thumbnail" alt="スポット写真">
-                            </a>
-                        </div> -->
-                    <!-- /imgArea -->
-                    <!-- textArea -->
-                    <!-- <div class="p-textArea">
-                            <div class="p-textContent u-flex">
-                                <div class="p-bookmark u-flex">
-                                    <img src="assets/images/icon_archive_common_icon_heart02.png" class="c-icon__heart">
-                                    <div class="c-bookmark__text"><span class="c-bookmark__count">10</span>いいね！</div>
-                                </div>
-                                <div class="p-tag u-flex">
-                                    <div class="c-tag u-west u-mr15">県西部</div>
-                                    <div class="c-tag">スポット</div>
-                                </div>
-                            </div>
-                            <div class="c-title u-center">たけのこおいしい</div>
-                        </div> -->
-                    <!-- /textArea -->
-                    <!-- </article> -->
-                    <!-- /article -->
-
                 </div>
                 <!-- /articleList -->
 

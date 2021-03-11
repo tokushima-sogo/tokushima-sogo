@@ -11,8 +11,8 @@
             <span>トップ</span>
             <i class="fas fa-angle-right"></i>
             <span>エリア名</span>
-            <i class="fas fa-angle-right"></i> <span>カテゴリ</span>
-            <i class="fas fa-angle-right"></i> <span>記事タイトル</span>
+            <i class="fas fa-angle-right"></i><span>カテゴリ</span>
+            <i class="fas fa-angle-right"></i><span>記事タイトル</span>
             <!-- breadcrumbループend -->
         </div>
     </div>
@@ -97,11 +97,8 @@
                                 <!-- singleTagList -->
                                 <ul class="p-singleTagList__ul u-flex">
                                     <?php
-                                    echo get_the_term_list($post->ID, 'taxotag', '＃<li class="c-singleTagList__li>', '</li>＃<li class="c-singleTagList__li>', '</li>');
+                                    echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li>', '</li><li class="c-singleTagList__li>', '</li>');
                                     ?>
-                                    <!-- <li class="c-singleTagList__li">#タグ名</li>
-                                    <li class="c-singleTagList__li">#タグ名</li>
-                                    <li class="c-singleTagList__li">#タグ名</li> -->
                                 </ul>
                                 <!-- /singleTagList -->
                             </div>
@@ -109,14 +106,6 @@
 
                             <!-- singleBtns -->
                             <div class="p-singleBtns u-center u-flex">
-                                <!-- いいね！ -->
-                                <a href="#" class="p-singleBtn c-btnTag u-center u-btnTag--fav">
-                                    <!-- ハートのsvg -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 792 637.038" preserveAspectRatio="none">
-                                        <path class="1e6ff1b7-abfa-4d80-a212-8e109273a368" d="M896,512c0,212.077-384,384-384,384S128,724.077,128,512,384,192,512,384C640,192,896,299.923,896,512Z" transform="translate(-116 -272.11)" />
-                                    </svg><span class="c-favCount">10</span>いいね！
-                                </a>
-                                <!-- /いいね！ -->
                             </div>
                             <!-- /singleBtns -->
                         </div>
@@ -133,6 +122,8 @@
                                 <td class="c-singleTable__td">
                                     <?php if ($held) : ?>
                                         <?php echo $held; ?>
+                                    <?php else : ?>
+                                        <p>-</p>
                                     <?php endif; ?>
                                 </td>
                             </tr>
@@ -142,6 +133,8 @@
                                 <td class="c-singleTable__td">
                                     <?php if ($place) : ?>
                                         <?php echo $place; ?>
+                                    <?php else : ?>
+                                        <p>-</p>
                                     <?php endif; ?>
                                 </td>
                             </tr>
@@ -151,6 +144,8 @@
                                 <td class="c-singleTable__td">
                                     <?php if ($owner) : ?>
                                         <?php echo $owner; ?>
+                                    <?php else : ?>
+                                        <p>-</p>
                                     <?php endif; ?>
                                 </td>
                             </tr>
@@ -160,6 +155,8 @@
                                 <td class="c-singleTable__td">
                                     <?php if ($url) : ?>
                                         <a href="<?php echo $url; ?>"><?php echo $url; ?></a>
+                                    <?php else : ?>
+                                        <p>-</p>
                                     <?php endif; ?>
                                 </td>
                             </tr>
@@ -169,6 +166,8 @@
                                 <td class="c-singleTable__td">
                                     <?php if ($facebook) : ?>
                                         <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
+                                    <?php else : ?>
+                                        <p>-</p>
                                     <?php endif; ?>
                                     <?php if ($instagram) : ?>
                                         <a href="<?php echo $instagram; ?>"><i class="fab fa-instagram-square"></i></a>

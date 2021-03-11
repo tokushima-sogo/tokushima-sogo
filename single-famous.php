@@ -97,7 +97,7 @@
                                 <!-- singleTagList -->
                                 <ul class="p-singleTagList__ul u-flex">
                                     <?php
-                                    echo get_the_term_list($post->ID, 'taxotag', '＃<li class="c-singleTagList__li>', '</li>＃<li class="c-singleTagList__li>', '</li>');
+                                    echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li>', '</li><li class="c-singleTagList__li>', '</li>');
                                     ?>
                                     <!-- <li class="c-singleTagList__li">#タグ名</li>
                                     <li class="c-singleTagList__li">#タグ名</li>
@@ -133,6 +133,8 @@
                                 <td class="c-singleTable__td">
                                     <?php if ($makername) : ?>
                                         <?php echo $makername; ?>
+                                    <?php else : ?>
+                                        <p>-</p>
                                     <?php endif; ?>
                                 </td>
                             </tr>
@@ -142,6 +144,8 @@
                                 <td class="c-singleTable__td">
                                     <?php if ($shop) : ?>
                                         <?php echo $shop; ?>
+                                    <?php else : ?>
+                                        <p>-</p>
                                     <?php endif; ?>
                                 </td>
                             </tr>
@@ -151,6 +155,8 @@
                                 <td class="c-singleTable__td">
                                     <?php if ($url) : ?>
                                         <a href="<?php echo $url; ?>"><?php echo $url; ?></a>
+                                    <?php else : ?>
+                                        <p>-</p>
                                     <?php endif; ?>
                                 </td>
                             </tr>
@@ -160,6 +166,8 @@
                                 <td class="c-singleTable__td">
                                     <?php if ($online) : ?>
                                         <a href="<?php echo $online; ?>"><?php echo $online; ?></a>
+                                    <?php else : ?>
+                                        <p>-</p>
                                     <?php endif; ?>
                                 </td>
                             </tr>
@@ -169,6 +177,8 @@
                                 <td class="c-singleTable__td">
                                     <?php if ($facebook) : ?>
                                         <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
+                                    <?php else : ?>
+                                        <p>-</p>
                                     <?php endif; ?>
                                     <?php if ($instagram) : ?>
                                         <a href="<?php echo $instagram; ?>"><i class="fab fa-instagram-square"></i></a>

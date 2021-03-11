@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/single-horror.css">
+<!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/single-horror.css"> -->
 ​
 <main class="l-main u-bgHorror">
     ​
@@ -75,7 +75,6 @@
                         <div class="p-textArea u-horrorRed">
                             <div class="p-textContent u-flex">
                                 <div class="p-tag u-flex">
-                                    <!-- <div class="c-tag u-bgHorror u-mr15">市内</div> -->
                                     <div class="c-tag u-bgHorror">
                                         <?php echo get_the_term_list($post->ID, 'taxotag');
                                         ?>
