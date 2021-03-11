@@ -1,23 +1,29 @@
 <?php get_header(); ?>
 
-<!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/single-horror.css"> -->
-​
+
 <main class="l-main u-bgHorror">
-    ​
+    <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner u-panHorror">
             <?php if (function_exists('bcn_display')) {
                 bcn_display();
             } ?>
         </div>
-    </div>​
-    ​
+    </div>
+    <!-- /breadCrumb -->
+
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : ?>
-            <?php the_post(); ?>​
-            ​
+            <?php the_post(); ?>
+
+            <!-- カスタムフィールドの値を取得 -->
+            <?php
+            $picture = get_field('horror_pic');
+            $address = get_field('horror_address');
+            ?>
+
             <?php the_content(); ?>
-            ​
+
         <?php endwhile; ?>
     <?php endif; ?>
     ​
@@ -26,7 +32,7 @@
     <!-- articleList -->
     <section class="l-articleList">
         <h3 class="c-subHeading u-center"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_horror_relation.png" alt="関連記事"></h3>
-        ​
+
         <?php
         global $post;
         $post_id = $post->ID;                         //投稿記事を取得する。
@@ -55,13 +61,14 @@
             <?php $the_query = new WP_Query($args); ?>
             <?php if ($the_query->have_posts()) : ?>
                 <?php while ($the_query->have_posts()) : ?>
-                    <?php $the_query->the_post(); ?>​
+                    <?php $the_query->the_post(); ?>
 
                     <!-- article -->
                     <article class="p-article c-more1">
                         <!-- imgArea -->
                         <div class="p-imgArea">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_horror_thmbFlame.png" class="c-frame" alt="額縁">
+                            <!-- thumbnail -->
                             <a href="<?php the_permalink(); ?>" class="c-thumbnail">
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('medium') ?>
@@ -73,14 +80,14 @@
                         <!-- /imgArea -->
                         <!-- textArea -->
                         <div class="p-textArea u-horrorRed">
-
                             <div class="p-textContent">
                                 <div class="c-title u-center u-fontHorror"><?php the_title(); ?></div>
-                                <div class="c-date u-center u-fontHorror">公開日：<?php the_time(get_option('date_format')); ?></div>
+                                <div class="c-date u-center u-fontHorror">公開日：<?php the_time('Y-m-d'); ?></div>
+
+
                                 <div class="p-tag u-flex">
                                     <div class="c-tag u-bgHorror">
-                                        <?php echo get_the_term_list($post->ID, 'taxotag');
-                                        ?>
+                                        <?php echo get_the_term_list($post->ID, 'taxotag'); ?>
                                     </div>
                                 </div>
                             </div>
@@ -93,13 +100,12 @@
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
-
         </div>
         <!-- /articleList -->
-        ​
+
     </section>
     <!-- /spot -->
-    ​
+
 </main>
 <!-- /main -->
 

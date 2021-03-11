@@ -4,7 +4,7 @@
     <div class="l-page">
         <!-- description -->
         <div class="p-description">
-            <h2 class="c-imgHeading u-center"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_page_contact.png" alt="お問い合わせフォーム"></h2>
+            <h2 class="c-heading u-flex">お問い合わせ</h2>
 
             <?php echo do_shortcode('[mwform_formkey key="193"]'); ?>
 

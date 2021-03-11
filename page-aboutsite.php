@@ -5,7 +5,7 @@
         <!-- description -->
         <section class="l-description">
             <div class="p-description">
-                <h2 class="c-imgHeading u-center"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_page_aboutsite.png" alt="このサイトについて"></h2>
+                <h2 class="c-heading u-flex">このサイトについて</h2>
                 <p class="c-description__text">
                     私たちは国の求職者支援制度に基づく株式会社QLIP クリッププログラミングスクール「WEBプログラマー養成科」第8期生によって2021年に制作されたものです。
                     ​

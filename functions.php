@@ -87,14 +87,16 @@ function add_tokushima_sogo_styles()
         wp_enqueue_style('tokushima_sogo_front_before_style', get_template_directory_uri() . '/assets/css/basebefo.css');
 
         //固定ページ
+
     } else if (is_page('quiz')) {
         wp_enqueue_style('tokushima_sogo_quiz_style', get_template_directory_uri() . '/assets/css/page-quiz.css');
-    } else if (is_page('mapcreate')) {
-        wp_enqueue_style('tokushima_sogo_mapcreate_style', get_template_directory_uri() . '/assets/css/page-mapcreate.css');
+    } else if (is_page('mymap')) {
+        wp_enqueue_style('tokushima_sogo_page_style', get_template_directory_uri() . '/assets/css/page.css');
+        wp_enqueue_style('tokushima_sogo_mymap_style', get_template_directory_uri() . '/assets/css/mymap.css');
     } else if (is_page()) {
         wp_enqueue_style('tokushima_sogo_page_style', get_template_directory_uri() . '/assets/css/page.css');
 
-        //詳細？ページ
+        // シングルページ
     } else if (is_singular('special')) {
         wp_enqueue_style('tokushima_sogo_single_special_style', get_template_directory_uri() . '/assets/css/single-special.css');
     } else if (is_singular('event') || is_singular('famous')) {
@@ -144,14 +146,12 @@ function add_tokushima_sogo_scripts()
         wp_enqueue_script('elevator', get_template_directory_uri() . '/assets/js/elevator.js', '', '', true);
     } else if (is_single()) {
         wp_enqueue_script('slick_setting_js', get_template_directory_uri() . '/assets/js/slicksetting.js', '', '', true);
-    } else if (is_post_type_archive('horror')) {
-        wp_enqueue_script('horro_js', get_template_directory_uri() . '/assets/js/more.js', '', '', true);
+    } else if (is_archive()) {
+        wp_enqueue_script('sogo_more_js', get_template_directory_uri() . '/assets/js/more.js', '', '', true);
     } else if (is_tax('area', array('east', 'west', 'city', 'south'))) {
-        wp_enqueue_script('horro_js', get_template_directory_uri() . '/assets/js/more.js', '', '', true);
+        wp_enqueue_script('sogo_more_js', get_template_directory_uri() . '/assets/js/more.js', '', '', true);
     }
-    // wp_enqueue_script('menu_js', get_template_directory_uri() . '/assets/js/menu.js', '', '', true);
-    // wp_enqueue_script('serchForm_js', get_template_directory_uri() . '/assets/js/searchForm.js', '', '', true);
-    // wp_enqueue_script('searchandfilter', get_template_directory_uri() . '/assets/js/searchandfilter.js', '', '', true);
+    wp_enqueue_script('searchandfilter', get_template_directory_uri() . '/assets/js/searchandfilter.js', '', '', true);
     wp_enqueue_script('sogo_common', get_template_directory_uri() . '/assets/js/sogo_common.js', '', '', true);
 }
 add_action('wp_enqueue_scripts', 'add_tokushima_sogo_scripts');
@@ -160,6 +160,58 @@ add_action('wp_enqueue_scripts', 'add_tokushima_sogo_scripts');
 
 
 // 下記からは、絶対に編集しない！！！！！！！！！！！
+
+/**
+ * myマップページのみカスタムクエリを適用する
+ */
+// カスタムクエリでwp_postsとwp_ulikeを結合
+add_filter('posts_join', 'table_join');
+function table_join($join)
+{
+    global $wpdb;
+    if (is_page(220)) {
+        $join .= " INNER JOIN wp_ulike ON $wpdb->posts.ID = wp_ulike.post_id ";
+    }
+    return $join;
+}
+
+//取得したいデータのフィールドを追加
+add_filter('posts_fields', 'add_fields');
+function add_fields($fields)
+{
+    if (is_page(220)) {
+        $fields .= ',wp_ulike.ip';
+        $fields .= ',wp_ulike.status';
+    }
+    return $fields;
+}
+
+// 絞り込むSQLを追加
+// add_filter('posts_where', 'filter_where');
+// function filter_where($where)
+// {
+//     if (is_page(220)) {
+//         $where = "";
+//         $where .= " AND wp_ulike.status = 'like' ";
+//     }
+//     return $where;
+// }
+
+// レンタルサーバーにはもう一つwhereをつなぐ
+add_filter('posts_where', 'filter_where');
+function filter_where($where)
+{
+    if (is_page(220)) {
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $where = "";
+        $where .= " AND wp_ulike.status = 'like' ";
+        $where .= " AND ip = '$ip' ";
+    }
+    return $where;
+}
+/**
+ * ここまで：myマップページのみカスタムクエリを適用する
+ */
 
 /**
  * ajaxの準備

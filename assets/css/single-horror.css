@@ -2,17 +2,11 @@
 
 /* いいねの所 */
 .wp1_like_like {
-    margin-left: 200px;
-
-
-
-
-
-
+  margin-left: 200px;
 }
 
 .fa {
-    padding: 10px;
+  padding: 10px;
 }
 
 /* =============
@@ -20,42 +14,33 @@
 ================ */
 /* 関連記事一覧 */
 .l-articleList {
-    padding: 30px 0;
+  padding: 30px 0;
 }
 
 /* 全体 */
 .l-wrap {
-    background-color: white;
-    width: 90%;
-    margin: 0 auto;
+  background-color: white;
+  width: 90%;
+  margin: 0 auto;
 }
 
-@media(min-width:768px) {
-    .l-wrap {
-        width: 75%;
-    }
-
+@media (min-width: 768px) {
+  .l-wrap {
+    width: 75%;
+  }
 }
-
 
 /* メインのコンテンツのレイアウト */
 .l-mainContents {
-    padding: 30px 0;
+  padding: 30px 0;
 }
 
-@media(min-width:768px) {
-    .l-mainContents {
-        width: 70%;
-        margin: 0 auto;
-    }
+@media (min-width: 768px) {
+  .l-mainContents {
+    width: 70%;
+    margin: 0 auto;
+  }
 }
-
-
-
-
-
-
-
 
 /* =============
     Project
@@ -65,110 +50,100 @@
 .p-singleBtn,
 a.p-singleBtn,
 button.p-singleBtn {
-    position: relative;
-    display: inline-block;
-    margin: 5px 0;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-transition: all 0.3s;
-    font-size: 12px;
-    transition: all 0.3s;
-    letter-spacing: 1px;
-    border-radius: 13px;
-    text-align: center;
-    vertical-align: middle;
-
+  position: relative;
+  display: inline-block;
+  margin: 5px 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  font-size: 12px;
+  transition: all 0.3s;
+  letter-spacing: 1px;
+  border-radius: 13px;
+  text-align: center;
+  vertical-align: middle;
 }
-
-@media (min-width:400px) {
-
-    .p-singleBtn,
-    a.p-singleBtn,
-    button.p-singleBtn {
-        margin: 0 10px 0 0;
-    }
+@media (min-width: 400px) {
+  .p-singleBtn,
+  a.p-singleBtn,
+  button.p-singleBtn {
+    margin: 0 10px 0 0;
+  }
 }
-
-@media (min-width:768px) {
-
-    .p-singleBtn,
-    a.p-singleBtn,
-    button.p-singleBtn {
-        font-size: 18px;
-    }
+@media (min-width: 768px) {
+  .p-singleBtn,
+  a.p-singleBtn,
+  button.p-singleBtn {
+    font-size: 18px;
+  }
 }
 
 /* 下の住所など */
 .p-underText {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 
-@media(min-width:768px) {
-    .p-underText {
-        font-size: 2.0rem;
-    }
+@media (min-width: 768px) {
+  .p-underText {
+    font-size: 2rem;
+  }
 }
 
 /* いいねの位置 */
 .p-favorite__wrap {
-    text-align: right;
+  text-align: right;
 }
-
-
 
 /* グリッドの指定 */
 .p-articleList {
-    justify-content: center;
-    gap: 50px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
-    width: 90%;
-    margin: 0 auto;
-    padding: 30px 0;
+  justify-content: center;
+  gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  width: 90%;
+  margin: 0 auto;
+  padding: 30px 0;
 }
-
 /* pc用グリッドの幅指定 */
-@media(min-width:1025px) {
-    .p-articleList {
-        width: 80%;
-    }
+@media (min-width: 1025px) {
+  .p-articleList {
+    width: 80%;
+  }
 }
 
 /* 一つの記事 */
 .p-article {
-    width: 280px;
-    height: 320px;
-    margin: 0 auto;
+  width: 280px;
+  height: 320px;
+  margin: 0 auto;
 }
 
 /* 額縁のクラス */
 .p-imgArea {
-    position: relative;
-    width: 280px;
-    height: 200px;
+  position: relative;
+  width: 280px;
+  height: 200px;
 }
 
 /* 額縁の下全体 */
 .p-textArea {
-    height: 120px;
-    background-color: rgba(153, 118, 83, 0.2);
+  height: 120px;
+  background-color: rgba(153, 118, 83, 0.2);
 }
 
 /* いいねとタグ */
 .p-textContent {
-    padding: 16px 15px 10px;
-    justify-content: space-between;
+  padding: 16px 15px 10px;
+  justify-content: space-between;
 }
 
 /* タグ全体 */
 .p-tag {
-    color: #FEF9F9;
-    justify-content: start;
-    align-items: center;
+  color: #fef9f9;
+  justify-content: start;
+  align-items: center;
 }
-
-
 
 /* =============
     Compornent
@@ -176,232 +151,199 @@ button.p-singleBtn {
 
 /* 一番上の見出し */
 .c-topTitle {
-    text-align: center;
-    padding-top: 80px;
-
+  text-align: center;
+  padding-top: 80px;
 }
 
 .c-topTitle:before {
-
-    content: "\f6e2";
-    font-family: "Font Awesome 5 Free";
-    color: black;
-    padding-right: 10px;
-
-
-
-
+  content: "\f6e2";
+  font-family: "Font Awesome 5 Free";
+  color: black;
+  padding-right: 10px;
 }
 
-@media(min-width:768px) {
-    .c-topTitle {
-        padding: 20px 0;
-        font-size: 4.5rem;
-    }
+@media (min-width: 768px) {
+  .c-topTitle {
+    padding: 20px 0;
+    font-size: 4.5rem;
+  }
 }
-
 
 /* ボタンのタグ */
 a.c-btnTag {
-    padding: 14px 14px 13px 50px;
-    color: #000000;
-    background: #f5f5f5;
+  padding: 14px 14px 13px 50px;
+  color: #000000;
+  background: #f5f5f5;
 }
-
-@media (min-width:768px) {
-    a.c-btnTag {
-        padding: 26px 18px 24px 95px;
-    }
+@media (min-width: 768px) {
+  a.c-btnTag {
+    padding: 26px 18px 24px 95px;
+  }
 }
-
 a.c-btnTag::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 100%;
-    content: "";
-    border-radius: 13px 0 0 13px;
-    background: #cccccc;
-    opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 100%;
+  content: "";
+  border-radius: 13px 0 0 13px;
+  background: #cccccc;
+  opacity: 0.5;
 }
-
-@media (min-width:768px) {
-    a.c-btnTag::before {
-        width: 80px;
-    }
+@media (min-width: 768px) {
+  a.c-btnTag::before {
+    width: 80px;
+  }
 }
 
 /* ボタン内のsvg */
 a.c-btnTag img {
-    position: absolute;
-    padding: 0;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    opacity: 0.3;
+  position: absolute;
+  padding: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 0.3;
 }
 
 /* hoverしたら1.2倍 */
 a.c-btnTag:hover img {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-    opacity: 1;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  opacity: 1;
 }
-
 /* いいねカウント数 */
 .c-favCount {
-    padding: 2px;
-    font-size: 18px;
+  padding: 2px;
+  font-size: 18px;
 }
-
 
 /* 記事の中の内容 */
 .c-text {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
+  padding: 10px 0;
+  line-height: 30px;
+}
+@media (min-width: 768px) {
+  .c-text {
+    font-size: 2rem;
     padding: 10px 0;
     line-height: 30px;
-
+  }
 }
-
-@media(min-width:768px) {
-    .c-text {
-        font-size: 2.0rem;
-        padding: 10px 0;
-        line-height: 30px;
-
-    }
-}
-
-
-
 
 /* エリア名 */
 .c-heading {
-    width: 100%;
-    height: 60px;
-    padding: 15px 0;
-    font-size: 3rem;
-    border: 2px solid #707070;
+  width: 100%;
+  height: 60px;
+  padding: 15px 0;
+  font-size: 3rem;
+  border: 2px solid #707070;
 }
 
 /* エリアの説明 */
 .c-description__text {
-    width: 90%;
+  width: 90%;
+  margin: 0 auto;
+  padding: 14px;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+@media (min-width: 768px) {
+  .c-description__text {
+    width: 80%;
+
     margin: 0 auto;
-    padding: 14px;
-    font-size: 1.4rem;
-    line-height: 1.5;
+    padding: 20px;
+    font-size: 1.8rem;
+    line-height: 2;
+  }
 }
-
-@media(min-width:768px) {
-    .c-description__text {
-        width: 80%;
-
-        margin: 0 auto;
-        padding: 20px;
-        font-size: 1.8rem;
-        line-height: 2;
-    }
+@media (min-width: 1025px) {
+  .c-description__text {
+    /* width: 65%; */
+    padding: 30px;
+  }
 }
-
-@media(min-width:1025px) {
-    .c-description__text {
-        /* width: 65%; */
-        padding: 30px;
-    }
-}
-
-
 
 /* 地図の画像 */
 .c-map {
-    width: 65%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  width: 65%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* 見出し画像 */
 .c-subHeading img {
-    height: 60px;
-
+  height: 60px;
 }
 
 /* 額縁の画像 */
 .c-frame {
-    width: 280px;
-    height: 200px;
+  width: 280px;
+  height: 200px;
 }
 
 /* サムネイル画像 */
 .c-thumbnail {
-    width: 240px;
-    height: 160px;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
+  width: 240px;
+  height: 160px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
 }
 
 .c-thumbnail img {
-    width: 240px;
-    height: 160px;
-
+  width: 240px;
+  height: 160px;
 }
 
 /* ハートのSVG */
 .c-icon__heart {
-    width: 32px;
-    height: 30px;
-    fill: #bd0000;
-    stroke: none;
+  width: 32px;
+  height: 30px;
+  fill: #bd0000;
+  stroke: none;
 }
 
 /* いいねの文字 */
 .c-bookmark__text {
-    padding: 5px 2px;
-    font-size: 1.2rem;
+  padding: 5px 2px;
+  font-size: 1.2rem;
 }
 
 /* いいねの数 */
 .c-bookmark__count {
-    padding: 0 2px;
-    font-size: 1.8rem;
-    font-family: 'mamelon5';
+  padding: 0 2px;
+  font-size: 1.8rem;
+  font-family: "mamelon5";
 }
-
 
 /* タグ */
 .c-tag {
-    display: inline-block;
-    padding: 8px;
-    /* background: #2D294F; */
-    border: 1px solid #707070;
-    font-size: 1.2rem;
-
+  display: inline-block;
+  padding: 8px;
+  /* background: #2D294F; */
+  border: 1px solid #707070;
+  font-size: 1.2rem;
 }
-
 .c-tag a {
-    color: white;
-
+  color: white;
 }
 
 /* スポット名称 */
 .c-title {
-    font-size: 1.8rem;
-    font-family: 'mamelon5';
+  font-size: 1.8rem;
+  font-family: "mamelon5";
 }
-
 .c-date {
-    font-size: 1.4rem;
-    font-family: 'mamelon5';
-    padding: 8px;
+  font-size: 1.4rem;
+  font-family: "mamelon5";
+  padding: 8px;
 }
-
-
-
-
 
 /* =============
     Utility
@@ -409,81 +351,72 @@ a.c-btnTag:hover img {
 
 /* グリッドレイアウト */
 .u-grid {
-    display: grid;
+  display: grid;
 }
 
 /* flex-box指定 */
 .u-flex {
-    display: flex;
+  display: flex;
 }
 
 /* right */
 .u-right {
-    text-align: right;
+  text-align: right;
 }
 
 /* margin */
 .u-mr15 {
-    margin-right: 15px;
+  margin-right: 15px;
 }
 
-
-
 .u-horror {
-    background: #990000;
+  background: #990000;
 }
 
 /* 都市伝説のパンクズリストの色 */
 .u-panHorror {
-    color: white;
+  color: white;
 }
-
-.u-panHorror>i {
-    color: white;
+.u-panHorror > i {
+  color: white;
 }
 
 .u-panHorror a {
-    color: white;
+  color: white;
 }
 
 /* 都市伝説の背景カラー */
 .u-bgHorror {
-    background-color: black;
+  background-color: black;
 }
 
 /* 都市伝説の赤 */
 .u-horrorRed {
-    background-color: #990000;
+  background-color: #990000;
 }
 
 /* 都市伝説のfontの色 */
 .u-fontHorror {
-    color: white;
+  color: white;
 }
-
-
 
 /* moreボタンをhoverした時 */
 .u-moreHover:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
-
-
-
 
 /* いいね！アイコン */
 a.u-btnTag--fav img {
-    fill: black;
-    stroke: none;
-    top: 12px;
-    left: 8px;
-    width: 24px;
+  fill: black;
+  stroke: none;
+  top: 12px;
+  left: 8px;
+  width: 24px;
 }
-
-@media (min-width:768px) {
-    a.u-btnTag--fav img {
-        top: 16px;
-        left: 16px;
-        width: 48px;
-    }
+@media (min-width: 768px) {
+  a.u-btnTag--fav img {
+    top: 16px;
+    left: 16px;
+    width: 48px;
+  }
 }

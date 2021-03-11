@@ -90,7 +90,7 @@
 
         <!-- moreBtn -->
         <div class="l-moreBtn u-right">
-            <button class="c-moreBtn one u-center u-west">more</button>
+            <button class="c-moreBtn one u-center">more</button>
         </div>
         <!-- /moreBtn -->
 
@@ -164,7 +164,7 @@
 
         <!-- moreBtn -->
         <div class="l-moreBtn u-right">
-            <button class="c-moreBtn three u-center u-west">more</button>
+            <button class="c-moreBtn three u-center">more</button>
         </div>
         <!-- /moreBtn -->​
     </section>
@@ -239,7 +239,7 @@
         <!-- /articleList -->
         <!-- moreBtn -->
         <div class="l-moreBtn u-right">
-            <button class="c-moreBtn three u-center u-west">more</button>
+            <button class="c-moreBtn three u-center">more</button>
         </div>
         <!-- /moreBtn -->
         ​

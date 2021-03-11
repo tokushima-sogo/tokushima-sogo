@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+/* グリッドの指定 */
+.p-articleList {
+  justify-content: center;
+  gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  width: 90%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+/* pc用グリッドの幅指定 */
+@media (min-width: 1025px) {
+  .p-articleList {
+    width: 80%;
+  }
+}
+
+/* 一つの記事 */
+.p-article {
+  width: 280px;
+  height: 320px;
+  margin: 0 auto;
+  box-shadow: 0 0 3px #707070;
+}
+
+/* 額縁のクラス */
+.p-imgArea {
+  position: relative;
+  width: 280px;
+  height: 200px;
+}
+
+/* 額縁の下全体 */
+.p-textArea {
+  height: 120px;
+  background: #efebe8;
+}
+
+/* いいねとタグ */
+.p-textContent {
+  padding: 16px 15px;
+  justify-content: space-between;
+}
+
+/* タグ全体 */
+.p-tag {
+  color: #ffffff;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* 額縁の画像 */
+.c-frame {
+  width: 280px;
+  height: 200px;
+}
+
+/* サムネイル画像 */
+.wp-post-image {
+  width: 240px;
+  height: 160px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 54%;
+  left: 50%;
+}
+
+/* タグ */
+.c-tag {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #2d294f;
+  border: 1px solid #707070;
+  border-radius: 12px;
+  font-size: 1.4rem;
+}
+
+.c-tag a {
+  color: #ffffff;
+}
+
+/* スポット名称 */
+.c-title {
+  font-size: 1.8rem;
+  font-family: "mamelon5";
+  letter-spacing: 1px;
+}
+
+.u-grid {
+  display: grid;
+}
+
+/* ボタン */
+/*  作成ボタン
+-------------------------------- */
+
+button.mapBtn {
+  width: 250px;
+  padding: 7px;
+  border-radius: 30px;
+  color: #ffffff;
+  font-family: "mamelon5";
+  font-size: 2.6rem;
+  letter-spacing: 1px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.u-mapBtn--center {
+  text-align: center;
+}
+
+.u-mapBtn--bgcOrange {
+  background: #d5a42d;
+}
+
+/* -------------------------------- */
+
+/* ここからマップ作成関係 */
+.map_wrapper {
+  position: relative;
+  padding-top: 56.25%; /*アスペクト比16:9*/
+  margin: 3%;
+}
+
+/* #plain_map iframe{
+    position:absolute;
+    top:0;
+    left:0;
+    width:94%;
+    height:70%;
+} */
+
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 94%;
+  height: 70%;
+}
+
+.map_appear {
+  /* visibility:visible; */
+  display: block;
+}
+.map_disappear {
+  /* visibility:hidden; */
+  display: none;
+}

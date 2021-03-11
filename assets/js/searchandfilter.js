@@ -14,7 +14,7 @@
 // }, false);
 
 document.getElementById("btn_header_searchOpen").addEventListener("click", function () {
-    var elements = document.getElementsByClassName("searchandfilter");
+    var elements = document.getElementsByClassName("l-searchArea");
     for (i = 0; i < elements.length; i++) {
         elements[i].style.display = 'block';
     }
@@ -24,8 +24,8 @@ document.getElementById("btn_header_searchOpen").addEventListener("click", funct
     }
 }, false);
 
-document.getElementById("close").addEventListener("click", function () {
-    var elements = document.getElementsByClassName("searchandfilter");
+document.getElementById("c-button__searchForm__close").addEventListener("click", function () {
+    var elements = document.getElementsByClassName("l-searchArea");
     for (i = 0; i < elements.length; i++) {
         elements[i].style.display = 'none';
     }

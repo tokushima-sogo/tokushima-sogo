@@ -69,10 +69,17 @@
             <!-- /topNav -->
             <!-- header__contentsList -->
             <ul class="p-header__contentsList u-flex u-center u-white">
-                <li><a href="<?php echo home_url('taxonomy') ?>"><img class="c-headerIcon" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_searchOpen.png" alt="検索アイコン">
+
+
+                <li><button class="p-header_search"><img id="btn_header_searchOpen" class="c-headerIcon" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_searchOpen.png" alt="検索アイコン">
                         <p class="u-white u-center">検索</p>
-                    </a></li>
-                <li><a href="mymap.html"><img class="c-headerIcon" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_map.png" alt="マップアイコン">
+                    </button></li>
+
+                <!-- <li><a href="<?php echo home_url('taxonomy') ?>"><img class="c-headerIcon" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_searchOpen.png" alt="検索アイコン">
+                        <p class="u-white u-center">検索</p>
+                    </a></li> -->
+
+                <li><a href="<?php echo get_page_link(220); ?>"><img class="c-headerIcon" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_map.png" alt="マップアイコン">
                         <p class="u-white u-center">MYマップ</p>
                     </a></li>
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_burgerOpen.png" class="c-burgerBtn u-open" alt="開くボタン"></li>
@@ -117,51 +124,23 @@
             <!-- /header__contentsBurger -->
         </div>
         <!-- /header__contents -->
+
+
+
+
         <!-- searchArea -->
         <section class="l-searchArea">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_searchForm_close.png" alt="" srcset="" width="25px" height="25px" class="c-button__searchForm--close">
-            <form action="" method="post" class="searchandfilter">
-                <div>
-                    <ul>
-
-                        <li class="p-search__keyword u-mb40"><input type="text" name="ofsearch" placeholder="　Search &hellip;" value="">
-                            <div class="c-icon__submit"></div>
-                        </li>
-
-                        <li class="u-mb40">
-                            <h4 class="c-title__searchForm u-center u-mb10">エリアで探す</h4>
-                            <ul class="l-radio__area group">
-                                <li class="cat-item cat-item-5"><label class="p-label__search--area"><input type='radio' name='ofarea[]' value='5' /> 南部
-                                        (4)</label>
-                                </li>
-                                <li class="cat-item cat-item-4 u-search"><label class="p-label__search--area "><input type='radio' name='ofarea[]' value='4' /> 徳島市内
-                                        (4)</label>
-                                </li>
-                                <li class="cat-item cat-item-2 u-search"><label class="p-label__search--area "><input type='radio' name='ofarea[]' value='2' /> 東部
-                                        (5)</label>
-                                </li>
-                                <li class="cat-item cat-item-3 u-search"><label class="p-label__search--area "><input type='radio' name='ofarea[]' value='3' /> 西部
-                                        (4)</label>
-                                </li>
-                            </ul><input type="hidden" name="ofarea_operator" value="and" />
-                        </li>
-
-                        <li class="u-mb40">
-                            <h4 class="c-title__searchForm u-center u-mb10">内容で探す</h4>
-                            <ul class="l-radio__content">
-                                <li class="cat-item"><label class="p-label__search--content "><input class="postform" type="radio" name="ofpost_types[]" value="spot">
-                                        スポット</label></li>
-                                <li class="cat-item u-search"><label class="p-label__search--content"><input class="postform" type="radio" name="ofpost_types[]" value="gourmet"> グルメ</label></li>
-                                <li class="cat-item u-search"><label class="p-label__search--content"><input class="postform" type="radio" name="ofpost_types[]" value="souvenir"> ショップ</label></li>
-                            </ul>
-                        </li>
-                        <li class="l-submit__radio"><input type="hidden" name="ofsubmitted" value="1">
-                            <label class="c-label_submit"><input type="submit" value="検索">この条件で検索</label>
-                        </li>
-                    </ul>
-                </div>
-            </form>
+            <div class="c-button__seachForm__close">
+                <button id="c-button__searchForm__close" class="close c-button__searchForm__close "><img src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_searchForm_close.png" alt="×" srcset="" width="25px" height="25px" class="c-button__searchForm--close"></button>
+            </div>
+            <!-- <div id="searchform">
+                <?php echo do_shortcode('[searchandfilter fields="search"]'); ?>
+            </div> -->
+            <div id="searchfilter">
+                <?php echo do_shortcode('[searchandfilter fields="searcharea,contents"  types="radio,radio" " submit_label="検索" headings="エリアで探す,コンテンツで探す"]'); ?>
+            </div>
         </section>
         <!-- /searchArea -->
+
     </header>
     <!-- /header -->

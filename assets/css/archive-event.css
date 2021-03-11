@@ -5,18 +5,18 @@
 ================ */
 
 .l-description {
-    width: 90%;
-    margin: 0 auto;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .l-articleList {
-    padding: 30px 0;
+  padding: 30px 0 50px;
 }
 
 .l-moreBtn {
-    width: 90%;
-    margin: 0 auto;
-    padding: 0;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
 }
 
 /* =============
@@ -25,99 +25,87 @@
 
 /* 説明 */
 .p-description {
-    width: 90%;
-    margin: 0 auto;
-    padding: 30px 0;
+  width: 100%; /* 変更：90%→100％に */
+  margin: 0 auto;
+  padding: 30px 0;
 }
 
 .p-description__item {
-    padding: 30px 0;
-    margin: 0 auto;
-    background: #f9e1e1;
+  padding: 30px 0;
+  margin: 0 auto;
+  background: #f9e1e1;
 }
 
 /* グリッドの指定 */
 .p-articleList {
-    justify-content: center;
-    gap: 50px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
-    width: 90%;
-    margin: 0 auto;
-    padding: 30px 0;
+  justify-content: center;
+  gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  width: 90%;
+  margin: 0 auto;
+  padding: 30px 0;
 }
 
 /* pc用グリッドの幅指定 */
-@media(min-width:1025px) {
-    .p-articleList {
-        width: 80%;
-    }
+@media (min-width: 1025px) {
+  .p-articleList {
+    width: 80%;
+  }
 }
 
 /* 一つの記事 */
 .p-article {
-    width: 280px;
-    height: 320px;
-    margin: 0 auto;
-    box-shadow: 0 0 3px #707070;
+  width: 280px;
+  height: 320px;
+  margin: 0 auto;
+  box-shadow: 0 0 3px #707070;
 }
 
 /* 額縁のクラス */
 .p-imgArea {
-    position: relative;
-    width: 280px;
-    height: 200px;
+  position: relative;
+  width: 280px;
+  height: 200px;
 }
 
 /* 額縁の下全体 */
 .p-textArea {
-    height: 120px;
-    background: #efebe8;
+  height: 120px;
+  background: #efebe8;
 }
 
 /* いいねとタグ */
 .p-textContent {
-    padding: 16px 15px;
-    justify-content: space-between;
+  padding: 16px 15px;
+  justify-content: space-between;
 }
 
-/* タグ全体 */
-/* .p-tag {
-    color: #ffffff;
-    justify-content: space-around;
-    align-items: center;
-} */
 /* 記事タグリスト */
 .p-singleTagList__ul {
-    margin: 0 auto;
-    padding: 5px 0;
-}
-
-@media (min-width:400px) {
-    .p-singleTagList__ul {
-        margin: 0;
-        padding: 0;
-    }
+  margin: 0 auto;
+  padding: 5px 0;
+  justify-content: center;
 }
 
 /* タグ名 */
 .p-singleTagList__ul li {
-    position: relative;
-    padding: 5px 10px 5px 18px;
-    letter-spacing: 1px;
-    font-size: 1.8rem;
-    text-align: center;
+  position: relative;
+  padding: 5px 10px 5px 18px;
+  letter-spacing: 1px;
+  font-size: 1.8rem;
+  text-align: center;
 }
 
 .p-singleTagList__ul li::before {
-    content: "\f292";
-    position: absolute;
-    left: 2px;
-    top: 45%;
-    transform: translateY(-50%);
-    font-family: "Font Awesome 5 Free";
-    color: #cf7e7c;
-    font-size: 1.4rem;
-    font-weight: 900;
+  content: "\f292";
+  position: absolute;
+  left: 2px;
+  top: 45%;
+  transform: translateY(-50%);
+  font-family: "Font Awesome 5 Free";
+  color: #cf7e7c;
+  font-size: 1.4rem;
+  font-weight: 900;
 }
 
 /* =============
@@ -126,94 +114,80 @@
 
 /* メインビジュアル */
 .c-heroImg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* 説明 */
 .c-description__text {
-    width: 90%;
-    margin: 0 auto;
-    font-size: 1.6rem;
-    line-height: 1.5;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  line-height: 1.5;
 }
 
 /* 見出し画像 */
 .c-subHeading img {
-    height: 60px;
+  height: 60px;
 }
 
 /* 額縁の画像 */
 .c-frame {
-    width: 280px;
-    height: 200px;
+  width: 280px;
+  height: 200px;
 }
 
 /* サムネイル画像 */
 .wp-post-image {
-    width: 240px;
-    height: 160px;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 54%;
-    left: 50%;
+  width: 240px;
+  height: 160px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 54%;
+  left: 50%;
 }
-
-/* タグ */
-/* .c-tag {
-    display: inline-block;
-    padding: 10px 15px;
-    background: #2D294F;
-    border: 1px solid #707070;
-    border-radius: 12px;
-    font-size: 1.4rem;
-}
-
-.c-tag a {
-    color: #ffffff;
-} */
 
 /* スポット名称 */
 .c-title {
-    font-size: 1.8rem;
-    font-family: 'mamelon5';
-    letter-spacing: 1px;
+  font-size: 1.8rem;
+  font-family: "mamelon5";
+  letter-spacing: 1px;
 }
-
 
 /*  moreボタン
 -------------------------------- */
 
 button.c-moreBtn {
-    width: 180px;
-    padding: 7px;
-    border-radius: 30px;
-    color: #ffffff;
-    font-family: 'mamelon5';
-    font-size: 2.6rem;
-    letter-spacing: 1px;
-    border: none;
-    outline: none;
-    cursor: pointer;
+  width: 180px;
+  padding: 7px;
+  border-radius: 30px;
+  background: #cf7e7c; /* 変更：bg追加 */
+  color: #ffffff;
+  font-family: "mamelon5";
+  font-size: 2.6rem;
+  letter-spacing: 1px;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 /* それぞれのmoreボタンを効かすためのもの */
 .c-more1,
 .c-more2,
 .c-more3 {
-    overflow: hidden;
-    transition: all .4s ease 0s;
+  overflow: hidden;
+  transition: all 0.4s ease 0s;
 }
 
 .c-more1.is-hidden,
 .c-more2.is-hidden,
 .c-more3.is-hidden {
-    visibility: hidden;
-    opacity: 0;
-    height: 0;
-    margin: 0 10px;
-    padding: 0;
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  margin: 0 10px;
+  padding: 0;
 }
 
 /* -------------------------------- */
@@ -224,37 +198,37 @@ button.c-moreBtn {
 
 /* グリッドレイアウト */
 .u-grid {
-    display: grid;
+  display: grid;
 }
 
 /* flex-box指定 */
 .u-flex {
-    display: flex;
+  display: flex;
 }
 
 /* right */
 .u-right {
-    text-align: right;
+  text-align: right;
 }
 
 /* margin */
 .u-mr15 {
-    margin-right: 15px;
+  margin-right: 15px;
 }
 
 /* 地域別カラー */
 .u-south {
-    background: #991f26;
+  background: #991f26;
 }
 
 .u-city {
-    background: #d1a429;
+  background: #d1a429;
 }
 
 .u-west {
-    background: #004e3f;
+  background: #004e3f;
 }
 
 .u-east {
-    background: #539199;
+  background: #539199;
 }
