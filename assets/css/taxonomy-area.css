@@ -70,6 +70,7 @@
     width: 280px;
     height: 320px;
     margin: 0 auto;
+    box-shadow: 0 0 3px #707070;
 }
 
 /* 額縁のクラス */
@@ -146,12 +147,9 @@
 
 /* 地図の白背景の部分 */
 .c-description__map {
-    background-color: white;
+    background-color: #ffffff;
     position: relative;
     text-align: center;
-    background-image: url("../images/flame_archive_common_map.png");
-    background-size: cover;
-    background-repeat: no-repeat;
     width: 100%;
     height: 0;
     margin: 0 auto;
@@ -176,9 +174,19 @@
     transform: translate(-50%, -50%);
 }
 
-/* 見出し画像 */
-.c-subHeading img {
-    height: 60px;
+/* h3見出し */
+.c-subHeading {
+    width: 90%;
+    display: inline-block;
+    font-size: 2.4rem;
+    border: dashed 3px #cf7e7c;
+    padding: 1.3rem 1.5rem;
+}
+
+@media(min-width:1025px) {
+    .c-subHeading {
+        width: 80%;
+    }
 }
 
 /* 額縁の画像 */
@@ -202,7 +210,6 @@
     display: inline-block;
     padding: 10px 15px;
     background: #2D294F;
-    border: 1px solid #707070;
     border-radius: 12px;
     font-size: 1.4rem;
 }

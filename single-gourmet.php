@@ -1,29 +1,26 @@
 <!-- ヘッダーの読み込み -->
 <?php get_header(); ?>
 
-<!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/single.css"> -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNNbWvrL46SW-8K-D0w6Haff4Vbcc4rRQ"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/googlemap.js"></script>
 
 <main class="l-main">
-
-    <!-- breadCrumb -->
-    <div class="p-breadCrumb">
-        <div class="p-breadCrumb__inner">
-            <!-- breadcrumbループstart -->
-            <a href="<?php home_url(); ?>"><span>HOME</span></a>
-            <i class="fas fa-angle-right"></i>
-            <span><?php echo get_the_term_list($post->ID, 'area') ?></span>
-            <i class="fas fa-angle-right"></i> <span><?php echo esc_html(get_post_type_object(get_post_type())->label); ?></span>
-            <i class="fas fa-angle-right"></i> <span><?php echo get_post()->post_title ?></span>
-            <!-- breadcrumbループend -->
-        </div>
-    </div>
-    <!-- /breadCrumb -->
-
-    <!-- 詳細記事の出力 -->
     <!-- singleArticle -->
     <section class="l-singleArticle">
+
+        <!-- breadCrumb -->
+        <div class="p-breadCrumb">
+            <div class="p-breadCrumb__inner">
+                <!-- breadcrumbループstart -->
+                <a href="<?php home_url(); ?>"><span>HOME</span></a>
+                <i class="fas fa-angle-right"></i>
+                <span><?php echo get_the_term_list($post->ID, 'area') ?></span>
+                <i class="fas fa-angle-right"></i> <span><?php echo esc_html(get_post_type_object(get_post_type())->label); ?></span>
+                <i class="fas fa-angle-right"></i> <span><?php echo get_post()->post_title ?></span>
+                <!-- breadcrumbループend -->
+            </div>
+        </div>
+        <!-- /breadCrumb -->
 
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : ?>
@@ -43,21 +40,12 @@
                 $facebook  = get_field('gourmet_facebook');
                 $instagram = get_field('gourmet_instagram');
                 $twitter   = get_field('gourmet_twitter');
-                $remarks1   = get_field('gourmet_remarks1');
-                $remarks2   = get_field('gourmet_remarks2');
-                $remarks3   = get_field('gourmet_remarks3');
-                $remarks4   = get_field('gourmet_remarks4');
-                $remarks5   = get_field('gourmet_remarks5');
+                $remarks1  = get_field('gourmet_remarks1');
+                $remarks2  = get_field('gourmet_remarks2');
+                $remarks3  = get_field('gourmet_remarks3');
+                $remarks4  = get_field('gourmet_remarks4');
+                $remarks5  = get_field('gourmet_remarks5');
                 ?>
-
-
-                <!-- singleHeader -->
-                <div class="l-singleHeader">
-                    <h2 class="c-heading u-flex"><?php the_title(); ?></h2>
-                    <!-- /singleArticle__title -->
-                </div>
-                <!-- /singleHeader -->
-
                 <!-- singleBody -->
                 <div class="l-singleBody">
                     <!-- singleArticle__item -->
@@ -69,39 +57,33 @@
                                     <?php if ($picture1) : ?>
                                         <?php echo '<img src=" ' . $picture1 . '">'; ?>
                                     <?php endif; ?>
-                                    <!-- <img src="assets/images/takenoko1.jpg" alt=""> -->
                                 </li>
                                 <li>
                                     <?php if ($picture2) : ?>
                                         <?php echo '<img src=" ' . $picture2 . '">'; ?>
                                     <?php endif; ?>
-                                    <!-- <img src="assets/images/takenoko2.jpg" alt=""> -->
                                 </li>
                                 <li>
                                     <?php if ($picture3) : ?>
                                         <?php echo '<img src=" ' . $picture3 . '">'; ?>
                                     <?php endif; ?>
-                                    <!-- <img src="assets/images/takenoko3.jpg" alt=""> -->
                                 </li>
                             </ul>
-                            <ul class="p-thumbSlider">
+                            <ul class="p-thumbSlider u-flex">
                                 <li>
                                     <?php if ($picture1) : ?>
                                         <?php echo '<img src=" ' . $picture1 . '">'; ?>
                                     <?php endif; ?>
-                                    <!-- <img src="assets/images/takenoko1.jpg" alt=""> -->
                                 </li>
                                 <li>
                                     <?php if ($picture2) : ?>
                                         <?php echo '<img src=" ' . $picture2 . '">'; ?>
                                     <?php endif; ?>
-                                    <!-- <img src="assets/images/takenoko2.jpg" alt=""> -->
                                 </li>
                                 <li>
                                     <?php if ($picture3) : ?>
                                         <?php echo '<img src=" ' . $picture3 . '">'; ?>
                                     <?php endif; ?>
-                                    <!-- <img src="assets/images/takenoko3.jpg" alt=""> -->
                                 </li>
                             </ul>
                         </div>
@@ -109,39 +91,30 @@
                         <!-- /slickSlider -->
                         <!-- singleArticle__description -->
                         <div class="p-singleArticle__description u-flex">
+                            <h2 class="c-heading u-flex"><?php the_title(); ?></h2>
                             <!-- singleArticle__text -->
-                            <div class="c-singleArticle__text"><?php the_content(); ?></div>
-                            <!-- /singleArticle__text -->
+                            <div class="c-singleArticle__text u-center"><?php the_content(); ?>
+                                <!-- map登録ボタン -->
+                                <?php echo do_shortcode('[wp_ulike]'); ?>
+                            </div>
                             <!-- singleTag -->
                             <div class="p-singleTag u-flex">
-                                <div class="c-singleTag__text u-center">登録タグ</div>
+                                <div class="c-singleTag__text u-center">タグ</div>
                                 <!-- /singleTag__text -->
                                 <!-- singleTagList -->
-
-                                <ul class="p-singleTagList__ul u-flex">
+                                <ul class="p-singleTagList__ul u-flex u-center">
                                     <?php
-                                    echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li>', '</li><li class="c-singleTagList__li>', '</li>');
+                                    echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li', '</li><li class="c-singleTagList__li>', '</li>');
                                     ?>
                                 </ul>
                                 <!-- /singleTagList -->
                             </div>
                             <!-- /singleTag -->
-                            <!-- singleBtns -->
-                            <div class="p-singleBtns u-center u-flex">
-                                <!-- Myスポット -->
-                                <div class="p-singleBtn c-btnTag u-center">
-                                    <!-- map登録ボタン -->
-                                    <?php echo do_shortcode('[wp_ulike]'); ?>
-                                    <!-- Myスポットに追加 -->
-                                </div>
-                                <!-- /Myスポット -->
-                            </div>
-                            <!-- /singleBtns -->
+                            <!-- /singleArticle__text -->
                         </div>
                         <!-- /singleArticle__description -->
                     </div>
                     <!-- /singleArticle__item -->
-
                     <!-- singleArticle__info -->
                     <div class="p-singleArticle__info u-flex">
                         <!-- singleMap -->
@@ -153,11 +126,9 @@
                                 </div>
                             </div>
                         <?php endif; ?>
-
                         <!-- singleTable -->
                         <div class="l-singleTable">
                             <table class="p-singleTable">
-
                                 <tr class="c-singleTable__tr">
                                     <th class="c-singleTable__th">所在地</th>
                                     <td class="c-singleTable__td">
@@ -169,7 +140,6 @@
                                         <?php endif; ?>
                                     </td>
                                 </tr>
-
                                 <tr class="c-singleTable__tr">
                                     <th class="c-singleTable__th">TEL</th>
                                     <td class="c-singleTable__td">
@@ -181,7 +151,6 @@
                                         <?php endif; ?>
                                     </td>
                                 </tr>
-
                                 <tr class="c-singleTable__tr">
                                     <th class="c-singleTable__th">営業時間</th>
                                     <td class="c-singleTable__td">
@@ -193,7 +162,6 @@
                                         <?php endif; ?>
                                     </td>
                                 </tr>
-
                                 <tr class="c-singleTable__tr">
                                     <th class="c-singleTable__th">定休日</th>
                                     <td class="c-singleTable__td">
@@ -205,7 +173,6 @@
                                         <?php endif; ?>
                                     </td>
                                 </tr>
-
                                 <tr class="c-singleTable__tr">
                                     <th class="c-singleTable__th">URL</th>
                                     <td class="c-singleTable__td">
@@ -216,7 +183,6 @@
                                         <?php endif; ?>
                                     </td>
                                 </tr>
-
                                 <tr class="c-singleTable__tr">
                                     <!-- カスタムフィールドsns -->
                                     <th class="c-singleTable__th">SNS</th>
@@ -232,7 +198,6 @@
                                         <?php endif; ?>
                                     </td>
                                 </tr>
-
                                 <tr class="c-singleTable__tr">
                                     <!-- カスタムフィールド備考 -->
                                     <th class="c-singleTable__th">備考</th>
@@ -252,18 +217,16 @@
                                         <?php endif; ?>
                                     </td>
                                 </tr>
-
                             </table>
                         </div>
                         <!-- /singleTable -->
                     </div>
-                    <!-- /singleArticle__info -->
+                </div>
+                <!-- /singleArticle__info -->
                 </div>
                 <!-- /singleBody -->
-
             <?php endwhile; ?>
         <?php endif; ?>
-
     </section>
     <!-- /singleArticle -->
 
@@ -272,7 +235,6 @@
     <!-- articleList -->
     <section class="l-articleList">
         <h3 class="c-subHeading u-center"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_single_common_related.png" alt="関連記事"></h3>
-
         <!-- articleList -->
         <div class="p-articleList u-grid">
             <?php
@@ -285,7 +247,6 @@
             ?>
             <?php $args = array(
                 'post_type'        => $post_type,         //カスタム投稿タイプ名
-                'posts_per_page'   => 3,                  // 取得する投稿数
                 'orderby'          => 'rand',             //ランダムで表示
                 'exclude'          => $post_id,           // 表示中の投稿を除外
                 'tax_query'        => array(
@@ -301,8 +262,6 @@
             <?php if ($the_query->have_posts()) : ?>
                 <?php while ($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
-
-
                     <!-- article -->
                     <article class="p-article">
                         <!-- imgArea -->
@@ -340,13 +299,11 @@
                         <!-- /textArea -->
                     </article>
                     <!-- /article -->
-
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
         <!-- /articleList -->
-
     </section>
     <!-- /articleList -->
 

@@ -1,12 +1,9 @@
 <?php get_header(); ?>
-<!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/mapcreate.css"> -->
-
 
 <main class="l-main">
     <div class="l-page">
         <!-- <h2 class="c-heading u-center">Myマップ</h2> -->
         <section class="p-mapchoice l-articleList">
-            <!-- <h3 class="c-subHeading u-center"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_map_myMap.png" alt="Myスポット"></h3> -->
             <h3 class="c-subHeading u-center">Myスポット</h3>
             <!-- articleList -->
             <div class="p-articleList u-grid">

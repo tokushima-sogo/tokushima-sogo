@@ -36,14 +36,17 @@
 /* マップ */
 .l-singleMap {
     width: 100%;
+    height: 200px;
     margin: 0 auto;
-    padding: 15px 0;
+    padding: 30px 0;
 }
 
 @media (min-width:1025px) {
     .l-singleMap {
         display: inline-block;
-        width: 30%;
+        width: 25%;
+        height: 400px;
+        padding: 10px;
     }
 }
 
@@ -113,7 +116,7 @@
 @media (min-width:1140px) {
     .p-singleArticle__description {
         width: 45%;
-        margin: 0;
+        justify-content: center;
     }
 }
 
@@ -176,8 +179,9 @@
 
 /* マップ～テーブル */
 .p-singleArticle__info {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
+    padding: 30px 0;
     justify-content: center;
     flex-direction: column;
 }
@@ -186,6 +190,7 @@
     .p-singleArticle__info {
         justify-content: space-between;
         flex-direction: row;
+        align-items: center;
         padding: 30px 0 50px;
     }
 }
@@ -195,15 +200,8 @@
     position: relative;
     padding-bottom: 56.25%;
     width: 100%;
-    height: 200px;
     margin: 0 auto;
     overflow: hidden;
-}
-
-@media (min-width:768px) {
-    .p-singleMap {
-        height: 400px;
-    }
 }
 
 /* マップのiframe */
@@ -217,10 +215,16 @@
 
 /* テーブル */
 .p-singleTable {
+    box-sizing: border-box;
     width: 100%;
-    border: 1px solid #333333;
-    border-collapse: collapse;
-    vertical-align: middle;
+}
+
+@media (min-width:768px) {
+    .p-singleTable {
+        border: 2px solid #707070;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
 }
 
 /* 関連記事ここから */
@@ -294,7 +298,7 @@
 @media (min-width:1025px) {
     .c-heading {
         padding: 25px 0;
-        font-size: 2.8rem;
+        font-size: 2.4rem;
     }
 }
 
@@ -454,45 +458,50 @@ a.wp1_like_like span {
 /* tableここから */
 .c-singleTable__th,
 .c-singleTable__td {
-    display: block;
-    padding: 20px 10px;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 15px 10px;
     width: 100%;
     height: 60px;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     letter-spacing: 1px;
+    vertical-align: middle;
+}
+
+
+
+.c-singleTable__th {
+    background: #f6f4ec;
+    vertical-align: bottom;
+}
+
+.c-singleTable__td {
+    background: #ffffff;
+    border: 2px solid #707070;
 }
 
 @media (min-width:768px) {
 
     .c-singleTable__th,
     .c-singleTable__td {
-        display: inline-block;
+        border: 1px solid #707070;
     }
-}
 
-.c-singleTable__th {
-    background: #f6f4ec;
-    border: 1px solid #707070;
-}
-
-@media (min-width:768px) {
     .c-singleTable__th {
         width: 20%;
     }
-}
 
-.c-singleTable__td {
-    background: #ffffff;
-    border: 1px solid #707070;
-}
-
-@media (min-width:768px) {
     .c-singleTable__td {
         width: 80%;
     }
 }
 
+
 .c-singleTable__td a {
+    color: #cf7e7c;
+}
+
+.c-singleTable__td a i {
     color: #cf7e7c;
 }
 

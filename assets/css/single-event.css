@@ -24,14 +24,16 @@
 
 /* slider */
 .l-slickSlider {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
+    padding: 30px 0;
 }
 
-@media (min-width:1140px) {
+@media (min-width:1025px) {
     .l-slickSlider {
         width: 50%;
         margin: 0;
+        padding: 0;
     }
 }
 
@@ -39,12 +41,12 @@
 .l-singleTable {
     width: 100%;
     margin: 0 auto;
-    padding: 10px 0 30px;
+    padding: 30px 0 50px;
 }
 
 @media (min-width:768px) {
     .l-singleTable {
-        padding: 30px 0 50px;
+        width: 90%;
     }
 }
 
@@ -71,7 +73,7 @@
 }
 
 /* flexレイアウト用 */
-@media (min-width:1140px) {
+@media (min-width:1025px) {
     .p-singleArticle__item {
         flex-direction: row;
         justify-content: space-between;
@@ -84,6 +86,7 @@
     margin: 0 auto;
     padding: 0;
     flex-direction: column;
+    justify-content: center;
 }
 
 @media (min-width:1025px) {
@@ -98,19 +101,20 @@
     box-sizing: border-box;
     width: 100%;
     max-width: 100%;
-    padding: 0;
+    padding: 20px 0 30px;
     flex-direction: column;
 }
 
 @media (min-width:400px) {
     .p-singleTag {
         flex-direction: row;
+        justify-content: center;
     }
 }
 
-@media (min-width:1025px) {
+@media (min-width:1140px) {
     .p-singleTag {
-        padding: 30px 0 15px;
+        padding: 30px 0;
     }
 }
 
@@ -152,16 +156,15 @@
 
 /* テーブル */
 .p-singleTable {
+    box-sizing: border-box;
     width: 100%;
-    border: 1px solid #333333;
-    border-collapse: collapse;
-    vertical-align: middle;
 }
 
-@media (min-width:1025px) {
+@media (min-width:768px) {
     .p-singleTable {
-        width: 70%;
-        margin: 0 auto;
+        border: 2px solid #707070;
+        border-collapse: collapse;
+        border-spacing: 0;
     }
 }
 
@@ -172,19 +175,18 @@
 
 /* 記事タイトル */
 .c-heading {
-    height: 30px;
-    padding: 6px 0;
-    font-size: 1.8rem;
+    height: 70px;
+    padding: 20px 0;
+    font-size: 2.2rem;
     letter-spacing: 2px;
     justify-content: center;
     align-items: center;
 }
 
-@media (min-width:768px) {
+@media (min-width:1025px) {
     .c-heading {
-        height: 60px;
-        font-size: 2.8rem;
-        padding: 16px 0;
+        padding: 25px 0;
+        font-size: 2.4rem;
     }
 }
 
@@ -247,43 +249,6 @@
     }
 }
 
-
-/* タグ名 */
-.c-singleTagList__li {
-    padding: 5px;
-    letter-spacing: 1px;
-    font-size: 1.6rem;
-}
-
-@media (min-width:400px) {
-    .c-singleTagList__li {
-        padding: 7px;
-    }
-}
-
-@media (min-width:768px) {
-    .c-singleTagList__li {
-        padding: 14px;
-        font-size: 1.8rem;
-    }
-}
-
-/* 登録タグ */
-.c-singleTag__text {
-    margin: 0 auto;
-    padding: 8px 12px;
-    font-size: 1.4rem;
-    letter-spacing: 1px;
-}
-
-@media (min-width:400px) {
-    .c-singleTag__text {
-        margin: 0;
-    }
-}
-
-
-
 /* いいねボタン */
 .wp1_like_like,
 a.wp1_like_like {
@@ -344,45 +309,50 @@ a.wp1_like_like span {
 /* tableここから */
 .c-singleTable__th,
 .c-singleTable__td {
-    display: block;
-    padding: 20px 10px;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 15px 10px;
     width: 100%;
     height: 60px;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     letter-spacing: 1px;
+    vertical-align: middle;
+}
+
+
+
+.c-singleTable__th {
+    background: #f6f4ec;
+    vertical-align: bottom;
+}
+
+.c-singleTable__td {
+    background: #ffffff;
+    border: 2px solid #707070;
 }
 
 @media (min-width:768px) {
 
     .c-singleTable__th,
     .c-singleTable__td {
-        display: inline-block;
+        border: 1px solid #707070;
     }
-}
 
-.c-singleTable__th {
-    background: #f6f4ec;
-    border: 1px solid #707070;
-}
-
-@media (min-width:768px) {
     .c-singleTable__th {
         width: 20%;
     }
-}
 
-.c-singleTable__td {
-    background: #ffffff;
-    border: 1px solid #707070;
-}
-
-@media (min-width:768px) {
     .c-singleTable__td {
         width: 80%;
     }
 }
 
+
 .c-singleTable__td a {
+    color: #cf7e7c;
+}
+
+.c-singleTable__td a i {
     color: #cf7e7c;
 }
 

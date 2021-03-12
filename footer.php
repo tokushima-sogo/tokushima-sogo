@@ -1,8 +1,5 @@
-<!-- エリア別のスポットグルメショップにリンクが飛ぶようになっているが，
-そんなアーカイブサイトは存在しない。要確認3月9日（23：29）現在 -->
-
-<!-- footer -->
-<footer class="l-footer u-center u-white u-bgCalmBlue">
+<footer class="l-footer u-center u-white">
+    <!-- <footer class="l-footer u-center u-white u-bgCalmBlue"> -->
     <!-- footer__inner -->
     <div class="p-footer__inner u-flex">
         <!-- footer__contentsBlock -->

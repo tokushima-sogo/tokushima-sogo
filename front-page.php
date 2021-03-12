@@ -20,10 +20,10 @@
         <div class="p-elevatorArea u-bg3ea5c8">
             <img class="c-buildingTablet" src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_front_tablet.jpg" alt="建物">
             <img class="c-buildingPc u-m0A" src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_front_web.png" alt="建物">
-            <!-- <img src="assets/images/img_front_catchCopy.png" class="c-catchCopy" alt="＼定員無制限／エレベーターに乗って見つけよう！あ・わくわくする徳島"> -->
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_catchCopy02.png" class="c-catchCopy" alt="＼定員無制限／エレベーターに乗って見つけよう！あ・わくわくする徳島">
 
             <!-- 6F -->
-            <section id="js_6f" class="p-departmentFloor u-m0A">
+            <!-- <section id="js_6f" class="p-departmentFloor u-m0A">
                 <div class="p-floorBlock6">
                     <h2 class="c-floorName u-bg2d294f u-mb10 u-white">特設会場</h2>
                     <div class="p-special u-flex">
@@ -39,7 +39,33 @@
                                 <img class="c-specialEvent" src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_special.png" alt="特集">
                             </a>
                         </div>
-                        <!-- <img class="c-wheel" src="assets/images/img_front_ferrisWheel.gif" alt="観覧車"> -->
+                        <img class="c-wheel" src="assets/images/img_front_ferrisWheel.gif" alt="観覧車">
+                    </div>
+                </div>
+            </section> -->
+
+            <section id="js_6f" class="u-m0A">
+                <div class="p-floorBlock6">
+                    <h2 class="c-floorName u-bg2d294f u-white u-mb0">特設会場</h2>
+                    <div class="p-special u-flex">
+                        <div class="p-specialLink ">
+                            <a href="<?php echo home_url('quiz/') ?>" class="c-specialLink">
+                                <h3 class="u-specialName">クイズゲーム</h3>
+                                <img class="c-specialEvent" src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_game.png" alt="ゲーム">
+                            </a>
+                        </div>
+                        <div class="p-specialLink ">
+                            <a href="<?php echo home_url('special') ?>" class="c-specialLink">
+                                <h3 class="u-specialName">特集コーナー</h3>
+                                <img class="c-specialEvent" src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_special.png" alt="特集">
+                            </a>
+                        </div>
+                        <div class="p-specialLink ">
+                            <a href="<?php echo home_url('special') ?>" class="c-specialLink">
+                                <h3 class="u-specialName">都市伝説</h3>
+                                <img class="c-specialEvent" src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_special.png" alt="特集">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -65,8 +91,10 @@
                 <div class="p-floorBlock4">
                     <div class="p-floorLink ">
                         <a href="<?php echo home_url('area/west') ?>">
-                            <h2 class="c-floorName c-floorNameRight u-bg2d294f u-mb10 u-white ">県西部</h2>
-                            <div class="p-floorImgNisi">
+                            <!-- <h2 class="c-floorName c-floorNameRight u-bg2d294f u-mb10 u-white ">県西部</h2>
+                            <div class="p-floorImgNisi"> -->
+                            <h2 class="c-floorName u-bg2d294f u-mb10 u-white ">県西部</h2>
+                            <div class="p-floorImg">
                                 <img class="c-soba" src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_west01.png" class="c-floorSpot" alt="祖谷そば">
                                 <img class="c-tutuji" src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_west02.png" class="c-floorSpot u-floorSpot--2nd" alt="オンツツジ">
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_map_west.png" class="c-floorMapNisi" alt="県西部">
@@ -112,7 +140,7 @@
         </div>
 
         <!-- 1F -->
-        <section id="js_1f" class="p-departmentFloor u-m0A u-bgEAE4AD">
+        <!-- <section id="js_1f" class="p-departmentFloor u-m0A u-bgEAE4AD">
             <div class="p-floorBlock1">
                 <h2 class="c-floorName u-mb10 u-bg2d294f u-mb10 u-white ">ご案内</h2>
                 <div class="p-guideArea u-m0A">
@@ -125,17 +153,38 @@
                         <li class="c-tokushimaLink"><a href="<?php echo get_post_type_archive_link('famous'); ?>">徳島の名物</a></li>
                         <li class="c-tokushimaLink"><a href="<?php echo get_post_type_archive_link('event'); ?>">徳島のイベント</a></li>
                     </ul>
-                    <!-- <div class="p-topIcon">
-                                <div class="c-topIcon"><i class="fas fa-caret-up"></i></div>
-                                <span class="c-floor__text">上へどうぞ</span>
-                            </div> -->
+                </div>
+            </div>
+        </section> -->
+
+        <section id="js_1f" class="u-m0A u-bgEAE4AD">
+            <div class="p-floorBlock_info">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_fukidashi.png" alt="" srcset="" class="c-fukidashi">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/anime_front_awaodori.gif" alt="" srcset="" class="c-awaodori">
+                <h2 class="c-floorName u-bg2d294f u-mb10 u-white ">ご案内</h2>
+                <div class="p-guideArea u-m0A">
+                    <span id="front_info"></span>
+                    <h3 class="c-guideTitle">このサイトの使い方</h3>
+                    <ul class="c-floor__text">
+                        <li>①行きたい場所を見つける</li>
+                        <li>②Myマップに登録する</li>
+                        <li>③自分だけの地図づくり</li>
+                        <li>④徳島へ行く</li>
+                    </ul>
+                    <ul class="p-tokushimaLink">
+                        <li class="c-tokushimaLink"><a href="<?php echo esc_url(home_url('/tokushima')); ?>">徳島について</a></li>
+                        <li class="c-tokushimaLink"><a href="<?php echo get_post_type_archive_link('famous'); ?>">徳島の名物</a></li>
+                        <li class="c-tokushimaLink"><a href="<?php echo get_post_type_archive_link('event'); ?>">徳島のイベント</a></li>
+                    </ul>
                 </div>
             </div>
         </section>
+
+
         <!-- /elevatorArea -->
 
         <!-- B1 -->
-        <section id="page-link" class="p-departmentFloor u-bgblack u-red">
+        <!-- <section id="page-link" class="p-departmentFloor u-bgblack u-red">
             <a href="#js_6f" class="c-horrorLink">
                 <div class="p-floorBlock">
                     <h2 class="c-floorNameBasement u-bg2d294f u-white u-mb10 ">徳島の都市伝説</h2>
@@ -143,7 +192,7 @@
                         特設会場のゲームをクリアすれば 都市伝説へご案内</p>
                 </div>
             </a>
-        </section>
+        </section> -->
     </div>
     <!-- /department -->
 
@@ -157,7 +206,7 @@
     <!-- /news -->
 
     <!-- insta -->
-    <section class="p-insta u-bgEAE4AD">
+    <section class="p-insta">
         <div class="c-footerImg"></div>
         <!-- instagram表示 ショートコード -->
         <?php echo do_shortcode('[instagram-feed]'); ?>

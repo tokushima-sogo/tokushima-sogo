@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-
 <main class="l-main u-bgHorror">
     <!-- breadCrumb -->
     <div class="p-breadCrumb">
@@ -15,20 +14,15 @@
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : ?>
             <?php the_post(); ?>
-
             <!-- カスタムフィールドの値を取得 -->
             <?php
             $picture = get_field('horror_pic');
             $address = get_field('horror_address');
             ?>
-
             <?php the_content(); ?>
-
         <?php endwhile; ?>
     <?php endif; ?>
-    ​
-    ​
-    <!-- 関連記事の出力 -->
+
     <!-- articleList -->
     <section class="l-articleList">
         <h3 class="c-subHeading u-center"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_horror_relation.png" alt="関連記事"></h3>
@@ -43,7 +37,6 @@
         ?>
         <?php $args = array(
             'post_type'        => $post_type,         //カスタム投稿タイプ名
-            'posts_per_page'   => 3,                  // 取得する投稿数
             'orderby'          => 'rand',             //ランダムで表示
             'exclude'          => $post_id,           // 表示中の投稿を除外
             'tax_query'        => array(
@@ -68,7 +61,6 @@
                         <!-- imgArea -->
                         <div class="p-imgArea">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_horror_thmbFlame.png" class="c-frame" alt="額縁">
-                            <!-- thumbnail -->
                             <a href="<?php the_permalink(); ?>" class="c-thumbnail">
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('medium') ?>
@@ -82,12 +74,11 @@
                         <div class="p-textArea u-horrorRed">
                             <div class="p-textContent">
                                 <div class="c-title u-center u-fontHorror"><?php the_title(); ?></div>
-                                <div class="c-date u-center u-fontHorror">公開日：<?php the_time('Y-m-d'); ?></div>
-
+                                <div class="c-date u-center u-fontHorror">公開日：<?php the_time('Y-m-d'); ?>
+                                </div>
 
                                 <div class="p-tag u-flex">
-                                    <div class="c-tag u-bgHorror">
-                                        <?php echo get_the_term_list($post->ID, 'taxotag'); ?>
+                                    <div class="c-tag u-bgHorror"> <?php echo get_the_term_list($post->ID, 'taxotag'); ?>
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +87,6 @@
                         <!-- /textArea -->
                     </article>
                     <!-- /article -->
-                    ​
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>

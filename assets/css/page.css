@@ -13,13 +13,14 @@
 
 /* このサイトについて */
 .l-reference {
+  width: 90%;
   margin: 0 auto;
   padding: 15px;
 }
 
 /* テーブル */
 .l-pageTable {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   padding: 20px 15px;
 }
@@ -29,6 +30,12 @@
   width: 90%;
   margin: 0 auto;
   padding: 30px 0 50px;
+}
+
+@media (min-width: 1025px) {
+  .l-myMap {
+    width: 70%;
+  }
 }
 
 /* =============
@@ -47,6 +54,7 @@
   margin: 0 auto;
   flex-direction: column;
 }
+
 @media (min-width: 768px) {
   .p-img {
     flex-direction: row;
@@ -57,9 +65,15 @@
 /* table */
 .p-pageTable {
   width: 100%;
-  border: 1px solid #707070;
   border-collapse: collapse;
   color: #333333;
+}
+
+@media (min-width:768px) {
+  .p-pageTable {
+    border: 2px solid #707070;
+    border-collapse: collapse;
+  }
 }
 
 /* map */
@@ -69,6 +83,7 @@
   height: 0;
   overflow: hidden;
 }
+
 /* iframe */
 .p-myMap iframe {
   position: absolute;
@@ -91,48 +106,54 @@
 ================ */
 
 /* h2 */
-/* 画像タイトル */
-.c-imgHeading img {
-  height: 80px;
-}
-
 /* 記事タイトル */
 .c-heading {
-  height: 30px;
-  padding: 6px 0;
-  font-size: 1.8rem;
+  height: 70px;
+  padding: 20px 0;
+  font-size: 2.2rem;
   letter-spacing: 2px;
   justify-content: center;
   align-items: center;
 }
-@media (min-width: 768px) {
+
+@media (min-width:1025px) {
   .c-heading {
-    height: 60px;
-    font-size: 2.8rem;
-    padding: 16px 0;
+    padding: 25px 0;
+    font-size: 2.4rem;
   }
 }
+
 .c-heading::before,
 .c-heading::after {
-  content: "";
+  content: '';
   width: 10%;
   height: 4px;
   border-radius: 2px;
-  background: #a7170b;
+  background: #cf7e7c;
 }
+
 .c-heading::before {
   margin-right: 20px;
 }
+
 .c-heading::after {
   margin-left: 20px;
 }
 
-/* h3 */
+
+/* h3見出し */
 .c-subHeading {
-  margin: 0 auto;
-  padding: 30px 15px;
-  font-size: 2.2rem;
-  letter-spacing: 1px;
+  width: 90%;
+  display: inline-block;
+  font-size: 2.4rem;
+  border: dashed 3px #cf7e7c;
+  padding: 1.3rem 1.5rem;
+}
+
+@media(min-width:1025px) {
+  .c-subHeading {
+    width: 80%;
+  }
 }
 
 /* 説明 */
@@ -143,11 +164,13 @@
   font-size: 1.8rem;
   line-height: 1.5;
 }
+
 @media (min-width: 400px) {
   .c-description__text {
     width: 80%;
   }
 }
+
 @media (min-width: 1025px) {
   .c-description__text {
     width: 70%;
@@ -161,38 +184,48 @@
 }
 
 /* table */
-.c-pageTable__th {
-  display: block;
+.c-pageTable__th,
+.c-pageTable__td {
+  display: inline-block;
   width: 100%;
   padding: 10px;
   vertical-align: middle;
-  background: #f6f4ec;
-  border: 1px solid #707070;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   letter-spacing: 1px;
 }
+
 @media (min-width: 768px) {
-  .c-pageTable__th {
-    display: table-cell;
-    width: 40%;
-  }
-}
-.c-pageTable__td {
-  display: block;
-  width: 100%;
-  padding: 20px;
-  background: #ffffff;
-  border: 1px solid #707070;
-  font-size: 1.6rem;
-  line-height: 1.5;
-}
-@media (min-width: 768px) {
+
+  .c-pageTable__th,
   .c-pageTable__td {
     display: table-cell;
-    width: 60%;
   }
 }
+
+.c-pageTable__th {
+  background: #f6f4ec;
+}
+
+@media (min-width: 768px) {
+  .c-pageTable__th {
+    width: 40%;
+    border: 1px solid #707070;
+  }
+}
+
+.c-pageTable__td {
+  background: #ffffff;
+  border: 2px solid #707070;
+}
+
+@media (min-width: 768px) {
+  .c-pageTable__td {
+    width: 60%;
+    border: 1px solid #707070;
+  }
+}
+
 .c-pageTable__td a {
   color: #cf7e7c;
 }
@@ -219,6 +252,7 @@
   background: #ffffff;
   font-size: 140%;
 }
+
 .c-pageTable__td textarea {
   font-size: 140%;
 }
@@ -246,22 +280,26 @@
   width: 100px;
   margin: 30px 0;
   padding: 10px;
+  border-radius: 8px;
   background: #ffffff;
   border: 1px solid #2d294f;
   font-size: 1.8rem;
   letter-spacing: 1px;
   cursor: pointer;
 }
+
 @media (min-width: 400px) {
   .c-contactBtn {
     width: 150px;
   }
 }
+
 @media (min-width: 768px) {
   .c-contactBtn {
     width: 200px;
   }
 }
+
 /* お問い合わせフォーム */
 
 /* =============
@@ -294,7 +332,7 @@
 /* 必須 */
 .u-must {
   display: inline-block;
-  padding: 3px 4px;
+  padding: 2px 5px;
   font-size: 1.2rem;
   color: #cf7e7c;
 }

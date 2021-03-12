@@ -3,26 +3,19 @@
 
     <section class="l-description">
         <div class="p-description">
-            <h2 class="c-subHeading u-center">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_taxonomy_seachResult.png" alt="検索結果">
-            </h2>
+            <h2 class="c-heading u-flex">検索結果</h2>
         </div>
     </section>
-
-    <!-- パンくずリスト -->
-    <!-- <?php get_template_part('template-parts/breadcrumb'); ?> -->
-    <?php if (have_posts()) : ?>
-        <?php while (have_posts()) : ?>
-            <?php the_post(); ?>
-
-            <section class="l-articleList">
-                <!-- articleList -->
-                <div class="p-articleList u-grid">
-                    <!-- article -->
+    <section class="l-articleList">
+        <!-- articleList -->
+        <div class="p-articleList u-grid">
+            <?php if (have_posts()) : ?>
+                <?php while (have_posts()) : ?>
+                    <?php the_post(); ?>
                     <article class="p-article">
                         <!-- imgArea -->
                         <div class="p-imgArea">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flame_archive_common_thumbFlame.png" class="c-frame" alt="額縁">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/frame_archive_common_thumbFrame.png" class="c-frame" alt="額縁">
                             <!-- thumbnail -->
                             <a href="<?php the_permalink(); ?>" class="c-thumbnail">
                                 <?php if (has_post_thumbnail()) : ?>
@@ -35,7 +28,7 @@
                         <!-- /imgArea -->
                         <!-- textArea -->
                         <div class="p-textArea">
-                            <div class="p-textContent u-flex">
+                            <div class="p-textContent">
                                 <div class="p-tag u-flex">
                                     <div class="c-tag u-west u-mr15">
                                         <?php
@@ -53,17 +46,10 @@
                         </div>
                         <!-- /textArea -->
                     </article>
-                    <!-- moreBtn -->
-                    <div class="l-moreBtn u-right">
-                        <button class="c-moreBtn one u-center u-west">more</button>
-                    </div>
-                    <!-- /moreBtn -->
-                </div>
-            </section>
-
-        <?php endwhile; ?>
-    <?php endif; ?>
-
+                <?php endwhile; ?>
+            <?php endif; ?>
+        </div>
+    </section>
 </main>
 
 <?php get_footer(); ?>

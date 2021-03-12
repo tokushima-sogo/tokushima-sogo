@@ -7,9 +7,9 @@
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
             <!-- breadcrumbループstart -->
-            <a href="<?php home_url(); ?>"><span>HOME</span></a>
+            <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
             <i class="fas fa-angle-right"></i>
-            <span>特集</span>
+            <span>特集一覧</span>
             <!-- breadcrumbループend -->
         </div>
     </div>
@@ -44,10 +44,6 @@
                             <?php else : ?>
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="画像がありません">
                             <?php endif; ?>
-                        </div>
-                        <!-- コンテンツ文章の抜粋 -->
-                        <div class="c-specialArticle__description u-black">
-                            <?php the_excerpt(); ?>
                         </div>
                     </a>
                 </article>

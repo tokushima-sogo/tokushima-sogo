@@ -6,11 +6,9 @@
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
             <!-- breadcrumbループstart -->
-            <span>トップ</span>
+            <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
             <i class="fas fa-angle-right"></i>
-            <span>エリア名</span>
-            <i class="fas fa-angle-right"></i> <span>カテゴリ</span>
-            <i class="fas fa-angle-right"></i> <span>記事タイトル</span>
+            <span>徳島のイベント</span>
             <!-- breadcrumbループend -->
         </div>
     </div>
@@ -31,16 +29,16 @@
 
     <!--  1  -->
     <section class="l-articleList">
-        <h3 class="c-subHeading u-center">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_event_look.png" alt="展示・見学">
-        </h3>
+        <div class="u-center">
+            <h3 class="c-subHeading">展示・見学</h3>
+        </div>
         <!-- articleList -->
         <div class="p-articleList u-grid">
             <!-- 展示・体験の記事を出力するループ -->
             <?php
             $args = array(
                 'post_type'         => 'event',     // カスタム投稿タイプ名
-                'orderby'           => "modified",  // 更新日で表示
+                'orderby'           => 'rand',  // 更新日で表示
                 'tax_query'         => array(
                     'relation'      => 'AND',
                     array(
@@ -99,12 +97,11 @@
     </section>
     <!-- /1 -->
 
-
     <!-- 2 -->
     <section class="l-articleList">
-        <h3 class="c-subHeading u-center">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_event_play.png" alt="体験・レジャー">
-        </h3>
+        <div class="u-center">
+            <h3 class="c-subHeading">体験・レジャー</h3>
+        </div>
 
         <!-- articleList -->
         <div class="p-articleList u-grid">
@@ -112,7 +109,7 @@
             <?php
             $args = array(
                 'post_type'         => 'event',     // カスタム投稿タイプ名
-                'orderby'           => 'modified',  // 更新日で表示
+                'orderby'           => 'rand',  // 更新日で表示
                 'tax_query'         => array(
                     'relation'      => 'AND',
                     array(
@@ -127,8 +124,6 @@
             <?php if ($the_query->have_posts()) : ?>
                 <?php while ($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
-
-
                     <!-- article -->
                     <article class="p-article c-more2">
                         <!-- imgArea -->
@@ -160,8 +155,6 @@
                         <!-- /textArea -->
                     </article>
                     <!-- /article -->
-
-
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
@@ -172,17 +165,14 @@
             <button class="c-moreBtn two u-center">more</button>
         </div>
         <!-- /moreBtn -->
-
     </section>
     <!-- /2 -->
 
-
-
     <!-- 3 -->
     <section class="l-articleList">
-        <h3 class="c-subHeading u-center">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_event_festival.png" alt="お祭り">
-        </h3>
+        <div class="u-center">
+            <h3 class="c-subHeading">お祭り</h3>
+        </div>
 
         <!-- articleList -->
         <div class="p-articleList u-grid">
@@ -190,7 +180,7 @@
             <?php
             $args = array(
                 'post_type'         => 'event',     // カスタム投稿タイプ名
-                'orderby'           => 'modified',  // 更新日で表示
+                'orderby'           => 'rand',  // 更新日で表示
                 'tax_query'         => array(
                     'relation'      => 'AND',
                     array(
@@ -237,10 +227,6 @@
                         <!-- /textArea -->
                     </article>
                     <!-- /article -->
-
-
-
-
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>

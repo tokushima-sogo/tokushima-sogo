@@ -25,7 +25,7 @@
 
 /* 説明 */
 .p-description {
-  width: 100%; /* 変更：90%→100％に */
+  width: 100%;
   margin: 0 auto;
   padding: 30px 0;
 }
@@ -33,7 +33,7 @@
 .p-description__item {
   padding: 30px 0;
   margin: 0 auto;
-  background: #f9e1e1;
+  background: #f6f4ec;
 }
 
 /* グリッドの指定 */
@@ -47,7 +47,7 @@
 }
 
 /* pc用グリッドの幅指定 */
-@media (min-width: 1025px) {
+@media(min-width:1025px) {
   .p-articleList {
     width: 80%;
   }
@@ -127,10 +127,21 @@
   line-height: 1.5;
 }
 
-/* 見出し画像 */
-.c-subHeading img {
-  height: 60px;
+/* h3見出し */
+.c-subHeading {
+  width: 90%;
+  display: inline-block;
+  font-size: 2.4rem;
+  border: dashed 3px #cf7e7c;
+  padding: 1.3rem 1.5rem;
 }
+
+@media(min-width:1025px) {
+  .c-subHeading {
+    width: 80%;
+  }
+}
+
 
 /* 額縁の画像 */
 .c-frame {
@@ -151,9 +162,10 @@
 /* スポット名称 */
 .c-title {
   font-size: 1.8rem;
-  font-family: "mamelon5";
+  font-family: 'mamelon5';
   letter-spacing: 1px;
 }
+
 
 /*  moreボタン
 -------------------------------- */
@@ -162,9 +174,9 @@ button.c-moreBtn {
   width: 180px;
   padding: 7px;
   border-radius: 30px;
-  background: #cf7e7c; /* 変更：bg追加 */
+  background: #cf7e7c;
   color: #ffffff;
-  font-family: "mamelon5";
+  font-family: 'mamelon5';
   font-size: 2.6rem;
   letter-spacing: 1px;
   border: none;
@@ -177,7 +189,7 @@ button.c-moreBtn {
 .c-more2,
 .c-more3 {
   overflow: hidden;
-  transition: all 0.4s ease 0s;
+  transition: all .4s ease 0s;
 }
 
 .c-more1.is-hidden,

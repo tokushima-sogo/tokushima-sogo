@@ -1,46 +1,42 @@
 <?php get_header(); ?>
 
-<!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/single-event.css"> -->
-
 <main class="l-main">
-
-    <!-- breadCrumb -->
-    <div class="p-breadCrumb">
-        <div class="p-breadCrumb__inner">
-            <!-- breadcrumbループstart -->
-            <span>トップ</span>
-            <i class="fas fa-angle-right"></i>
-            <span>エリア名</span>
-            <i class="fas fa-angle-right"></i><span>カテゴリ</span>
-            <i class="fas fa-angle-right"></i><span>記事タイトル</span>
-            <!-- breadcrumbループend -->
+    <!-- singleArticle -->
+    <section class="l-singleArticle">
+        <!-- breadCrumb -->
+        <div class="p-breadCrumb">
+            <div class="p-breadCrumb__inner">
+                <!-- breadcrumbループstart -->
+                <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
+                <i class="fas fa-angle-right"></i>
+                <a href="<?php echo home_url('event'); ?>">
+                    <span>
+                        徳島のイベント
+                    </span>
+                </a>
+                <i class="fas fa-angle-right"></i>
+                <span><?php echo get_post()->post_title ?></span>
+                <!-- breadcrumbループend -->
+            </div>
         </div>
-    </div>
-    <!-- /breadCrumb -->
+        <!-- /breadCrumb -->
+        <?php if (have_posts()) : ?>
+            <?php while (have_posts()) : ?>
+                <?php the_post(); ?>
 
-    <!-- 詳細記事の出力 -->
-
-    <?php if (have_posts()) : ?>
-        <?php while (have_posts()) : ?>
-            <?php the_post(); ?>
-
-            <!-- カスタムフィールドの値を取得 -->
-            <?php
-            $eventname  = get_field('event_name');
-            $picture1   = get_field('event_pic1');
-            $picture2   = get_field('event_pic2');
-            $held       = get_field('event_held');
-            $place      = get_field('event_shop');
-            $owner      = get_field('event_owner');
-            $url        = get_field('event_url');
-            $facebook   = get_field('event_facebook');
-            $instagram  = get_field('event_instagram');
-            $twitter    = get_field('event_twitter');
-            ?>
-
-            <!-- singleArticle -->
-            <section class="l-singleArticle">
-
+                <!-- カスタムフィールドの値を取得 -->
+                <?php
+                $eventname  = get_field('event_name');
+                $picture1   = get_field('event_pic1');
+                $picture2   = get_field('event_pic2');
+                $held       = get_field('event_held');
+                $place      = get_field('event_shop');
+                $owner      = get_field('event_owner');
+                $url        = get_field('event_url');
+                $facebook   = get_field('event_facebook');
+                $instagram  = get_field('event_instagram');
+                $twitter    = get_field('event_twitter');
+                ?>
                 <!-- singleBody -->
                 <div class="l-singleBody">
                     <!-- singleArticle__item -->
@@ -73,12 +69,11 @@
                             </ul>
                         </div>
                         <!-- /slickSlider -->
-
                         <!-- singleArticle__description -->
                         <div class="p-singleArticle__description u-flex">
                             <!-- singleArticle__text -->
-                            <h2 class="c-singleArticle__title u-center"><?php echo $eventname; ?></h2>
-                            <div class="c-singleArticle__text"><?php the_content(); ?></div>
+                            <h2 class="c-heading u-flex"><?php echo $eventname; ?></h2>
+                            <div class="c-singleArticle__text u-center"><?php the_content(); ?></div>
                             <!-- /singleArticle__text -->
 
                             <!-- singleTag -->
@@ -166,12 +161,11 @@
                     <!-- /singleTable -->
                 </div>
                 <!-- /singleBody -->
-            </section>
-            <!-- /singleArticle -->
-        <?php endwhile; ?>
-    <?php endif; ?>
 
-
+            <?php endwhile; ?>
+        <?php endif; ?>
+    </section>
+    <!-- /singleArticle -->
 
 </main>
 <!-- /main -->

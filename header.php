@@ -64,6 +64,11 @@
                                 </a></li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="<?php echo home_url('horror') ?>" class="p-header__navList u-center"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_horror.png" alt="都市伝説">
+                            <p class="c-header__nav u-white">都市伝説</p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- /topNav -->

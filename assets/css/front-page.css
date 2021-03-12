@@ -19,7 +19,6 @@
     }
 }
 
-
 /* ロープウェイ */
 /* 切り替え */
 .p-main__liftGroup__parts {
@@ -36,12 +35,14 @@
     }
 }
 
-
-
-
 /* キャッチコピー */
-/* .c-catchCopy {
-} */
+.c-catchCopy {
+    width: 15vw;
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    z-index: 2;
+}
 
 
 /* ヘッダー分の高さ確保 */
@@ -57,6 +58,46 @@
 
 /* 新着情報ここから*/
 .p-newsArea {
+    position: relative;
+    z-index: 2;
+    display: table;
+    width: 70%;
+    margin: 2% 15% 2% 15%;
+}
+
+.c-newsArea {
+    display: table-cell;
+    vertical-align: middle;
+    background-color: rgb(39, 39, 39);
+    border: 8px solid;
+    border-color: black;
+    padding: 2% 0;
+    border-radius: 5px;
+}
+
+/* 文字変更 */
+.mtphr-dnt-tick-contents {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: chartreuse;
+}
+
+.mtphr-dnt-tick-container {
+    height: 1.4rem;
+}
+
+@media (min-width: 768px) {
+    .mtphr-dnt-tick-container {
+        height: 1.8rem;
+    }
+
+    .mtphr-dnt-tick-contents {
+        font-size: 1.8rem;
+    }
+}
+
+/* 新着情報ここから*/
+/* .p-newsArea {
     height: 70px;
     position: relative;
     z-index: 2;
@@ -74,11 +115,8 @@
     .p-newsArea {
         height: 100px;
     }
-}
-
+} */
 /* 新着情報ここまで*/
-
-
 
 
 .p-floorBlock1 {
@@ -101,41 +139,98 @@
 }
 
 /* 『このサイトの使い方』 */
+.p-floorBlock_info {
+    padding: 0 15%;
+    position: relative;
+}
+
 .c-guideTitle {
+    font-size: 1.8rem;
     padding-bottom: 10px;
 }
 
-
-
-
-@media(min-width:768px) {
-
-    .c-guideTitle,
-    .c-floor__text,
-    .c-tokushimaLink {
-        font-size: 1.2rem;
-    }
-
-    /* .p-topIcon{
-    display: inline-block;
-    transform: translate(-200px, -50px);
-} */
+.c-tokushimaLink {
+    margin-bottom: 5px;
 }
 
+.c-tokushimaLink>a {
+    font-size: 1.6rem;
+}
 
+.c-tokushimaLink::before {
+    content: "\f04b";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    color: #2D294F;
+    font-size: 1.4rem;
+    font-weight: 900;
+    padding-right: 10px;
+}
 
-.u-bg3ea5c8 {
-    background-color: #3ea5c8;
+@media (min-width: 910px) {
+    .c-guideTitle {
+        font-size: 2rem;
+        padding-bottom: 10px;
+    }
+
+    .c-tokushimaLink {
+        margin-bottom: 10px;
+    }
+
+    .c-tokushimaLink>a {
+        font-size: 2.2rem;
+    }
+
+    .c-tokushimaLink::before {
+        content: "\f04b";
+        display: inline-block;
+        font-family: "Font Awesome 5 Free";
+        color: #2D294F;
+        font-size: 1.6rem;
+        font-weight: 900;
+        padding-right: 10px;
+    }
+}
+
+.c-floor__text {
+    margin-bottom: 20px;
+}
+
+.c-floor__text>li {
+    display: inline-block;
+    line-height: 1.8;
+    font-size: 1.2rem;
+}
+
+@media (min-width: 910px) {
+    .c-floor__text>li {
+        display: inline-block;
+        line-height: 1.8;
+        font-size: 1.4rem;
+    }
+}
+
+.c-floor__text>li::after {
+    content: "";
+    display: inline-block;
+    padding-right: 10px;
 }
 
 .l-department {
     position: relative;
+    /* background-image: url(/assets/images/mv_front_web.png);
+  background-size: contain;
+  width: 100%;
+  padding-top: calc(2161 / 1920 * 100%); */
 }
 
 /* 各階のイラストたち */
-.p-floorImg {
-    position: relative;
-    top: -10px;
+/* .p-floorImg {
+  position: relative;
+  top: -10px;
+} */
+.p-floorImg>img+img {
+    padding-left: 20px;
 }
 
 /* 各階のイラストの大きさ */
@@ -158,9 +253,89 @@
     width: 15%;
 }
 
-
 /* 特設会場のイラスト二つ */
 .c-specialEvent {
+    width: 20vw;
+}
+
+@media (min-width: 768px) {
+    .c-specialEvent {
+        width: 13vw;
+    }
+}
+
+.p-floorBlock6 {
+    width: 60vw;
+}
+
+.u-specialName {
+    font-size: 12px;
+}
+
+@media (min-width: 768px) {
+    .u-specialName {
+        font-size: 16px;
+    }
+}
+
+/* 『このサイトの使い方』 */
+/* .c-guideTitle {
+    padding-bottom: 10px;
+}
+
+@media(min-width:768px) {
+
+    .c-guideTitle,
+    .c-floor__text,
+    .c-tokushimaLink {
+        font-size: 1.2rem;
+    }
+
+    .p-topIcon{
+    display: inline-block;
+    transform: translate(-200px, -50px);
+}
+} */
+
+
+
+/* .u-bg3ea5c8 {
+    background-color: #3ea5c8;
+}
+
+.l-department {
+    position: relative;
+} */
+
+/* 各階のイラストたち */
+/* .p-floorImg {
+    position: relative;
+    top: -10px;
+} */
+
+/* 各階のイラストの大きさ */
+/* .c-satomusume,
+.c-beer,
+.c-soba,
+.c-tutuji,
+.c-yakimoti,
+.c-sirasagi,
+.c-turtle,
+.c-surfing {
+    width: 20%;
+} */
+
+/* 各階のマップの大きさ */
+/* .c-floorMapHigasi,
+.c-floorMapNisi,
+.c-floorMapTokusimacity,
+.c-floorMapMinami {
+    width: 15%;
+} */
+
+
+/* 特設会場のイラスト二つ */
+/* .c-specialEvent {
     width: 55%;
 }
 
@@ -174,10 +349,10 @@ img.c-game {
 
 }
 
-/* .c-wheel{
+.c-wheel{
     position: relative;
     top: -10px;
-} */
+}
 @media(min-width:768px) {
     .c-wheel {
         top: -25px;
@@ -188,7 +363,7 @@ img.c-game {
     .c-wheel {
         top: -5px;
     }
-}
+} */
 
 
 /* 特設会場のイラストのリンク */
@@ -212,8 +387,10 @@ img.c-game {
 
 /* 6階部分 */
 #js_6f {
+    display: flex;
+    padding: 0 20%;
     position: absolute;
-    top: .5%;
+    top: 5vh;
     left: 0;
     right: 0;
     text-align: center;
@@ -230,10 +407,10 @@ img.c-game {
     padding: 2% 0%;
 }
 
-#js_5f:hover {
+/* #js_5f:hover {
     background-color: #539199;
     transform: scale(1.3);
-}
+} */
 
 /* 4階部分 */
 #js_4f {
@@ -245,10 +422,10 @@ img.c-game {
     padding: 2% 0%;
 }
 
-#js_4f:hover {
+/* #js_4f:hover {
     background-color: #004e3f;
     transform: scale(1.3);
-}
+} */
 
 /* 3階部分 */
 #js_3f {
@@ -260,10 +437,10 @@ img.c-game {
     padding: 2% 0%;
 }
 
-#js_3f:hover {
+/* #js_3f:hover {
     background-color: #d1a429;
     transform: scale(1.3);
-}
+} */
 
 /* 2階部分 */
 #js_2f {
@@ -275,13 +452,13 @@ img.c-game {
     padding: 2% 0%;
 }
 
-#js_2f:hover {
+/* #js_2f:hover {
     background-color: #991f26;
     transform: scale(1.3);
-}
+} */
 
 /* 1階部分 */
-#js_1f {
+/* #js_1f {
     position: absolute;
     width: 60%;
     top: 64%;
@@ -289,6 +466,19 @@ img.c-game {
     right: 0;
     text-align: center;
     padding: 2% 0%;
+} */
+#js_1f {
+    position: absolute;
+    width: 80%;
+    top: 70%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: #EAE4AD;
+    font-size: 1.6rem;
+    padding: 1% 0%;
+    box-shadow: 0 0 5px 5px #EAE4AD;
+    border-radius: 15px;
 }
 
 /* 都市伝説の階 */
@@ -300,8 +490,10 @@ img.c-game {
 
 @media(min-width:768px) {
     #js_6f {
+        display: flex;
+        padding: 0 20%;
         position: absolute;
-        top: .5%;
+        top: 5vh;
         left: 0;
         right: 0;
         text-align: center;
@@ -343,7 +535,7 @@ img.c-game {
         padding: 1% 0%;
     }
 
-    #js_1f {
+    /* #js_1f {
         position: absolute;
         width: 80%;
         top: 69%;
@@ -353,6 +545,20 @@ img.c-game {
         background-color: #EAE4AD;
         font-size: 1.6rem;
         padding: 1% 0%;
+    } */
+
+    #js_1f {
+        position: absolute;
+        width: 60%;
+        top: 80%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        background-color: #EAE4AD;
+        font-size: 1.6rem;
+        padding: 1% 0%;
+        box-shadow: 0 0 5px 5px #EAE4AD;
+        border-radius: 15px;
     }
 
     .c-satomusume,
@@ -380,28 +586,76 @@ img.c-game {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
 /* 都市伝説のところ */
+/* .p-floorBlock {
+    text-align: center;
+} */
+
+/* インスタ一式ここから */
+/* .p-insta {
+    position: relative;
+    z-index: 2;
+} */
+
+/* 2～5階のホバーで背景色がつく */
+.p-departmentFloor:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transform: scale(1.3);
+    box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.6);
+}
+
+/* ご案内の阿波踊りアニメ */
+.c-awaodori,
+.c-fukidashi {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .c-awaodori {
+        height: 60%;
+        width: auto;
+        position: absolute;
+        top: 100%;
+        transform: translate(0, -100%);
+        left: 0;
+        display: block;
+    }
+
+    .c-fukidashi {
+        height: 60%;
+        width: auto;
+        position: absolute;
+        top: -15%;
+        transform: translate(0, 0);
+        left: -15%;
+        display: block;
+    }
+}
+
+/* 都市伝説の階 */
+#page-link {
+    padding: 20px;
+    /* position: relative; */
+    z-index: 2;
+}
+
 .p-floorBlock {
     text-align: center;
 }
 
-
-
+.p-floorHorror {
+    background-color: rgb(0, 0, 0, 0.8);
+    color: white;
+    background-image: url(../images/img_front_horrorBn.png);
+    background-size: cover;
+}
 
 /* インスタ一式ここから */
 .p-insta {
     position: relative;
     z-index: 2;
+    padding: 0 15%;
 }
 
 .p-instaPhotos {
@@ -497,6 +751,54 @@ img.c-game {
 
 /* フロア見出し */
 .c-floorName {
+    font-size: 1.6rem;
+    display: inline-block;
+    text-align: center;
+    width: 100px;
+    padding: 5px 0px;
+    border-radius: 25px;
+    opacity: 1;
+    background-color: #2D294F;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.c-floorNameBasement {
+    font-size: 1.6rem;
+    display: inline-block;
+    text-align: center;
+    width: 150px;
+    padding: 5px 0px;
+    border-radius: 25px;
+}
+
+.c-floorNameBasementP {
+    font-size: 1.4rem;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .c-floorName {
+        width: 140px;
+        font-size: 2.4rem;
+    }
+
+    .c-floorNameBasement {
+        font-size: 2.4rem;
+        display: inline-block;
+        text-align: center;
+        width: 200px;
+        padding: 5px 0px;
+        border-radius: 25px;
+    }
+
+    .c-floorNameBasementP {
+        font-size: 1.6rem;
+    }
+}
+
+/* フロア見出し */
+/* .c-floorName {
     font-size: 1.4rem;
     display: inline-block;
     text-align: center;
@@ -530,7 +832,7 @@ img.c-game {
     .c-floorNameBasementP {
         font-size: 1.6rem;
     }
-}
+} */
 
 /* ご案内見出しの隠し領域 */
 span[id="front_info"] {

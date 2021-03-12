@@ -6,7 +6,7 @@
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
             <!-- breadcrumbループstart -->
-            <a href="<?php echo home_url(); ?>"><span>HOME</span></a>
+            <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
             <i class="fas fa-angle-right"></i>
             <span>県南部</span>
             <!-- breadcrumbループend -->
@@ -34,16 +34,16 @@
     <section class="l-articleList">
         <!-- タイトルの表示 -->
         <span id="south_spot"></span>
-        <h3 class="c-subHeading u-center">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_spot.png" alt="スポット">
-        </h3>
+        <div class="u-center">
+            <h3 class="c-subHeading">スポット</h3>
+        </div>
 
         <div class="p-articleList u-grid">
             <!-- 南部の観光スポット記事を出力 -->
             <?php
             $args = array(
                 'post_type'         => 'spot',      // カスタム投稿タイプ名
-                'orderby'           => 'modified',  // 更新日で表示
+                'orderby'           => 'rand',      //ランダムで表示
                 'tax_query'         => array(
                     'relation'      => 'AND',
                     array(
@@ -111,15 +111,15 @@
     <section class="l-articleList">
         <!-- タイトルの表示 -->
         <span id="south_gourmet"></span>
-        <h3 class="c-subHeading u-center">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_gourmet.png" alt="グルメ">
-        </h3>
+        <div class="u-center">
+            <h3 class="c-subHeading">グルメ</h3>
+        </div>
         <div class="p-articleList u-grid">
             <!-- 南部のグルメ記事を出力 -->
             <?php
             $args = array(
                 'post_type'         => 'gourmet',   // カスタム投稿タイプ名
-                'orderby'           => 'modified',  // 更新日で表示
+                'orderby'           => 'rand',      //ランダムで表示
                 'tax_query'         => array(
                     'relation'      => 'AND',
                     array(
@@ -185,16 +185,15 @@
     <section class="l-articleList">
         <!-- タイトルの表示 -->
         <span id="south_shop"></span>
-        <h3 class="c-subHeading u-center">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_common_shop.png" alt="ショップ">
-        </h3>
-
+        <div class="u-center">
+            <h3 class="c-subHeading">ショップ</h3>
+        </div>
         <div class="p-articleList u-grid">
             <!-- 南部のお土産記事を出力 -->
             <?php
             $args = array(
                 'post_type'         => 'shop',      // カスタム投稿タイプ名
-                'orderby'           => 'modified',  // 更新日で表示
+                'orderby'           => 'rand',      //ランダムで表示
                 'tax_query'         => array(
                     'relation'      => 'AND',
                     array(
@@ -240,9 +239,7 @@
                             <div class="c-title u-center"><?php the_title(); ?></div>
                         </div>
                         <!-- articleList -->
-
                         <!-- article -->
-
                         <div class="c-title u-center">
                             <!-- コンテンツの抜粋 -->
                             <?php the_excerpt(); ?>

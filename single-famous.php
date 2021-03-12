@@ -1,27 +1,25 @@
 <?php get_header(); ?>
 
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/single-event.css">
-
 <main class="l-main">
-
-    <!-- breadCrumb -->
-    <div class="p-breadCrumb">
-        <div class="p-breadCrumb__inner">
-            <!-- breadcrumbループstart -->
-            <span>トップ</span>
-            <i class="fas fa-angle-right"></i>
-            <span>エリア名</span>
-            <i class="fas fa-angle-right"></i> <span>カテゴリ</span>
-            <i class="fas fa-angle-right"></i> <span>記事タイトル</span>
-            <!-- breadcrumbループend -->
-        </div>
-    </div>
-    <!-- /breadCrumb -->
-
-    <!-- 詳細記事の出力 -->
     <!-- singleArticle -->
     <section class="l-singleArticle">
-
+        <!-- breadCrumb -->
+        <div class="p-breadCrumb">
+            <div class="p-breadCrumb__inner">
+                <!-- breadcrumbループstart -->
+                <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
+                <i class="fas fa-angle-right"></i>
+                <a href="<?php echo home_url('famous'); ?>">
+                    <span>
+                        徳島の名物
+                    </span>
+                </a>
+                <i class="fas fa-angle-right"></i>
+                <span><?php echo get_post()->post_title ?></span>
+                <!-- breadcrumbループend -->
+            </div>
+        </div>
+        <!-- /breadCrumb -->
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : ?>
                 <?php the_post(); ?>
@@ -39,15 +37,6 @@
                 $instagram   = get_field('famous_instagram');
                 $twitter     = get_field('famous_twitter');
                 ?>
-
-
-                <!-- singleHeader -->
-                <div class="l-singleHeader">
-                    <h2 class="c-singleArticle__title u-center"><?php echo $famousname; ?></h2>
-                    <!-- /singleArticle__title -->
-                </div>
-                <!-- /singleHeader -->
-
                 <!-- singleBody -->
                 <div class="l-singleBody">
                     <!-- singleArticle__item -->
@@ -83,13 +72,14 @@
 
                         <!-- singleArticle__description -->
                         <div class="p-singleArticle__description u-flex">
+                            <h2 class="c-heading u-flex"><?php echo $famousname; ?></h2>
                             <!-- singleArticle__text -->
-                            <div class="c-singleArticle__text"><?php the_content(); ?></div>
+                            <div class="c-singleArticle__text u-center"><?php the_content(); ?></div>
                             <!-- /singleArticle__text -->
 
                             <!-- singleTag -->
                             <div class="p-singleTag u-flex">
-                                <div class="c-singleTag__text u-center">登録タグ</div>
+                                <div class="c-singleTag__text u-center">タグ</div>
                                 <!-- /singleTag__text -->
                                 <!-- singleTagList -->
                                 <ul class="p-singleTagList__ul u-flex">
@@ -172,7 +162,6 @@
                     <!-- /singleTable -->
                 </div>
                 <!-- /singleBody -->
-
 
             <?php endwhile; ?>
         <?php endif; ?>

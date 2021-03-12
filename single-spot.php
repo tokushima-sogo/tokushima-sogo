@@ -1,29 +1,24 @@
-<!-- ヘッダーの読み込み -->
 <?php get_header(); ?>
 
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"> -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNNbWvrL46SW-8K-D0w6Haff4Vbcc4rRQ"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/googlemap.js"></script>
 
 <main class="l-main">
-    <!-- 詳細記事の出力 -->
-
-    <!-- breadCrumb -->
-    <div class="p-breadCrumb">
-        <div class="p-breadCrumb__inner">
-            <!-- breadcrumbループstart -->
-            <a href="<?php echo home_url(); ?>"><span>HOME</span></a>
-            <i class="fas fa-angle-right"></i>
-            <span><?php echo get_the_term_list($post->ID, 'area') ?></span>
-            <i class="fas fa-angle-right"></i> <span><?php echo esc_html(get_post_type_object(get_post_type())->label); ?></span>
-            <i class="fas fa-angle-right"></i> <span><?php echo get_post()->post_title ?></span>
-            <!-- breadcrumbループend -->
-        </div>
-    </div>
-    <!-- /breadCrumb -->
-
     <!-- singleArticle -->
     <section class="l-singleArticle">
+        <!-- breadCrumb -->
+        <div class="p-breadCrumb">
+            <div class="p-breadCrumb__inner">
+                <!-- breadcrumbループstart -->
+                <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
+                <i class="fas fa-angle-right"></i>
+                <span><?php echo get_the_term_list($post->ID, 'area') ?></span>
+                <i class="fas fa-angle-right"></i> <span><?php echo esc_html(get_post_type_object(get_post_type())->label); ?></span>
+                <i class="fas fa-angle-right"></i> <span><?php echo get_post()->post_title ?></span>
+                <!-- breadcrumbループend -->
+            </div>
+        </div>
+        <!-- /breadCrumb -->
 
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : ?>
@@ -49,14 +44,6 @@
                 $remarks4  = get_field('spot_remarks4');
                 $remarks5  = get_field('spot_remarks5');
                 ?>
-
-
-
-                <!-- singleHeader -->
-                <div class="l-singleHeader">
-                    <h2 class="c-heading u-flex"><?php the_title(); ?></h2>
-                </div>
-                <!-- /singleHeader -->
                 <!-- singleBody -->
                 <div class="l-singleBody">
                     <!-- singleArticle__item -->
@@ -101,12 +88,17 @@
                         <!-- /slickSlider -->
                         <!-- singleArticle__description -->
                         <div class="p-singleArticle__description u-flex">
+                            <h2 class="c-heading u-flex"><?php the_title(); ?></h2>
                             <!-- singleArticle__text -->
-                            <div class="c-singleArticle__text"><?php the_content(); ?></div>
+                            <div class="c-singleArticle__text u-center">
+                                <?php the_content(); ?>
+                                <!-- map登録ボタン -->
+                                <?php echo do_shortcode('[wp_ulike]'); ?>
+                            </div>
                             <!-- /singleArticle__text -->
                             <!-- singleTag -->
                             <div class="p-singleTag u-flex">
-                                <div class="c-singleTag__text u-center">登録タグ</div>
+                                <div class="c-singleTag__text u-center">タグ</div>
                                 <!-- /singleTag__text -->
                                 <!-- singleTagList -->
 
@@ -118,17 +110,8 @@
                                 <!-- /singleTagList -->
                             </div>
                             <!-- /singleTag -->
-                            <!-- singleBtns -->
-                            <div class="p-singleBtns u-center u-flex">
-                                <!-- Myスポット -->
-                                <div class="p-singleBtn c-btnTag u-center">
-                                    <!-- map登録ボタン -->
-                                    <?php echo do_shortcode('[wp_ulike]'); ?>
-                                </div>
-                                <!-- /singleBtns -->
-                            </div>
-                            <!-- /singleArticle__description -->
                         </div>
+                        <!-- /singleArticle__description -->
                     </div>
                     <!-- /singleArticle__item -->
                     <!-- singleArticle__info -->
@@ -142,6 +125,7 @@
                                 </div>
                             </div>
                         <?php endif; ?>
+                        <!-- /singleMap -->
                         <!-- singleTable -->
                         <div class="l-singleTable">
                             <table class="p-singleTable">
@@ -238,9 +222,8 @@
                         </div>
                         <!-- /singleTable -->
                     </div>
-
+                    <!-- /singleArticle__info -->
                 </div>
-                <!-- /singleArticle__info -->
                 <!-- /singleBody -->
             <?php endwhile; ?>
         <?php endif; ?>
@@ -264,7 +247,6 @@
             ?>
             <?php $args = array(
                 'post_type'        => $post_type,         //カスタム投稿タイプ名
-                'posts_per_page'   => 3,                  // 取得する投稿数
                 'orderby'          => 'rand',             //ランダムで表示
                 'exclude'          => $post_id,           // 表示中の投稿を除外
                 'tax_query'        => array(
@@ -280,7 +262,6 @@
             <?php if ($the_query->have_posts()) : ?>
                 <?php while ($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
-
 
                     <!-- article -->
                     <article class="p-article">

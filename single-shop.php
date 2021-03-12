@@ -1,26 +1,25 @@
 <?php get_header(); ?>
 
-<!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/single.css"> -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNNbWvrL46SW-8K-D0w6Haff4Vbcc4rRQ"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/googlemap.js"></script>
-<main class="l-main">
 
-    <!-- breadCrumb -->
-    <div class="p-breadCrumb">
-        <div class="p-breadCrumb__inner">
-            <!-- breadcrumbループstart -->
-            <a href="<?php home_url(); ?>"><span>HOME</span></a>
-            <i class="fas fa-angle-right"></i>
-            <span><?php echo get_the_term_list($post->ID, 'area') ?></span>
-            <i class="fas fa-angle-right"></i> <span><?php echo esc_html(get_post_type_object(get_post_type())->label); ?></span>
-            <i class="fas fa-angle-right"></i> <span><?php echo get_post()->post_title ?></span>
-            <!-- breadcrumbループend -->
-        </div>
-    </div>
-    <!-- /breadCrumb -->
+<main class="l-main">
     <!-- singleArticle -->
     <section class="l-singleArticle">
-        <!-- 投稿記事の出力 -->
+        <!-- breadCrumb -->
+        <div class="p-breadCrumb">
+            <div class="p-breadCrumb__inner">
+                <!-- breadcrumbループstart -->
+                <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
+                <i class="fas fa-angle-right"></i>
+                <span><?php echo get_the_term_list($post->ID, 'area') ?></span>
+                <i class="fas fa-angle-right"></i><span><?php echo esc_html(get_post_type_object(get_post_type())->label); ?></span>
+                <i class="fas fa-angle-right"></i> <span><?php echo get_post()->post_title ?></span>
+                <!-- breadcrumbループend -->
+            </div>
+        </div>
+        <!-- /breadCrumb -->
+
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : ?>
                 <?php the_post(); ?>
@@ -44,14 +43,6 @@
                 $remarks4  = get_field('shop_remarks4');
                 $remarks5  = get_field('shop_remarks5');
                 ?>
-
-                <!-- singleHeader -->
-                <div class="l-singleHeader">
-                    <h2 class="c-heading u-flex"><?php the_title(); ?></h2>
-                    <!-- /singleArticle__title -->
-                </div>
-                <!-- /singleHeader -->
-
                 <!-- singleBody -->
                 <div class="l-singleBody">
                     <!-- singleArticle__item -->
@@ -93,16 +84,20 @@
                                 </li>
                             </ul>
                         </div>
-
                         <!-- /slickSlider -->
                         <!-- singleArticle__description -->
                         <div class="p-singleArticle__description u-flex">
+                            <h2 class="c-heading u-flex"><?php the_title(); ?></h2>
                             <!-- singleArticle__text -->
-                            <div class="c-singleArticle__text"><?php the_content(); ?></div>
+                            <div class="c-singleArticle__text u-center">
+                                <?php the_content(); ?>
+                                <!-- map登録ボタン -->
+                                <?php echo do_shortcode('[wp_ulike]'); ?>
+                            </div>
                             <!-- /singleArticle__text -->
                             <!-- singleTag -->
                             <div class="p-singleTag u-flex">
-                                <div class="c-singleTag__text u-center">登録タグ</div>
+                                <div class="c-singleTag__text u-center">タグ</div>
                                 <!-- /singleTag__text -->
                                 <!-- singleTagList -->
                                 <ul class="p-singleTagList__ul u-flex">
@@ -113,16 +108,6 @@
                                 <!-- /singleTagList -->
                             </div>
                             <!-- /singleTag -->
-                            <!-- singleBtns -->
-                            <div class="p-singleBtns u-center u-flex">
-                                <!-- Myスポット -->
-                                <div class="p-singleBtn c-btnTag u-center u-btnTag--spot">
-                                    <!-- map登録ボタン -->
-                                    <?php echo do_shortcode('[wp_ulike]'); ?>
-                                </div>
-                                <!-- /Myスポット -->
-                            </div>
-                            <!-- /singleBtns -->
                         </div>
                         <!-- /singleArticle__description -->
                     </div>
@@ -138,10 +123,7 @@
                                 </div>
                             </div>
                         <?php endif; ?>
-
                         <!-- /singleMap -->
-
-
                         <!-- singleTable -->
                         <div class="l-singleTable">
                             <table class="p-singleTable">
@@ -214,8 +196,6 @@
                                             <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
-
-
                                 </tr>
                                 <tr class="c-singleTable__tr">
                                     <!-- カスタムフィールド備考 -->
@@ -243,10 +223,8 @@
                     <!-- /singleArticle__info -->
                 </div>
                 <!-- /singleBody -->
-
             <?php endwhile; ?>
         <?php endif; ?>
-
     </section>
     <!-- /singleArticle -->
 
@@ -255,36 +233,34 @@
     <!-- articleList -->
     <section class="l-articleList">
         <h3 class="c-subHeading u-center"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_single_common_related.png" alt="関連記事"></h3>
-
-        <?php
-        global $post;
-        $post_id = $post->ID;                         //投稿記事を取得する。
-        $post_type = get_post_type($post_id);         //投稿タイプを取得
-        $taxonomy = 'area';                           //タクソノミーを指定
-        $terms = get_the_terms($post_id, $taxonomy);  //タームデータを取得する。
-        $term_slug =  $terms[0]->slug;                //タームを指定する。
-        ?>
-        <?php $args = array(
-            'post_type'        => $post_type,         //カスタム投稿タイプ名
-            'posts_per_page'   => 3,                  // 取得する投稿数
-            'orderby'          => 'rand',             //ランダムで表示
-            'exclude'          => $post_id,           // 表示中の投稿を除外
-            'tax_query'        => array(
-                array(
-                    'taxonomy' => $taxonomy,          // タクソノミースラッグを指定
-                    'field'    => 'slug',             // termsで使用する種類指定
-                    'terms'    => $term_slug,         // タームスラッグを指定
+        <!-- articleList -->
+        <div class="p-articleList  u-grid">
+            <?php
+            global $post;
+            $post_id = $post->ID;                         //投稿記事を取得する。
+            $post_type = get_post_type($post_id);         //投稿タイプを取得
+            $taxonomy = 'area';                           //タクソノミーを指定
+            $terms = get_the_terms($post_id, $taxonomy);  //タームデータを取得する。
+            $term_slug =  $terms[0]->slug;                //タームを指定する。
+            ?>
+            <?php $args = array(
+                'post_type'        => $post_type,         //カスタム投稿タイプ名
+                'orderby'          => 'rand',             //ランダムで表示
+                'exclude'          => $post_id,           // 表示中の投稿を除外
+                'tax_query'        => array(
+                    array(
+                        'taxonomy' => $taxonomy,          // タクソノミースラッグを指定
+                        'field'    => 'slug',             // termsで使用する種類指定
+                        'terms'    => $term_slug,         // タームスラッグを指定
+                    ),
                 ),
-            ),
-        );
-        ?>
-        <?php $the_query = new WP_Query($args); ?>
-        <?php if ($the_query->have_posts()) : ?>
-            <?php while ($the_query->have_posts()) : ?>
-                <?php $the_query->the_post(); ?>
+            );
+            ?>
+            <?php $the_query = new WP_Query($args); ?>
+            <?php if ($the_query->have_posts()) : ?>
+                <?php while ($the_query->have_posts()) : ?>
+                    <?php $the_query->the_post(); ?>
 
-                <!-- articleList -->
-                <div class="p-articleList u-grid">
                     <!-- article -->
                     <article class="p-article">
                         <!-- imgArea -->
@@ -322,16 +298,13 @@
                         <!-- /textArea -->
                     </article>
                     <!-- /article -->
-                </div>
-                <!-- /articleList -->
-
-            <?php endwhile; ?>
-            <?php wp_reset_postdata(); ?>
-        <?php endif; ?>
-
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
+        </div>
+        <!-- /articleList -->
     </section>
     <!-- /articleList -->
-
 </main>
 <!-- /main -->
 

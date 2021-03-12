@@ -1,12 +1,59 @@
 @charset "utf-8";
 
-/* いいねの所 */
-.wp1_like_like {
+.wp1_like_like,
+a.wp1_like_like {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  margin: 0 10px;
   margin-left: 200px;
+  padding: 5px 12px;
+  -webkit-transition: all 0.3s;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+  letter-spacing: 1px;
+  border-radius: 13px;
+  text-align: center;
+  cursor: pointer;
 }
 
-.fa {
-  padding: 10px;
+/* いいねボタンのアイコンを表示するところ */
+a.wp1_like_like::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100%;
+  content: “”;
+  border-radius: 13px 0 0 13px;
+  background: #CCCCCC;
+  opacity: 0.5;
+}
+
+/* いいねボタンのアイコン */
+a.wp1_like_like i::before {
+  position: absolute;
+  top: 11px;
+  left: 10px;
+  padding: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #D37B6A;
+  font-size: 2.9rem;
+}
+
+/* ボタンのspan */
+a.wp1_like_like span{
+  position: absolute;
+  display: inline-block;
+  top: 14px;
+  left: 62px;
+  padding: 5px 0;
+  font-family: "mamelon3.5";
+  font-size: 1.4rem;
+  vertical-align: bottom;
+  color: #333;
 }
 
 /* =============
@@ -24,23 +71,32 @@
   margin: 0 auto;
 }
 
-@media (min-width: 768px) {
+@media(min-width:768px) {
   .l-wrap {
     width: 75%;
   }
+
 }
+
 
 /* メインのコンテンツのレイアウト */
 .l-mainContents {
   padding: 30px 0;
 }
 
-@media (min-width: 768px) {
+@media(min-width:768px) {
   .l-mainContents {
     width: 70%;
     margin: 0 auto;
   }
 }
+
+
+
+
+
+
+
 
 /* =============
     Project
@@ -64,15 +120,20 @@ button.p-singleBtn {
   border-radius: 13px;
   text-align: center;
   vertical-align: middle;
+
 }
-@media (min-width: 400px) {
+
+@media (min-width:400px) {
+
   .p-singleBtn,
   a.p-singleBtn,
   button.p-singleBtn {
     margin: 0 10px 0 0;
   }
 }
-@media (min-width: 768px) {
+
+@media (min-width:768px) {
+
   .p-singleBtn,
   a.p-singleBtn,
   button.p-singleBtn {
@@ -85,9 +146,9 @@ button.p-singleBtn {
   font-size: 1.4rem;
 }
 
-@media (min-width: 768px) {
+@media(min-width:768px) {
   .p-underText {
-    font-size: 2rem;
+    font-size: 2.0rem;
   }
 }
 
@@ -95,6 +156,8 @@ button.p-singleBtn {
 .p-favorite__wrap {
   text-align: right;
 }
+
+
 
 /* グリッドの指定 */
 .p-articleList {
@@ -105,8 +168,9 @@ button.p-singleBtn {
   margin: 0 auto;
   padding: 30px 0;
 }
+
 /* pc用グリッドの幅指定 */
-@media (min-width: 1025px) {
+@media(min-width:1025px) {
   .p-articleList {
     width: 80%;
   }
@@ -140,10 +204,12 @@ button.p-singleBtn {
 
 /* タグ全体 */
 .p-tag {
-  color: #fef9f9;
+  color: #FEF9F9;
   justify-content: start;
   align-items: center;
 }
+
+
 
 /* =============
     Compornent
@@ -153,21 +219,28 @@ button.p-singleBtn {
 .c-topTitle {
   text-align: center;
   padding-top: 80px;
+
 }
 
 .c-topTitle:before {
+
   content: "\f6e2";
   font-family: "Font Awesome 5 Free";
   color: black;
   padding-right: 10px;
+
+
+
+
 }
 
-@media (min-width: 768px) {
+@media(min-width:768px) {
   .c-topTitle {
     padding: 20px 0;
     font-size: 4.5rem;
   }
 }
+
 
 /* ボタンのタグ */
 a.c-btnTag {
@@ -175,11 +248,13 @@ a.c-btnTag {
   color: #000000;
   background: #f5f5f5;
 }
-@media (min-width: 768px) {
+
+@media (min-width:768px) {
   a.c-btnTag {
     padding: 26px 18px 24px 95px;
   }
 }
+
 a.c-btnTag::before {
   position: absolute;
   top: 0;
@@ -191,7 +266,8 @@ a.c-btnTag::before {
   background: #cccccc;
   opacity: 0.5;
 }
-@media (min-width: 768px) {
+
+@media (min-width:768px) {
   a.c-btnTag::before {
     width: 80px;
   }
@@ -212,25 +288,33 @@ a.c-btnTag:hover img {
   transform: scale(1.2);
   opacity: 1;
 }
+
 /* いいねカウント数 */
 .c-favCount {
   padding: 2px;
   font-size: 18px;
 }
 
+
 /* 記事の中の内容 */
 .c-text {
   font-size: 1.4rem;
   padding: 10px 0;
   line-height: 30px;
+
 }
-@media (min-width: 768px) {
+
+@media(min-width:768px) {
   .c-text {
-    font-size: 2rem;
+    font-size: 2.0rem;
     padding: 10px 0;
     line-height: 30px;
+
   }
 }
+
+
+
 
 /* エリア名 */
 .c-heading {
@@ -249,7 +333,8 @@ a.c-btnTag:hover img {
   font-size: 1.4rem;
   line-height: 1.5;
 }
-@media (min-width: 768px) {
+
+@media(min-width:768px) {
   .c-description__text {
     width: 80%;
 
@@ -259,12 +344,15 @@ a.c-btnTag:hover img {
     line-height: 2;
   }
 }
-@media (min-width: 1025px) {
+
+@media(min-width:1025px) {
   .c-description__text {
     /* width: 65%; */
     padding: 30px;
   }
 }
+
+
 
 /* 地図の画像 */
 .c-map {
@@ -278,6 +366,7 @@ a.c-btnTag:hover img {
 /* 見出し画像 */
 .c-subHeading img {
   height: 60px;
+
 }
 
 /* 額縁の画像 */
@@ -299,6 +388,7 @@ a.c-btnTag:hover img {
 .c-thumbnail img {
   width: 240px;
   height: 160px;
+
 }
 
 /* ハートのSVG */
@@ -319,8 +409,9 @@ a.c-btnTag:hover img {
 .c-bookmark__count {
   padding: 0 2px;
   font-size: 1.8rem;
-  font-family: "mamelon5";
+  font-family: 'mamelon5';
 }
+
 
 /* タグ */
 .c-tag {
@@ -329,21 +420,29 @@ a.c-btnTag:hover img {
   /* background: #2D294F; */
   border: 1px solid #707070;
   font-size: 1.2rem;
+
 }
+
 .c-tag a {
   color: white;
+
 }
 
 /* スポット名称 */
 .c-title {
   font-size: 1.8rem;
-  font-family: "mamelon5";
+  font-family: 'mamelon5';
 }
+
 .c-date {
   font-size: 1.4rem;
-  font-family: "mamelon5";
+  font-family: 'mamelon5';
   padding: 8px;
 }
+
+
+
+
 
 /* =============
     Utility
@@ -369,6 +468,8 @@ a.c-btnTag:hover img {
   margin-right: 15px;
 }
 
+
+
 .u-horror {
   background: #990000;
 }
@@ -377,7 +478,8 @@ a.c-btnTag:hover img {
 .u-panHorror {
   color: white;
 }
-.u-panHorror > i {
+
+.u-panHorror>i {
   color: white;
 }
 
@@ -400,10 +502,15 @@ a.c-btnTag:hover img {
   color: white;
 }
 
+
+
 /* moreボタンをhoverした時 */
 .u-moreHover:hover {
   opacity: 0.8;
 }
+
+
+
 
 /* いいね！アイコン */
 a.u-btnTag--fav img {
@@ -413,7 +520,8 @@ a.u-btnTag--fav img {
   left: 8px;
   width: 24px;
 }
-@media (min-width: 768px) {
+
+@media (min-width:768px) {
   a.u-btnTag--fav img {
     top: 16px;
     left: 16px;

@@ -6,11 +6,9 @@
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
             <!-- breadcrumbループstart -->
-            <span>トップ</span>
+            <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
             <i class="fas fa-angle-right"></i>
-            <span>エリア名</span>
-            <i class="fas fa-angle-right"></i><span>カテゴリ</span>
-            <i class="fas fa-angle-right"></i><span>記事タイトル</span>
+            <span>徳島の名物</span>
             <!-- breadcrumbループend -->
         </div>
     </div>
@@ -29,9 +27,9 @@
     <!-- description -->
 
     <section class="l-articleList">
-        <h3 class="c-subHeading u-center">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_event_look.png" alt="展示・見学">
-        </h3>
+        <div class="u-center">
+            <h3 class="c-subHeading">お菓子</h3>
+        </div>
         <!-- articleList -->
         <div class="p-articleList u-grid">​
 
@@ -39,7 +37,7 @@
             <?php
             $args = array(
                 'post_type'         => 'famous',  // カスタム投稿タイプ名
-                'orderby'           => 'modified', // 更新日で表示
+                'orderby'          => 'rand',             //ランダムで表示
                 'tax_query'         => array(
                     'relation'      => 'AND',
                     array(
@@ -99,9 +97,9 @@
 
     <!-- 2 -->
     <section class="l-articleList">
-        <h3 class="c-subHeading u-center">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_event_play.png" alt="体験・レジャー">
-        </h3>​
+        <div class="u-center">
+            <h3 class="c-subHeading">おかず</h3>
+        </div>
 
         <!-- articleList -->
         <div class="p-articleList u-grid">
@@ -109,7 +107,7 @@
             <?php
             $args = array(
                 'post_type'        => 'famous',    // カスタム投稿タイプ名
-                'orderby'          => 'modified',  // 更新日で表示
+                'orderby'          => 'rand',             //ランダムで表示
                 'tax_query'        => array(
                     'relation'     => 'AND',
                     array(
@@ -172,9 +170,9 @@
 
     <!-- 3 -->
     <section class="l-articleList">
-        <h3 class="c-subHeading u-center">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_archive_event_festival.png" alt="お祭り">
-        </h3>
+        <div class="u-center">
+            <h3 class="c-subHeading">お酒</h3>
+        </div>
 
         <!-- articleList -->
         <div class="p-articleList u-grid">
@@ -183,7 +181,7 @@
             <?php
             $args = array(
                 'post_type'         => 'famous',    // カスタム投稿タイプ名
-                'orderby'           => 'modified',  // 更新日で表示
+                'orderby'          => 'rand',             //ランダムで表示
                 'tax_query'         => array(
                     'relation'      => 'AND',
                     array(

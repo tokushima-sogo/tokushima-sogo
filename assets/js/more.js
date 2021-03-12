@@ -1,4 +1,4 @@
-var show = 3; //最初に表示する件数
+var show = 4; //最初に表示する件数
 var num = 20;  //clickごとに表示したい件数
 var first__contents = '.c-more1'; // 対象の記事 １つ目のカテゴリー
 var secound__contents = '.c-more2'; //対象の記事 2つ目のカテゴリー

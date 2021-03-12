@@ -14,7 +14,9 @@
 
     <!-- /breadCrumb -->
 
-    ​ <section class="l-description">
+
+
+    <section class="l-description">
         <div class="c-heroImg">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_archive_horror_web.png" alt="都市伝説">
         </div>
@@ -31,7 +33,8 @@
 
             </div>
         </div>
-    </section>​
+    </section>
+
 
     <!-- 歴史の記事 -->
     <section class="l-articleList">
@@ -45,7 +48,7 @@
             <?php
             $args = array(
                 'post_type'        => 'horror',   // カスタム投稿タイプ名
-                'orderby'          => 'modified', // 更新日で表示
+                'orderby'          => 'rand',             //ランダムで表示
                 'tax_query'        => array(
                     'relation'     => 'AND',
                     array(
@@ -56,9 +59,6 @@
                 ),
             );
             ?>
-
-
-
             <!-- サブループ開始 -->
             <?php $the_query = new WP_Query($args); ?>
             <?php if ($the_query->have_posts()) : ?>
@@ -104,13 +104,14 @@
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
-
         <!-- moreBtn -->
         <div class="l-moreBtn u-right">
             <button class="c-moreBtn one u-center u-horrorRed u-moreHover">more</button>
         </div>
         <!-- /moreBtn -->​
     </section>
+
+
 
     <!-- 妖怪の記事 -->
     <section class="l-articleList">
@@ -123,7 +124,7 @@
             <?php
             $args = array(
                 'post_type'        => 'horror',    // カスタム投稿タイプ名
-                'orderby'          => 'modified',  // 更新日で表示
+                'orderby'          => 'rand',             //ランダムで表示
                 'tax_query'        => array(
                     'relation'     => 'AND',
                     array(
@@ -158,6 +159,7 @@
                             </a>
                         </div>
                         <!-- /imgArea -->
+
                         <!-- textArea -->
                         <div class="p-textArea u-horrorRed">
                             <div class="p-textContent">
@@ -177,6 +179,8 @@
                         <!-- /textArea -->
                     </article>
 
+
+
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
@@ -186,11 +190,7 @@
             <button class="c-moreBtn two u-center u-horrorRed u-moreHover">more</button>
         </div>
         <!-- /moreBtn -->​
-
-
     </section>
-
-
 
 </main>
 
