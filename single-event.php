@@ -135,24 +135,24 @@
                                 <!-- カスタムフィールドイベントURL -->
                                 <td class="c-singleTable__td">
                                     <?php if ($url) : ?>
-                                        <a href="<?php echo $url; ?>">ホームページはこちら</a>
+                                        <a href="<?php echo $url; ?>" target="_blank">ホームページはこちら</a>
                                     <?php else : ?>
                                         <p>&nbsp;</p>
                                     <?php endif; ?>
                                 </td>
                             </tr>
-                            <tr class="c-singleTable__tr">
+                            <tr class=" c-singleTable__tr">
                                 <th class="c-singleTable__th">SNS</th>
                                 <!-- カスタムフィールドsns -->
                                 <td class="c-singleTable__td">
                                     <?php if ($facebook) : ?>
-                                        <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
+                                        <a href="<?php echo $facebook; ?>" target="_blank"><i class="fab fa-facebook-square"></i></a>
                                     <?php endif; ?>
                                     <?php if ($instagram) : ?>
-                                        <a href="<?php echo $instagram; ?>"><i class="fab fa-instagram-square"></i></a>
+                                        <a href="<?php echo $instagram; ?>" target="_blank"><i class="fab fa-instagram-square"></i></a>
                                     <?php endif; ?>
                                     <?php if ($twitter) : ?>
-                                        <a href="<?php echo $twitter; ?>"><i class="fab fa-twitter-square"></i></a>
+                                        <a href="<?php echo $twitter; ?>" target="_blank"><i class="fab fa-twitter-square"></i></a>
                                     <?php endif; ?>
                                     <?php if ($facebook == false && $instagram == false && $twitter == false) : ?>
                                         <p>&nbsp;</p>

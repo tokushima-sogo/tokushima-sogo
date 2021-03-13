@@ -96,8 +96,8 @@
             <li>
                 <!-- p-fab -->
                 <ul class="p-fab u-flex">
-                    <li class="c-fab"><a href="https://www.instagram.com/?hl=ja" class="u-white"><i class="fab fa-instagram-square fa-3x"></i></a></li>
-                    <li class="c-fab"><a href="https://twitter.com/home?lang=ja" class="u-white"><i class="fab fa-twitter-square fa-3x"></i></a></li>
+                    <li class="c-fab"><a href="https://www.instagram.com/?hl=ja" class="u-white" target="_blank"><i class="fab fa-instagram-square fa-3x"></i></a></li>
+                    <li class="c-fab"><a href="https://twitter.com/home?lang=ja" class="u-white" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a></li>
                 </ul>
                 <!-- /p-fab -->
             </li>
