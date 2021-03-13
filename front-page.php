@@ -49,7 +49,7 @@
                     <h2 class="c-floorName u-bg2d294f u-white u-mb0">特設会場</h2>
                     <div class="p-special u-flex">
                         <div class="p-specialLink ">
-                            <a href="<?php echo home_url('quiz/') ?>" class="c-specialLink">
+                            <a href="<?php echo home_url('quiz/') ?>" target="_blank" class="c-specialLink">
                                 <h3 class="u-specialName">クイズゲーム</h3>
                                 <img class="c-specialEvent" src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_game.png" alt="ゲーム">
                             </a>

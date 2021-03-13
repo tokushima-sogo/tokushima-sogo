@@ -8,16 +8,16 @@
 //canvas設定
 const CANVAS = document.getElementById("canvas");
 const CTX = CANVAS.getContext("2d");
-const HEADER = document.getElementById("header_size");
+//const HEADER = document.getElementById("header_size");
 
 //運用時のキャンバスの大きさ
-CANVAS.width = window.innerWidth;
-CANVAS.height = window.innerHeight;
+CANVAS.width = window.innerWidth * 0.9;
+CANVAS.height = window.innerHeight * 0.9;
 //ヘッダーのサイズ分マージンにあてる。
-const HEADER_HEIGHT = HEADER.scrollHeight;
+//const HEADER_HEIGHT = HEADER.scrollHeight;
 const CANVAS_HEIGHT = CANVAS.scrollHeight;
 
-CANVAS.style.marginTop = HEADER_HEIGHT + "px";
+//CANVAS.style.marginTop = HEADER_HEIGHT + "px";
 //CANVAS.width = 1600;開発時の初期画面サイズ
 //CANVAS.height = 900;開発時の初期画面サイズ
 
@@ -148,40 +148,59 @@ class mobile {
     //解答番号の文字の大きさ    resultにも
     answerCircleFont() {
         if (isMobile == true) {
-            CTX.font = "20px serif";
+            CTX.font = "18px 'sans-serif',serif";
         } else {
-            CTX.font = "50px serif";
+            CTX.font = "45px 'sans-serif',serif";
+        }
+    }
+    //解答文字の大きさ
+    answerFont() {
+        if (isMobile == true) {
+            CTX.font = "11px 'sans-serif',serif";
+        } else {
+            CTX.font = "36px 'sans-serif',serif";
         }
     }
     //時間の文字の大きさ
     timeFont() {
         if (isMobile == true) {
-            CTX.font = "18px serif";
+            CTX.font = "15px 'sans-serif',serif";
         } else {
-            CTX.font = "40px serif";
+            CTX.font = "36px 'sans-serif',serif";
         }
     }
+    //問題文
     questionFont() {
         if (isMobile == true) {
-            CTX.font = "20px serif";
-            textSize = 20;
+            CTX.font = "15px 'sans-serif',serif";
+            textSize = 15;
         } else {
-            CTX.font = "50px serif";
-            textSize = 50;
+            CTX.font = "45px 'sans-serif',serif";
+            textSize = 45;
         }
     }
+    //最終点数
     finishResultFont() {
         if (isMobile == true) {
-            CTX.font = "80px PixelMplus10-Regular";
+            CTX.font = "40px PixelMplus10-Regular";
         } else {
-            CTX.font = "220px PixelMplus10-Regular";
+            CTX.font = "198px PixelMplus10-Regular";
         }
     }
+    //コメント
     commentFont() {
         if (isMobile == true) {
-            CTX.font = "50px PixelMplus10-Regular";
+            CTX.font = "28px PixelMplus10-Regular";
         } else {
-            CTX.font = "100px PixelMplus10-Regular";
+            CTX.font = "90px PixelMplus10-Regular";
+        }
+    }
+    //クレジット表記
+    creditFont() {
+        if (isMobile == true) {
+            CTX.font = "9px 'sans-serif',serif";
+        } else {
+            CTX.font = "27px 'sans-serif',serif";
         }
     }
 }
@@ -259,17 +278,8 @@ function onClick(e) {
     }
     if (mode == 2) {
         window.addEventListener("click", function () {
-            mode = 3;
             clearInterval(resultAnime);
-            setTimeout(() => {
-                DRAW.linkDraw();
-            }, 200);
-        })
-    }
-    if (mode == 3) {
-        window.addEventListener("click", function () {
-            //都市伝説のページへ移動
-            location.href = "http://localhost/sogo/horror/";
+            location.href = "https://heroxs3v38.xsrv.jp/tokushima-sogo/";
         })
     }
 }
@@ -447,23 +457,23 @@ class draw {
     answerTextDraw() {
         //1番目
         CTX.fillStyle = "black";
-        MOBILE.timeFont();
-        CTX.fillText(questions[setQuestionNumbers[nowQuestionNumber]][1], CANVAS.width * 0.16, CANVAS.height * 0.67222);
+        MOBILE.answerFont();
+        CTX.fillText(questions[setQuestionNumbers[nowQuestionNumber]][1], CANVAS.width * 0.16, CANVAS.height * 0.67);
 
         //２番目
         CTX.fillStyle = "black";
-        MOBILE.timeFont();
-        CTX.fillText(questions[setQuestionNumbers[nowQuestionNumber]][2], CANVAS.width * 0.58, CANVAS.height * 0.67222);
+        MOBILE.answerFont();
+        CTX.fillText(questions[setQuestionNumbers[nowQuestionNumber]][2], CANVAS.width * 0.58, CANVAS.height * 0.67);
 
         //３番目
         CTX.fillStyle = "black";
-        MOBILE.timeFont();
-        CTX.fillText(questions[setQuestionNumbers[nowQuestionNumber]][3], CANVAS.width * 0.16, CANVAS.height * 0.8166);
+        MOBILE.answerFont();
+        CTX.fillText(questions[setQuestionNumbers[nowQuestionNumber]][3], CANVAS.width * 0.16, CANVAS.height * 0.81);
 
         //４番目
         CTX.fillStyle = "black";
-        MOBILE.timeFont();
-        CTX.fillText(questions[setQuestionNumbers[nowQuestionNumber]][4], CANVAS.width * 0.58, CANVAS.height * 0.8166);
+        MOBILE.answerFont();
+        CTX.fillText(questions[setQuestionNumbers[nowQuestionNumber]][4], CANVAS.width * 0.58, CANVAS.height * 0.81);
     }
     //正答を教える
     teachAnswer() {
@@ -591,8 +601,19 @@ class draw {
             CTX.drawImage(RESULT_IMG, 0, 0, CANVAS.width, CANVAS.height);
             DRAW.pointDraw();
             DRAW.commentDraw();
+            DRAW.creaditDraw();
         })
     }
+
+    //クレジット表記
+    creaditDraw() {
+        CTX.fillStyle = "white";
+        MOBILE.creditFont();
+        CTX.fillText("効果音　OtoLogic様　https://otologic.jp/", CANVAS.width * 0.12, CANVAS.height * 0.82)
+        CTX.fillText("BGM　いまたく様　https://imatakumusic.com", CANVAS.width * 0.12, CANVAS.height * 0.87)
+
+    }
+
     /* finishDraw() {
         resultAnime = setInterval(function () {
             setTimeout(function () {
@@ -629,10 +650,6 @@ class draw {
         else if (point = 100) {
             CTX.fillText("阿波博士", CANVAS.width * 0.5, CANVAS.height * 0.82);
         }
-    }
-    //クレジットと都市伝説ページの表示
-    linkDraw() {
-        CTX.drawImage(LINK_IMG, 0, 0, CANVAS.width, CANVAS.height);
     }
 }
 const DRAW = new draw();
@@ -802,7 +819,6 @@ const QUIZ = new quiz();
 let start = null;
 //起動時
 window.addEventListener("load", function () {
-
     //クイズ生成とスマホ判定
     QUIZ.createQuestion();
     QUIZ.createAnswer();

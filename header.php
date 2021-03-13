@@ -58,7 +58,7 @@
                             <p class="c-header__nav u-bold u-white">特設会場</p>
                         </div>
                         <ul class="p-header__navListDetail u-special u-center">
-                            <li><a class="c-header__navListDetail" href="<?php echo home_url('quiz/') ?>">クイズ
+                            <li><a class="c-header__navListDetail" href="<?php echo home_url('quiz/') ?>" target="_blank">クイズ
                                 </a></li>
                             <li><a class="c-header__navListDetail" href="<?php echo home_url('special') ?>">特集
                                 </a></li>
