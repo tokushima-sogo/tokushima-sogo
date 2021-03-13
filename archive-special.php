@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<link href="<?php echo get_template_directory_uri(); ?>/assets/css/archive-special.css " rel="stylesheet">
+<!-- <link href="<?php echo get_template_directory_uri(); ?>/assets/css/archive-special.css " rel="stylesheet"> -->
 
 <!-- breadCrumb-->
 <main class="l-main">

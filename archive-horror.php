@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-
+<?php $more_count = 0; ?>
 <main class="l-main u-bgHorror">
 
     <!-- breadCrumb -->
