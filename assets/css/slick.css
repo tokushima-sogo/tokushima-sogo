@@ -2,6 +2,10 @@
 
 /* メインのスライド */
 .p-slickSlider li {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
     width: 100%;
     height: 75%;
     padding: 10px 0;
@@ -30,6 +34,10 @@
 }
 
 .p-thumbSlider li {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
     width: 28%;
     height: 21%;
     margin: 0 2px;

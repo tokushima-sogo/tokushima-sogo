@@ -4,7 +4,7 @@
     <div class="l-page">
         <!-- <h2 class="c-heading u-center">Myマップ</h2> -->
         <section class="p-mapchoice l-articleList">
-            <h3 class="c-subHeading u-center">Myスポット</h3>
+            <h2 class="c-subHeading u-center l-page">Myマップ</h2>
             <!-- articleList -->
             <div class="p-articleList u-grid">
 
@@ -51,20 +51,16 @@
                             </div>
                             <!-- /Myスポット -->
                         </article>
-
                         <!-- /article -->
                     <?php endwhile;
                     "" ?>
                 <?php else : ?>
                     <?php echo 'Myスポット登録がありません。' ?>
                 <?php endif; ?>
-                <!-- どこかに更新ボタン欲しい -->
-                <!-- お店のリンクも -->
             </div>
         </section>
         <!-- googlemap表示 -->
         <section class="l-myMap">
-            <h3 class="c-subHeading u-center">Myマップ</h3>
             <div class="u-mapBtn--center">
                 <button id="mapBtn" class="mapBtn u-mapBtn--bgcOrange">マップ作成
             </div>

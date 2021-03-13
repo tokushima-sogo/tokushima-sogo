@@ -22,7 +22,6 @@
     width: 90%;
     margin: 0 auto;
     padding: 30px 0;
-    flex-direction: column;
 }
 
 @media (min-width:1140px) {
@@ -93,7 +92,7 @@
 
 @media (min-width:768px) {
     .p-singleArticle__item {
-        padding: 30px;
+        padding: 50px;
     }
 }
 
@@ -116,6 +115,7 @@
 @media (min-width:1140px) {
     .p-singleArticle__description {
         width: 45%;
+        margin: 0;
         justify-content: center;
     }
 }
@@ -138,7 +138,7 @@
 
 @media (min-width:1140px) {
     .p-singleTag {
-        padding: 30px 0;
+        padding: 10px 0;
     }
 }
 
@@ -308,7 +308,7 @@
     width: 10%;
     height: 4px;
     border-radius: 2px;
-    background: #a7170b;
+    background: #cf7e7c;
 }
 
 .c-heading::before {
@@ -327,7 +327,7 @@
 
 @media (min-width:1140px) {
     .c-singleArticle__text {
-        padding: 0;
+        padding: 30px 0 10px;
     }
 }
 
@@ -396,12 +396,12 @@ a.wp1_like_like::before {
 a.wp1_like_like i::before {
     position: absolute;
     top: 11px;
-    left: 11px;
+    left: 10px;
     padding: 0;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
     color: #d37b6a;
-    font-size: 3rem;
+    font-size: 2.9rem;
 }
 
 /* ボタンのspan */
@@ -508,11 +508,21 @@ a.wp1_like_like span {
 /* tableここまで */
 
 
-/* 関連記事ここから */
-/* 関連見出し画像 */
-.c-subHeading img {
-    height: 60px;
+/* h3見出し */
+.c-subHeading {
+    width: 90%;
+    display: inline-block;
+    font-size: 2.4rem;
+    border: dashed 3px #cf7e7c;
+    padding: 1.3rem 1.5rem;
 }
+
+@media(min-width:1025px) {
+    .c-subHeading {
+        width: 80%;
+    }
+}
+
 
 /* 額縁の画像 */
 .c-frame {
@@ -535,7 +545,6 @@ a.wp1_like_like span {
     display: inline-block;
     padding: 10px 15px;
     background: #2D294F;
-    border: 1px solid #707070;
     border-radius: 12px;
     font-size: 1.4rem;
 }

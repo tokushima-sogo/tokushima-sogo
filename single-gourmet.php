@@ -234,7 +234,10 @@
     <!-- 関連記事の出力 -->
     <!-- articleList -->
     <section class="l-articleList">
-        <h3 class="c-subHeading u-center"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_single_common_related.png" alt="関連記事"></h3>
+        <!-- <h3 class="c-subHeading u-center"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_single_common_related.png" alt="関連記事"></h3> -->
+        <div class="u-center">
+            <h3 class="c-subHeading">関連記事</h3>
+        </div>
         <!-- articleList -->
         <div class="p-articleList u-grid">
             <?php

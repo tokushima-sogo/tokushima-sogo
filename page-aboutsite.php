@@ -24,34 +24,43 @@
                     以下のサイトを参考元・引用元として、まとめさせて頂きました。<br>アドレスをクリックすると、リンク先へ飛びます。</p>
             </div>
             <div class="l-reference">
-                <h3 class="c-subHeading">地域情報、等</h3>
-                <table class="p-pageTable">
-                    <tr>
-                        <th class="c-pageTable__th">ウィキペディア</th>
-                        <td class="c-pageTable__td"><a href="https://ja.wikipedia.org/wiki/">https://ja.wikipedia.org/wiki/</a></td>
-                    </tr>
-                    <tr>
-                        <th class="c-pageTable__th">徳島県観光情報:阿波ナビ</th>
-                        <td class="c-pageTable__td"><a href="http://www.awanavi.jp/">http://www.awanavi.jp/</a></td>
-                    </tr>
-                    <tr>
-                        <th class="c-pageTable__th">周辺地図:Googleマップ</th>
-                        <td class="c-pageTable__td"><a href="https://www.google.co.jp/maps/?hl=ja">https://www.google.co.jp/maps/?hl=ja</a></td>
-                    </tr>
-                </table>
+                <div class="u-center">
+                    <h3 class="c-subHeading">地域情報、等</h3>
+                </div>
+                <div class="l-pageTable">
+                    <table class="p-pageTable">
+                        <tr>
+                            <th class="c-pageTable__th">ウィキペディア</th>
+                            <td class="c-pageTable__td"><a href="https://ja.wikipedia.org/wiki/">https://ja.wikipedia.org/wiki/</a></td>
+                        </tr>
+                        <tr>
+                            <th class="c-pageTable__th">徳島県観光情報:阿波ナビ</th>
+                            <td class="c-pageTable__td"><a href="http://www.awanavi.jp/">http://www.awanavi.jp/</a></td>
+                        </tr>
+                        <tr>
+                            <th class="c-pageTable__th">周辺地図:Googleマップ</th>
+                            <td class="c-pageTable__td"><a href="https://www.google.co.jp/maps/?hl=ja">https://www.google.co.jp/maps/?hl=ja</a></td>
+                        </tr>
+                    </table>
+                </div>
+
             </div>
             <div class="l-reference">
-                <h3 class="c-subHeading">画像</h3>
-                <table class="p-pageTable">
-                    <tr>
-                        <th class="c-pageTable__th">イラストAC</th>
-                        <td class="c-pageTable__td"><a href="https://www.ac-illust.com/">https://www.ac-illust.com/</a></td>
-                    </tr>
-                    <tr>
-                        <th class="c-pageTable__th">CLEANPNG</th>
-                        <td class="c-pageTable__td"><a href="https://www.cleanpng.com/">https://www.cleanpng.com/</a></td>
-                    </tr>
-                </table>
+                <div class="u-center">
+                    <h3 class="c-subHeading">画像</h3>
+                </div>
+                <div class="l-pageTable">
+                    <table class="p-pageTable">
+                        <tr>
+                            <th class="c-pageTable__th">イラストAC</th>
+                            <td class="c-pageTable__td"><a href="https://www.ac-illust.com/">https://www.ac-illust.com/</a></td>
+                        </tr>
+                        <tr>
+                            <th class="c-pageTable__th">CLEANPNG</th>
+                            <td class="c-pageTable__td"><a href="https://www.cleanpng.com/">https://www.cleanpng.com/</a></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </section>
     </div>
