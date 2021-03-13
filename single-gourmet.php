@@ -189,11 +189,14 @@
                                     <td class="c-singleTable__td">
                                         <?php if ($facebook) : ?>
                                             <a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
-                                        <?php elseif ($instagram) : ?>
+                                        <?php endif; ?>
+                                        <?php if ($instagram) : ?>
                                             <a href="<?php echo $instagram; ?>"><i class="fab fa-instagram-square"></i></a>
-                                        <?php elseif ($twitter) : ?>
+                                        <?php endif; ?>
+                                        <?php if ($twitter) : ?>
                                             <a href="<?php echo $twitter; ?>"><i class="fab fa-twitter-square"></i></a>
-                                        <?php else : ?>
+                                        <?php endif; ?>
+                                        <?php if ($facebook == false && $instagram == false && $twitter == false) : ?>
                                             <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
@@ -283,8 +286,10 @@
                         <!-- /imgArea -->
                         <!-- textArea -->
                         <div class="p-textArea">
+
                             <div class="p-textContent">
                                 <div class="p-tag u-flex">
+                                    <div class="c-title u-center"><?php the_title(); ?></div>
                                     <div class="c-tag u-west u-mr15">
                                         <?php
                                         echo get_the_term_list($post->ID, 'area');
@@ -297,7 +302,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="c-title u-center"><?php the_title(); ?></div>
                         </div>
                         <!-- /textArea -->
                     </article>

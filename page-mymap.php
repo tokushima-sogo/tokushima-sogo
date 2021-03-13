@@ -5,7 +5,7 @@
         <!-- <h2 class="c-heading u-center">Myマップ</h2> -->
         <section class="p-mapchoice l-articleList">
             <div class="u-center">
-                <h2 class="c-subHeading">Myマップ</h2>
+                <h2 class="c-subHeading">MYマップ</h2>
             </div>
             <!-- <h2 class="c-subHeading u-center l-page"></h2> -->
             <!-- articleList -->
