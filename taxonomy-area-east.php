@@ -59,6 +59,9 @@
                 <?php while ($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
 
+                    <!-- 記事の数 ループ文の中で-->
+                    <?php $more_count++; ?>
+
                     <article class="p-article c-more1">
                         <!-- imgArea -->
                         <div class="p-imgArea">
@@ -68,7 +71,7 @@
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('medium') ?>
                                 <?php else : ?>
-                                    <img src=" <?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                    <img src=" <?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="画像がありません">
                                 <?php endif; ?>
                             </a>
                         </div>
@@ -76,6 +79,9 @@
 
                         <div class="p-textArea">
                             <div class="p-textContent">
+                                <div class="c-title u-center">
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                </div>
                                 <div class="p-tag u-flex">
                                     <div class="c-tag u-east u-mr15">
                                         <?php echo get_the_term_list($post->ID, 'area') ?>
@@ -85,7 +91,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="c-title u-center"><?php the_title(); ?></div>
                         </div>
                         <!-- articleList -->
 
@@ -99,9 +104,18 @@
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
-        <div class="l-moreBtn u-right">
-            <button class="c-moreBtn one u-center u-east">more</button>
-        </div>
+
+        <!-- 記事が3以上ならmoreボタンを出す。 -->
+        <?php if ($more_count > 3) : ?>
+
+            <div class="l-moreBtn u-right">
+                <button class="c-moreBtn one u-center u-east">more</button>
+            </div>
+
+        <?php endif; ?>
+        <!-- カウントを初期化する -->
+        <?php $more_count = 0; ?>
+
     </section>
 
     <section class="l-articleList">
@@ -134,6 +148,9 @@
                 <?php while ($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
 
+                    <!-- 記事の数 ループ文の中で-->
+                    <?php $more_count++; ?>
+
 
                     <article class="p-article c-more2">
                         <!-- imgArea -->
@@ -144,7 +161,7 @@
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('medium') ?>
                                 <?php else : ?>
-                                    <img src=" <?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                    <img src=" <?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="画像がありません">
                                 <?php endif; ?>
                             </a>
                         </div>
@@ -152,6 +169,9 @@
 
                         <div class="p-textArea">
                             <div class="p-textContent">
+                                <div class="c-title u-center">
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                </div>
                                 <div class="p-tag u-flex">
                                     <div class="c-tag u-east u-mr15">
                                         <?php echo get_the_term_list($post->ID, 'area') ?>
@@ -161,7 +181,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="c-title u-center"><?php the_title(); ?></div>
                         </div>
                         <!-- articleList -->
 
@@ -177,9 +196,16 @@
             <?php endif; ?>
         </div>
 
-        <div class="l-moreBtn u-right">
-            <button class="c-moreBtn two u-center u-east">more</button>
-        </div>
+        <!-- 記事が3以上ならmoreボタンを出す。 -->
+        <?php if ($more_count > 3) : ?>
+
+            <div class="l-moreBtn u-right">
+                <button class="c-moreBtn two u-center u-east">more</button>
+            </div>
+
+        <?php endif; ?>
+        <!-- カウントを初期化する -->
+        <?php $more_count = 0; ?>
     </section>
 
     <section class="l-articleList">
@@ -210,6 +236,9 @@
                 <?php while ($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
 
+                    <!-- 記事の数 ループ文の中で-->
+                    <?php $more_count++; ?>
+
                     <article class="p-article c-more3">
                         <!-- imgArea -->
                         <div class="p-imgArea">
@@ -219,7 +248,7 @@
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('medium') ?>
                                 <?php else : ?>
-                                    <img src=" <?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                    <img src=" <?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="画像がありません">
                                 <?php endif; ?>
                             </a>
                         </div>
@@ -227,6 +256,9 @@
 
                         <div class="p-textArea">
                             <div class="p-textContent">
+                                <div class="c-title u-center">
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                </div>
                                 <div class="p-tag u-flex">
                                     <div class="c-tag u-east u-mr15">
                                         <?php echo get_the_term_list($post->ID, 'area') ?>
@@ -236,7 +268,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="c-title u-center"><?php the_title(); ?></div>
                         </div>
                         <!-- articleList -->
                         <!-- article -->
@@ -249,9 +280,17 @@
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
-        <div class="l-moreBtn u-right">
-            <button class="c-moreBtn three u-center u-east">more</button>
-        </div>
+
+        <!-- 記事が3以上ならmoreボタンを出す。 -->
+        <?php if ($more_count > 3) : ?>
+
+            <div class="l-moreBtn u-right">
+                <button class="c-moreBtn three u-center u-east">more</button>
+            </div>
+
+        <?php endif; ?>
+        <!-- カウントを初期化する -->
+        <?php $more_count = 0; ?>
     </section>
 
 </main>

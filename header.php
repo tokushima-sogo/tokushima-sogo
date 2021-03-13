@@ -134,15 +134,23 @@
 
 
         <!-- searchArea -->
+        <!-- <section class="l-searchArea">
+            <div class="c-button__seachForm__close">
+                <button id="c-button__searchForm__close" class="close c-button__searchForm__close "><img src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_searchForm_close.png" alt="×" srcset="" width="25px" height="25px" class="c-button__searchForm--close"></button>
+            </div>
+
+                <?php echo do_shortcode('[searchandfilter fields="search"]'); ?>
+
+            <div id="searchfilter">
+                <?php echo do_shortcode('[searchandfilter fields="searcharea,contents"  types="radio,radio" " submit_label="検索" headings="エリアで探す,コンテンツで探す"]'); ?>
+            </div>
+        </section> -->
         <section class="l-searchArea">
             <div class="c-button__seachForm__close">
                 <button id="c-button__searchForm__close" class="close c-button__searchForm__close "><img src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_searchForm_close.png" alt="×" srcset="" width="25px" height="25px" class="c-button__searchForm--close"></button>
             </div>
-            <!-- <div id="searchform">
-                <?php echo do_shortcode('[searchandfilter fields="search"]'); ?>
-            </div> -->
             <div id="searchfilter">
-                <?php echo do_shortcode('[searchandfilter fields="searcharea,contents"  types="radio,radio" " submit_label="検索" headings="エリアで探す,コンテンツで探す"]'); ?>
+                <?php echo do_shortcode('[searchandfilter fields="searcharea,contents"  types="radio,radio" " submit_label="この条件で絞り込む" headings="エリアを選択,コンテンツを選択"]'); ?>
             </div>
         </section>
         <!-- /searchArea -->

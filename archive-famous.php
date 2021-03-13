@@ -51,6 +51,10 @@
             <?php if ($the_query->have_posts()) : ?>
                 <?php while ($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
+
+                    <!-- 記事の数 ループ文の中で-->
+                    <?php $more_count++; ?>
+
                     <!-- article -->
                     <article class="p-article c-more1">
                         <!-- imgArea -->
@@ -61,7 +65,7 @@
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('medium') ?>
                                 <?php else : ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="画像がありません">
                                 <?php endif; ?>
                             </a>
                         </div>
@@ -69,6 +73,9 @@
                         <!-- textArea -->
                         <div class="p-textArea">
                             <div class="p-textContent">
+                                <div class="c-title u-center">
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                </div>
                                 <ul class="p-singleTagList__ul u-flex">
                                     <?php
                                     echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li', '</li><li class="c-singleTagList__li>', '</li>');
@@ -76,7 +83,6 @@
                                 </ul>
                                 <!-- /singleTagList -->
                             </div>
-                            <div class="c-title u-center"><?php the_title(); ?></div>
                         </div>
                         <!-- /textArea -->
                     </article>
@@ -84,11 +90,19 @@
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
-        <!-- moreBtn -->
-        <div class="l-moreBtn u-right">
-            <button class="c-moreBtn one u-center">more</button>
-        </div>
-        <!-- /moreBtn -->
+
+        <!-- 記事が3以上ならmoreボタンを出す。 -->
+        <?php if ($more_count > 3) : ?>
+
+            <!-- moreBtn -->
+            <div class="l-moreBtn u-right">
+                <button class="c-moreBtn one u-center">more</button>
+            </div>
+            <!-- /moreBtn -->
+
+        <?php endif; ?>
+        <!-- カウントを初期化する -->
+        <?php $more_count = 0; ?>
     </section>
     <!-- /1 -->
 
@@ -119,6 +133,10 @@
             <?php if ($the_query->have_posts()) : ?>
                 <?php while ($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
+
+                    <!-- 記事の数 ループ文の中で-->
+                    <?php $more_count++; ?>
+
                     <!-- article -->
                     <article class="p-article c-more3">
                         <!-- imgArea -->
@@ -129,7 +147,7 @@
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('medium') ?>
                                 <?php else : ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="画像がありません">
                                 <?php endif; ?>
                             </a>
                         </div>
@@ -137,6 +155,9 @@
                         <!-- textArea -->
                         <div class="p-textArea">
                             <div class="p-textContent">
+                                <div class="c-title u-center">
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                </div>
                                 <ul class="p-singleTagList__ul u-flex">
                                     <?php
                                     echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li', '</li><li class="c-singleTagList__li>', '</li>');
@@ -144,7 +165,6 @@
                                 </ul>
                                 <!-- /singleTagList -->
                             </div>
-                            <div class="c-title u-center"><?php the_title(); ?></div>
                         </div>
                         <!-- /textArea -->
                     </article>
@@ -155,11 +175,18 @@
         </div>
         <!-- /articleList -->
 
-        <!-- moreBtn -->
-        <div class="l-moreBtn u-right">
-            <button class="c-moreBtn three u-center">more</button>
-        </div>
-        <!-- /moreBtn -->​
+        <!-- 記事が3以上ならmoreボタンを出す。 -->
+        <?php if ($more_count > 3) : ?>
+
+            <!-- moreBtn -->
+            <div class="l-moreBtn u-right">
+                <button class="c-moreBtn three u-center">more</button>
+            </div>
+            <!-- /moreBtn -->
+
+        <?php endif; ?>
+        <!-- カウントを初期化する -->
+        <?php $more_count = 0; ?>​
     </section>
 
 
@@ -191,7 +218,8 @@
                 <?php while ($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
 
-
+                    <!-- 記事の数 ループ文の中で-->
+                    <?php $more_count++; ?>
 
                     <!-- article -->
                     <article class="p-article c-more3">
@@ -203,7 +231,7 @@
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('medium') ?>
                                 <?php else : ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="画像がありません">
                                 <?php endif; ?>
                             </a>
                         </div>
@@ -211,6 +239,9 @@
                         <!-- textArea -->
                         <div class="p-textArea">
                             <div class="p-textContent">
+                                <div class="c-title u-center">
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                </div>
                                 <ul class="p-singleTagList__ul u-flex">
                                     <?php
                                     echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li', '</li><li class="c-singleTagList__li>', '</li>');
@@ -218,7 +249,6 @@
                                 </ul>
                                 <!-- /singleTagList -->
                             </div>
-                            <div class="c-title u-center"><?php the_title(); ?></div>
                         </div>
                         <!-- /textArea -->
                     </article>
@@ -229,11 +259,19 @@
             <?php endif; ?>
         </div>
         <!-- /articleList -->
-        <!-- moreBtn -->
-        <div class="l-moreBtn u-right">
-            <button class="c-moreBtn three u-center">more</button>
-        </div>
-        <!-- /moreBtn -->
+
+        <!-- 記事が3以上ならmoreボタンを出す。 -->
+        <?php if ($more_count > 3) : ?>
+
+            <!-- moreBtn -->
+            <div class="l-moreBtn u-right">
+                <button class="c-moreBtn three u-center">more</button>
+            </div>
+            <!-- /moreBtn -->
+
+        <?php endif; ?>
+        <!-- カウントを初期化する -->
+        <?php $more_count = 0; ?>
         ​
     </section>
 

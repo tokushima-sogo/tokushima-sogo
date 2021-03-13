@@ -135,7 +135,7 @@
                                 <!-- カスタムフィールドイベントURL -->
                                 <td class="c-singleTable__td">
                                     <?php if ($url) : ?>
-                                        <a href="<?php echo $url; ?>"><?php echo $url; ?></a>
+                                        <a href="<?php echo $url; ?>">ホームページはこちら</a>
                                     <?php else : ?>
                                         <p>&nbsp;</p>
                                     <?php endif; ?>

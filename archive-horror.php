@@ -65,6 +65,9 @@
                 <?php while ($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
 
+                    <!-- 記事の数 ループ文の中で-->
+                    <?php $more_count++; ?>
+
                     <!-- article -->
                     <article class="p-article c-more1">
 
@@ -76,7 +79,7 @@
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('medium') ?>
                                 <?php else : ?>
-                                    <img src=" <?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                    <img src=" <?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="画像がありません">
                                 <?php endif; ?>
                             </a>
                         </div>
@@ -87,12 +90,9 @@
                             <div class="p-textContent">
                                 <div class="c-title u-center u-fontHorror"><?php the_title(); ?></div>
                                 <div class="c-date u-center u-fontHorror">公開日：<?php the_time('Y-m-d'); ?></div>
-
-
                                 <div class="p-tag u-flex">
-
-                                    <div class="c-tag u-bgHorror"> <?php echo get_the_term_list($post->ID, 'taxotag');
-                                                                    ?></div>
+                                    <div class="c-tag u-bgHorror"><?php echo get_the_term_list($post->ID, 'taxotag'); ?>
+                                    </div>
                                 </div>
                             </div>
 
@@ -104,11 +104,18 @@
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
-        <!-- moreBtn -->
-        <div class="l-moreBtn u-right">
-            <button class="c-moreBtn one u-center u-horrorRed u-moreHover">more</button>
-        </div>
-        <!-- /moreBtn -->​
+
+        <!-- 記事が3以上ならmoreボタンを出す。 -->
+        <?php if ($more_count > 3) : ?>
+            <!-- moreBtn -->
+            <div class="l-moreBtn u-right">
+                <button class="c-moreBtn one u-center u-horrorRed u-moreHover">more</button>
+            </div>
+            <!-- /moreBtn -->
+
+        <?php endif; ?>
+        <!-- カウントを初期化する -->
+        <?php $more_count = 0; ?>​
     </section>
 
 
@@ -142,6 +149,8 @@
                 <?php while ($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
 
+                    <!-- 記事の数 ループ文の中で-->
+                    <?php $more_count++; ?>
 
                     <!-- article -->
                     <article class="p-article c-more2">
@@ -154,7 +163,7 @@
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('medium') ?>
                                 <?php else : ?>
-                                    <img src=" <?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                    <img src=" <?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="画像がありません">
                                 <?php endif; ?>
                             </a>
                         </div>
@@ -166,30 +175,31 @@
                                 <div class="c-title u-center u-fontHorror"><?php the_title(); ?></div>
                                 <div class="c-date u-center u-fontHorror">公開日：<?php the_time('Y-m-d'); ?></div>
 
-
                                 <div class="p-tag u-flex">
-                                    <!-- <div class="c-tag u-bgHorror u-mr15"><?php echo $term_slug; ?></div> -->
-                                    <!-- <div class="c-tag u-bgHorror u-mr15"><?php echo esc_html(get_post_type_object(get_post_type())->label); ?></div> -->
-                                    <div class="c-tag u-bgHorror"> <?php echo get_the_term_list($post->ID, 'taxotag');
-                                                                    ?></div>
+                                    <div class="c-tag u-bgHorror"> <?php echo get_the_term_list($post->ID, 'taxotag'); ?>
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
                         <!-- /textArea -->
                     </article>
-
-
-
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
-        <!-- moreBtn -->
-        <div class="l-moreBtn u-right">
-            <button class="c-moreBtn two u-center u-horrorRed u-moreHover">more</button>
-        </div>
-        <!-- /moreBtn -->​
+
+        <!-- 記事が3以上ならmoreボタンを出す。 -->
+        <?php if ($more_count > 3) : ?>
+
+            <!-- moreBtn -->
+            <div class="l-moreBtn u-right">
+                <button class="c-moreBtn two u-center u-horrorRed u-moreHover">more</button>
+            </div>
+            <!-- /moreBtn -->
+
+        <?php endif; ?>
+        <!-- カウントを初期化する -->
+        <?php $more_count = 0; ?>​
     </section>
 
 </main>

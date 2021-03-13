@@ -176,7 +176,7 @@
                                     <td class="c-singleTable__td">
                                         <!-- カスタムフィールドURL -->
                                         <?php if ($url) : ?>
-                                            <a href="<?php echo $url; ?>"><?php echo $url; ?></a>
+                                            <a href="<?php echo $url; ?>">ホームページはこちら</a>
                                         <?php else : ?>
                                             <p>&nbsp;</p>
                                         <?php endif; ?>
@@ -206,15 +206,26 @@
                                     <td class="c-singleTable__td">
                                         <?php if ($remarks1) : ?>
                                             <?php echo $remarks1; ?>
-                                        <?php elseif ($remarks2) : ?>
+                                        <?php endif; ?>
+                                        <?php if ($remarks2) : ?>
                                             <?php echo $remarks2; ?>
-                                        <?php elseif ($remarks3) : ?>
+                                        <?php endif; ?>
+                                        <?php if ($remarks3) : ?>
                                             <?php echo $remarks3; ?>
-                                        <?php elseif ($remarks4) : ?>
+                                        <?php endif; ?>
+                                        <?php if ($remarks4) : ?>
                                             <?php echo $remarks4; ?>
-                                        <?php elseif ($remarks5) : ?>
+                                        <?php endif; ?>
+                                        <?php if ($remarks5) : ?>
                                             <?php echo $remarks5; ?>
-                                        <?php else : ?>
+                                        <?php endif; ?>
+                                        <?php if (
+                                            $remarks1 == false &&
+                                            $remarks2 == false &&
+                                            $remarks3 == false &&
+                                            $remarks4 == false &&
+                                            $remarks5 == false
+                                        ) : ?>
                                             <p>&nbsp;</p>
                                         <?php endif; ?>
                                     </td>
@@ -235,7 +246,6 @@
     <!-- 関連記事の出力 -->
     <!-- articleList -->
     <section class="l-articleList">
-        <!-- <h3 class="c-subHeading u-center"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/tl_single_common_related.png" alt="関連記事"></h3> -->
         <div class="u-center">
             <h3 class="c-subHeading">関連記事</h3>
         </div>
@@ -277,7 +287,7 @@
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('medium') ?>
                                 <?php else : ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="画像がありません">
                                 <?php endif; ?>
                             </a>
                             <!-- </a> -->
@@ -286,7 +296,9 @@
                         <!-- textArea -->
                         <div class="p-textArea">
                             <div class="p-textContent">
-                                <div class="c-title u-center"><?php the_title(); ?></div>
+                                <div class="c-title u-center">
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                </div>
                                 <div class="p-tag u-flex">
                                     <div class="c-tag u-west u-mr15">
                                         <?php

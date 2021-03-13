@@ -1,83 +1,40 @@
-.l-searchArea {
-  display: none;
-  position: fixed;
-  z-index: 10;
-  top: 70px;
-}
-/* @media screen and (min-width: 1025px) {
-    .l-searchArea {
-        top: 100px;
-    }
-} */
 .searchandfilter {
   text-align: center;
 }
-
 .searchandfilter li {
   list-style: none;
   display: block;
   margin-bottom: 1em;
 }
-
 .searchandfilter h4 {
   font-size: 18px;
 }
-
 .cat-item {
   font-size: 14px;
 }
-
 .searchfilter > form > div > ul {
   width: 70%;
 }
-
-/* .searchfilter > form > div > ul > li {
-    width: 100%;
-} */
-
-/* .searchfilter > form > div > ul > li > ul > li {
-    width: 50vw;
-}*/
-
-/* #c-button__searchForm__close {
-    background-color: transparent;
-    border: none;
-} */
-
 .c-button__searchForm__close {
   background-color: transparent;
   border: none;
   display: none;
 }
-
-/* #searchform > form > div > ul > li:nth-of-type(2) {
-    display: none;
-} */
-
-/* #searchfilter > form > div > ul > li:nth-of-type(1) > ul > li:nth-of-type(1) {
-    display: none;
+/* エリア検索 一覧 */
+form > div > ul > li:nth-of-type(1) > ul > li:nth-of-type(1) {
+  font-size: 13px;
+  margin-bottom: 12px;
 }
-
-#searchfilter > form > div > ul > li:nth-of-type(1) > ul > li:nth-of-type(2) {
-    display: none;
+/* コンテンツ一覧を隠す */
+form > div > ul > li:nth-of-type(2) > ul > li:nth-of-type(1) {
+  display: none;
 }
-
-#searchfilter > form > div > ul > li:nth-of-type(1) > ul > li:nth-of-type(3) {
-    display: none;
+/* 検索ボタン */
+form > div > ul > li:nth-of-type(3) > input:nth-of-type(2) {
+  padding: 5px 20px;
+  color: white;
+  background-color: #252f4d;
+  border: 0;
+  border-radius: 20px;
+  cursor: pointer;
 }
-
-#searchfilter > form > div > ul > li:nth-of-type(1) > ul > li:nth-of-type(7) {
-    display: none;
-}
-
-#searchfilter > form > div > ul > li:nth-of-type(1) > ul > li:nth-of-type(8) {
-    display: none;
-}
-
-#searchfilter > form > div > ul > li:nth-of-type(1) > ul > li:nth-of-type(9) {
-    display: none;
-}
-
-#searchfilter > form > div > ul > li:nth-of-type(1) > ul > li:nth-of-type(10) {
-    display: none;
-} */

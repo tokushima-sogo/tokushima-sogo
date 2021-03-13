@@ -23,7 +23,7 @@
                                     <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail('medium') ?>
                                     <?php else : ?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="画像がありません">
                                     <?php endif; ?>
                                 </a>
                             </div>
@@ -31,6 +31,9 @@
                             <!-- textArea -->
                             <div class="p-textArea">
                                 <div class="p-textContent">
+                                    <div class="c-title u-center">
+                                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                    </div>
                                     <div class="p-tag u-flex">
                                         <div class="c-tag u-west u-mr15">
                                             <?php
@@ -44,7 +47,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="c-title u-center"><?php the_title(); ?></div>
                             </div>
                             <!-- /textArea -->
                             <!-- Myスポット -->

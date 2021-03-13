@@ -6,9 +6,9 @@
 
     <!-- リフト部分 -->
     <div class="p-main__liftGroup__parts">
-        <div><img class="c-main__liftLineImg u-bgWhite" src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_liftLine03.png" alt=""></div>
+        <div><img class="c-main__liftLineImg u-bgWhite" src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_liftLine03.png" alt="リフトのロープ"></div>
         <div id="elevator" class="c-main__liftBodyImg">
-            <img class="c-ropeway" src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_ropeway.png" alt="">
+            <img class="c-ropeway" src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_ropeway.png" alt="ロープウェイ">
         </div>
     </div>
     <!-- リフト部分 -->
@@ -20,7 +20,7 @@
         <div class="p-elevatorArea u-bg3ea5c8">
             <img class="c-buildingTablet" src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_front_tablet.jpg" alt="建物">
             <img class="c-buildingPc u-m0A" src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_front_web.png" alt="建物">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_catchCopy02.png" class="c-catchCopy" alt="＼定員無制限／エレベーターに乗って見つけよう！あ・わくわくする徳島">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_catchCopy02.png" class="c-catchCopy" alt="ロープウェイに乗って見つけよう！あ・わくわくする徳島">
 
             <!-- 6F -->
             <!-- <section id="js_6f" class="p-departmentFloor u-m0A">
