@@ -30,7 +30,7 @@
                 $picture1   = get_field('event_pic1');
                 $picture2   = get_field('event_pic2');
                 $held       = get_field('event_held');
-                $place      = get_field('event_shop');
+                $place      = get_field('event_place');
                 $owner      = get_field('event_owner');
                 $url        = get_field('event_url');
                 $facebook   = get_field('event_facebook');
