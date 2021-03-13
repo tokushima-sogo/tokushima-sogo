@@ -61,7 +61,7 @@
                             </a>
                         </div>
                         <div class="p-specialLink ">
-                            <a href="<?php echo home_url('special') ?>" class="c-specialLink">
+                            <a href="<?php echo home_url('horror') ?>" class="c-specialLink">
                                 <h3 class="u-specialName">都市伝説</h3>
                                 <img class="c-specialEvent" src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_special.png" alt="特集">
                             </a>
