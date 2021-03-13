@@ -31,8 +31,7 @@
             <h3 class="c-subHeading">お菓子</h3>
         </div>
         <!-- articleList -->
-        <div class="p-articleList u-grid">​
-
+        <div class="p-articleList u-grid">
             <!-- お菓子の記事を出力するループ -->
             <?php
             $args = array(
@@ -85,13 +84,11 @@
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
-
         <!-- moreBtn -->
         <div class="l-moreBtn u-right">
             <button class="c-moreBtn one u-center">more</button>
         </div>
         <!-- /moreBtn -->
-
     </section>
     <!-- /1 -->
 
@@ -122,7 +119,6 @@
             <?php if ($the_query->have_posts()) : ?>
                 <?php while ($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
-
                     <!-- article -->
                     <article class="p-article c-more3">
                         <!-- imgArea -->
@@ -153,7 +149,6 @@
                         <!-- /textArea -->
                     </article>
                     <!-- /article -->
-
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
@@ -176,7 +171,6 @@
 
         <!-- articleList -->
         <div class="p-articleList u-grid">
-            ​
             <!-- お酒の記事を出力するループ -->
             <?php
             $args = array(

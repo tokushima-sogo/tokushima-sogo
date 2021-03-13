@@ -4,7 +4,10 @@
     <div class="l-page">
         <!-- <h2 class="c-heading u-center">Myマップ</h2> -->
         <section class="p-mapchoice l-articleList">
-            <h2 class="c-subHeading u-center l-page">Myマップ</h2>
+            <div class="u-center">
+                <h2 class="c-subHeading">Myマップ</h2>
+            </div>
+            <!-- <h2 class="c-subHeading u-center l-page"></h2> -->
             <!-- articleList -->
             <div class="p-articleList u-grid">
 
