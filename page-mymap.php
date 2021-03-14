@@ -77,8 +77,8 @@
                 </div>
                 <div id="map" class="map_disappear"></div>
             </div>
-            <div class="u-mapBtn--center print_none">
-                <button id="mapBtn" class="mapBtn u-mapBtn--bgcOrange">マップ作成
+            <div class="u-mapBtn--center ">
+                <button id="printBtn" class="mapBtn u-mapBtn--bgcOrange print_none">マップ印刷
             </div>
         </section>
     </div>
