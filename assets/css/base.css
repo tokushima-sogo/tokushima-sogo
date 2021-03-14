@@ -57,13 +57,37 @@ body {
   }
 }
 
+.l-footer {
+  position: relative;
+  padding: 2% 0;
+  z-index: 2;
+  background-color: rgba(37, 47, 77);
+  background-image: url(../images/bg_footer_nami_mb.png);
+  background-position: bottom 60px left;
+  background-size: cover;
+  background-repeat: repeat-x;
+}
+
+@media (min-width: 1000px) {
+  .l-footer {
+    position: relative;
+    padding: 2% 0;
+    z-index: 2;
+    background-color: rgba(37, 47, 77);
+    background-image: url(../images/bg_footer_nami_web.png);
+    background-position: bottom 60px left;
+    background-size: cover;
+    background-repeat: repeat-x;
+  }
+}
+
 /* .l-footer {
   position: relative;
   padding: 40px 0;
   z-index: 2;
 } */
 
-.l-footer {
+/* .l-footer {
   position: relative;
   padding: 40px 0;
   z-index: 2;
@@ -71,7 +95,7 @@ body {
   background-image: url(../images/フッター背景.png);
   background-position: bottom;
   background-repeat: repeat-x;
-}
+} */
 
 /* .l-searchArea {
   width: 84vw;
@@ -94,7 +118,7 @@ body {
   }
 } */
 
-.l-searchArea {
+/* .l-searchArea {
   width: 84vw;
   right: 0;
   padding-top: 10px;
@@ -113,49 +137,28 @@ body {
     padding-top: 10px;
     margin: 100px 5vw 0 0;
   }
-}
+} */
 
-/* .l-searchArea {
+.l-searchArea {
   width: 84vw;
   right: 0;
-  padding-top: 10px;
   position: absolute;
   margin: 0 8vw 0 8vw;
   background-color: #ffffff;
+  display: none;
+  position: fixed;
+  z-index: 10;
+  margin-top: 0;
 }
-@media screen and (min-width: 1025px) {
+
+@media (min-width: 1025px) {
   .l-searchArea {
     width: 45vw;
     right: 0;
-    padding-top: 10px;
-    position: absolute;
-    margin: 0 5vw 0 0;
+    /* top: 100px; */
+    margin: 30px 5vw 0 0;
   }
-} */
-
-/* .l-searchArea {
-    width: 84vw;
-    right: 0;
-    padding-top: 70px;
-    position: absolute;
-    margin: 0 8vw 0 8vw;
-    background-color: #ffffff;
 }
-
-@media screen and (min-width: 1025px) {
-    .l-searchArea {
-    width: 45vw;
-    right: 0;
-    padding-top: 70px;
-    position: absolute;
-    margin: 0 5vw 0 0;
-    }
-} */
-
-/* ラジオボタン */
-/* input[type="radio"] {
-  display: none;
-} */
 
 /* エリアで探す */
 .l-radio__area {
@@ -432,8 +435,14 @@ body {
 -------------------------------- */
 
 /* footer__inner */
+/* .p-footer__inner {
+  flex-direction: column;
+} */
+
 .p-footer__inner {
   flex-direction: column;
+  background-color: rgba(37, 47, 77, 0.8);
+  padding: 2% 10%;
 }
 /* デバイス幅1000px以上で横並び */
 @media (min-width: 1000px) {
@@ -441,7 +450,7 @@ body {
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
-    padding: 20px;
+    /* padding: 20px; */
   }
 }
 

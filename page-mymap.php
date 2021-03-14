@@ -3,7 +3,7 @@
 <main class="l-main">
     <div class="l-page">
         <!-- <h2 class="c-heading u-center">Myマップ</h2> -->
-        <section class="p-mapchoice l-articleList">
+        <section class="p-mapchoice l-articleList print_none">
             <div class="u-center">
                 <h2 class="c-subHeading">MYマップ</h2>
             </div>
@@ -66,7 +66,7 @@
         </section>
         <!-- googlemap表示 -->
         <section class="l-myMap">
-            <div class="u-mapBtn--center">
+            <div class="u-mapBtn--center print_none">
                 <button id="mapBtn" class="mapBtn u-mapBtn--bgcOrange">マップ作成
             </div>
             </button><br>
@@ -77,10 +77,21 @@
                 </div>
                 <div id="map" class="map_disappear"></div>
             </div>
+            <div class="u-mapBtn--center print_none">
+                <button id="mapBtn" class="mapBtn u-mapBtn--bgcOrange">マップ作成
+            </div>
         </section>
     </div>
     <!-- /googlemap表示 -->
 </main>
+
+<script>
+    const PRINT_BUTTON = document.getElementById("printBtn");
+    PRINT_BUTTON.addEventListener("click", function() {
+        print();
+    })
+</script>
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNNbWvrL46SW-8K-D0w6Haff4Vbcc4rRQ">
 </script>
 <script>

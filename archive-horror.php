@@ -6,9 +6,11 @@
     <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner u-panHorror">
-            <?php if (function_exists('bcn_display')) {
-                bcn_display();
-            } ?>
+            <!-- breadcrumbループstart -->
+            <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
+            <i class="fas fa-angle-right"></i>
+            <span>都市伝説</span>
+            <!-- breadcrumbループend -->
         </div>
     </div>
 
@@ -88,7 +90,8 @@
                         <!-- textArea -->
                         <div class="p-textArea u-horrorRed">
                             <div class="p-textContent">
-                                <div class="c-title u-center u-fontHorror"><?php the_title(); ?></div>
+                                <a href="<?php the_permalink(); ?>" class="c-title u-center u-fontHorror"><?php the_title(); ?></a>
+                                <!-- <div class="c-title u-center u-fontHorror"><?php the_title(); ?></div> -->
                                 <div class="c-date u-center u-fontHorror">公開日：<?php the_time('Y-m-d'); ?></div>
                                 <div class="p-tag u-flex">
                                     <div class="c-tag u-bgHorror"><?php echo get_the_term_list($post->ID, 'taxotag'); ?>
@@ -172,7 +175,8 @@
                         <!-- textArea -->
                         <div class="p-textArea u-horrorRed">
                             <div class="p-textContent">
-                                <div class="c-title u-center u-fontHorror"><?php the_title(); ?></div>
+                                <!-- <div class="c-title u-center u-fontHorror"><?php the_title(); ?></div> -->
+                                <a href="<?php the_permalink(); ?>" class="c-title u-center u-fontHorror"><?php the_title(); ?></a>
                                 <div class="c-date u-center u-fontHorror">公開日：<?php the_time('Y-m-d'); ?></div>
 
                                 <div class="p-tag u-flex">

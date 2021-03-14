@@ -15,7 +15,6 @@
     </div>
     <!-- /breadCrumb -->
 
-
     <!-- description -->
     <section class="l-description">
         <h2 class="c-heroImg"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_archive_event_web.jpg" alt="徳島のイベント"></h2>

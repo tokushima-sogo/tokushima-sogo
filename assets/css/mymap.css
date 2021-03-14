@@ -150,3 +150,9 @@ button.mapBtn {
   /* visibility:hidden; */
   display: none;
 }
+
+@media print {
+  .print_none {
+    display: none;
+  }
+}

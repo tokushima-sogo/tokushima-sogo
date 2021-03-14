@@ -4,9 +4,15 @@
     <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner u-panHorror">
-            <?php if (function_exists('bcn_display')) {
-                bcn_display();
-            } ?>
+            <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
+            <i class="fas fa-angle-right"></i>
+            <a href="<?php echo home_url('horror'); ?>">
+                <span>
+                    都市伝説
+                </span>
+            </a>
+            <i class="fas fa-angle-right"></i>
+            <span><?php echo get_post()->post_title ?></span>
         </div>
     </div>
     <!-- /breadCrumb -->
@@ -19,7 +25,9 @@
             $picture = get_field('horror_pic');
             $address = get_field('horror_address');
             ?>
-            <?php the_content(); ?>
+            <div class="l-wrapper">
+                <?php the_content(); ?>
+            </div>
         <?php endwhile; ?>
     <?php endif; ?>
 
@@ -73,7 +81,8 @@
                         <!-- textArea -->
                         <div class="p-textArea u-horrorRed">
                             <div class="p-textContent">
-                                <div class="c-title u-center u-fontHorror"><?php the_title(); ?></div>
+                                <!-- <div class="c-title u-center u-fontHorror"><?php the_title(); ?></div> -->
+                                <a href="<?php the_permalink(); ?>" class="c-title u-center u-fontHorror"><?php the_title(); ?></a>
                                 <div class="c-date u-center u-fontHorror">公開日：<?php the_time('Y-m-d'); ?>
                                 </div>
                                 <div class="p-tag u-flex">
