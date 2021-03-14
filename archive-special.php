@@ -1,19 +1,16 @@
 <?php get_header(); ?>
-<!-- <link href="<?php echo get_template_directory_uri(); ?>/assets/css/archive-special.css " rel="stylesheet"> -->
 
-<!-- breadCrumb-->
 <main class="l-main">
-    <!-- breadCrumb -->
+
+    <!-- breadCrumb-->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
-            <!-- breadcrumbループstart -->
             <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
             <i class="fas fa-angle-right"></i>
             <span>特集一覧</span>
-            <!-- breadcrumbループend -->
         </div>
     </div>
-    <!-- /breadCrumb -->
+    <!-- breadCrumb -->
 
     <!-- description -->
     <section class="l-description">
@@ -37,7 +34,7 @@
                 <!-- specialArticle -->
                 <article class="p-specialArticle">
                     <a href="<?php the_permalink(); ?>">
-                        <!-- サムネイルの表示 -->
+                        <!-- thumbnail -->
                         <div class="c-specialBanner">
                             <?php if (has_post_thumbnail()) : ?>
                                 <?php the_post_thumbnail('medium') ?>
@@ -50,9 +47,8 @@
             <?php endwhile; ?>
         <?php endif; ?>
     </section>
-    <!-- /specialArticle -->
+    <!-- specialArticle -->
 
 </main>
-
 
 <?php get_footer(); ?>

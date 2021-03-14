@@ -6,14 +6,12 @@
     <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
-            <!-- breadcrumbループstart -->
             <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
             <i class="fas fa-angle-right"></i>
             <span>徳島のイベント</span>
-            <!-- breadcrumbループend -->
         </div>
     </div>
-    <!-- /breadCrumb -->
+    <!-- breadCrumb -->
 
     <!-- description -->
     <section class="l-description">
@@ -37,8 +35,8 @@
             <!-- 展示・体験の記事を出力するループ -->
             <?php
             $args = array(
-                'post_type'         => 'event',     // カスタム投稿タイプ名
-                'orderby'           => 'rand',  // 更新日で表示
+                'post_type'         => 'event',    // カスタム投稿タイプ名
+                'orderby'           => 'rand',     // 更新日で表示
                 'tax_query'         => array(
                     'relation'      => 'AND',
                     array(
@@ -54,7 +52,7 @@
                 <?php while ($the_query->have_posts()) : ?>
                     <?php $the_query->the_post(); ?>
 
-                    <!-- 記事の数 ループ文の中で-->
+                    <!-- 記事の数ループ文の中で-->
                     <?php $more_count++; ?>
 
                     <!-- article -->
@@ -71,7 +69,8 @@
                                 <?php endif; ?>
                             </a>
                         </div>
-                        <!-- /imgArea -->
+                        <!-- imgArea -->
+
                         <!-- textArea -->
                         <div class="p-textArea">
                             <div class="p-textContent">
@@ -83,16 +82,16 @@
                                     echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li', '</li><li class="c-singleTagList__li>', '</li>');
                                     ?>
                                 </ul>
-                                <!-- /singleTagList -->
                             </div>
                         </div>
-                        <!-- /textArea -->
+                        <!-- textArea -->
                     </article>
+                    <!-- article -->
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
-        <!-- /articleList -->
+        <!-- articleList -->
 
         <!-- 記事が3以上ならmoreボタンを出す。 -->
         <?php if ($more_count > 3) : ?>
@@ -101,14 +100,13 @@
             <div class="l-moreBtn u-right">
                 <button class="c-btn c-moreBtn one u-center">more</button>
             </div>
-            <!-- /moreBtn -->
+            <!-- moreBtn -->
 
         <?php endif; ?>
         <!-- カウントを初期化する -->
         <?php $more_count = 0; ?>
-
     </section>
-    <!-- /1 -->
+    <!-- 1 -->
 
     <!-- 2 -->
     <section class="l-articleList">
@@ -122,7 +120,7 @@
             <?php
             $args = array(
                 'post_type'         => 'event',     // カスタム投稿タイプ名
-                'orderby'           => 'rand',  // 更新日で表示
+                'orderby'           => 'rand',      // 更新日で表示
                 'tax_query'         => array(
                     'relation'      => 'AND',
                     array(
@@ -146,8 +144,8 @@
                         <!-- imgArea -->
                         <div class="p-imgArea">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/frame_archive_common_thumbFrame.png" class="c-frame" alt="額縁">
-                            <!-- thumbnail -->
                             <a href="<?php the_permalink(); ?>" class="c-thumbnail">
+                                <!-- thumbnail -->
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('medium') ?>
                                 <?php else : ?>
@@ -155,7 +153,7 @@
                                 <?php endif; ?>
                             </a>
                         </div>
-                        <!-- /imgArea -->
+                        <!-- imgArea -->
 
                         <!-- textArea -->
                         <div class="p-textArea">
@@ -168,17 +166,16 @@
                                     echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li', '</li><li class="c-singleTagList__li>', '</li>');
                                     ?>
                                 </ul>
-                                <!-- /singleTagList -->
                             </div>
                         </div>
-                        <!-- /textArea -->
+                        <!-- textArea -->
                     </article>
-                    <!-- /article -->
+                    <!-- article -->
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
-        <!-- /articleList -->
+        <!-- articleList -->
 
         <!-- 記事が3以上ならmoreボタンを出す。 -->
         <?php if ($more_count > 3) : ?>
@@ -187,14 +184,13 @@
             <div class="l-moreBtn u-right">
                 <button class="c-btn c-moreBtn two u-center">more</button>
             </div>
-            <!-- /moreBtn -->
+            <!-- moreBtn -->
 
         <?php endif; ?>
         <!-- カウントを初期化する -->
         <?php $more_count = 0; ?>
-
     </section>
-    <!-- /2 -->
+    <!-- 2 -->
 
     <!-- 3 -->
     <section class="l-articleList">
@@ -208,7 +204,7 @@
             <?php
             $args = array(
                 'post_type'         => 'event',     // カスタム投稿タイプ名
-                'orderby'           => 'rand',  // 更新日で表示
+                'orderby'           => 'rand',      // 更新日で表示
                 'tax_query'         => array(
                     'relation'      => 'AND',
                     array(
@@ -232,8 +228,8 @@
                         <!-- imgArea -->
                         <div class="p-imgArea">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/frame_archive_common_thumbFrame.png" class="c-frame" alt="額縁">
-                            <!-- thumbnail -->
                             <a href="<?php the_permalink(); ?>" class="c-thumbnail">
+                                <!-- thumbnail -->
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('medium') ?>
                                 <?php else : ?>
@@ -241,7 +237,8 @@
                                 <?php endif; ?>
                             </a>
                         </div>
-                        <!-- /imgArea -->
+                        <!-- imgArea -->
+
                         <!-- textArea -->
                         <div class="p-textArea">
                             <div class="p-textContent">
@@ -253,17 +250,16 @@
                                     echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li', '</li><li class="c-singleTagList__li>', '</li>');
                                     ?>
                                 </ul>
-                                <!-- /singleTagList -->
                             </div>
                         </div>
-                        <!-- /textArea -->
+                        <!-- textArea -->
                     </article>
-                    <!-- /article -->
+                    <!-- article -->
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
-        <!-- /articleList -->
+        <!-- articleList -->
 
         <!-- 記事が3以上ならmoreボタンを出す。 -->
         <?php if ($more_count > 3) : ?>
@@ -272,13 +268,13 @@
             <div class="l-moreBtn u-right">
                 <button class="c-btn c-moreBtn three u-center">more</button>
             </div>
-            <!-- /moreBtn -->
+            <!-- moreBtn -->
 
         <?php endif; ?>
         <!-- カウントを初期化する -->
         <?php $more_count = 0; ?>
     </section>
-    <!-- /3 -->
+    <!-- 3 -->
 
 </main>
 <?php get_footer(); ?>

@@ -51,13 +51,6 @@
   }
 }
 
-/* @media (min-width: 768px) {
-  .l-singleTable {
-    width: 60%;
-  }
-} */
-/* 変更ここまで */
-
 /* =============
     Project
 ================ */
@@ -307,7 +300,6 @@ a.wp1_like_like span {
   color: #333333;
 }
 
-/* 変更ここから */
 /* tableここから */
 .c-singleTable__th,
 .c-singleTable__td {
@@ -346,4 +338,3 @@ a.wp1_like_like span {
   font-size: 2rem;
 }
 /* tableここまで */
-/* 変更ここまで */

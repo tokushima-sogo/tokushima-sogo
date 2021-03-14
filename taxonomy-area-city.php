@@ -6,14 +6,12 @@
     <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
-            <!-- breadcrumbループstart -->
             <a href="<?php echo home_url('/'); ?>"><span>トップ</span></a>
             <i class="fas fa-angle-right"></i>
             <span>徳島市内</span>
-            <!-- breadcrumbループend -->
         </div>
     </div>
-    <!-- /breadCrumb -->
+    <!-- breadCrumb -->
 
     <section class="l-description">
         <div class="c-heroImg"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_archive_city_web.jpg" alt="徳島市内"></div>
@@ -56,7 +54,6 @@
                 ),
             );
             ?>
-            <!-- ループ開始 -->
             <?php $the_query = new WP_Query($args); ?>
             <?php if ($the_query->have_posts()) : ?>
                 <?php while ($the_query->have_posts()) : ?>
@@ -78,7 +75,6 @@
                                 <?php endif; ?>
                             </a>
                         </div>
-                        <!-- /imgArea -->
 
                         <div class="p-textArea">
                             <div class="p-textContent">
@@ -95,10 +91,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- articleList -->
 
                         <!-- article -->
-
                         <div class="c-title u-center">
                             <!-- コンテンツの抜粋 -->
                             <?php the_excerpt(); ?>
@@ -165,7 +159,6 @@
                                 <?php endif; ?>
                             </a>
                         </div>
-                        <!-- /imgArea -->
 
                         <div class="p-textArea">
                             <div class="p-textContent">
@@ -182,7 +175,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- articleList -->
 
                         <!-- article -->
 
@@ -254,7 +246,6 @@
                                 <?php endif; ?>
                             </a>
                         </div>
-                        <!-- /imgArea -->
 
                         <div class="p-textArea">
                             <div class="p-textContent">
@@ -271,10 +262,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- articleList -->
 
                         <!-- article -->
-
                         <div class="c-title u-center">
                             <!-- コンテンツの抜粋 -->
                             <?php the_excerpt(); ?>

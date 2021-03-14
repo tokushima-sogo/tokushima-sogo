@@ -15,7 +15,7 @@
             <span><?php echo get_post()->post_title ?></span>
         </div>
     </div>
-    <!-- /breadCrumb -->
+    <!-- breadCrumb -->
 
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : ?>
@@ -56,8 +56,6 @@
             ),
         );
         ?>
-
-        <!-- articleList -->
         <div class="p-articleList u-grid">
             <?php $the_query = new WP_Query($args); ?>
             <?php if ($the_query->have_posts()) : ?>
@@ -77,11 +75,10 @@
                                 <?php endif; ?>
                             </a>
                         </div>
-                        <!-- /imgArea -->
+
                         <!-- textArea -->
                         <div class="p-textArea u-horrorRed">
                             <div class="p-textContent">
-                                <!-- <div class="c-title u-center u-fontHorror"><?php the_title(); ?></div> -->
                                 <a href="<?php the_permalink(); ?>" class="c-title u-center u-fontHorror"><?php the_title(); ?></a>
                                 <div class="c-date u-center u-fontHorror">公開日：<?php the_time('Y-m-d'); ?>
                                 </div>
@@ -91,19 +88,13 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- /textArea -->
                     </article>
-                    <!-- /article -->
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
-        <!-- /articleList -->
-
     </section>
-    <!-- /spot -->
 
 </main>
-<!-- /main -->
 
 <?php get_footer(); ?>

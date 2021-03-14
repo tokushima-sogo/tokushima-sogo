@@ -1,8 +1,7 @@
 <footer class="l-footer u-center u-white">
-    <!-- <footer class="l-footer u-center u-white u-bgCalmBlue"> -->
-    <!-- footer__inner -->
+
     <div class="p-footer__inner u-flex">
-        <!-- footer__contentsBlock -->
+
         <ul class="p-footer__contentsBlock u-flex u-cr u-o3">
             <li class="p-footer__contentsParts">
                 <div class="c-footer__contentsPartsBtn "><span>特設会場</span></div>
@@ -26,8 +25,7 @@
                 </ul>
             </li>
         </ul>
-        <!-- /footer__contentsBlock -->
-        <!-- footer__contentsBlock -->
+
         <ul class="p-footer__contentsBlock u-flex u-cr u-o2">
             <li class="p-footer__contentsParts">
                 <div class="c-footer__contentsPartsBtn"><span>県西部</span></div>
@@ -42,6 +40,7 @@
                     <li><a href="<?php echo $west_link; ?>#west_shop">ショップ</a></li>
                 </ul>
             </li>
+
             <li class="p-footer__contentsParts">
                 <div class="c-footer__contentsPartsBtn"><span>徳島市</span></div>
                 <ul class="c-footer__contentsDetail u-center">
@@ -56,8 +55,7 @@
                 </ul>
             </li>
         </ul>
-        <!-- /footer__contentsBlock -->
-        <!-- footer__contentsBlock -->
+
         <ul class="p-footer__contentsBlock u-flex u-cr u-o1">
             <li class="p-footer__contentsParts">
                 <div class="c-footer__contentsPartsBtn"><span>県南部</span></div>
@@ -72,6 +70,7 @@
                     <li><a href="<?php echo $south_link; ?>#south_shop">ショップ</a></li>
                 </ul>
             </li>
+
             <li class="p-footer__contentsParts">
                 <div class="c-footer__contentsPartsBtn"><span>ご案内</span></div>
                 <ul class="c-footer__contentsDetail u-center u-p88">
@@ -81,39 +80,33 @@
                 </ul>
             </li>
         </ul>
-        <!-- /footer__contentsBlock -->
-        <!-- footer__contentsBlock -->
+
         <ul class="p-footer__contentsBlock u-flex u-o4">
             <li>
-                <!-- このサイトについてなど -->
                 <ul class="p-footer__contentsParts p-footer__contentsPartsLast u-center">
                     <li><a href="<?php echo esc_url(home_url('/aboutsite')); ?>">このサイトについて</a></li>
                     <li><a href="<?php echo esc_url(home_url('/privacy')); ?>">プライバシーポリシー</a></li>
                     <li><a href="<?php echo esc_url(home_url('/contact')); ?>">お問い合わせ</a></li>
                     <li><a href="<?php echo esc_url(home_url()); ?>#front_info">サイトの使い方</a></li>
-                    <!-- <li><a href="<?php echo esc_url(home_url('/tokushima')); ?>">徳島県について</a></li> -->
                 </ul>
-                <!-- /このサイトについてなど -->
             </li>
+
             <li>
-                <!-- p-fab -->
                 <ul class="p-fab u-flex">
                     <li class="c-fab"><a href="https://www.instagram.com/?hl=ja" class="u-white" target="_blank"><i class="fab fa-instagram-square fa-3x"></i></a></li>
                     <li class="c-fab"><a href="https://twitter.com/home?lang=ja" class="u-white" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a></li>
                 </ul>
-                <!-- /p-fab -->
             </li>
         </ul>
-        <!-- /footer__contentsBlock -->
+
     </div>
-    <!-- /footer__inner -->
+
     <!-- copyRight -->
     <p class="c-copyRight">
         Copyright©トクシマSOGO館 All Rights Reserved.
     </p>
-    <!-- /copyRight -->
+    <!-- copyRight -->
 </footer>
-<!-- /footer -->
 
 <?php wp_footer(); ?>
 </body>

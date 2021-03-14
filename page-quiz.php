@@ -21,7 +21,7 @@
     </script>
 
 
-    <main>
+    <main class="l-main">
         <div id="canvas_wrapper">
             <canvas id="canvas"></canvas>
         </div>

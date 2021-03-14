@@ -26,7 +26,7 @@
                                 <?php endif; ?>
                             </a>
                         </div>
-                        <!-- /imgArea -->
+
                         <!-- textArea -->
                         <div class="p-textArea">
                             <div class="p-textContent">
@@ -47,7 +47,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- /textArea -->
                     </article>
                 <?php endwhile; ?>
             <?php endif; ?>

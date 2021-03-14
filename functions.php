@@ -49,7 +49,7 @@ function tokushima_sogo_document_title_parts($title)
 {
     if (is_home()) {
         unset($title['tagline']);
-        $title['title'] = "トクシマSOGO";
+        $title['title'] = "トクシマSOGO館";
     }
     return $title;
 }
@@ -82,10 +82,10 @@ function add_tokushima_sogo_styles()
     wp_enqueue_style('tokushima_sogo_base_style', get_template_directory_uri() . '/assets/css/base.css');
     wp_enqueue_style('tokushima_sogo_search_style', get_template_directory_uri() . '/assets/css/searchandfilter.css');
     wp_enqueue_style('tokushima_sogo_front_before_style', get_template_directory_uri() . '/assets/css/basebefo.css');
+    wp_enqueue_style('tokushima_sogo_fontawesome', 'https://use.fontawesome.com/releases/v5.15.1/css/all.css');
     //トップページ
     if (is_front_page()) {
         wp_enqueue_style('tokushima_sogo_front_page_style', get_template_directory_uri() . '/assets/css/front-page.css');
-        // wp_enqueue_style('tokushima_sogo_front_before_style', get_template_directory_uri() . '/assets/css/basebefo.css');
 
         //固定ページ
     } else if (is_page('quiz')) {
@@ -106,8 +106,6 @@ function add_tokushima_sogo_styles()
     } else if (is_singular('horror')) {
         wp_enqueue_style('tokushima_sogo_single_horror_style', get_template_directory_uri() . '/assets/css/single-horror.css');
     } else if (is_singular()) {
-        // wp_enqueue_style('tokushima_sogo_single_style', get_template_directory_uri() . '/assets/css/single.css');
-        // wp_enqueue_style('tokushima_sogo_slick_style', get_template_directory_uri() . '/assets/css/slick.css', false);
         wp_enqueue_style('tokushima_sogo_single_style', get_template_directory_uri() . '/assets/css/single.css', false);
         wp_enqueue_style('tokushima_sogo_slick_style', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', false);
         wp_enqueue_style('tokushima_sogo_slick_set', get_template_directory_uri() . '/assets/css/slick.css', false);

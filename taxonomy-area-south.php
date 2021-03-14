@@ -6,14 +6,12 @@
     <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
-            <!-- breadcrumbループstart -->
             <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
             <i class="fas fa-angle-right"></i>
             <span>県南部</span>
-            <!-- breadcrumbループend -->
         </div>
     </div>
-    <!-- /breadCrumb -->
+    <!-- breadCrumb -->
 
     <section class="l-description">
         <div class="c-heroImg"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_archive_south_web.jpg" alt="徳島南部"></div>
@@ -77,7 +75,6 @@
                                 <?php endif; ?>
                             </a>
                         </div>
-                        <!-- /imgArea -->
 
                         <div class="p-textArea">
                             <div class="p-textContent">
@@ -94,10 +91,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- articleList -->
 
                         <!-- article -->
-
                         <div class="c-title u-center">
                             <!-- コンテンツの抜粋 -->
                             <?php the_excerpt(); ?>
@@ -166,7 +161,6 @@
                                 <?php endif; ?>
                             </a>
                         </div>
-                        <!-- /imgArea -->
 
                         <div class="p-textArea">
                             <div class="p-textContent">
@@ -183,10 +177,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- articleList -->
 
                         <!-- article -->
-
                         <div class="c-title u-center">
                             <!-- コンテンツの抜粋 -->
                             <?php the_excerpt(); ?>
@@ -254,7 +246,6 @@
                                 <?php endif; ?>
                             </a>
                         </div>
-                        <!-- /imgArea -->
 
                         <div class="p-textArea">
                             <div class="p-textContent">
@@ -271,7 +262,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- articleList -->
+
                         <!-- article -->
                         <div class="c-title u-center">
                             <!-- コンテンツの抜粋 -->

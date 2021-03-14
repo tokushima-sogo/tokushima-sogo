@@ -6,14 +6,12 @@
     <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
-            <!-- breadcrumbループstart -->
             <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
             <i class="fas fa-angle-right"></i>
             <span>県東部</span>
-            <!-- breadcrumbループend -->
         </div>
     </div>
-    <!-- /breadCrumb -->
+    <!-- breadCrumb -->
 
     <section class="l-description">
         <div class="c-heroImg"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/mv_archive_east_web.jpg" alt="徳島東部"></div>
@@ -23,7 +21,8 @@
             <h2 class="c-heading u-center u-white u-east">徳島東部</h2>
             <div class="p-description__item u-flex">
                 <div class="c-description__text">
-                    テキストはまだ
+                    県東部は1985年に神戸淡路鳴門自動車道が開通して以来、「四国の玄関口」として四国訪客者の憩いの場となってきた。大鳴門橋を渡ってすぐの鳴門市では、世界的にも珍しい「鳴門の渦潮」(世界三大潮流※1の一つ)がみられる。また伝統工芸「藍染め」を体験できる施設が多くある。「藍染め」とは植物染料 藍 を用いた染色技法で、縁起の良い勝色として古くから重宝されている。その他にも、県東部には郷土料理「たらいうどん」を堪能できるお店もあり、徳島を深く感じられるエリアである。
+                    （※1日本・鳴門の渦潮、イタリア・メッシーナ海峡、カナダのセイモア海峡）
                 </div>
                 <div class="c-description__map">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/img_archive_east_map02.png" class="c-map" alt="徳島東部">
@@ -54,7 +53,6 @@
                 ),
             );
             ?>
-            <!-- ループ開始 -->
             <?php $the_query = new WP_Query($args); ?>
             <?php if ($the_query->have_posts()) : ?>
                 <?php while ($the_query->have_posts()) : ?>
@@ -76,7 +74,6 @@
                                 <?php endif; ?>
                             </a>
                         </div>
-                        <!-- /imgArea -->
 
                         <div class="p-textArea">
                             <div class="p-textContent">
@@ -93,7 +90,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- articleList -->
 
                         <!-- article -->
                         <div class="c-title u-center">
@@ -126,7 +122,6 @@
             <h3 class="c-subHeading">グルメ</h3>
         </div>
         <div class="p-articleList u-grid">
-            <!-- spot -->
 
             <!-- 東部のグルメ記事を出力 -->
             <?php
@@ -166,7 +161,6 @@
                                 <?php endif; ?>
                             </a>
                         </div>
-                        <!-- /imgArea -->
 
                         <div class="p-textArea">
                             <div class="p-textContent">
@@ -183,10 +177,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- articleList -->
 
                         <!-- article -->
-
                         <div class="c-title u-center">
                             <!-- コンテンツの抜粋 -->
                             <?php the_excerpt(); ?>
@@ -253,7 +245,6 @@
                                 <?php endif; ?>
                             </a>
                         </div>
-                        <!-- /imgArea -->
 
                         <div class="p-textArea">
                             <div class="p-textContent">
@@ -270,7 +261,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- articleList -->
+
                         <!-- article -->
                         <div class="c-title u-center">
                             <!-- コンテンツの抜粋 -->
@@ -293,7 +284,6 @@
         <!-- カウントを初期化する -->
         <?php $more_count = 0; ?>
     </section>
-
 </main>
 
 <?php get_footer(); ?>

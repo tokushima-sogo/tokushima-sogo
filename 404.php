@@ -12,10 +12,8 @@
                 </p>
             </div>
         </section>
-        <!-- /description -->
+        <!-- description -->
     </div>
-    <!-- /404 -->
 </main>
-<!-- /main -->
 
 <?php get_footer(); ?>

@@ -13,7 +13,8 @@
 /* pc用グリッドの幅指定 */
 @media (min-width: 1025px) {
   .p-articleList {
-    width: 80%;
+    /* width: 80%; */
+    width: 1000px;
   }
 }
 
@@ -86,6 +87,7 @@
   font-size: 1.8rem;
   font-family: "mamelon5";
   letter-spacing: 1px;
+  padding: 0 15px 16px;
 }
 
 .u-grid {

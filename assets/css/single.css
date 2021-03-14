@@ -58,12 +58,6 @@
   padding: 30px 0 0;
 }
 
-/* @media (min-width: 768px) {
-  .l-singleTable {
-    padding: 30px 0 50px;
-  }
-} */
-
 @media (min-width: 1025px) {
   .l-singleTable {
     display: inline-block;
@@ -74,10 +68,7 @@
 }
 
 /* 関連記事 */
-/* .l-articleList {
-  padding: 30px 0 50px;
-  padding: 30px 0 0;
-} */
+
 .l-articleList {
   padding: 50px 0 20px;
 }
@@ -517,14 +508,6 @@ a.wp1_like_like span {
   font-size: 2rem;
 }
 
-/* .c-singleTable__td a {
-  color: #cf7e7c;
-}
-
-.c-singleTable__td a i {
-  color: #cf7e7c;
-} */
-
 /* tableここまで */
 
 /* h3見出し */
@@ -572,11 +555,6 @@ a.wp1_like_like span {
 }
 
 /* スポット名称 */
-/* .c-title {
-  font-size: 1.8rem;
-  font-family: "mamelon5";
-  letter-spacing: 1px;
-} */
 
 .c-title {
   padding: 0 15px 16px;
@@ -599,26 +577,10 @@ a.wp1_like_like span {
 /* margin */
 .u-mr15 {
   margin-right: 15px;
+  background: #333333;
 }
 
 /* right */
 .u-right {
   text-align: right;
 }
-
-/* 地域別カラー */
-/* .u-south {
-  background: #991f26;
-}
-
-.u-city {
-  background: #d1a429;
-}
-
-.u-west {
-  background: #004e3f;
-}
-
-.u-east {
-  background: #539199;
-} */

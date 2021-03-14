@@ -6,14 +6,12 @@
     <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
-            <!-- breadcrumbループstart -->
             <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
             <i class="fas fa-angle-right"></i>
             <span>徳島の名物</span>
-            <!-- breadcrumbループend -->
         </div>
     </div>
-    <!-- /breadCrumb -->
+    <!-- breadCrumb -->
 
     <!-- description -->
     <section class="l-description">
@@ -27,6 +25,7 @@
     </section>
     <!-- description -->
 
+    <!--  1  -->
     <section class="l-articleList">
         <div class="u-center">
             <h3 class="c-subHeading">お菓子</h3>
@@ -37,7 +36,7 @@
             <?php
             $args = array(
                 'post_type'         => 'famous',  // カスタム投稿タイプ名
-                'orderby'          => 'rand',             //ランダムで表示
+                'orderby'          => 'rand',     //ランダムで表示
                 'tax_query'         => array(
                     'relation'      => 'AND',
                     array(
@@ -70,7 +69,8 @@
                                 <?php endif; ?>
                             </a>
                         </div>
-                        <!-- /imgArea -->
+                        <!-- imgArea -->
+
                         <!-- textArea -->
                         <div class="p-textArea">
                             <div class="p-textContent">
@@ -82,15 +82,16 @@
                                     echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li', '</li><li class="c-singleTagList__li>', '</li>');
                                     ?>
                                 </ul>
-                                <!-- /singleTagList -->
                             </div>
                         </div>
-                        <!-- /textArea -->
+                        <!-- textArea -->
                     </article>
+                    <!-- article -->
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
+        <!-- articleList -->
 
         <!-- 記事が3以上ならmoreボタンを出す。 -->
         <?php if ($more_count > 3) : ?>
@@ -105,7 +106,7 @@
         <!-- カウントを初期化する -->
         <?php $more_count = 0; ?>
     </section>
-    <!-- /1 -->
+    <!-- 1 -->
 
     <!-- 2 -->
     <section class="l-articleList">
@@ -119,7 +120,7 @@
             <?php
             $args = array(
                 'post_type'        => 'famous',    // カスタム投稿タイプ名
-                'orderby'          => 'rand',             //ランダムで表示
+                'orderby'          => 'rand',      //ランダムで表示
                 'tax_query'        => array(
                     'relation'     => 'AND',
                     array(
@@ -152,7 +153,8 @@
                                 <?php endif; ?>
                             </a>
                         </div>
-                        <!-- /imgArea -->
+                        <!-- imgArea -->
+
                         <!-- textArea -->
                         <div class="p-textArea">
                             <div class="p-textContent">
@@ -164,17 +166,16 @@
                                     echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li', '</li><li class="c-singleTagList__li>', '</li>');
                                     ?>
                                 </ul>
-                                <!-- /singleTagList -->
                             </div>
                         </div>
-                        <!-- /textArea -->
+                        <!-- textArea -->
                     </article>
-                    <!-- /article -->
+                    <!-- article -->
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
-        <!-- /articleList -->
+        <!-- articleList -->
 
         <!-- 記事が3以上ならmoreボタンを出す。 -->
         <?php if ($more_count > 3) : ?>
@@ -183,13 +184,13 @@
             <div class="l-moreBtn u-right">
                 <button class="c-btn c-moreBtn two u-center">more</button>
             </div>
-            <!-- /moreBtn -->
+            <!-- moreBtn -->
 
         <?php endif; ?>
         <!-- カウントを初期化する -->
         <?php $more_count = 0; ?>​
     </section>
-
+    <!-- 2 -->
 
     <!-- 3 -->
     <section class="l-articleList">
@@ -236,7 +237,8 @@
                                 <?php endif; ?>
                             </a>
                         </div>
-                        <!-- /imgArea -->
+                        <!-- imgArea -->
+
                         <!-- textArea -->
                         <div class="p-textArea">
                             <div class="p-textContent">
@@ -248,18 +250,17 @@
                                     echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li', '</li><li class="c-singleTagList__li>', '</li>');
                                     ?>
                                 </ul>
-                                <!-- /singleTagList -->
+                                <!-- singleTagList -->
                             </div>
                         </div>
-                        <!-- /textArea -->
+                        <!-- textArea -->
                     </article>
-                    <!-- /article -->
-
+                    <!-- article -->
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
-        <!-- /articleList -->
+        <!-- articleList -->
 
         <!-- 記事が3以上ならmoreボタンを出す。 -->
         <?php if ($more_count > 3) : ?>
@@ -268,13 +269,13 @@
             <div class="l-moreBtn u-right">
                 <button class="c-btn c-moreBtn three u-center">more</button>
             </div>
-            <!-- /moreBtn -->
+            <!-- moreBtn -->
 
         <?php endif; ?>
         <!-- カウントを初期化する -->
-        <?php $more_count = 0; ?>
-        ​
+        <?php $more_count = 0; ?>​
     </section>
+    <!-- 3 -->
 
 </main>
 <?php get_footer(); ?>

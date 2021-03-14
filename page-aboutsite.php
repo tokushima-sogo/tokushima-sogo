@@ -15,7 +15,7 @@
                 </p>
             </div>
         </section>
-        <!-- /description -->
+
         <!-- description -->
         <section class="l-description">
             <div class="p-description">
@@ -64,8 +64,8 @@
             </div>
         </section>
     </div>
-    <!-- /page -->
+    <!-- page -->
 </main>
-<!-- /main -->
+<!-- main -->
 
 <?php get_footer(); ?>

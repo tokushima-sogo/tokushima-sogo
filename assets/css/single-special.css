@@ -5,65 +5,75 @@
 ================ */
 
 .l-description {
-    width: 90%;
-    margin: 0 auto;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .l-article {
-    width: 70%;
-    margin: 0 auto;
-    padding: 30px 0 50px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 30px 0 50px;
 }
 
 /* 記事見出し */
-.l-article h3 {
-    width: 90%;
-    display: inline-block;
-    margin-bottom: 40px;
+h2 {
+  height: 70px;
+  padding: 20px 0;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 1025px) {
+  h2 {
+    padding: 25px 0;
     font-size: 2.4rem;
-    border: dashed 3px #cf7e7c;
-    padding: 1.3rem 1.5rem;
+  }
 }
 
-@media(min-width:1025px) {
-    .l-article h3 {
-        width: 80%;
-    }
+h3 {
+  width: 90%;
+  display: inline-block;
+  margin-bottom: 40px;
+  font-size: 2.4rem;
+  border: dashed 3px #cf7e7c;
+  padding: 1.3rem 1.5rem;
+}
+
+@media (min-width: 1025px) {
+  h3 {
+    width: 80%;
+  }
 }
 
 /* 記事テキスト */
 .l-article p {
-    width: 80%;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    line-height: 1.5;
-    font-size: 1.4rem;
-    text-align: left;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  font-size: 1.4rem;
+  text-align: left;
 }
 
-@media (min-width:768px) {
-    .l-article p {
-        font-size: 1.8rem
-    }
+@media (min-width: 768px) {
+  .l-article p {
+    font-size: 1.8rem;
+  }
 }
 
 /* 記事画像 */
 .l-article img {
-    width: 60%;
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #FFFFFF;
-    border: 1px solid #333333;
+  width: 60%;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #333333;
 }
-
 /* 記事リンク */
 .l-article a {
-    color: #cf7e7c;
-    text-align: center;
-}
-
-.l-article a:hover {
-    font-family: "mamelon5";
+  text-align: center;
 }
 
 /* =============
@@ -72,15 +82,14 @@
 
 /* 説明 */
 .p-description {
-    margin: 0 auto;
-    padding: 30px 0;
+  margin: 0 auto;
+  padding: 30px 0;
 }
 
 .p-description__item {
-    padding: 20px 0;
-    margin: 0 auto;
+  padding: 20px 0;
+  margin: 0 auto;
 }
-
 
 /* =============
     Compornent
@@ -88,76 +97,125 @@
 
 /* バナー */
 .c-specialBanner {
-    width: 90%;
-    margin: 0 auto;
-    padding: 15px 0;
+  width: 90%;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+.c-specialBanner img {
+  width: 100%;
 }
 
 /* 説明 */
 .c-description__text p {
-    width: 90%;
-    margin: 0 auto;
-    font-size: 1.8rem;
-    line-height: 1.5;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 1.8rem;
+  line-height: 1.5;
 }
 
+/* 記事テーブル */
+.wp-block-table {
+  margin: 30px auto;
+  box-sizing: border-box;
+  width: 90%;
+}
 
+@media (min-width: 768px) {
+  .wp-block-table {
+    max-width: 900px;
+    border: 2px solid #707070;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+}
+
+/* tableここから */
+td:nth-of-type(odd),
+td:nth-of-type(even) {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 20px 10px;
+  width: 100%;
+  height: 60px;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+td:nth-of-type(odd) {
+  background: #f6f4ec;
+  vertical-align: bottom;
+}
+td:nth-of-type(even) {
+  background: #ffffff;
+  border: 2px solid #707070;
+}
+@media (min-width: 768px) {
+  td:nth-of-type(odd),
+  td:nth-of-type(even) {
+    border: 1px solid #707070;
+  }
+  td:nth-of-type(odd) {
+    width: 30%;
+  }
+  td:nth-of-type(even) {
+    width: 70%;
+  }
+}
+/* tableここまで */
 
 /* いいねボタン */
 .wp1_like_like,
 a.wp1_like_like {
-    position: relative;
-    display: inline-block;
-    width: 150px;
-    height: 40px;
-    margin: 0 10px;
-    padding: 5px 12px;
-    -webkit-transition: all 0.3s;
-    font-size: 1.8rem;
-    transition: all 0.3s;
-    letter-spacing: 1px;
-    border-radius: 13px;
-    text-align: center;
-    cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  margin: 0 10px;
+  padding: 5px 12px;
+  -webkit-transition: all 0.3s;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+  letter-spacing: 1px;
+  border-radius: 13px;
+  text-align: center;
+  cursor: pointer;
 }
-
 
 /* いいねボタンのアイコンを表示するところ */
 a.wp1_like_like::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 100%;
-    content: "";
-    border-radius: 13px 0 0 13px;
-    background: #cccccc;
-    opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100%;
+  content: "";
+  border-radius: 13px 0 0 13px;
+  background: #cccccc;
+  opacity: 0.5;
 }
 
 /* いいねボタンのアイコン */
 a.wp1_like_like i::before {
-    position: absolute;
-    top: 11px;
-    left: 10px;
-    padding: 0;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    color: #d37b6a;
-    font-size: 2.9rem;
+  position: absolute;
+  top: 11px;
+  left: 10px;
+  padding: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #d37b6a;
+  font-size: 2.9rem;
 }
 
 /* ボタンのspan */
 a.wp1_like_like span {
-    position: absolute;
-    display: inline-block;
-    top: 14px;
-    left: 62px;
-    padding: 5px 0;
-    font-family: "mamelon3.5";
-    font-size: 1.4rem;
-    vertical-align: bottom;
-    color: #333333;
+  position: absolute;
+  display: inline-block;
+  top: 14px;
+  left: 62px;
+  padding: 5px 0;
+  font-family: "mamelon3.5";
+  font-size: 1.4rem;
+  vertical-align: bottom;
+  color: #333333;
 }
 
 /* =============
@@ -166,64 +224,64 @@ a.wp1_like_like span {
 
 /* color */
 .u-white {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 /* bgcolor */
 /* 地域別 */
 .u-south {
-    background: #991f26;
+  background: #991f26;
 }
 
 .u-city {
-    background: #d1a429;
+  background: #d1a429;
 }
 
 .u-west {
-    background: #004e3f;
+  background: #004e3f;
 }
 
 .u-east {
-    background: #539199;
+  background: #539199;
 }
 
 /* font-sizeを3倍の大きさにする */
 .u-3times {
-    font-size: 300%;
+  font-size: 300%;
 }
 
 /* bold */
 .u-bold {
-    font-family: "mamelon5";
+  font-family: "mamelon5";
 }
 
 /* text-align */
 .u-left {
-    text-align: left;
+  text-align: left;
 }
 
 .u-center {
-    text-align: center;
+  text-align: center;
 }
 
 .u-right {
-    text-align: right;
+  text-align: right;
 }
 
 /* marker */
 .u-marker {
-    display: inline-block;
-    font-size: 1.8rem;
-    margin: 5px;
-    padding-right: 3px;
-    background-image: linear-gradient(90deg, #cf7e7c, #ffffff);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: 100% 50%;
+  display: inline-block;
+  font-size: 1.8rem;
+  margin: 5px;
+  padding-right: 3px;
+  background-image: linear-gradient(90deg, #cf7e7c, #ffffff);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 50%;
 }
 
-@media (min-width:768px) {
-    .u-marker {
-        font-size: 2.2rem
-    }
+@media (min-width: 768px) {
+  .u-marker {
+    font-size: 2.2rem;
+  }
 }

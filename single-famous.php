@@ -6,7 +6,6 @@
         <!-- breadCrumb -->
         <div class="p-breadCrumb">
             <div class="p-breadCrumb__inner">
-                <!-- breadcrumbループstart -->
                 <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
                 <i class="fas fa-angle-right"></i>
                 <a href="<?php echo home_url('famous'); ?>">
@@ -16,10 +15,10 @@
                 </a>
                 <i class="fas fa-angle-right"></i>
                 <span><?php echo get_post()->post_title ?></span>
-                <!-- breadcrumbループend -->
             </div>
         </div>
-        <!-- /breadCrumb -->
+        <!-- breadCrumb -->
+
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : ?>
                 <?php the_post(); ?>
@@ -68,32 +67,26 @@
                                 </li>
                             </ul>
                         </div>
-                        <!-- /slickSlider -->
 
                         <!-- singleArticle__description -->
                         <div class="p-singleArticle__description u-flex">
                             <h2 class="c-heading u-flex"><?php echo $famousname; ?></h2>
                             <!-- singleArticle__text -->
                             <div class="c-singleArticle__text u-center"><?php the_content(); ?></div>
-                            <!-- /singleArticle__text -->
 
                             <!-- singleTag -->
                             <div class="p-singleTag u-flex">
                                 <div class="c-singleTag__text u-center">タグ</div>
-                                <!-- /singleTag__text -->
+
                                 <!-- singleTagList -->
                                 <ul class="p-singleTagList__ul u-flex">
                                     <?php
                                     echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li>', '</li><li class="c-singleTagList__li>', '</li>');
                                     ?>
                                 </ul>
-                                <!-- /singleTagList -->
                             </div>
-                            <!-- /singleTag -->
                         </div>
-                        <!-- /singleArticle__description -->
                     </div>
-                    <!-- /singleArticle__item -->
 
                     <!-- singleTable -->
                     <div class="l-singleTable">
@@ -162,16 +155,13 @@
                             </tr>
                         </table>
                     </div>
-                    <!-- /singleTable -->
                 </div>
-                <!-- /singleBody -->
 
             <?php endwhile; ?>
         <?php endif; ?>
     </section>
-    <!-- /singleArticle -->
 
 </main>
-<!-- /main -->
+<!-- main -->
 
 <?php get_footer(); ?>

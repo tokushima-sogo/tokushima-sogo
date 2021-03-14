@@ -7,7 +7,6 @@
         <!-- breadCrumb -->
         <div class="p-breadCrumb">
             <div class="p-breadCrumb__inner">
-                <!-- breadcrumbループstart -->
                 <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
                 <i class="fas fa-angle-right"></i>
                 <a href="<?php echo home_url('special'); ?>">
@@ -16,10 +15,8 @@
                     </span>
                 </a>
                 <i class="fas fa-angle-right"></i><span><?php echo get_post()->post_title ?></span>
-                <!-- breadcrumbループend -->
             </div>
         </div>
-        <!-- /breadCrumb -->
 
         <!-- 投稿記事の出力 -->
         <?php if (have_posts()) : ?>
@@ -43,19 +40,17 @@
                         </div>
                     </div>
                 </section>
-                <!-- /description -->
+
                 <!-- article -->
                 <section class="l-article u-center">
                     <!-- 本文 -->
                     <?php the_content(); ?>
                 </section>
-                <!-- /article -->
+
             <?php endwhile; ?>
         <?php endif; ?>
-        <!-- 記事内容ここまで -->
     </section>
 
 </main>
-<!-- /main -->
 
 <?php get_footer(); ?>

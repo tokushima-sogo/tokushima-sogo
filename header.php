@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
 
     <?php wp_head(); ?>
 </head>
@@ -17,9 +16,11 @@
     <header id="scroll" class="l-header">
         <!-- header__contents -->
         <div class="p-header__contents u-flex u-bgCalmBlue">
+
             <!-- logo -->
             <h1><a href="<?php echo home_url(); ?>"><img id="header_size" class="c-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_tokushima_sogokan.png" alt="トクシマSoGo館"></a></h1>
-            <!-- /logo -->
+            <!-- logo -->
+
             <!-- topNav -->
             <nav class="p-topNav">
                 <ul class="p-header__nav u-flex">
@@ -55,6 +56,11 @@
                         </a>
                     </li>
                     <li>
+                        <a href="<?php echo home_url('horror') ?>" class="p-header__navList u-center"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_horror.png" alt="都市伝説">
+                            <p class="c-header__nav u-white">都市伝説</p>
+                        </a>
+                    </li>
+                    <li>
                         <div class="p-header__navList u-center"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_special.png" alt="6階">
                             <p class="c-header__nav u-bold u-white">特設会場</p>
                         </div>
@@ -65,56 +71,49 @@
                                 </a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="<?php echo home_url('horror') ?>" class="p-header__navList u-center"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_horror.png" alt="都市伝説">
-                            <p class="c-header__nav u-white">都市伝説</p>
-                        </a>
-                    </li>
                 </ul>
             </nav>
-            <!-- /topNav -->
+            <!-- topNav -->
+
             <!-- header__contentsList -->
             <ul class="p-header__contentsList u-flex u-center u-white">
 
-
-                <!-- <li>
-                    <button class="p-header_search"><img id="btn_header_searchOpen" class="c-headerIcon" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_searchOpen.png" alt="検索アイコン">
-                        <p class="u-white u-center">検索</p>
-                    </button>
-                </li> -->
-
+                <!-- search -->
                 <li>
                     <div id="p-header_searchID" class="p-header_search"><img id="btn_header_searchOpen" class="c-headerIcon" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_searchOpen.png" alt="検索アイコン">
                         <p class="u-white u-center">検索</p>
                     </div>
                 </li>
 
-                <!-- <li><a href="<?php echo home_url('taxonomy') ?>"><img class="c-headerIcon" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_searchOpen.png" alt="検索アイコン">
-                        <p class="u-white u-center">検索</p>
-                    </a></li> -->
-
+                <!-- MYmap -->
                 <li><a href="<?php echo get_page_link(220); ?>"><img class="c-headerIcon" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_map.png" alt="マップアイコン">
                         <p class="u-white u-center">MYマップ</p>
                     </a></li>
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_burgerOpen.png" class="c-burgerBtn u-open" alt="開くボタン"></li>
             </ul>
-            <!-- /header__contentsList -->
+            <!-- header__contentsList -->
+
             <!-- header__contentsBurger -->
             <div class="p-header__contentsBurger">
                 <!-- header__contentsBurgerTop -->
                 <div class="p-header__contentsBurgerTop u-bgCalmBlue">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_burgerClose.png" class="c-burgerBtn u-close" alt="閉じるボタン">
                 </div>
-                <!-- /header__contentsBurgerTop -->
+                <!-- header__contentsBurgerTop -->
+
                 <!-- header__contentsBurgerNav -->
                 <nav class="p-header__contentsBurgerNav u-center">
                     <ul>
+
                         <li>
                             <div class="c-header__contentsBurgerNavBtn"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_special.png" alt="6階"><span class="u-bold u-calmBlue">特設会場</span></div>
                             <ul class="p-BurgerNavDetail">
                                 <li><a href="<?php echo home_url('quiz') ?>">クイズ</a></li>
                                 <li><a href="<?php echo home_url('special') ?>">特集</a></li>
                             </ul>
+                        </li>
+                        <li>
+                            <a href="<?php echo home_url('horror') ?>" class="c-header__contentsBurgerNavBtn"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_horror.png" alt="都市伝説"><span class="u-bold u-calmBlue">都市伝説</span></a>
                         </li>
                         <li><a href="<?php echo home_url('area/east') ?>" class="c-header__contentsBurgerNavBtn"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_east.png" alt="5県東部"><span class="u-bold u-calmBlue">県東部</span></a>
                         </li>
@@ -133,27 +132,12 @@
                         </li>
                     </ul>
                 </nav>
-                <!-- /header__contentsBurgerNav -->
+                <!-- header__contentsBurgerNav -->
             </div>
-            <!-- /header__contentsBurger -->
+            <!-- header__contentsBurger -->
         </div>
-        <!-- /header__contents -->
+        <!-- header__contents -->
 
-
-
-
-        <!-- searchArea -->
-        <!-- <section class="l-searchArea">
-            <div class="c-button__seachForm__close">
-                <button id="c-button__searchForm__close" class="close c-button__searchForm__close "><img src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_searchForm_close.png" alt="×" srcset="" width="25px" height="25px" class="c-button__searchForm--close"></button>
-            </div>
-
-                <?php echo do_shortcode('[searchandfilter fields="search"]'); ?>
-
-            <div id="searchfilter">
-                <?php echo do_shortcode('[searchandfilter fields="searcharea,contents"  types="radio,radio" " submit_label="検索" headings="エリアで探す,コンテンツで探す"]'); ?>
-            </div>
-        </section> -->
         <section class="l-searchArea">
             <div class="c-button__seachForm__close">
                 <button id="c-button__searchForm__close" class="close c-button__searchForm__close "><img src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_searchForm_close.png" alt="×" srcset="" width="25px" height="25px" class="c-button__searchForm--close"></button>
@@ -162,7 +146,7 @@
                 <?php echo do_shortcode('[searchandfilter fields="searcharea,contents"  types="radio,radio" " submit_label="この条件で絞り込む" headings="エリアを選択,コンテンツを選択"]'); ?>
             </div>
         </section>
-        <!-- /searchArea -->
+        <!-- searchArea -->
 
     </header>
-    <!-- /header -->
+    <!-- header -->

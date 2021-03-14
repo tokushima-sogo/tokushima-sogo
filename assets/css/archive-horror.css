@@ -26,15 +26,15 @@
 ================ */
 
 /* エリア名と説明全体 */
-.p-description {
-  /* padding: 20px 0; */
+/* .p-description {
+  padding: 20px 0;
 }
 
 @media (min-width: 768px) {
   .p-description {
-    /* padding: 40px 0; */
+    padding: 40px 0;
   }
-}
+} */
 
 /* 地図の画像と説明 */
 .p-description__item {

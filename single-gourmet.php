@@ -11,16 +11,14 @@
         <!-- breadCrumb -->
         <div class="p-breadCrumb">
             <div class="p-breadCrumb__inner">
-                <!-- breadcrumbループstart -->
-                <a href="<?php home_url(); ?>"><span>HOME</span></a>
+                <a href="<?php home_url(); ?>"><span>トップ</span></a>
                 <i class="fas fa-angle-right"></i>
                 <span><?php echo get_the_term_list($post->ID, 'area') ?></span>
                 <i class="fas fa-angle-right"></i> <span><?php echo esc_html(get_post_type_object(get_post_type())->label); ?></span>
                 <i class="fas fa-angle-right"></i> <span><?php echo get_post()->post_title ?></span>
-                <!-- breadcrumbループend -->
             </div>
         </div>
-        <!-- /breadCrumb -->
+        <!-- breadCrumb -->
 
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : ?>
@@ -88,7 +86,6 @@
                             </ul>
                         </div>
 
-                        <!-- /slickSlider -->
                         <!-- singleArticle__description -->
                         <div class="p-singleArticle__description u-flex">
                             <h2 class="c-heading u-flex"><?php the_title(); ?></h2>
@@ -100,24 +97,20 @@
                             <!-- singleTag -->
                             <div class="p-singleTag u-flex">
                                 <div class="c-singleTag__text u-center">タグ</div>
-                                <!-- /singleTag__text -->
+
                                 <!-- singleTagList -->
                                 <ul class="p-singleTagList__ul u-flex u-center">
                                     <?php
                                     echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li', '</li><li class="c-singleTagList__li>', '</li>');
                                     ?>
                                 </ul>
-                                <!-- /singleTagList -->
                             </div>
-                            <!-- /singleTag -->
-                            <!-- /singleArticle__text -->
                         </div>
-                        <!-- /singleArticle__description -->
                     </div>
-                    <!-- /singleArticle__item -->
+
                     <!-- singleArticle__info -->
                     <div class="p-singleArticle__info u-flex">
-                        <!-- singleMap -->
+                        <!-- Map -->
                         <?php
                         $location = get_field('location');
                         if ($location) : ?>
@@ -233,19 +226,17 @@
                                 </tr>
                             </table>
                         </div>
-                        <!-- /singleTable -->
+                        <!-- singleTable -->
                     </div>
                 </div>
-                <!-- /singleArticle__info -->
+                <!-- singleArticle__info -->
                 </div>
-                <!-- /singleBody -->
+                <!-- singleBody -->
             <?php endwhile; ?>
         <?php endif; ?>
     </section>
-    <!-- /singleArticle -->
+    <!-- singleArticle -->
 
-
-    <!-- 関連記事の出力 -->
     <!-- articleList -->
     <section class="l-articleList">
         <div class="u-center">
@@ -291,9 +282,8 @@
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="画像がありません">
                                 <?php endif; ?>
                             </a>
-                            <!-- </a> -->
                         </div>
-                        <!-- /imgArea -->
+
                         <!-- textArea -->
                         <div class="p-textArea">
                             <div class="p-textContent">
@@ -314,18 +304,14 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- /textArea -->
                     </article>
-                    <!-- /article -->
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
-        <!-- /articleList -->
     </section>
-    <!-- /articleList -->
 
 </main>
-<!-- /main -->
+<!-- main -->
 
 <?php get_footer(); ?>

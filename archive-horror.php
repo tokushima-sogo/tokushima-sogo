@@ -6,17 +6,12 @@
     <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner u-panHorror">
-            <!-- breadcrumbループstart -->
             <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
             <i class="fas fa-angle-right"></i>
             <span>都市伝説</span>
-            <!-- breadcrumbループend -->
         </div>
     </div>
-
-    <!-- /breadCrumb -->
-
-
+    <!-- breadCrumb -->
 
     <section class="l-description">
         <div class="c-heroImg">
@@ -30,13 +25,11 @@
                 <div class="c-description__text">
                     徳島にまつわる都市伝説は数多くある。妖怪伝説、邪馬台国は徳島説、ユダヤ三種の神器が
                     入っているアークの場所は徳島にある説、本ページで紹介しきれない所もあるだろう。
-                    実際に取材を行った所では興味深い話を聞けたり、いろんな体験をした。ネットだけで調べるよりも足を運んで行くことの重要性を知った。それを全てここに載せている。興味のある方はぜひ行って確かめて欲しい。あなたにも何か不思議な体験ができるかもしれない。
+                    実際に取材に行った所では興味深い話を聞くことができたり、いろんな体験をした。ネットだけで調べるよりも自ら足を運ぶことの重要性を知った。それを全てここに載せている。興味のある方はぜひ行って確かめて欲しい。あなたにも何か不思議な体験ができるかもしれない。
                 </div>
-
             </div>
         </div>
     </section>
-
 
     <!-- 歴史の記事 -->
     <section class="l-articleList">
@@ -50,7 +43,7 @@
             <?php
             $args = array(
                 'post_type'        => 'horror',   // カスタム投稿タイプ名
-                'orderby'          => 'rand',             //ランダムで表示
+                'orderby'          => 'rand',     //ランダムで表示
                 'tax_query'        => array(
                     'relation'     => 'AND',
                     array(
@@ -85,22 +78,20 @@
                                 <?php endif; ?>
                             </a>
                         </div>
-                        <!-- /imgArea -->
+                        <!-- imgArea -->
 
                         <!-- textArea -->
                         <div class="p-textArea u-horrorRed">
                             <div class="p-textContent">
                                 <a href="<?php the_permalink(); ?>" class="c-title u-center u-fontHorror"><?php the_title(); ?></a>
-                                <!-- <div class="c-title u-center u-fontHorror"><?php the_title(); ?></div> -->
                                 <div class="c-date u-center u-fontHorror">公開日：<?php the_time('Y-m-d'); ?></div>
                                 <div class="p-tag u-flex">
                                     <div class="c-tag u-bgHorror"><?php echo get_the_term_list($post->ID, 'taxotag'); ?>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-                        <!-- /textArea -->
+                        <!-- textArea -->
                     </article>
 
                 <?php endwhile; ?>
@@ -114,14 +105,12 @@
             <div class="l-moreBtn u-right">
                 <button class="c-btn c-moreBtn one u-center u-horrorRed u-moreHover">more</button>
             </div>
-            <!-- /moreBtn -->
+            <!-- moreBtn -->
 
         <?php endif; ?>
         <!-- カウントを初期化する -->
         <?php $more_count = 0; ?>​
     </section>
-
-
 
     <!-- 妖怪の記事 -->
     <section class="l-articleList">
@@ -134,7 +123,7 @@
             <?php
             $args = array(
                 'post_type'        => 'horror',    // カスタム投稿タイプ名
-                'orderby'          => 'rand',             //ランダムで表示
+                'orderby'          => 'rand',      //ランダムで表示
                 'tax_query'        => array(
                     'relation'     => 'AND',
                     array(
@@ -145,8 +134,6 @@
                 ),
             );
             ?>
-
-            <!-- サブループ開始 -->
             <?php $the_query = new WP_Query($args); ?>
             <?php if ($the_query->have_posts()) : ?>
                 <?php while ($the_query->have_posts()) : ?>
@@ -170,12 +157,11 @@
                                 <?php endif; ?>
                             </a>
                         </div>
-                        <!-- /imgArea -->
+                        <!-- imgArea -->
 
                         <!-- textArea -->
                         <div class="p-textArea u-horrorRed">
                             <div class="p-textContent">
-                                <!-- <div class="c-title u-center u-fontHorror"><?php the_title(); ?></div> -->
                                 <a href="<?php the_permalink(); ?>" class="c-title u-center u-fontHorror"><?php the_title(); ?></a>
                                 <div class="c-date u-center u-fontHorror">公開日：<?php the_time('Y-m-d'); ?></div>
 
@@ -185,7 +171,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- /textArea -->
+                        <!-- textArea -->
                     </article>
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
@@ -199,7 +185,7 @@
             <div class="l-moreBtn u-right">
                 <button class="c-btn c-moreBtn two u-center u-horrorRed u-moreHover">more</button>
             </div>
-            <!-- /moreBtn -->
+            <!-- moreBtn -->
 
         <?php endif; ?>
         <!-- カウントを初期化する -->

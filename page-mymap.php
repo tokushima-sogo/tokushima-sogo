@@ -2,9 +2,8 @@
 
 <main class="l-main">
     <div class="l-page">
-        <!-- <h2 class="c-heading u-center">Myマップ</h2> -->
         <section class="p-mapchoice l-articleList print_none">
-            <h2 class="c-subHeading u-flex">MYマップ</h2>
+            <h2 class="c-heading u-flex">MYマップ</h2>
             <div class="u-center">
                 <h3 class="c-subHeading">MYスポット一覧</h3>
             </div>
@@ -14,49 +13,51 @@
                 <?php if (have_posts()) : ?>
                     <?php while (have_posts()) : ?>
                         <?php the_post(); ?>
-                        <!-- article -->
-                        <article class="p-article">
-                            <!-- imgArea -->
-                            <div class="p-imgArea">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/frame_archive_common_thumbFrame.png" class="c-frame" alt="額縁">
-                                <a href="<?php the_permalink(); ?>" class="c-thumbnail">
-                                    <?php if (has_post_thumbnail()) : ?>
-                                        <?php the_post_thumbnail('medium') ?>
-                                    <?php else : ?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="画像がありません">
-                                    <?php endif; ?>
-                                </a>
-                            </div>
-                            <!-- /imgArea -->
-                            <!-- textArea -->
-                            <div class="p-textArea">
-                                <div class="p-textContent">
-                                    <div class="c-title u-center">
-                                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                    </div>
-                                    <div class="p-tag u-flex">
-                                        <div class="c-tag u-west u-mr15">
-                                            <?php
-                                            echo get_the_term_list($post->ID, 'area');
-                                            ?>
+                        <div>
+                            <!-- article -->
+                            <article class="p-article">
+                                <!-- imgArea -->
+                                <div class="p-imgArea">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/frame_archive_common_thumbFrame.png" class="c-frame" alt="額縁">
+                                    <a href="<?php the_permalink(); ?>" class="c-thumbnail">
+                                        <?php if (has_post_thumbnail()) : ?>
+                                            <?php the_post_thumbnail('medium') ?>
+                                        <?php else : ?>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="画像がありません">
+                                        <?php endif; ?>
+                                    </a>
+                                </div>
+                                <!-- /imgArea -->
+                                <!-- textArea -->
+                                <div class="p-textArea">
+                                    <div class="p-textContent">
+                                        <div class="c-title u-center">
+                                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                         </div>
-                                        <div class="c-tag">
-                                            <?php
-                                            echo esc_html(get_post_type_object(get_post_type())->label);
-                                            ?>
+                                        <div class="p-tag u-flex">
+                                            <div class="c-tag u-west u-mr15">
+                                                <?php
+                                                echo get_the_term_list($post->ID, 'area');
+                                                ?>
+                                            </div>
+                                            <div class="c-tag">
+                                                <?php
+                                                echo esc_html(get_post_type_object(get_post_type())->label);
+                                                ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- /textArea -->
+                                <!-- /textArea -->
+                            </article>
+                            <!-- /article -->
                             <!-- Myスポット -->
                             <div class="p-singleBtn c-btnTag u-center">
                                 <!-- map登録ボタン -->
                                 <?php echo do_shortcode('[wp_ulike]'); ?>
                             </div>
                             <!-- /Myスポット -->
-                        </article>
-                        <!-- /article -->
+                        </div>
                     <?php endwhile; ?>
                 <?php else : ?>
                     <?php echo 'Myスポット登録がありません。' ?>

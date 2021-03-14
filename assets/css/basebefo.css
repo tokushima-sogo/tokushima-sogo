@@ -19,16 +19,6 @@ img {
   vertical-align: bottom;
 }
 
-/* リンク設定 */
-/* a {
-  text-decoration: none;
-  cursor: pointer;
-  color: #2d294f;
-}
-a:hover {
-  color: #cf7e7c;
-} */
-
 body {
   /* サイト全体のコンテンツ領域指定 */
   box-sizing: border-box;
@@ -59,23 +49,6 @@ main {
 }
 
 /* ここからヘッダー */
-/* .c-logo {
-    height: 60px;
-    padding-left: 11%;
-}
-.c-mapIcon,.c-search{
-    height: 40px;
-}
-#c-elevatorOpen,#c-elevatorClose{
-    height: 60px;
-    padding-bottom: 5px;
-}
-.c-elevatorBtn{
-    opacity: .3;
-}
-.c-elevatorBtn:hover{
-    opacity: 1;
-} */
 .p-header__contentsList ul div {
   font-size: 13px;
 }
@@ -157,10 +130,6 @@ main {
   .p-header__contentsList li {
     padding-right: 6px;
   }
-  /* .c-logo {
-    height: 50px;
-    padding-left: 11%;
-} */
 }
 @media screen and (min-width: 1025px) {
   .p-header__contents {

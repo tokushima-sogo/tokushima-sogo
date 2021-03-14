@@ -13,7 +13,8 @@
                     </tr>
                 </table>
             </section>
-            <!-- /pageTable -->
+
+            <!-- pageTable -->
             <section class="l-pageTable">
                 <table class="p-pageTable">
                     <tr>
@@ -23,7 +24,8 @@
                     </tr>
                 </table>
             </section>
-            <!-- /pageTable -->
+
+            <!-- pageTable -->
             <section class="l-pageTable">
                 <table class="p-pageTable">
                     <tr>
@@ -32,7 +34,8 @@
                     </tr>
                 </table>
             </section>
-            <!-- /pageTable -->
+
+            <!-- pageTable -->
             <section class="l-pageTable">
                 <table class="p-pageTable">
                     <tr>
@@ -41,7 +44,8 @@
                     </tr>
                 </table>
             </section>
-            <!-- /pageTable -->
+
+            <!-- pageTable -->
             <section class="l-pageTable">
                 <table class="p-pageTable">
                     <tr>
@@ -50,7 +54,8 @@
                     </tr>
                 </table>
             </section>
-            <!-- /pageTable -->
+
+            <!-- pageTable -->
             <section class="l-pageTable">
                 <table class="p-pageTable">
                     <tr>
@@ -59,8 +64,8 @@
                     </tr>
                 </table>
             </section>
-            <!-- /pageTable -->
-            <!-- /pageTable -->
+
+            <!-- pageTable -->
             <section class="l-pageTable">
                 <table class="p-pageTable">
                     <tr>
@@ -69,12 +74,12 @@
                     </tr>
                 </table>
             </section>
-            <!-- /pageTable -->
+
         </div>
-        <!-- /description -->
+        <!-- description -->
     </div>
-    <!-- /page -->
+    <!-- page -->
 </main>
-<!-- /main -->
+<!-- main -->
 
 <?php get_footer(); ?>

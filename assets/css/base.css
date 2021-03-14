@@ -24,6 +24,7 @@ img {
 a {
   text-decoration: none;
   cursor: pointer;
+  color: #0000ee;
 }
 a:hover {
   font-family: "mamelon5";
@@ -82,43 +83,6 @@ body {
   }
 }
 
-/* .l-footer {
-  position: relative;
-  padding: 40px 0;
-  z-index: 2;
-} */
-
-/* .l-footer {
-  position: relative;
-  padding: 40px 0;
-  z-index: 2;
-  background-color: rgba(37, 47, 77);
-  background-image: url(../images/フッター背景.png);
-  background-position: bottom;
-  background-repeat: repeat-x;
-} */
-
-/* .l-searchArea {
-  width: 84vw;
-  right: 0;
-  position: absolute;
-  margin: 0 8vw 0 8vw;
-  background-color: #FFFFFF;
-  display: none;
-  position: fixed;
-  z-index: 10;
-  margin-top: 0;
-}
-
-@media (min-width: 1025px) {
-  .l-searchArea {
-    width: 45vw;
-    right: 0;
-    top: 100px;
-    margin: 30px 5vw 0 0;
-  }
-} */
-
 .l-searchArea {
   width: 84vw;
   right: 0;
@@ -139,27 +103,6 @@ body {
     margin: 100px 5vw 0 0;
   }
 }
-
-/* .l-searchArea {
-  width: 84vw;
-  right: 0;
-  position: absolute;
-  margin: 0 8vw 0 8vw;
-  background-color: #ffffff;
-  display: none;
-  position: fixed;
-  z-index: 10;
-  margin-top: 0;
-}
-
-@media (min-width: 1025px) {
-  .l-searchArea {
-    width: 45vw;
-    right: 0;
-    top: 100px;
-    margin: 30px 5vw 0 0;
-  }
-} */
 
 /* エリアで探す */
 .l-radio__area {
@@ -489,13 +432,14 @@ header a:hover {
 .p-footer__contentsPartsLast li a {
   display: block;
   padding-bottom: 20px;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  /* font-size: 1.4rem; */
   color: #ffffff;
 }
 
 @media (min-width: 768px) {
   .p-footer__contentsPartsLast li a {
-    font-size: 2rem;
+    /* font-size: 2rem; */
   }
 }
 
@@ -512,71 +456,10 @@ header a:hover {
   }
 }
 
-/* .p-footer__contentsPartsLast {
-  padding: 25px;
-}
-
-.p-footer__contentsPartsLast li a {
-  display: block;
-  padding: 12px 0;
-  font-size: 1.4rem;
-  color: #ffffff;
-}
-@media (min-width: 768px) {
-  .p-footer__contentsPartsLast li a {
-    font-size: 2.4rem;
-  }
-}
-
-SNSアイコンたち
-.p-fab {
-  padding: 20px 0 50px;
-  justify-content: center;
-  font-size: 2.4rem;
-}
-@media (min-width: 1000px) {
-  .p-fab {
-    padding-top: 40px;
-  }
-} */
-
 /* -------------------------------- */
 
 /*  search
 ----------------------------------- */
-
-/* キーワード検索 */
-/* .p-search__keyword {
-  background-color: #e2dfff;
-  position: relative;
-  width: 100%;
-  padding: 30px 0;
-}
-
-.l-search__keyword {
-  height: 40px;
-  width: 60%;
-  margin: 0 20%;
-} */
-
-/* ラジオボタン */
-/* エリア検索 */
-/* .p-label__search--area {
-  display: inline-block;
-  padding: 5px 5px;
-  border: 1px solid #2d294f;
-  border-radius: 10px;
-  line-height: normal;
-  font-size: 1rem;
-  background-color: #ffffff;
-}
-@media screen and (min-width: 1025px) {
-  .p-label__search--area {
-    padding: 5px 15px;
-    border-radius: 15px;
-    font-size: 1.6rem;
-  }
-} */
 
 /* 内容で検索 */
 .p-label__search--content {
@@ -723,15 +606,6 @@ a.c-header__navListDetail {
   }
 }
 
-/* フッターメニュー文字 */
-/* .c-footer__contentsPartsBtn span {
-    position: relative;
-    display: inline-block;
-    width: 150px;
-    padding-left: 25px;
-    text-align: left;
-} */
-
 .c-footer__contentsPartsBtn span {
   position: relative;
   display: inline-block;
@@ -769,14 +643,6 @@ a.c-header__navListDetail {
   }
 }
 
-/* .c-footer__contentsDetail li a{
-    display: block;
-    width: 100%;
-    padding: 14px 0;
-    color: #ffffff;
-    font-size: 1.6rem;
-} */
-
 /* リンクの領域 */
 .c-footer__contentsDetail li a {
   display: block;
@@ -787,19 +653,6 @@ a.c-header__navListDetail {
   text-align: center;
   margin: 0 auto;
 }
-
-/* 変更点 */
-/* @media (min-width: 1000px) {
-  .c-footer__contentsDetail li a {
-    display: block;
-    width: 200px;
-    padding: 14px 0 0 25%;
-    color: #ffffff;
-    font-size: 1.6rem;
-    text-align: left;
-    margin: 0 auto;
-  }
-} */
 
 /* リンクの領域 */
 .c-footer__contentsDetail li a {

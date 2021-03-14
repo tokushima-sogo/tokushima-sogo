@@ -2,6 +2,11 @@
   margin: 0;
   padding: 0;
 }
+
+.l-main {
+  padding: 0;
+}
+
 #canvas_wrapper {
   background-color: black;
   width: 100vw;
