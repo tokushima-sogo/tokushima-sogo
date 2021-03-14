@@ -18,7 +18,7 @@
         <!-- header__contents -->
         <div class="p-header__contents u-flex u-bgCalmBlue">
             <!-- logo -->
-            <h1><a href="<?php echo home_url(); ?>"><img id="header_size" class="c-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_tokushima_sogokan.png" alt="トクシマSo Go！"></a></h1>
+            <h1><a href="<?php echo home_url(); ?>"><img id="header_size" class="c-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_tokushima_sogokan.png" alt="トクシマSoGo館"></a></h1>
             <!-- /logo -->
             <!-- topNav -->
             <nav class="p-topNav">
@@ -27,10 +27,11 @@
                         <div class="p-header__navList u-center"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_info.png" alt="ご案内">
                             <p class="c-header__nav u-bold u-white">ご案内</p>
                         </div>
-                        <ul class="p-header__navListDetail u-info u-center">
-                            <li><a class="c-header__navListDetail" href="<?php echo get_post_type_archive_link('famous'); ?>">徳島県の名物
+                        <ul class="p-header__navListDetail u-info u-center" style="display:none">
+                            <li><a class="c-header__navListDetail" href="<?php echo esc_url(home_url('/tokushima')); ?>">徳島について</a></li>
+                            <li><a class="c-header__navListDetail" href="<?php echo get_post_type_archive_link('famous'); ?>">徳島の名物
                                 </a></li>
-                            <li><a class="c-header__navListDetail" href="<?php echo get_post_type_archive_link('event'); ?>">徳島県のイベント</a></li>
+                            <li><a class="c-header__navListDetail" href="<?php echo get_post_type_archive_link('event'); ?>">徳島のイベント</a></li>
                         </ul>
                     </li>
                     <li>
@@ -57,7 +58,7 @@
                         <div class="p-header__navList u-center"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_special.png" alt="6階">
                             <p class="c-header__nav u-bold u-white">特設会場</p>
                         </div>
-                        <ul class="p-header__navListDetail u-special u-center">
+                        <ul class="p-header__navListDetail u-special u-center" style="display:none">
                             <li><a class="c-header__navListDetail" href="<?php echo home_url('quiz/') ?>" target="_blank">クイズ
                                 </a></li>
                             <li><a class="c-header__navListDetail" href="<?php echo home_url('special') ?>">特集
@@ -76,9 +77,17 @@
             <ul class="p-header__contentsList u-flex u-center u-white">
 
 
-                <li><button class="p-header_search"><img id="btn_header_searchOpen" class="c-headerIcon" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_searchOpen.png" alt="検索アイコン">
+                <!-- <li>
+                    <button class="p-header_search"><img id="btn_header_searchOpen" class="c-headerIcon" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_searchOpen.png" alt="検索アイコン">
                         <p class="u-white u-center">検索</p>
-                    </button></li>
+                    </button>
+                </li> -->
+
+                <li>
+                    <div id="p-header_searchID" class="p-header_search"><img id="btn_header_searchOpen" class="c-headerIcon" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_searchOpen.png" alt="検索アイコン">
+                        <p class="u-white u-center">検索</p>
+                    </div>
+                </li>
 
                 <!-- <li><a href="<?php echo home_url('taxonomy') ?>"><img class="c-headerIcon" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_searchOpen.png" alt="検索アイコン">
                         <p class="u-white u-center">検索</p>

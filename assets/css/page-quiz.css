@@ -1,23 +1,28 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
-
 #canvas_wrapper {
-    background-color: black;
-    width: 100VW;
-    height: 100VH;
-    text-align: center;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
 }
-
 
 #canvas {
-    background-color: black;
+  background-color: black;
 }
 
 @font-face {
-    font-family: PixelMplus10-Regular;
-    /* src: url('http://localhost/tokushima-sogo/wp-content/themes/tokushima-sogo/assets/fonts/PixelMplus10-Regular.ttf') format("woff2"); */
-    src: url('https://heroxs3v38.xsrv.jp/tokushima-sogo/wp-content/themes/tokushima-sogo/assets/fonts/PixelMplus10-Regular.ttf') format("woff2");
+  font-family: PixelMplus10-Regular;
+  /* src: url('http://localhost/sogo/wp-content/themes/tokushima-sogo/assets/fonts/PixelMplus10-Regular.ttf') format("woff2"); */
+  src: url("https://heroxs3v38.xsrv.jp/tokushima-sogo/wp-content/themes/tokushima-sogo/assets/fonts/PixelMplus10-Regular.ttf")
+    format("woff2");
+}
 
+@font-face {
+  font-family: mamelon-fonts5;
+  /* src: url('http://localhost/sogo/wp-content/themes/tokushima-sogo/assets/fonts/mamelon-fonts5.woff') format("woff"); */
+  src: url("https://heroxs3v38.xsrv.jp/tokushima-sogo/wp-content/themes/tokushima-sogo/assets/fonts/mamelon-fonts5.woff")
+    format("woff2");
 }

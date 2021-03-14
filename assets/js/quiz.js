@@ -15,18 +15,16 @@ CANVAS.width = window.innerWidth * 0.9;
 CANVAS.height = window.innerHeight * 0.9;
 //ヘッダーのサイズ分マージンにあてる。
 //const HEADER_HEIGHT = HEADER.scrollHeight;
-const CANVAS_HEIGHT = CANVAS.scrollHeight;
+//const CANVAS_HEIGHT = CANVAS.scrollHeight;
 
 //CANVAS.style.marginTop = HEADER_HEIGHT + "px";
 //CANVAS.width = 1600;開発時の初期画面サイズ
 //CANVAS.height = 900;開発時の初期画面サイズ
 
 //キャンバスサイズチェック（デバッグ用）
-/* console.log(CANVAS.width);
+console.log(CANVAS.width);
 console.log(CANVAS.height);
-console.log(HEADER.scrollHeight);
-console.log(CANVAS.offsetTop);
-console.log(HEADER.offsetTop); */
+
 
 //画像
 const CORRECT_IMG = new Image();
@@ -53,7 +51,7 @@ const MISTAKE_MP3 = new Audio(PATH + "/assets/audio/mistake.mp3");
 MISTAKE_MP3.loop = false;
 const BGM_MP3 = new Audio(PATH + "/assets/audio/bgm.mp3");
 BGM_MP3.loop = true;
-BGM_MP3.volume = 0.4;
+BGM_MP3.volume = 0.3;
 
 //重要なパラメーター
 const FPS = 10;
@@ -65,7 +63,7 @@ let protoQuestions = [
     ["アジアで初めてベートーヴェンの交響曲第九番が演奏された地域はどこ？", "鳴門市", "徳島市", "小松島市", "吉野川市"],
     ["次の有名人のうち，徳島県出身でない人は誰？", "大塚愛さん", "アンジェラアキさん", "米津玄師さん", "板東英二さん"],
     ["四国八十八個所の一番札所はどこ？", "霊山寺", "極楽寺", "安楽寺", "地蔵寺"],
-    ["徳島県が全国１位をとったことがないものはどれ", "下水道普及率", "医師数（人口10万人当たり）", "女性社長率", "幼稚園数（人口10万人当たり）"],
+    ["徳島県が全国１位をとったことがないものはどれ", "下水道普及率", "人口あたりの医師数", "女性社長率", "人口あたりの幼稚園数"],
     ["徳島県を西から東に流れる吉野川の別名は次のうちのどれ？", "四国三郎", "四国太郎", "四国次郎", "四国四郎"],
     ["徳島県を拠点にしているアニメ制作会社は次のうちのどれ？", "Ufotable", "A-1 Pictures", "P.A.WORKS", "タツノコプロ"],
     ["徳島県をモデルにしたことがないアニメ作品は次のうちのどれ？", "名探偵コナン", "平成狸合戦ぽんぽこ", "涼宮ハルヒの憂鬱", "蟲師"],
@@ -100,7 +98,8 @@ let gameRound = null;       //timerの変数名    ゲームサイクル
 let rowStringCount = 0;      //mobileで設定，DRAWで使用。一行の文字数
 let textSize = 0;           //monileで設定,questionDrawで仕様
 let isMobile = false;         //スマホかPC・タブレットか判定
-
+let fontMode = 0;               //画面サイズに合わせたフォントサイズ指定
+let answerCircleSize = 0;
 //class draw
 let nowQuestionNumber = 0;
 let theQuestionNumber = [];
@@ -130,53 +129,169 @@ class mobile {
     //もしスマホなら横向きに直すようにお願いする（半強制）。
     isSmartPhone() {
         if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
-            rowStringCount = 24;
             isMobile = true;
+            console.log("スマホ");
             if (window.innerHeight > window.innerWidth) {
                 alert("このゲームは横向き対応です。横向きに変更した後，再度更新し直してください");
                 CTX.fillStyle = "black";
                 CTX.globalAlpha = 0.3;                                                          //画面暗くして強制的に促す。
                 CTX.fillRect(0, 0, CANVAS.width, CANVAS.height);
             }
-            return true;
         } else {
-            console.log("PCかタブレット");
-            rowStringCount = 28;
-            return false;
+            if (CANVAS.width > 1700) {
+                fontMode = 4;
+                console.log("width:1700以上のPC")
+            }
+            else if (CANVAS.width > 1350) {
+                fontMode = 3;
+                console.log("width:1350以上のPC")
+            } else if (CANVAS.width >= 1050) {
+                fontMode = 2;
+                console.log("width:1050以上のPC")
+            }
+            else if (CANVAS.width < 1050) {
+                fontMode = 1;
+                console.log("width:1000以下のPCかIPAD")
+            }
+        }
+    }
+    //行の文字数
+    rowStringCount() {
+        if (isMobile == true) {
+            rowStringCount = 24;
+        } else {
+            if (CANVAS.width > 2000) {
+                fontMode = 4;
+                rowStringCount = 32;
+                console.log("width:1700以上のPC")
+            }
+            if (CANVAS.width > 1700) {
+                fontMode = 4;
+                rowStringCount = 29;
+                console.log("width:1700以上のPC")
+            }
+            else if (CANVAS.width > 1600) {
+                fontMode = 3;
+                rowStringCount = 30;
+                console.log("width:1350以上のPC")
+            } else if (CANVAS.width > 1500) {
+                fontMode = 2;
+                rowStringCount = 27;
+                console.log("width:1050以上のPC")
+            } else if (CANVAS.width > 1400) {
+                fontMode = 2;
+                rowStringCount = 29;
+                console.log("width:1050以上のPC")
+            }
+            else if (CANVAS.width > 1300) {
+                fontMode = 2;
+                rowStringCount = 27;
+                console.log("width:1050以上のPC")
+            }
+            else if (CANVAS.width > 1200) {
+                fontMode = 2;
+                rowStringCount = 24;
+                console.log("width:1050以上のPC")
+            }
+            else if (CANVAS.width > 1100) {
+                fontMode = 2;
+                rowStringCount = 23;
+                console.log("width:1050以上のPC")
+            }
+            else if (CANVAS.width > 1000) {
+                fontMode = 2;
+                rowStringCount = 22;
+                console.log("width:1050以上のPC")
+            }
+            else if (CANVAS.width > 900) {
+                fontMode = 1;
+                rowStringCount = 24;
+                console.log("width:1000以下のPCかIPAD")
+            }
+            else if (CANVAS.width > 800) {
+                fontMode = 1;
+                rowStringCount = 22;
+                console.log("width:1000以下のPCかIPAD")
+            } else if (CANVAS.width >= 700) {
+                fontMode = 1;
+                rowStringCount = 22;
+                console.log("width:1000以下のPCかIPAD")
+            }
+            else if (CANVAS.width < 700) {
+                fontMode = 1;
+                rowStringCount = 18;
+                console.log("width:1000以下のPCかIPAD")
+            }
         }
     }
     //解答番号の文字の大きさ    resultにも
     answerCircleFont() {
         if (isMobile == true) {
-            CTX.font = "18px 'sans-serif',serif";
+            CTX.font = "18px 'mamelon-fonts5','sans-serif',serif";
         } else {
-            CTX.font = "45px 'sans-serif',serif";
+            if (fontMode == 4) {
+                CTX.font = "45px 'mamelon-fonts5','sans-serif',serif";
+            } else if (fontMode == 3) {
+                CTX.font = "38px 'mamelon-fonts5','sans-serif',serif";
+            } else if (fontMode == 2) {
+                CTX.font = "31px 'mamelon-fonts5','sans-serif',serif";
+            } else if (fontMode == 1) {
+                CTX.font = "24px 'mamelon-fonts5','sans-serif',serif";
+            }
+
         }
     }
     //解答文字の大きさ
     answerFont() {
         if (isMobile == true) {
-            CTX.font = "11px 'sans-serif',serif";
+            CTX.font = "11px 'mamelon-fonts5','sans-serif',serif";
         } else {
-            CTX.font = "36px 'sans-serif',serif";
+            if (fontMode == 4) {
+                CTX.font = "36px 'mamelon-fonts5','sans-serif',serif";
+            } else if (fontMode == 3) {
+                CTX.font = "32px 'mamelon-fonts5','sans-serif',serif";
+            } else if (fontMode == 2) {
+                CTX.font = "26px 'mamelon-fonts5','sans-serif',serif";
+            } else if (fontMode == 1) {
+                CTX.font = "22px 'mamelon-fonts5','sans-serif',serif";
+            }
         }
     }
     //時間の文字の大きさ
     timeFont() {
         if (isMobile == true) {
-            CTX.font = "15px 'sans-serif',serif";
+            CTX.font = "15px 'mamelon-fonts5','sans-serif',serif";
         } else {
-            CTX.font = "36px 'sans-serif',serif";
+            if (fontMode == 4) {
+                CTX.font = "36px 'mamelon-fonts5','sans-serif',serif";
+            } else if (fontMode == 3) {
+                CTX.font = "32px 'mamelon-fonts5','sans-serif',serif";
+            } else if (fontMode == 2) {
+                CTX.font = "27px 'mamelon-fonts5','sans-serif',serif";
+            } else if (fontMode == 1) {
+                CTX.font = "22px 'mamelon-fonts5','sans-serif',serif";
+            }
         }
     }
     //問題文
     questionFont() {
         if (isMobile == true) {
-            CTX.font = "15px 'sans-serif',serif";
+            CTX.font = "15px 'mamelon-fonts5','sans-serif',serif";
             textSize = 15;
         } else {
-            CTX.font = "45px 'sans-serif',serif";
-            textSize = 45;
+            if (fontMode == 4) {
+                CTX.font = "45px 'mamelon-fonts5','sans-serif',serif";
+                textSize = 45;
+            } else if (fontMode == 3) {
+                CTX.font = "42px 'mamelon-fonts5','sans-serif',serif";
+                textSize = 37.5;
+            } else if (fontMode == 2) {
+                CTX.font = "38px 'mamelon-fonts5','sans-serif',serif";
+                textSize = 35;
+            } else if (fontMode == 1) {
+                CTX.font = "28px 'mamelon-fonts5','sans-serif',serif";
+                textSize = 25;
+            }
         }
     }
     //最終点数
@@ -184,7 +299,15 @@ class mobile {
         if (isMobile == true) {
             CTX.font = "40px PixelMplus10-Regular";
         } else {
-            CTX.font = "198px PixelMplus10-Regular";
+            if (fontMode == 4) {
+                CTX.font = "198px PixelMplus10-Regular";
+            } else if (fontMode == 3) {
+                CTX.font = "140px PixelMplus10-Regular";
+            } else if (fontMode == 2) {
+                CTX.font = "100px PixelMplus10-Regular";
+            } else if (fontMode == 1) {
+                CTX.font = "100px PixelMplus10-Regular";
+            }
         }
     }
     //コメント
@@ -192,20 +315,51 @@ class mobile {
         if (isMobile == true) {
             CTX.font = "28px PixelMplus10-Regular";
         } else {
-            CTX.font = "90px PixelMplus10-Regular";
+            if (fontMode == 4) {
+                CTX.font = "90px PixelMplus10-Regular";
+            } else if (fontMode == 3) {
+                CTX.font = "68px PixelMplus10-Regular";
+            } else if (fontMode == 2) {
+                CTX.font = "53px PixelMplus10-Regular";
+            } else if (fontMode == 1) {
+                CTX.font = "40px PixelMplus10-Regular";
+            }
         }
     }
     //クレジット表記
     creditFont() {
         if (isMobile == true) {
-            CTX.font = "9px 'sans-serif',serif";
+            CTX.font = "9px 'mamelon-fonts5','sans-serif',serif";
         } else {
-            CTX.font = "27px 'sans-serif',serif";
+            if (fontMode == 4) {
+                CTX.font = "27px 'mamelon-fonts5','sans-serif',serif";;
+            } else if (fontMode == 3) {
+                CTX.font = "20px 'mamelon-fonts5','sans-serif',serif";
+            } else if (fontMode == 2) {
+                CTX.font = "16px 'mamelon-fonts5','sans-serif',serif";
+            } else if (fontMode == 1) {
+                CTX.font = "12px 'mamelon-fonts5','sans-serif',serif";
+            }
+        }
+    }
+
+    ansCirSize() {
+        if (isMobile == true) {
+            answerCircleSize = CANVAS.height * 0.0444;
+        } else {
+            if (fontMode == 4) {
+                answerCircleSize = CANVAS.height * 0.04;
+            } else if (fontMode == 3) {
+                answerCircleSize = CANVAS.height * 0.036;
+            } else if (fontMode == 2) {
+                answerCircleSize = CANVAS.height * 0.032;
+            } else if (fontMode == 1) {
+                answerCircleSize = CANVAS.height * 0.028;
+            }
         }
     }
 }
 const MOBILE = new mobile();
-
 
 /**
  * クリック判定
@@ -413,12 +567,14 @@ class draw {
     }
 
     //解答の枠
-    answerCircleSize = CANVAS.height * 0.0444;
+
+
     answerNumberDraw() {
+
         //1番目
         CTX.fillStyle = "red";
         CTX.beginPath();
-        CTX.arc(CANVAS.width * 0.125, CANVAS.height * 0.65, this.answerCircleSize, 0, Math.PI * 2);
+        CTX.arc(CANVAS.width * 0.125, CANVAS.height * 0.65, answerCircleSize, 0, Math.PI * 2);
         CTX.fill();
         CTX.fillStyle = "white";
         MOBILE.answerCircleFont();
@@ -428,7 +584,7 @@ class draw {
         //２番目
         CTX.beginPath();
         CTX.fillStyle = "blue";
-        CTX.arc(CANVAS.width * 0.54375, CANVAS.height * 0.65, this.answerCircleSize, 0, Math.PI * 2);
+        CTX.arc(CANVAS.width * 0.54375, CANVAS.height * 0.65, answerCircleSize, 0, Math.PI * 2);
         CTX.fill();
         CTX.fillStyle = "white";
         MOBILE.answerCircleFont();
@@ -437,7 +593,7 @@ class draw {
         //３番目
         CTX.beginPath();
         CTX.fillStyle = "gold";
-        CTX.arc(CANVAS.width * 0.125, CANVAS.height * 0.7944, this.answerCircleSize, 0, Math.PI * 2);
+        CTX.arc(CANVAS.width * 0.125, CANVAS.height * 0.7944, answerCircleSize, 0, Math.PI * 2);
         CTX.fill();
         CTX.fillStyle = "white";
         MOBILE.answerCircleFont();
@@ -447,7 +603,7 @@ class draw {
         //４番目
         CTX.beginPath();
         CTX.fillStyle = "green";
-        CTX.arc(CANVAS.width * 0.54375, CANVAS.height * 0.7944, this.answerCircleSize, 0, Math.PI * 2);
+        CTX.arc(CANVAS.width * 0.54375, CANVAS.height * 0.7944, answerCircleSize, 0, Math.PI * 2);
         CTX.fill();
         CTX.fillStyle = "white";
         MOBILE.answerCircleFont();
@@ -823,6 +979,8 @@ window.addEventListener("load", function () {
     QUIZ.createQuestion();
     QUIZ.createAnswer();
     MOBILE.isSmartPhone();
+    MOBILE.ansCirSize();
+    MOBILE.rowStringCount();
     //スタート画面
     start = setInterval(function () {
         setTimeout(function () {

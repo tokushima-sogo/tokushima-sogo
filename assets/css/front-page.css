@@ -1,11 +1,11 @@
 @charset "utf-8";
 
 .c-main__liftLineImg {
-    height: 100vh;
+  height: 100vh;
 }
 
 /* 建物表示切替 */
-.c-buildingPc {
+/* .c-buildingPc {
     display: none;
 }
 
@@ -17,52 +17,108 @@
     .c-buildingTablet {
         display: none;
     }
-}
+} */
 
 /* ロープウェイ */
 /* 切り替え */
 .p-main__liftGroup__parts {
-    display: none;
+  display: none;
 }
 
-@media(min-width:1025px) {
-    .p-main__liftGroup__parts {
-        display: block;
-    }
+@media (min-width: 1025px) {
+  .p-main__liftGroup__parts {
+    display: block;
+  }
 
-    .c-ropeway {
-        width: 70%;
-    }
+  .c-ropeway {
+    width: 70%;
+  }
 }
 
 /* キャッチコピー */
 .c-catchCopy {
-    width: 15vw;
-    position: absolute;
-    left: 5%;
-    top: 5%;
-    z-index: 2;
+  width: 15vw;
+  position: absolute;
+  left: 5%;
+  /* top: 5%; */
+  top: 10%;
+  z-index: 2;
 }
-
 
 /* ヘッダー分の高さ確保 */
 .l-main {
-    padding-top: 70px;
+  padding-top: 70px;
 }
 
-@media(min-width:1025px) {
-    .l-main {
-        padding-top: 100px;
-    }
+@media (min-width: 1025px) {
+  .l-main {
+    padding-top: 100px;
+  }
 }
 
 /* 新着情報ここから*/
+
 .p-newsArea {
-    position: relative;
-    z-index: 2;
-    display: table;
-    width: 70%;
-    margin: 2% 15% 2% 15%;
+  position: relative;
+  z-index: 2;
+  display: table;
+  width: 70%;
+  /* 変更 */
+  margin: 20px 15% 40px 15%;
+}
+.c-newsArea {
+  display: table-cell;
+  vertical-align: middle;
+  background-color: rgb(0, 0, 0);
+  border: 8px solid;
+  border-color: rgb(145, 145, 145);
+  padding: 2% 0;
+  border-radius: 5px;
+}
+/* 変更ここから */
+.mtphr-dnt-wrapper {
+  height: 40px;
+  text-align: center;
+  display: inline-block;
+}
+.mtphr-dnt-tick {
+  display: inline-block;
+}
+/* 文字変更 */
+.mtphr-dnt-tick-contents {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: chartreuse;
+  text-align: center;
+  /* 高さ変える */
+  line-height: 40px;
+}
+/* 変更ここまで */
+@media (min-width: 768px) {
+  .mtphr-dnt-tick-contents {
+    font-size: 1.8rem;
+  }
+}
+/* 新着情報ここまで*/
+
+/*
+.p-newsArea {
+  position: relative;
+  z-index: 2;
+  display: table;
+  width: 70%;
+  margin: 20px 15% 40px 15%;
+  margin: 2% 15% 2% 15%;
+}
+
+.c-newsArea {
+  display: table-cell;
+  vertical-align: middle;
+  background-color: rgb(0, 0, 0);
+  border: 8px solid;
+  border-color: rgb(145, 145, 145);
+  padding: 2% 0;
+  border-radius: 5px;
 }
 
 .c-newsArea {
@@ -75,7 +131,27 @@
     border-radius: 5px;
 }
 
-/* 文字変更 */
+.mtphr-dnt-wrapper {
+  height: 40px;
+  text-align: center;
+  display: inline-block;
+}
+
+.mtphr-dnt-tick {
+  display: inline-block;
+}
+
+文字変更
+.mtphr-dnt-tick-contents {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: chartreuse;
+  text-align: center;
+
+  高さ変える
+  line-height: 40px;
+}
+
 .mtphr-dnt-tick-contents {
     font-size: 1.4rem;
     font-weight: bold;
@@ -87,14 +163,14 @@
 }
 
 @media (min-width: 768px) {
-    .mtphr-dnt-tick-container {
-        height: 1.8rem;
-    }
+  .mtphr-dnt-tick-container {
+    height: 1.8rem;
+  }
 
-    .mtphr-dnt-tick-contents {
+  .mtphr-dnt-tick-contents {
         font-size: 1.8rem;
     }
-}
+} */
 
 /* 新着情報ここから*/
 /* .p-newsArea {
@@ -118,42 +194,53 @@
 } */
 /* 新着情報ここまで*/
 
-
 .p-floorBlock1 {
-    width: 80%;
-    margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 }
-
 
 /* トップ各階リンク */
 .p-floorLink a {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
 }
-
 
 /* １階ご案内のリンク */
 .p-tokushimaLink {
-    padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
 }
+
+/* .p-tokushimaLink {
+    padding-top: 10px;
+} */
 
 /* 『このサイトの使い方』 */
 .p-floorBlock_info {
-    padding: 0 15%;
-    position: relative;
+  padding: 2% 15%;
+  /* padding: 0 15%; */
+  position: relative;
 }
 
 .c-guideTitle {
-    font-size: 1.8rem;
-    padding-bottom: 10px;
+  font-size: 1.8rem;
+  padding-bottom: 10px;
 }
 
 .c-tokushimaLink {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
+  width: 30%;
+  /* 仮 */
+  border: #2d294f solid 3px;
 }
 
-.c-tokushimaLink>a {
+/* .c-tokushimaLink {
+    margin-bottom: 5px;
+} */
+
+/* .c-tokushimaLink>a {
     font-size: 1.6rem;
 }
 
@@ -190,48 +277,69 @@
         font-weight: 900;
         padding-right: 10px;
     }
-}
+} */
 
 .c-floor__text {
-    margin-bottom: 20px;
+  margin: 0 auto;
+  /* margin-bottom: 20px; */
 }
 
-.c-floor__text>li {
-    display: inline-block;
-    line-height: 1.8;
-    font-size: 1.2rem;
+@media (max-width: 768px) {
+  .c-floor__text {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}
+
+.c-floor__text > li {
+  display: inline-block;
+  line-height: 1.8;
+  font-size: 1.2rem;
 }
 
 @media (min-width: 910px) {
-    .c-floor__text>li {
-        display: inline-block;
-        line-height: 1.8;
-        font-size: 1.4rem;
-    }
+  .c-floor__text > li {
+    display: inline-block;
+    line-height: 1.8;
+    font-size: 1.4rem;
+  }
 }
 
-.c-floor__text>li::after {
-    content: "";
-    display: inline-block;
-    padding-right: 10px;
+.c-floor__text > li::after {
+  content: "";
+  display: inline-block;
+  padding-right: 10px;
 }
 
 .l-department {
+  /* position: relative; */
+  background-image: url(../images/mv_front_web.png);
+  background-size: cover;
+  background-position: center center;
+  padding: 40px;
+}
+
+/*
+.l-department {
     position: relative;
-    /* background-image: url(/assets/images/mv_front_web.png);
+    background-image: url(/assets/images/mv_front_web.png);
   background-size: contain;
   width: 100%;
-  padding-top: calc(2161 / 1920 * 100%); */
-}
+  padding-top: calc(2161 / 1920 * 100%);
+} */
 
 /* 各階のイラストたち */
 /* .p-floorImg {
   position: relative;
   top: -10px;
 } */
-.p-floorImg>img+img {
-    padding-left: 20px;
+
+.p-floorImg > img + img {
+  padding-left: 2%;
 }
+/* .p-floorImg>img+img {
+    padding-left: 20px;
+} */
 
 /* 各階のイラストの大きさ */
 .c-satomusume,
@@ -242,7 +350,8 @@
 .c-sirasagi,
 .c-turtle,
 .c-surfing {
-    width: 20%;
+  width: 23%;
+  /* width: 20%; */
 }
 
 /* 各階のマップの大きさ */
@@ -250,32 +359,40 @@
 .c-floorMapNisi,
 .c-floorMapTokusimacity,
 .c-floorMapMinami {
-    width: 15%;
+  width: 15%;
 }
 
 /* 特設会場のイラスト二つ */
 .c-specialEvent {
-    width: 20vw;
+  width: 20vw;
 }
 
 @media (min-width: 768px) {
-    .c-specialEvent {
-        width: 13vw;
-    }
+  .c-specialEvent {
+    width: 13vw;
+  }
 }
 
 .p-floorBlock6 {
-    width: 60vw;
+  width: 60vw;
+  margin: 0 auto;
 }
 
-.u-specialName {
+/* .u-specialName {
     font-size: 12px;
+} */
+.u-specialName {
+  font-size: 12px;
+  text-shadow: 2px 2px 1px #ffffff, -2px 2px 1px #ffffff, 2px -2px 1px #ffffff,
+    -2px -2px 1px #ffffff, 2px 0px 1px #ffffff, 0px 2px 1px #ffffff,
+    -2px 0px 1px #ffffff, 0px -2px 1px #ffffff;
+  /* 文字の影 */
 }
 
 @media (min-width: 768px) {
-    .u-specialName {
-        font-size: 16px;
-    }
+  .u-specialName {
+    font-size: 16px;
+  }
 }
 
 /* 『このサイトの使い方』 */
@@ -296,8 +413,6 @@
     transform: translate(-200px, -50px);
 }
 } */
-
-
 
 /* .u-bg3ea5c8 {
     background-color: #3ea5c8;
@@ -333,7 +448,6 @@
     width: 15%;
 } */
 
-
 /* 特設会場のイラスト二つ */
 /* .c-specialEvent {
     width: 55%;
@@ -365,46 +479,43 @@ img.c-game {
     }
 } */
 
-
 /* 特設会場のイラストのリンク */
 .c-specialLink {
-    display: inline-block;
-    height: 80%;
+  display: inline-block;
+  height: 80%;
 }
 
 .c-specialLink:hover {
-    transform: scale(1.3);
+  transform: scale(1.1);
+  /* transform: scale(1.3); */
 }
 
 /* 都市伝説の階のリンク */
 .c-horrorLink {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
 }
-
-
 
 /* 6階部分 */
 #js_6f {
-    display: flex;
-    padding: 0 20%;
+  display: flex;
+  /* padding: 0 20%;
     position: absolute;
     top: 5vh;
     left: 0;
-    right: 0;
-    text-align: center;
+    right: 0; */
+  text-align: center;
 }
-
 
 /* 5階部分 */
 #js_5f {
-    position: absolute;
+  /* position: absolute;
     top: 17%;
     left: 0;
-    right: 0;
-    text-align: center;
-    padding: 2% 0%;
+    right: 0; */
+  text-align: center;
+  /* padding: 2% 0%; */
 }
 
 /* #js_5f:hover {
@@ -414,12 +525,12 @@ img.c-game {
 
 /* 4階部分 */
 #js_4f {
-    position: absolute;
+  /* position: absolute;
     top: 28%;
     left: 0;
-    right: 0;
-    text-align: center;
-    padding: 2% 0%;
+    right: 0; */
+  text-align: center;
+  /* padding: 2% 0%; */
 }
 
 /* #js_4f:hover {
@@ -429,12 +540,12 @@ img.c-game {
 
 /* 3階部分 */
 #js_3f {
-    position: absolute;
+  /* position: absolute;
     top: 38%;
     left: 0;
-    right: 0;
-    text-align: center;
-    padding: 2% 0%;
+    right: 0; */
+  text-align: center;
+  /* padding: 2% 0%; */
 }
 
 /* #js_3f:hover {
@@ -444,12 +555,13 @@ img.c-game {
 
 /* 2階部分 */
 #js_2f {
-    position: absolute;
+  /* position: absolute;
     top: 48%;
     left: 0;
-    right: 0;
-    text-align: center;
-    padding: 2% 0%;
+    right: 0; */
+  text-align: center;
+  margin: 0 auto 60px auto;
+  /* padding: 2% 0%; */
 }
 
 /* #js_2f:hover {
@@ -467,7 +579,23 @@ img.c-game {
     text-align: center;
     padding: 2% 0%;
 } */
+
 #js_1f {
+  /* position: absolute; */
+  width: 80%;
+  max-width: 600px;
+  /* top: 64%;
+  left: 0;
+  right: 0; */
+  text-align: center;
+  background-color: #eae4ad;
+  font-size: 1.6rem;
+  /* padding: 1% 0%; */
+  box-shadow: 0 0 5px 5px #eae4ad;
+  border-radius: 15px;
+  position: relative;
+}
+/* #js_1f {
     position: absolute;
     width: 80%;
     top: 70%;
@@ -479,75 +607,85 @@ img.c-game {
     padding: 1% 0%;
     box-shadow: 0 0 5px 5px #EAE4AD;
     border-radius: 15px;
-}
+} */
 
 /* 都市伝説の階 */
 #page-link {
-    padding: 20px;
-    position: relative;
-    z-index: 2;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
 }
 
-@media(min-width:768px) {
-    #js_6f {
-        display: flex;
-        padding: 0 20%;
+@media (min-width: 768px) {
+  #js_6f {
+    display: flex;
+    /* padding: 0 20%;
         position: absolute;
         top: 5vh;
         left: 0;
-        right: 0;
-        text-align: center;
-    }
+        right: 0; */
+    text-align: center;
+  }
 
-    #js_5f {
-        position: absolute;
+  #js_5f {
+    /* position: absolute;
         top: 17%;
         left: 0;
-        right: 0;
-        text-align: center;
-        padding: 1% 0%;
-    }
+        right: 0; */
+    text-align: center;
+    /* padding: 1% 0%; */
+  }
 
-    #js_4f {
-        position: absolute;
+  #js_4f {
+    /* position: absolute;
         top: 30%;
         left: 0;
-        right: 0;
-        text-align: center;
-        padding: 1% 0%;
-    }
+        right: 0; */
+    text-align: center;
+    /* padding: 1% 0%; */
+  }
 
-    #js_3f {
-        position: absolute;
+  #js_3f {
+    /* position: absolute;
         top: 43%;
         left: 0;
-        right: 0;
-        text-align: center;
-        padding: 1% 0%;
-    }
+        right: 0; */
+    text-align: center;
+    /* padding: 1% 0%; */
+  }
 
-    #js_2f {
-        position: absolute;
+  #js_2f {
+    /* position: absolute;
         top: 56%;
         left: 0;
-        right: 0;
-        text-align: center;
-        padding: 1% 0%;
-    }
+        right: 0; */
+    text-align: center;
+    /* padding: 1% 0%; */
+  }
 
-    /* #js_1f {
-        position: absolute;
-        width: 80%;
-        top: 69%;
-        left: 0;
-        right: 0;
-        text-align: center;
-        background-color: #EAE4AD;
-        font-size: 1.6rem;
-        padding: 1% 0%;
-    } */
+  #js_1f {
+    /* position: absolute; */
+    width: 60%;
+    max-width: 600px;
+    /* top: 70%;
+    left: 0;
+    right: 0; */
+    text-align: center;
+    background-color: #eae4ad;
+    font-size: 1.6rem;
+    /* padding: 1% 0%; */
+    box-shadow: 0 0 5px 5px #eae4ad;
+    border-radius: 15px;
+  }
 
+  @media (min-width: 1025px) {
     #js_1f {
+      width: 60%;
+      max-width: 600px;
+    }
+  }
+
+  /* #js_1f {
         position: absolute;
         width: 60%;
         top: 80%;
@@ -559,32 +697,32 @@ img.c-game {
         padding: 1% 0%;
         box-shadow: 0 0 5px 5px #EAE4AD;
         border-radius: 15px;
-    }
+    } */
 
-    .c-satomusume,
-    .c-beer,
-    .c-soba,
-    .c-tutuji,
-    .c-yakimoti,
-    .c-sirasagi,
-    .c-turtle,
-    .c-surfing {
-        width: 15%;
-    }
+  .c-satomusume,
+  .c-beer,
+  .c-soba,
+  .c-tutuji,
+  .c-yakimoti,
+  .c-sirasagi,
+  .c-turtle,
+  .c-surfing {
+    width: 15%;
+  }
 
-    .c-floorMapHigasi,
-    .c-floorMapNisi,
-    .c-floorMapTokusimacity,
-    .c-floorMapMinami {
-        width: 10%;
-    }
+  .c-floorMapHigasi,
+  .c-floorMapNisi,
+  .c-floorMapTokusimacity,
+  .c-floorMapMinami {
+    width: 10%;
+  }
 }
 
-@media(min-width:1025px) {
+/* @media(min-width:1025px) {
     #js_1f {
         width: 60%;
     }
-}
+} */
 
 /* 都市伝説のところ */
 /* .p-floorBlock {
@@ -599,59 +737,109 @@ img.c-game {
 
 /* 2～5階のホバーで背景色がつく */
 .p-departmentFloor:hover {
-    background-color: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    transform: scale(1.3);
-    box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transform: scale(1.3);
+  box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.6);
 }
 
 /* ご案内の阿波踊りアニメ */
 .c-awaodori,
 .c-fukidashi {
-    display: none;
+  display: none;
 }
 
 @media (min-width: 768px) {
-    .c-awaodori {
-        height: 60%;
-        width: auto;
-        position: absolute;
-        top: 100%;
-        transform: translate(0, -100%);
-        left: 0;
-        display: block;
-    }
+  .c-awaodori {
+    height: 60%;
+    width: auto;
+    position: absolute;
+    top: 100%;
+    transform: translate(0, -100%);
+    left: 0;
+    display: block;
+  }
 
-    .c-fukidashi {
-        height: 60%;
-        width: auto;
-        position: absolute;
-        top: -15%;
-        transform: translate(0, 0);
-        left: -15%;
-        display: block;
-    }
+  .c-fukidashi {
+    height: 60%;
+    width: auto;
+    position: absolute;
+    top: -15%;
+    transform: translate(0, 0);
+    left: -50px;
+    display: block;
+    /* left: -15%;
+        display: block; */
+  }
 }
 
 /* 都市伝説の階 */
-#page-link {
+/* #page-link {
     padding: 20px;
-    /* position: relative; */
+    position: relative;
     z-index: 2;
-}
+} */
 
 .p-floorBlock {
-    text-align: center;
+  text-align: center;
 }
 
 .p-floorHorror {
-    background-color: rgb(0, 0, 0, 0.8);
-    color: white;
-    background-image: url(../images/img_front_horrorBn.png);
-    background-size: cover;
+  background-color: rgb(0, 0, 0, 0.8);
+  color: white;
+  background-image: url(../images/img_front_horrorBn.png);
+  background-size: cover;
 }
 
 /* インスタ一式ここから */
+
+.p-insta {
+  position: relative;
+  z-index: 2;
+  padding: 0 15% 20px 15%;
+  text-align: center;
+}
+
+.p-insta h2 {
+  margin-bottom: 0;
+  width: 200px;
+}
+
+.p-instaPhotos {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.p-instaPhotos li {
+  position: relative;
+  width: calc(100% / 3);
+}
+
+.p-instaPhotos li::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.c-instaPhoto {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .p-instaPhotos li {
+    width: calc(100% / 6);
+  }
+}
+
+/*
 .p-insta {
     position: relative;
     z-index: 2;
@@ -690,111 +878,112 @@ img.c-game {
     .p-instaPhotos li {
         width: calc(100%/6);
     }
-}
+} */
 
 /* インスタ一式ここまで */
 
-
-
-
-
-
-
 .u-mb10 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.u-mb20 {
+  margin: 0 auto 20px auto;
+}
+
+.u-mb40 {
+  margin: 0 auto 40px auto;
 }
 
 .u-flex {
-    display: flex;
+  display: flex;
 }
 
 .u-m0A {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .u-white {
-    color: #fff;
+  color: #fff;
 }
 
-.u-red {
-    color: red;
+/* .u-red {
+  color: red;
 }
 
 .u-bgblack {
-    background-color: #000;
-}
+  background-color: #000;
+} */
 
 .u-bgEAE4AD {
-    background-color: #EAE4AD;
+  background-color: #eae4ad;
 }
 
-
-
 .p-special {
-    justify-content: space-around;
-    padding: 2% 10% 0 10%;
-    font-size: 1.4rem;
+  justify-content: space-around;
+  padding: 2% 10% 0 10%;
+  font-size: 1.4rem;
 }
 
 .p-specialLink {
-    width: 40%;
+  width: 40%;
 }
 
 .p-guideArea {
-    font-size: 1.4rem;
-    line-height: 1.2;
+  font-size: 1.4rem;
+  line-height: 1.2;
 }
 
 .u-bg2d294f {
-    background-color: #2d294f;
+  background-color: #2d294f;
 }
 
 /* フロア見出し */
 .c-floorName {
-    font-size: 1.6rem;
-    display: inline-block;
-    text-align: center;
-    width: 100px;
-    padding: 5px 0px;
-    border-radius: 25px;
-    opacity: 1;
-    background-color: #2D294F;
-    margin-bottom: 10px;
-    color: white;
+  font-size: 1.6rem;
+  display: inline-block;
+  text-align: center;
+  /* width: 100px; */
+  width: 150px;
+  padding: 5px 0px;
+  border-radius: 25px;
+  opacity: 1;
+  background-color: #2d294f;
+  margin-bottom: 20px;
+  color: white;
 }
 
 .c-floorNameBasement {
-    font-size: 1.6rem;
-    display: inline-block;
-    text-align: center;
-    width: 150px;
-    padding: 5px 0px;
-    border-radius: 25px;
+  font-size: 1.6rem;
+  display: inline-block;
+  text-align: center;
+  width: 150px;
+  padding: 5px 0px;
+  border-radius: 25px;
 }
 
 .c-floorNameBasementP {
-    font-size: 1.4rem;
-    color: white;
+  font-size: 1.4rem;
+  color: white;
 }
 
 @media (min-width: 768px) {
-    .c-floorName {
-        width: 140px;
-        font-size: 2.4rem;
-    }
+  .c-floorName {
+    /* width: 140px; */
+    font-size: 2.4rem;
+  }
 
-    .c-floorNameBasement {
-        font-size: 2.4rem;
-        display: inline-block;
-        text-align: center;
-        width: 200px;
-        padding: 5px 0px;
-        border-radius: 25px;
-    }
+  .c-floorNameBasement {
+    font-size: 2.4rem;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    padding: 5px 0px;
+    border-radius: 25px;
+  }
 
-    .c-floorNameBasementP {
-        font-size: 1.6rem;
-    }
+  .c-floorNameBasementP {
+    font-size: 1.6rem;
+  }
 }
 
 /* フロア見出し */
@@ -835,9 +1024,13 @@ img.c-game {
 } */
 
 /* ご案内見出しの隠し領域 */
+/* span[id="front_info"] {
+  display: block;
+  height: 120px;
+  margin-top: -120px;
+  content: "";
+} */
 span[id="front_info"] {
-    display: block;
-    height: 120px;
-    margin-top: -120px;
-    content: "";
+  display: block;
+  content: "";
 }

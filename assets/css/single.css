@@ -246,7 +246,8 @@
 /* pc用グリッドの幅指定 */
 @media (min-width: 1025px) {
   .p-articleList {
-    width: 80%;
+    /* width: 80%; */
+    width: 1000px;
   }
 }
 

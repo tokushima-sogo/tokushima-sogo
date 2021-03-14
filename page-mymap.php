@@ -4,10 +4,10 @@
     <div class="l-page">
         <!-- <h2 class="c-heading u-center">Myマップ</h2> -->
         <section class="p-mapchoice l-articleList print_none">
+            <h2 class="c-subHeading u-flex">MYマップ</h2>
             <div class="u-center">
-                <h2 class="c-subHeading">MYマップ</h2>
+                <h3 class="c-subHeading">MYスポット一覧</h3>
             </div>
-            <!-- <h2 class="c-subHeading u-center l-page"></h2> -->
             <!-- articleList -->
             <div class="p-articleList u-grid">
 
@@ -64,6 +64,8 @@
                 <?php endif; ?>
             </div>
         </section>
+
+
         <!-- googlemap表示 -->
         <section class="l-myMap">
             <div class="u-mapBtn--center print_none">
@@ -72,7 +74,8 @@
             </button><br>
             <div class="map_wrapper p-myMap">
                 <div id="plain_map" class="map_appear">
-                    <iframe src="https://www.google.com/maps?&z=10&ll=34.04273024112785,134.16295987060795&output=embed" style="border:0;" allowfullscreen="" loading="lazy">
+                    <!-- <iframe src="https://www.google.com/maps?&z=10&ll=34.04273024112785,134.16295987060795&output=embed" style="border:0;" allowfullscreen="" loading="lazy"> -->
+                    <iframe src="https://www.google.com/maps?&z=10&ll=33.9679095867058,134.34954311203705&output=embed" style="border:0;" allowfullscreen="" loading="lazy">
                     </iframe>
                 </div>
                 <div id="map" class="map_disappear"></div>
@@ -82,6 +85,27 @@
             </div>
         </section>
     </div>
+    <!-- /googlemap表示 -->
+
+
+    <!-- googlemap表示 -->
+    <!-- <section class="l-myMap">
+        <div class="u-mapBtn--center print_none">
+            <button id="mapBtn" class="mapBtn u-mapBtn--bgcOrange">マップ作成
+        </div>
+        </button><br>
+        <div class="map_wrapper p-myMap">
+            <div id="plain_map" class="map_appear">
+                <iframe src="https://www.google.com/maps?&z=10&ll=34.04273024112785,134.16295987060795&output=embed" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+            <div id="map" class="map_disappear"></div>
+        </div>
+        <div class="u-mapBtn--center ">
+            <button id="printBtn" class="mapBtn u-mapBtn--bgcOrange print_none">マップ印刷
+        </div>
+    </section>
+    </div> -->
     <!-- /googlemap表示 -->
 </main>
 

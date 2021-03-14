@@ -111,7 +111,7 @@
         <?php if ($more_count > 3) : ?>
 
             <div class="l-moreBtn u-right">
-                <button class="c-moreBtn one u-center u-west">more</button>
+                <button class="c-btn c-moreBtn one u-center u-west">more</button>
             </div>
 
         <?php endif; ?>
@@ -198,7 +198,7 @@
         <?php if ($more_count > 3) : ?>
 
             <div class="l-moreBtn u-right">
-                <button class="c-moreBtn two u-center u-west">more</button>
+                <button class="c-btn c-moreBtn two u-center u-west">more</button>
             </div>
 
         <?php endif; ?>
@@ -286,7 +286,7 @@
         <?php if ($more_count > 3) : ?>
 
             <div class="l-moreBtn u-right">
-                <button class="c-moreBtn three u-center u-west">more</button>
+                <button class="c-btn c-moreBtn three u-center u-west">more</button>
             </div>
 
         <?php endif; ?>

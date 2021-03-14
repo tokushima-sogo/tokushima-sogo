@@ -20,14 +20,14 @@ img {
 }
 
 /* リンク設定 */
-a {
+/* a {
   text-decoration: none;
   cursor: pointer;
   color: #2d294f;
 }
 a:hover {
   color: #cf7e7c;
-}
+} */
 
 body {
   /* サイト全体のコンテンツ領域指定 */

@@ -1,4 +1,4 @@
-document.getElementById("btn_header_searchOpen").addEventListener("click", function () {
+document.getElementById("p-header_searchID").addEventListener("click", function () {
     var elements = document.getElementsByClassName("l-searchArea");
     for (i = 0; i < elements.length; i++) {
         elements[i].style.display = 'block';

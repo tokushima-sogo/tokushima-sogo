@@ -4,16 +4,21 @@
     Layout
 ================ */
 
+/* .l-wrap {
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
+} */
+
 .l-articleList {
-    padding: 30px 0;
+  padding: 30px 0 0;
 }
 
 .l-moreBtn {
-    width: 90%;
-    margin: 0 auto;
-    padding: 0;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
 }
-
 
 /* =============
     Project
@@ -21,85 +26,84 @@
 
 /* エリア名と説明全体 */
 .p-description {
-    width: 90%;
-    margin: 0 auto;
-    padding: 20px 0;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
-@media(min-width:768px) {
-    .p-description {
-        padding: 40px 0;
-    }
+@media (min-width: 768px) {
+  .p-description {
+    padding: 40px 0;
+  }
 }
 
 /* 地図の画像と説明 */
 .p-description__item {
-    padding: 14px;
-    margin: 0 auto;
-    flex-direction: column;
-    background: #f5f5f5;
+  padding: 14px;
+  margin: 0 auto;
+  flex-direction: column;
+  background: #f5f5f5;
 }
 
-@media(min-width:768px) {
-    .p-description__item {
-        padding: 28px;
-        flex-direction: row-reverse;
-        align-items: center;
-    }
+@media (min-width: 768px) {
+  .p-description__item {
+    padding: 28px;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
 }
 
 /* グリッドの指定 */
 .p-articleList {
-    justify-content: center;
-    gap: 50px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
-    width: 90%;
-    margin: 0 auto;
-    padding: 30px 0;
+  justify-content: center;
+  gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  width: 90%;
+  margin: 0 auto;
+  padding: 30px 0;
 }
 
 /* pc用グリッドの幅指定 */
-@media(min-width:1025px) {
-    .p-articleList {
-        width: 80%;
-    }
+@media (min-width: 1025px) {
+  .p-articleList {
+    /* width: 80%; */
+    width: 1000px;
+  }
 }
 
 /* 一つの記事 */
 .p-article {
-    width: 280px;
-    height: 320px;
-    margin: 0 auto;
-    box-shadow: 0 0 3px #707070;
+  width: 280px;
+  height: 320px;
+  margin: 0 auto;
+  box-shadow: 0 0 3px #707070;
 }
 
 /* 額縁のクラス */
 .p-imgArea {
-    position: relative;
-    width: 280px;
-    height: 200px;
+  position: relative;
+  width: 280px;
+  height: 200px;
 }
 
 /* 額縁の下全体 */
 .p-textArea {
-    height: 120px;
-    background: #efebe8;
+  height: 120px;
+  background: #efebe8;
 }
 
 /* いいねとタグ */
 .p-textContent {
-    padding: 16px 15px 10px;
-    justify-content: space-between;
+  padding: 16px 15px 10px;
+  justify-content: space-between;
 }
 
 /* タグ全体 */
 .p-tag {
-    color: #ffffff;
-    justify-content: space-around;
-    align-items: center;
+  color: #ffffff;
+  justify-content: space-around;
+  align-items: center;
 }
-
-
 
 /* =============
     Compornent
@@ -107,161 +111,184 @@
 
 /* メインビジュアル */
 .c-heroImg {
-    width: 90%;
-    margin: 0 auto;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.c-heroImg img {
+  width: 100%;
 }
 
 /* エリア名 */
 .c-heading {
-    width: 100%;
-    height: 60px;
-    padding: 15px 0;
-    font-size: 3rem;
+  width: 100%;
+  height: 60px;
+  padding: 15px 0;
+  font-size: 3rem;
 }
 
 /* エリアの説明 */
 .c-description__text {
-    width: 90%;
-    margin: 0 auto;
-    padding: 14px;
-    font-size: 1.4rem;
-    line-height: 1.5;
+  width: 90%;
+  margin: 0 auto;
+  padding: 14px;
+  font-size: 1.4rem;
+  line-height: 1.5;
 }
 
-@media(min-width:768px) {
-    .c-description__text {
-        width: 60%;
-        margin: 0;
-        padding: 20px;
-        font-size: 1.8rem;
-        line-height: 2;
-    }
+@media (min-width: 768px) {
+  .c-description__text {
+    width: 60%;
+    margin: 0;
+    padding: 20px;
+    font-size: 1.8rem;
+    line-height: 2;
+  }
 }
 
-@media(min-width:1025px) {
-    .c-description__text {
-        width: 65%;
-        padding: 30px;
-    }
+@media (min-width: 1025px) {
+  .c-description__text {
+    width: 65%;
+    padding: 30px;
+  }
 }
 
 /* 地図の白背景の部分 */
 .c-description__map {
-    background-color: #ffffff;
-    position: relative;
-    text-align: center;
-    width: 100%;
-    height: 0;
-    margin: 0 auto;
-    padding-top: calc(3624 / 5886 * 100%);
-    /* calc(画像高さ ÷ 画像横幅 × 100%) */
+  background-color: #ffffff;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 0;
+  margin: 0 auto;
+  padding-top: calc(3624 / 5886 * 100%);
+  /* calc(画像高さ ÷ 画像横幅 × 100%) */
 }
 
-@media(min-width:768px) {
-    .c-description__map {
-        width: 35%;
-        padding-top: calc(3624 / 5886 * 35%);
-        /* calc(画像高さ ÷ 画像横幅 × 100%) */
-    }
+@media (min-width: 768px) {
+  .c-description__map {
+    width: 35%;
+    padding-top: calc(3624 / 5886 * 35%);
+    /* calc(画像高さ ÷ 画像横幅 × 100%) */
+  }
 }
 
 /* 地図の画像 */
 .c-map {
-    width: 65%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  width: 65%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* h3見出し */
 .c-subHeading {
-    width: 90%;
-    display: inline-block;
-    font-size: 2.4rem;
-    border: dashed 3px #cf7e7c;
-    padding: 1.3rem 1.5rem;
+  width: 90%;
+  display: inline-block;
+  font-size: 2.4rem;
+  border: dashed 3px #cf7e7c;
+  padding: 1.3rem 1.5rem;
 }
 
-@media(min-width:1025px) {
-    .c-subHeading {
-        width: 80%;
-    }
+@media (min-width: 1025px) {
+  .c-subHeading {
+    width: 80%;
+  }
 }
 
 /* 額縁の画像 */
 .c-frame {
-    width: 280px;
-    height: 200px;
+  width: 280px;
+  height: 200px;
 }
 
 /* サムネイル画像 */
 .wp-post-image {
-    width: 240px;
-    height: 160px;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 54%;
-    left: 50%;
+  width: 240px;
+  height: 160px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 54%;
+  left: 50%;
 }
 
 /* タグ */
 .c-tag {
-    display: inline-block;
-    padding: 10px 15px;
-    background: #2D294F;
-    border-radius: 12px;
-    font-size: 1.4rem;
+  display: inline-block;
+  padding: 10px 15px;
+  background: #2d294f;
+  border-radius: 12px;
+  font-size: 1.4rem;
 }
 
 .c-tag a {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 /* スポット名称 */
-.c-title {
-    font-size: 1.8rem;
-    font-family: 'mamelon5';
-    letter-spacing: 1px;
-}
+/* .c-title {
+  font-size: 1.8rem;
+  font-family: "mamelon5";
+  letter-spacing: 1px;
+} */
 
+.c-title {
+  padding: 0 15px 16px;
+  font-size: 1.8rem;
+  font-family: ‘mamelon5’;
+  letter-spacing: 1px;
+}
 
 /*  moreボタン
 -------------------------------- */
 
-button.c-moreBtn {
-    width: 180px;
-    padding: 7px;
-    border-radius: 30px;
-    color: #ffffff;
-    font-family: 'mamelon5';
-    font-size: 2.6rem;
-    letter-spacing: 1px;
-    border: none;
-    outline: none;
-    cursor: pointer;
+/* button.c-moreBtn {
+  width: 180px;
+  padding: 7px;
+  border-radius: 30px;
+  color: #ffffff;
+  font-family: "mamelon5";
+  font-size: 2.6rem;
+  letter-spacing: 1px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+} */
+
+button.c-btn {
+  width: 180px;
+  padding: 7px;
+  border-radius: 30px;
+  color: #ffffff;
+  background-color: #cf7e7c;
+  font-family: ‘mamelon5’;
+  font-size: 2.6rem;
+  letter-spacing: 1px;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 /* それぞれのmoreボタンを効かすためのもの */
 .c-more1,
 .c-more2,
 .c-more3 {
-    overflow: hidden;
-    transition: all .4s ease 0s;
+  overflow: hidden;
+  transition: all 0.4s ease 0s;
 }
 
 .c-more1.is-hidden,
 .c-more2.is-hidden,
 .c-more3.is-hidden {
-    visibility: hidden;
-    opacity: 0;
-    height: 0;
-    margin: 0 10px;
-    padding: 0;
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  margin: 0 10px;
+  padding: 0;
 }
 
 /* -------------------------------- */
-
 
 /* =============
     Utility
@@ -269,39 +296,39 @@ button.c-moreBtn {
 
 /* グリッドレイアウト */
 .u-grid {
-    display: grid;
+  display: grid;
 }
 
 /* flex-box指定 */
 .u-flex {
-    display: flex;
+  display: flex;
 }
 
 /* right */
 .u-right {
-    text-align: right;
+  text-align: right;
 }
 
 /* margin */
 .u-mr15 {
-    margin-right: 15px;
+  margin-right: 15px;
 }
 
 /* 地域別カラー */
 .u-south {
-    background: #991f26;
+  background: #991f26;
 }
 
 .u-city {
-    background: #d1a429;
+  background: #d1a429;
 }
 
 .u-west {
-    background: #004e3f;
+  background: #004e3f;
 }
 
 .u-east {
-    background: #539199;
+  background: #539199;
 }
 
 /* 地区別コンテンツ見出しの隠し領域 */
@@ -309,38 +336,38 @@ button.c-moreBtn {
 span[id="city_spot"],
 span[id="city_gourmet"],
 span[id="city_shop"] {
-    display: block;
-    height: 20vw;
-    margin-top: -20vw;
-    content: "";
+  display: block;
+  height: 20vw;
+  margin-top: -20vw;
+  content: "";
 }
 
 /* 西部 */
 span[id="west_spot"],
 span[id="west_gourmet"],
 span[id="west_shop"] {
-    display: block;
-    height: 20vw;
-    margin-top: -20vw;
-    content: "";
+  display: block;
+  height: 20vw;
+  margin-top: -20vw;
+  content: "";
 }
 
 /* 東部 */
 span[id="east_spot"],
 span[id="east_gourmet"],
 span[id="east_shop"] {
-    display: block;
-    height: 20vw;
-    margin-top: -20vw;
-    content: "";
+  display: block;
+  height: 20vw;
+  margin-top: -20vw;
+  content: "";
 }
 
 /* 南部 */
 span[id="south_spot"],
 span[id="south_gourmet"],
 span[id="south_shop"] {
-    display: block;
-    height: 20vw;
-    margin-top: -20vw;
-    content: "";
+  display: block;
+  height: 20vw;
+  margin-top: -20vw;
+  content: "";
 }

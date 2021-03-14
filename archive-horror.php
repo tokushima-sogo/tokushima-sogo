@@ -112,7 +112,7 @@
         <?php if ($more_count > 3) : ?>
             <!-- moreBtn -->
             <div class="l-moreBtn u-right">
-                <button class="c-moreBtn one u-center u-horrorRed u-moreHover">more</button>
+                <button class="c-btn c-moreBtn one u-center u-horrorRed u-moreHover">more</button>
             </div>
             <!-- /moreBtn -->
 
@@ -197,7 +197,7 @@
 
             <!-- moreBtn -->
             <div class="l-moreBtn u-right">
-                <button class="c-moreBtn two u-center u-horrorRed u-moreHover">more</button>
+                <button class="c-btn c-moreBtn two u-center u-horrorRed u-moreHover">more</button>
             </div>
             <!-- /moreBtn -->
 

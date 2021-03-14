@@ -21,7 +21,7 @@
         <div class="p-description">
             <div class="p-description__item">
                 <p class="c-description__text u-center">
-                    徳島県内の名物を紹介します。</p>
+                    お菓子・おかず・お酒の3種類の名産品を紹介します。どれもうまいんじょ！</p>
             </div>
         </div>
     </section>
@@ -97,7 +97,7 @@
 
             <!-- moreBtn -->
             <div class="l-moreBtn u-right">
-                <button class="c-moreBtn one u-center">more</button>
+                <button class="c-btn c-moreBtn one u-center">more</button>
             </div>
             <!-- /moreBtn -->
 
@@ -181,7 +181,7 @@
 
             <!-- moreBtn -->
             <div class="l-moreBtn u-right">
-                <button class="c-moreBtn three u-center">more</button>
+                <button class="c-btn c-moreBtn two u-center">more</button>
             </div>
             <!-- /moreBtn -->
 
@@ -266,7 +266,7 @@
 
             <!-- moreBtn -->
             <div class="l-moreBtn u-right">
-                <button class="c-moreBtn three u-center">more</button>
+                <button class="c-btn c-moreBtn three u-center">more</button>
             </div>
             <!-- /moreBtn -->
 

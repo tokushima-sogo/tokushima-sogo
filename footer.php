@@ -6,9 +6,10 @@
         <ul class="p-footer__contentsBlock u-flex u-cr u-o3">
             <li class="p-footer__contentsParts">
                 <div class="c-footer__contentsPartsBtn "><span>特設会場</span></div>
-                <ul class="c-footer__contentsDetail u-center u-p88">
+                <ul class="c-footer__contentsDetail u-center">
                     <li><a href="<?php echo esc_url(home_url('quiz')); ?>">クイズ</a></li>
                     <li><a href="<?php echo get_post_type_archive_link('special'); ?>">特集</a></li>
+                    <li><a href="<?php echo esc_url(home_url('horror')); ?>">都市伝説</a></li>
                 </ul>
             </li>
             <li class="p-footer__contentsParts u-white">
@@ -74,8 +75,9 @@
             <li class="p-footer__contentsParts">
                 <div class="c-footer__contentsPartsBtn"><span>ご案内</span></div>
                 <ul class="c-footer__contentsDetail u-center u-p88">
+                    <li><a href="<?php echo esc_url(home_url('/tokushima')); ?>">徳島について</a></li>
                     <li><a href="<?php echo get_post_type_archive_link('famous'); ?>">徳島の名物</a></li>
-                    <li><a href="<?php echo get_post_type_archive_link('event'); ?>">徳島県のイベント</a></li>
+                    <li><a href="<?php echo get_post_type_archive_link('event'); ?>">徳島のイベント</a></li>
                 </ul>
             </li>
         </ul>
@@ -89,7 +91,7 @@
                     <li><a href="<?php echo esc_url(home_url('/privacy')); ?>">プライバシーポリシー</a></li>
                     <li><a href="<?php echo esc_url(home_url('/contact')); ?>">お問い合わせ</a></li>
                     <li><a href="<?php echo esc_url(home_url()); ?>#front_info">サイトの使い方</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/tokushima')); ?>">徳島県について</a></li>
+                    <!-- <li><a href="<?php echo esc_url(home_url('/tokushima')); ?>">徳島県について</a></li> -->
                 </ul>
                 <!-- /このサイトについてなど -->
             </li>
@@ -107,7 +109,7 @@
     <!-- /footer__inner -->
     <!-- copyRight -->
     <p class="c-copyRight">
-        Copyright©トクシマSo Go！All Rights Reserved.
+        Copyright©トクシマSOGO館 All Rights Reserved.
     </p>
     <!-- /copyRight -->
 </footer>

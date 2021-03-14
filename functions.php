@@ -81,13 +81,13 @@ function add_tokushima_sogo_styles()
     wp_enqueue_style('tokushima_sogo_reset_style', get_template_directory_uri() . '/assets/css/reset.css');
     wp_enqueue_style('tokushima_sogo_base_style', get_template_directory_uri() . '/assets/css/base.css');
     wp_enqueue_style('tokushima_sogo_search_style', get_template_directory_uri() . '/assets/css/searchandfilter.css');
+    wp_enqueue_style('tokushima_sogo_front_before_style', get_template_directory_uri() . '/assets/css/basebefo.css');
     //トップページ
     if (is_front_page()) {
         wp_enqueue_style('tokushima_sogo_front_page_style', get_template_directory_uri() . '/assets/css/front-page.css');
-        wp_enqueue_style('tokushima_sogo_front_before_style', get_template_directory_uri() . '/assets/css/basebefo.css');
+        // wp_enqueue_style('tokushima_sogo_front_before_style', get_template_directory_uri() . '/assets/css/basebefo.css');
 
         //固定ページ
-
     } else if (is_page('quiz')) {
         wp_enqueue_style('tokushima_sogo_quiz_style', get_template_directory_uri() . '/assets/css/page-quiz.css');
     } else if (is_page('mymap')) {
