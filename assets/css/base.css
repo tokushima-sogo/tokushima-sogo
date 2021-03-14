@@ -688,6 +688,12 @@ a.c-header__navListDetail {
   font-weight: 900;
 }
 
+@media (min-width: 1000px) {
+  .c-footer__contentsPartsBtn::before {
+    display: none;
+  }
+}
+
 /* フッターメニュー文字 */
 /* .c-footer__contentsPartsBtn span {
     position: relative;
