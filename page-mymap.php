@@ -57,8 +57,7 @@
                             <!-- /Myスポット -->
                         </article>
                         <!-- /article -->
-                    <?php endwhile;
-                    "" ?>
+                    <?php endwhile; ?>
                 <?php else : ?>
                     <?php echo 'Myスポット登録がありません。' ?>
                 <?php endif; ?>
@@ -113,7 +112,7 @@
     const PRINT_BUTTON = document.getElementById("printBtn");
     PRINT_BUTTON.addEventListener("click", function() {
         print();
-    })
+    });
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNNbWvrL46SW-8K-D0w6Haff4Vbcc4rRQ">
@@ -161,12 +160,12 @@
                 console.log("同期成功");
                 console.log(json_list);
                 //取得データが""で囲まれていないためエラーが出る。回避するために改めてjsonデータに戻す。
-                let list = JSON.stringify(json_list)
+                let list = JSON.stringify(json_list);
                 //JSONデータをオブジェクトデータに戻す。
                 let temp_list = JSON.parse(list);
                 console.dir(temp_list);
                 //map関数を使って配列に置き換える。
-                let spot_list = temp_list.map(temp => temp.meta_value)
+                let spot_list = temp_list.map(temp => temp.meta_value);
                 console.log(spot_list);
 
                 for (let i = 0; i < spot_list.length / 3; i++) {
@@ -176,15 +175,6 @@
                     console.log(spotsName[i]);
                     console.log(getLngs[i]);
                     console.log(getLats[i]);
-                }
-
-
-
-                //スマホだったら
-                /*  if (USERAGENT.indexOf('iPhone') != -1 || USERAGENT.indexOf('Android') != -1) {
-                 } */
-                function isSmartPhone() {
-
                 }
 
 
@@ -199,56 +189,160 @@
                 console.dir(spots);
 
 
-                //【googleMap設定】
-                function initMap() {
-                    //地図の初期位置の座標。
 
 
-
-                    const CENTER = {
-                        lat: 34.04273024112785,
-                        lng: 134.16295987060795
-                    };
-                    //徳島駅の座標
-                    const TOKUSHIMA_STATION = {
-                        lat: 34.07434415876051,
-                        lng: 134.55118033939166
-                    };
-
-                    //CENTERを中心にmapの生成
-                    const opts = {
-                        zoom: 10,
-                        center: CENTER,
-                    };
-                    const map = new google.maps.Map(MAP, opts);
-
-                    //徳島駅のマーカーを生成する
-                    const centerMarker = new google.maps.Marker({
-                        position: TOKUSHIMA_STATION,
-                        map: map,
-                        label: {
-                            text: '徳島駅',
-                            color: 'green',
-                            fontFamily: 'sans-serif',
-                            fontWeight: 'bold',
-                            fontSize: '14px'
-                        },
-                    })
-                    //行きたい場所のマーカーを動的に生成する
-                    for (let i = 0; i < spots.length; i++) {
-                        const marker = new google.maps.Marker({
-                            position: spots[i],
+                if (window.matchMedia('(max-width: 767px)').matches) {
+                    //スマホ処理
+                    //【googleMap設定】
+                    function initMap() {
+                        //地図の初期位置の座標。
+                        const CENTER = {
+                            lat: 33.9679095867058,
+                            lng: 134.34954311203705
+                        };
+                        // 美馬
+                        // const CENTER = {
+                        //     lat: 34.04273024112785,
+                        //     lng: 134.16295987060795
+                        // };
+                        //徳島駅の座標
+                        const TOKUSHIMA_STATION = {
+                            lat: 34.07434415876051,
+                            lng: 134.55118033939166
+                        };
+                        //CENTERを中心にmapの生成
+                        const opts = {
+                            zoom: 9,
+                            center: CENTER,
+                        };
+                        const map = new google.maps.Map(MAP, opts);
+                        //徳島駅のマーカーを生成する
+                        const centerMarker = new google.maps.Marker({
+                            position: TOKUSHIMA_STATION,
                             map: map,
                             label: {
-                                text: spotsName[i],
-                                color: 'blue',
+                                text: '徳島駅',
+                                color: 'green',
                                 fontFamily: 'sans-serif',
                                 fontWeight: 'bold',
                                 fontSize: '14px'
                             },
                         });
+                        //行きたい場所のマーカーを動的に生成する
+                        for (let i = 0; i < spots.length; i++) {
+                            const marker = new google.maps.Marker({
+                                position: spots[i],
+                                map: map,
+                                label: {
+                                    text: spotsName[i],
+                                    color: 'blue',
+                                    fontFamily: 'sans-serif',
+                                    fontWeight: 'bold',
+                                    fontSize: '14px'
+                                },
+                            });
+                        }
+                    }
+                } else if (window.matchMedia('(min-width:768px)').matches) {
+                    //PC処理
+                    //【googleMap設定】
+                    function initMap() {
+                        //地図の初期位置の座標。
+                        const CENTER = {
+                            lat: 33.9679095867058,
+                            lng: 134.34954311203705
+                        };
+                        //徳島駅の座標
+                        const TOKUSHIMA_STATION = {
+                            lat: 34.07434415876051,
+                            lng: 134.55118033939166
+                        };
+                        //CENTERを中心にmapの生成
+                        const opts = {
+                            zoom: 10,
+                            center: CENTER,
+                        };
+                        const map = new google.maps.Map(MAP, opts);
+                        //徳島駅のマーカーを生成する
+                        const centerMarker = new google.maps.Marker({
+                            position: TOKUSHIMA_STATION,
+                            map: map,
+                            label: {
+                                text: '徳島駅',
+                                color: 'green',
+                                fontFamily: 'sans-serif',
+                                fontWeight: 'bold',
+                                fontSize: '14px'
+                            },
+                        });
+                        //行きたい場所のマーカーを動的に生成する
+                        for (let i = 0; i < spots.length; i++) {
+                            const marker = new google.maps.Marker({
+                                position: spots[i],
+                                map: map,
+                                label: {
+                                    text: spotsName[i],
+                                    color: 'blue',
+                                    fontFamily: 'sans-serif',
+                                    fontWeight: 'bold',
+                                    fontSize: '14px'
+                                },
+                            });
+                        }
                     }
                 }
+
+
+                // //【googleMap設定】
+                // function initMap() {
+                //     //地図の初期位置の座標。
+
+
+
+                //     const CENTER = {
+                //         lat: 34.04273024112785,
+                //         lng: 134.16295987060795
+                //     };
+                //     //徳島駅の座標
+                //     const TOKUSHIMA_STATION = {
+                //         lat: 34.07434415876051,
+                //         lng: 134.55118033939166
+                //     };
+
+                //     //CENTERを中心にmapの生成
+                //     const opts = {
+                //         zoom: 10,
+                //         center: CENTER,
+                //     };
+                //     const map = new google.maps.Map(MAP, opts);
+
+                //     //徳島駅のマーカーを生成する
+                //     const centerMarker = new google.maps.Marker({
+                //         position: TOKUSHIMA_STATION,
+                //         map: map,
+                //         label: {
+                //             text: '徳島駅',
+                //             color: 'green',
+                //             fontFamily: 'sans-serif',
+                //             fontWeight: 'bold',
+                //             fontSize: '14px'
+                //         },
+                //     })
+                //     //行きたい場所のマーカーを動的に生成する
+                //     for (let i = 0; i < spots.length; i++) {
+                //         const marker = new google.maps.Marker({
+                //             position: spots[i],
+                //             map: map,
+                //             label: {
+                //                 text: spotsName[i],
+                //                 color: 'blue',
+                //                 fontFamily: 'sans-serif',
+                //                 fontWeight: 'bold',
+                //                 fontSize: '14px'
+                //             },
+                //         });
+                //     }
+                // }
                 //リサイズしたときに初期位置を中央に持ってくる
                 // google.maps.event.addDomListener(window, "resize", function() {
                 //     var center = map.getCenter();

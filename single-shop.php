@@ -300,7 +300,7 @@
                                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                 </div>
                                 <div class="p-tag u-flex">
-                                    <div class="c-tag u-west u-mr15">
+                                    <div class="c-tag u-mr15">
                                         <?php
                                         echo get_the_term_list($post->ID, 'area');
                                         ?>

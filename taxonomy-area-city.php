@@ -86,7 +86,7 @@
                                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                 </div>
                                 <div class="p-tag u-flex">
-                                    <div class="c-tag u-city u-mr15">
+                                    <div class="c-tag u-mr15">
                                         <?php echo get_the_term_list($post->ID, 'area') ?>
                                     </div>
                                     <div class="c-tag">
@@ -113,7 +113,7 @@
         <?php if ($more_count > 3) : ?>
 
             <div class="l-moreBtn u-right">
-                <button class="c-btn c-moreBtn one u-center u-city">more</button>
+                <button class="c-btn c-moreBtn one u-center">more</button>
             </div>
 
         <?php endif; ?>
@@ -173,7 +173,7 @@
                                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                 </div>
                                 <div class="p-tag u-flex">
-                                    <div class="c-tag u-city u-mr15">
+                                    <div class="c-tag u-mr15">
                                         <?php echo get_the_term_list($post->ID, 'area') ?>
                                     </div>
                                     <div class="c-tag">
@@ -200,7 +200,7 @@
         <?php if ($more_count > 3) : ?>
 
             <div class="l-moreBtn u-right">
-                <button class="c-btn c-moreBtn two u-center u-city">more</button>
+                <button class="c-btn c-moreBtn two u-center">more</button>
             </div>
 
         <?php endif; ?>
@@ -262,7 +262,7 @@
                                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                 </div>
                                 <div class="p-tag u-flex">
-                                    <div class="c-tag u-city u-mr15">
+                                    <div class="c-tag u-mr15">
                                         <?php echo get_the_term_list($post->ID, 'area') ?>
                                     </div>
                                     <div class="c-tag">
@@ -290,7 +290,7 @@
         <?php if ($more_count > 3) : ?>
 
             <div class="l-moreBtn u-right">
-                <button class="c-btn c-moreBtn three u-center u-city">more</button>
+                <button class="c-btn c-moreBtn three u-center">more</button>
             </div>
 
         <?php endif; ?>
