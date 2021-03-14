@@ -253,9 +253,9 @@
 
     <div>
         <ul class="p-tokushimaLink u-mb40">
-            <li class="c-tokushimaLink"><a href="<?php echo esc_url(home_url('/tokushima')); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/徳島について.png" alt="" srcset=""></a></li>
-            <li class="c-tokushimaLink"><a href="<?php echo get_post_type_archive_link('famous'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/徳島のイベント.png" alt="" srcset=""></a></li>
-            <li class="c-tokushimaLink"><a href="<?php echo get_post_type_archive_link('event'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/徳島の名物.png" alt="" srcset=""></a></li>
+            <li class="c-tokushimaLink"><a href="<?php echo esc_url(home_url('/tokushima')); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bannar_front_aboutTokushima.png" alt="" srcset=""></a></li>
+            <li class="c-tokushimaLink"><a href="<?php echo get_post_type_archive_link('famous'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bannar_front_eventTokushima.png" alt="" srcset=""></a></li>
+            <li class="c-tokushimaLink"><a href="<?php echo get_post_type_archive_link('event'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bannar_front_famousTokushima.png" alt="" srcset=""></a></li>
         </ul>
     </div>
     <!-- spanの位置変更 -->
