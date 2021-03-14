@@ -273,6 +273,10 @@ body {
   cursor: pointer;
 }
 
+.p-header__navList:hover {
+  transform: scale(1.05);
+}
+
 /* PC用アコーディオンメニュー7中身 */
 .p-header__navListDetail {
   position: relative;
