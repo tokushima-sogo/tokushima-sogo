@@ -25,9 +25,10 @@
   width: 15vw;
   position: absolute;
   left: 5%;
-  /* top: 5%; */
-  top: 10%;
+  top: 15%;
+  min-width: 60px;
   z-index: 2;
+
 }
 
 /* ヘッダー分の高さ確保 */
@@ -60,25 +61,26 @@
   padding: 2% 0;
   border-radius: 5px;
 }
-/* 変更ここから */
+
 .mtphr-dnt-wrapper {
-  height: 40px;
+  height: 30px;
   text-align: center;
   display: inline-block;
 }
 .mtphr-dnt-tick {
   display: inline-block;
 }
-/* 文字変更 */
+
 .mtphr-dnt-tick-contents {
   font-size: 1.4rem;
   font-weight: bold;
-  color: chartreuse;
-  text-align: center;
-  /* 高さ変える */
-  line-height: 40px;
+  line-height: 30px;
 }
-.mtphr-dnt-default-tick a {
+
+/* .mtphr-dnt-default-tick  a {
+  color: rgb(255, 123, 0);
+} */
+.mtphr-dnt-default-tick  a {
   color: #ffffff;
 }
 
@@ -87,7 +89,6 @@
     font-size: 1.8rem;
   }
 }
-/* 新着情報ここまで*/
 
 .p-floorBlock1 {
   width: 80%;
@@ -110,64 +111,76 @@
 
 /* 『このサイトの使い方』 */
 .p-floorBlock_info {
-  padding: 2% 15%;
-  /* padding: 0 15%; */
+  padding: 4% 15%;
   position: relative;
 }
 
 .c-guideTitle {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   padding-bottom: 10px;
+  font-family: "mamelon5";
+    text-shadow:
+      1px  1px 0px #ffffff,
+      -1px  1px 0px #ffffff,
+       1px -1px 0px #ffffff,
+      -1px -1px 0px #ffffff,
+       1px  0px 0px #ffffff,
+       0px  1px 0px #ffffff,
+      -1px  0px 0px #ffffff,
+       0px -1px 0px #ffffff;
 }
 
 .c-tokushimaLink {
-  margin-bottom: 5px;
   width: 30%;
-  /* 仮 */
-  border: #2d294f solid 3px;
-}
-
-.c-floor__text {
-  margin: 0 auto;
-  /* margin-bottom: 20px; */
-}
-
-@media (max-width: 768px) {
-  .c-floor__text {
-    max-width: 250px;
-    margin: 0 auto;
-  }
-}
-
-.c-floor__text > li {
-  display: inline-block;
-  line-height: 1.8;
-  font-size: 1.2rem;
+  border: #2d294f solid 2px;
 }
 
 @media (min-width: 910px) {
-  .c-floor__text > li {
-    display: inline-block;
-    line-height: 1.8;
-    font-size: 1.4rem;
+  .c-guideTitle {
+    font-size: 1.8rem;
+  }
+
+  .c-tokushimaLink > a {
+    font-size: 2.2rem;
   }
 }
 
-.c-floor__text > li::after {
-  content: "";
+.c-floor__text li{
+  font-size: 1.2rem;
+  color: black;
+}
+
+.c-floor__text span {
   display: inline-block;
-  padding-right: 10px;
+  color: rgb(202, 57, 54);
+  font-family: "mamelon5";
+  text-shadow:
+       1px  1px 0px #ffffff,
+      -1px  1px 0px #ffffff,
+       1px -1px 0px #ffffff,
+      -1px -1px 0px #ffffff,
+       1px  0px 0px #ffffff,
+       0px  1px 0px #ffffff,
+      -1px  0px 0px #ffffff,
+       0px -1px 0px #ffffff;
+  font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+  .c-floor__text li{
+    font-size: 1.4rem;
+  }
+  .c-floor__text span {
+    font-size: 1.6rem;
+  }
 }
 
 .l-department {
-  /* position: relative; */
   background-image: url(../images/mv_front_web.png);
   background-size: cover;
   background-position: center center;
-  padding: 40px;
+  margin-top: 4%;
 }
-
-/* 各階のイラストたち */
 
 .p-floorImg > img + img {
   padding-left: 2%;
@@ -182,8 +195,7 @@
 .c-sirasagi,
 .c-turtle,
 .c-surfing {
-  width: 23%;
-  /* width: 20%; */
+  height: 10vh;
 }
 
 /* 各階のマップの大きさ */
@@ -191,7 +203,7 @@
 .c-floorMapNisi,
 .c-floorMapTokusimacity,
 .c-floorMapMinami {
-  width: 15%;
+  height: 8vh;
 }
 
 /* 特設会場のイラスト二つ */
@@ -210,20 +222,17 @@
   margin: 0 auto;
 }
 
-/* .u-specialName {
-    font-size: 12px;
-} */
 .u-specialName {
-  font-size: 12px;
+  font-size: 1.2rem;
+  /* 文字の影 */
   text-shadow: 2px 2px 1px #ffffff, -2px 2px 1px #ffffff, 2px -2px 1px #ffffff,
     -2px -2px 1px #ffffff, 2px 0px 1px #ffffff, 0px 2px 1px #ffffff,
     -2px 0px 1px #ffffff, 0px -2px 1px #ffffff;
-  /* 文字の影 */
 }
 
 @media (min-width: 768px) {
   .u-specialName {
-    font-size: 16px;
+    font-size: 2rem;
   }
 }
 
@@ -235,7 +244,6 @@
 
 .c-specialLink:hover {
   transform: scale(1.1);
-  /* transform: scale(1.3); */
 }
 
 /* 都市伝説の階のリンク */
@@ -248,92 +256,49 @@
 /* 6階部分 */
 #js_6f {
   display: flex;
-  /* padding: 0 20%;
-    position: absolute;
-    top: 5vh;
-    left: 0;
-    right: 0; */
   text-align: center;
+
 }
 
 /* 5階部分 */
 #js_5f {
-  /* position: absolute;
-    top: 17%;
-    left: 0;
-    right: 0; */
   text-align: center;
-  /* padding: 2% 0%; */
+  padding: 2% 0%;
 }
 
-/* #js_5f:hover {
-    background-color: #539199;
-    transform: scale(1.3);
-} */
 
 /* 4階部分 */
 #js_4f {
-  /* position: absolute;
-    top: 28%;
-    left: 0;
-    right: 0; */
   text-align: center;
-  /* padding: 2% 0%; */
+  padding: 2% 0%;
 }
 
-/* #js_4f:hover {
-    background-color: #004e3f;
-    transform: scale(1.3);
-} */
 
 /* 3階部分 */
 #js_3f {
-  /* position: absolute;
-    top: 38%;
-    left: 0;
-    right: 0; */
   text-align: center;
-  /* padding: 2% 0%; */
+  padding: 2% 0%;
 }
 
-/* #js_3f:hover {
-    background-color: #d1a429;
-    transform: scale(1.3);
-} */
 
 /* 2階部分 */
 #js_2f {
-  /* position: absolute;
-    top: 48%;
-    left: 0;
-    right: 0; */
   text-align: center;
-  margin: 0 auto 60px auto;
-  /* padding: 2% 0%; */
+  margin: 0 auto 4% auto;
+  padding: 2% 0%;
 }
 
-/* #js_2f:hover {
-    background-color: #991f26;
-    transform: scale(1.3);
-} */
-
-/* 1階部分 */
 
 #js_1f {
-  /* position: absolute; */
   width: 80%;
   max-width: 600px;
-  /* top: 64%;
-  left: 0;
-  right: 0; */
   text-align: center;
   background-color: #eae4ad;
   font-size: 1.6rem;
-  /* padding: 1% 0%; */
-  box-shadow: 0 0 5px 5px #eae4ad;
   border-radius: 15px;
   position: relative;
 }
+
 
 /* 都市伝説の階 */
 #page-link {
@@ -343,72 +308,15 @@
 }
 
 @media (min-width: 768px) {
-  #js_6f {
-    display: flex;
-    /* padding: 0 20%;
-        position: absolute;
-        top: 5vh;
-        left: 0;
-        right: 0; */
-    text-align: center;
-  }
 
-  #js_5f {
-    /* position: absolute;
-        top: 17%;
-        left: 0;
-        right: 0; */
-    text-align: center;
-    /* padding: 1% 0%; */
-  }
-
-  #js_4f {
-    /* position: absolute;
-        top: 30%;
-        left: 0;
-        right: 0; */
-    text-align: center;
-    /* padding: 1% 0%; */
-  }
-
-  #js_3f {
-    /* position: absolute;
-        top: 43%;
-        left: 0;
-        right: 0; */
-    text-align: center;
-    /* padding: 1% 0%; */
-  }
-
-  #js_2f {
-    /* position: absolute;
-        top: 56%;
-        left: 0;
-        right: 0; */
-    text-align: center;
-    /* padding: 1% 0%; */
-  }
 
   #js_1f {
-    /* position: absolute; */
     width: 60%;
     max-width: 600px;
-    /* top: 70%;
-    left: 0;
-    right: 0; */
     text-align: center;
     background-color: #eae4ad;
     font-size: 1.6rem;
-    /* padding: 1% 0%; */
-    box-shadow: 0 0 5px 5px #eae4ad;
     border-radius: 15px;
-  }
-
-  @media (min-width: 1025px) {
-    #js_1f {
-      width: 60%;
-      max-width: 600px;
-    }
   }
 
   .c-satomusume,
@@ -419,14 +327,39 @@
   .c-sirasagi,
   .c-turtle,
   .c-surfing {
-    width: 15%;
+    height: 18vh;
   }
 
   .c-floorMapHigasi,
   .c-floorMapNisi,
   .c-floorMapTokusimacity,
   .c-floorMapMinami {
-    width: 10%;
+    height: 15vh;
+  }
+}
+
+@media (min-width: 1025px) {
+  #js_1f {
+    width: 60%;
+    max-width: 600px;
+  }
+
+  .c-satomusume,
+  .c-beer,
+  .c-soba,
+  .c-tutuji,
+  .c-yakimoti,
+  .c-sirasagi,
+  .c-turtle,
+  .c-surfing {
+    height: 20vh;
+  }
+
+  .c-floorMapHigasi,
+  .c-floorMapNisi,
+  .c-floorMapTokusimacity,
+  .c-floorMapMinami {
+    height: 17vh;
   }
 }
 
@@ -446,25 +379,26 @@
 
 @media (min-width: 768px) {
   .c-awaodori {
-    height: 60%;
-    width: auto;
+    height: auto;
+    width: 18%;
+    min-width: 100px;
     position: absolute;
-    top: 100%;
+    top: 90%;
     transform: translate(0, -100%);
     left: 0;
     display: block;
   }
 
   .c-fukidashi {
-    height: 60%;
-    width: auto;
+    height: auto;
+    width: 22%;
+  min-width: 100px;
+
     position: absolute;
-    top: -15%;
+    top: 10%;
     transform: translate(0, 0);
-    left: -50px;
+    left: -15%;
     display: block;
-    /* left: -15%;
-        display: block; */
   }
 }
 
@@ -480,7 +414,6 @@
 }
 
 /* インスタ一式ここから */
-
 .p-insta {
   position: relative;
   z-index: 2;
@@ -527,36 +460,6 @@
   }
 }
 
-/* インスタ一式ここまで */
-
-.u-mb10 {
-  margin-bottom: 10px;
-}
-
-.u-mb20 {
-  margin: 0 auto 20px auto;
-}
-
-.u-mb40 {
-  margin: 0 auto 40px auto;
-}
-
-.u-flex {
-  display: flex;
-}
-
-.u-m0A {
-  margin: 0 auto;
-}
-
-.u-white {
-  color: #fff;
-}
-
-.u-bgEAE4AD {
-  background-color: #eae4ad;
-}
-
 .p-special {
   justify-content: space-around;
   padding: 2% 10% 0 10%;
@@ -581,14 +484,15 @@
   font-size: 1.6rem;
   display: inline-block;
   text-align: center;
-  /* width: 100px; */
-  width: 150px;
   padding: 5px 0px;
   border-radius: 25px;
   opacity: 1;
-  background-color: #2d294f;
-  margin-bottom: 20px;
-  color: white;
+  background-color: white;
+  margin-bottom: 2vw;
+  color: #2d294f;
+  width: 150px;
+
+  border: #2d294f 1px solid;
 }
 
 .c-floorNameBasement {
@@ -607,8 +511,8 @@
 
 @media (min-width: 768px) {
   .c-floorName {
-    /* width: 140px; */
     font-size: 2.4rem;
+    width: 200px;
   }
 
   .c-floorNameBasement {
@@ -625,11 +529,36 @@
   }
 }
 
-/* フロア見出し */
-
 /* ご案内見出しの隠し領域 */
-
 span[id="front_info"] {
   display: block;
   content: "";
+}
+
+.u-mb10 {
+  margin-bottom: 10px;
+}
+
+.u-mb2p {
+  margin: 0 auto 2% auto;
+}
+
+.u-mb4p {
+  margin: 0 auto 4% auto;
+}
+
+.u-flex {
+  display: flex;
+}
+
+.u-m0A {
+  margin: 0 auto;
+}
+
+.u-white {
+  color: #fff;
+}
+
+.u-bgEAE4AD {
+  background-color: #eae4ad;
 }

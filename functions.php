@@ -196,6 +196,34 @@ function add_fields($fields)
 // }
 
 // レンタルサーバーにはもう一つwhereをつなぐ
+// add_filter('posts_where', 'filter_where');
+// function filter_where($where)
+// {
+//     if (is_page(220)) {
+//         $ip = $_SERVER['REMOTE_ADDR'];
+//         $where = "";
+//         $where .= " AND wp_ulike.status = 'like' ";
+//         $where .= " AND ip = '$ip' ";
+//     }
+//     return $where;
+// }
+
+// 絞り込むSQLを追加
+// ローカルの場合
+// add_filter('posts_where', 'filter_where');
+// function filter_where($where)
+// {
+//     if (is_page(220)) {
+//         $where = "";
+//         $where .= " AND ip = '127.0.0.1' ";
+//         $where .= " AND wp_ulike.status = 'like' ";
+//         $where .= " AND wp_posts.post_status = 'publish' ";
+//         $where .= " OR wp_posts.ID = '1' ";
+//     }
+//     return $where;
+// }
+
+// レンタルサーバーの場合
 add_filter('posts_where', 'filter_where');
 function filter_where($where)
 {
@@ -204,6 +232,8 @@ function filter_where($where)
         $where = "";
         $where .= " AND wp_ulike.status = 'like' ";
         $where .= " AND ip = '$ip' ";
+        $where .= " AND wp_posts.post_status = 'publish' ";
+        $where .= " OR wp_posts.ID = '1' ";
     }
     return $where;
 }

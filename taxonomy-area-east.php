@@ -6,7 +6,7 @@
     <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
-            <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
+            <a href="<?php echo home_url('/'); ?>"><span>トップ</span></a>
             <i class="fas fa-angle-right"></i>
             <span>県東部</span>
         </div>
@@ -90,12 +90,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- article -->
-                        <div class="c-title u-center">
-                            <!-- コンテンツの抜粋 -->
-                            <?php the_excerpt(); ?>
-                        </div>
                     </article>
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
@@ -177,12 +171,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- article -->
-                        <div class="c-title u-center">
-                            <!-- コンテンツの抜粋 -->
-                            <?php the_excerpt(); ?>
-                        </div>
                     </article>
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
@@ -260,12 +248,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- article -->
-                        <div class="c-title u-center">
-                            <!-- コンテンツの抜粋 -->
-                            <?php the_excerpt(); ?>
                         </div>
                     </article>
                 <?php endwhile; ?>

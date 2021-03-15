@@ -7,8 +7,7 @@
             <div class="p-description">
                 <h2 class="c-heading u-flex">ページが見つかりませんでした</h2>
                 <p class="c-description__text u-center">
-                    申し訳ありません、<a href="<?php echo home_url('/') ?>">こちら</a>からトップページにお戻りください。<br>
-                    ※Myマップの作成には、Myスポットの登録が必要になります。
+                    申し訳ありません、<a href="<?php echo home_url('/') ?>">こちら</a>からトップページにお戻りください。
                 </p>
             </div>
         </section>

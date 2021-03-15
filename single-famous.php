@@ -6,9 +6,9 @@
         <!-- breadCrumb -->
         <div class="p-breadCrumb">
             <div class="p-breadCrumb__inner">
-                <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
+                <a href="<?php echo home_url('/'); ?>"><span>トップ</span></a>
                 <i class="fas fa-angle-right"></i>
-                <a href="<?php echo home_url('famous'); ?>">
+                <a href="<?php echo home_url('/famous/'); ?>">
                     <span>
                         徳島の名物
                     </span>

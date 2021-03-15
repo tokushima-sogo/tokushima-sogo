@@ -7,9 +7,9 @@
         <!-- breadCrumb -->
         <div class="p-breadCrumb">
             <div class="p-breadCrumb__inner">
-                <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
+                <a href="<?php echo home_url('/'); ?>"><span>トップ</span></a>
                 <i class="fas fa-angle-right"></i>
-                <a href="<?php echo home_url('event'); ?>">
+                <a href="<?php echo home_url('/event/'); ?>">
                     <span>
                         徳島のイベント
                     </span>

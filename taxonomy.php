@@ -2,6 +2,16 @@
 
 <main class="l-main">
 
+    <!-- breadCrumb -->
+    <div class="p-breadCrumb">
+        <div class="p-breadCrumb__inner">
+            <a href="<?php echo home_url('/'); ?>"><span>トップ</span></a>
+            <i class="fas fa-angle-right"></i>
+            <span>検索結果</span>
+        </div>
+    </div>
+    <!-- breadCrumb -->
+
     <section class="l-description">
         <div class="p-description">
             <h2 class="c-heading u-flex">検索結果</h2>

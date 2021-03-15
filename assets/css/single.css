@@ -462,6 +462,10 @@ a.wp1_like_like span {
   opacity: 0.5;
 } */
 
+.wp1_like_like, a.wp1_like_like :hover{
+  color: #CF7E7C;
+}
+
 /* tableここから */
 .c-singleTable__th,
 .c-singleTable__td {

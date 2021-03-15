@@ -6,7 +6,7 @@
     <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
-            <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
+            <a href="<?php echo home_url('/'); ?>"><span>トップ</span></a>
             <i class="fas fa-angle-right"></i>
             <span>県南部</span>
         </div>
@@ -21,7 +21,7 @@
             <h2 class="c-heading u-center u-white u-south">徳島南部</h2>
             <div class="p-description__item u-flex">
                 <div class="c-description__text">
-                    テキストはまだ
+                    県南部は太平洋に面しており、サーフィンやSUP、シーカヤックなどのマリンスポーツが盛んで体験施設も多くある。また美波町の「大浜海岸」には、毎年アカウミガメが産卵のため上陸し、美しい涙を流すという。そして美波町では、町を挙げてウミガメの保護活動に取り組んでいる。「大浜海岸」の目の前には「日和佐うみがめ博物館　カレッタ」があり、より深くウミガメについて学ぶこともできる。その他にも県南部は、新鮮な海の幸が豊富で、南国徳島を存分に味わうことのできるエリアである。
                 </div>
                 <div class="c-description__map">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/img_archive_south_map02.png" class="c-map" alt="徳島南部">
@@ -91,15 +91,7 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- article -->
-                        <div class="c-title u-center">
-                            <!-- コンテンツの抜粋 -->
-                            <?php the_excerpt(); ?>
-                        </div>
                     </article>
-
-
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
@@ -177,14 +169,7 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- article -->
-                        <div class="c-title u-center">
-                            <!-- コンテンツの抜粋 -->
-                            <?php the_excerpt(); ?>
-                        </div>
                     </article>
-
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
@@ -261,12 +246,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- article -->
-                        <div class="c-title u-center">
-                            <!-- コンテンツの抜粋 -->
-                            <?php the_excerpt(); ?>
                         </div>
                     </article>
                 <?php endwhile; ?>

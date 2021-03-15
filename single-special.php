@@ -7,9 +7,9 @@
         <!-- breadCrumb -->
         <div class="p-breadCrumb">
             <div class="p-breadCrumb__inner">
-                <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
+                <a href="<?php echo home_url('/'); ?>"><span>トップ</span></a>
                 <i class="fas fa-angle-right"></i>
-                <a href="<?php echo home_url('special'); ?>">
+                <a href="<?php echo home_url('/special/'); ?>">
                     <span>
                         特集一覧
                     </span>
@@ -17,6 +17,7 @@
                 <i class="fas fa-angle-right"></i><span><?php echo get_post()->post_title ?></span>
             </div>
         </div>
+        <!-- breadCrumb -->
 
         <!-- 投稿記事の出力 -->
         <?php if (have_posts()) : ?>

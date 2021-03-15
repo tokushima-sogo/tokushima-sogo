@@ -18,7 +18,7 @@
         <div class="p-header__contents u-flex u-bgCalmBlue">
 
             <!-- logo -->
-            <h1><a href="<?php echo home_url(); ?>"><img id="header_size" class="c-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_tokushima_sogokan.png" alt="トクシマSoGo館"></a></h1>
+            <h1><a href="<?php echo home_url('/'); ?>"><img id="header_size" class="c-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_tokushima_sogokan.png" alt="トクシマSoGo館"></a></h1>
             <!-- logo -->
 
             <!-- topNav -->
@@ -29,34 +29,34 @@
                             <p class="c-header__nav u-bold u-white">ご案内</p>
                         </div>
                         <ul class="p-header__navListDetail u-info u-center" style="display:none">
-                            <li><a class="c-header__navListDetail" href="<?php echo esc_url(home_url('/tokushima')); ?>">徳島について</a></li>
+                            <li><a class="c-header__navListDetail" href="<?php echo esc_url(home_url('/tokushima/')); ?>">徳島について</a></li>
                             <li><a class="c-header__navListDetail" href="<?php echo get_post_type_archive_link('famous'); ?>">徳島の名物
                                 </a></li>
                             <li><a class="c-header__navListDetail" href="<?php echo get_post_type_archive_link('event'); ?>">徳島のイベント</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="<?php echo home_url('area/south') ?>" class="p-header__navList u-center"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_south.png" alt="県南部">
+                        <a href="<?php echo home_url('/area/south/') ?>" class="p-header__navList u-center"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_south.png" alt="県南部">
                             <p class="c-header__nav u-white">県南部</p>
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo home_url('area/city') ?>" class="p-header__navList u-center"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_city.png" alt="徳島市">
+                        <a href="<?php echo home_url('/area/city/') ?>" class="p-header__navList u-center"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_city.png" alt="徳島市">
                             <p class="c-header__nav u-white">徳島市</p>
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo home_url('area/west') ?>" class="p-header__navList u-center"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_west.png" alt="県西部">
+                        <a href="<?php echo home_url('/area/west/') ?>" class="p-header__navList u-center"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_west.png" alt="県西部">
                             <p class="c-header__nav u-white">県西部</p>
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo home_url('area/east') ?>" class="p-header__navList u-center"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_east.png" alt="県東部">
+                        <a href="<?php echo home_url('/area/east/') ?>" class="p-header__navList u-center"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_east.png" alt="県東部">
                             <p class="c-header__nav u-white">県東部</p>
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo home_url('horror') ?>" class="p-header__navList u-center"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_horror.png" alt="都市伝説">
+                        <a href="<?php echo home_url('/horror/') ?>" class="p-header__navList u-center"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_horror.png" alt="都市伝説">
                             <p class="c-header__nav u-white">都市伝説</p>
                         </a>
                     </li>
@@ -65,9 +65,9 @@
                             <p class="c-header__nav u-bold u-white">特設会場</p>
                         </div>
                         <ul class="p-header__navListDetail u-special u-center" style="display:none">
-                            <li><a class="c-header__navListDetail" href="<?php echo home_url('quiz/') ?>" target="_blank">クイズ
+                            <li><a class="c-header__navListDetail" href="<?php echo home_url('/quiz/') ?>" target="_blank">クイズ
                                 </a></li>
-                            <li><a class="c-header__navListDetail" href="<?php echo home_url('special') ?>">特集
+                            <li><a class="c-header__navListDetail" href="<?php echo home_url('/special/') ?>">特集
                                 </a></li>
                         </ul>
                     </li>
@@ -108,26 +108,26 @@
                         <li>
                             <div class="c-header__contentsBurgerNavBtn"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_special.png" alt="6階"><span class="u-bold u-calmBlue">特設会場</span></div>
                             <ul class="p-BurgerNavDetail">
-                                <li><a href="<?php echo home_url('quiz') ?>">クイズ</a></li>
-                                <li><a href="<?php echo home_url('special') ?>">特集</a></li>
+                                <li><a href="<?php echo home_url('/quiz/') ?>" target="_blank">クイズ</a></li>
+                                <li><a href="<?php echo home_url('/special/') ?>">特集</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="<?php echo home_url('horror') ?>" class="c-header__contentsBurgerNavBtn"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_horror.png" alt="都市伝説"><span class="u-bold u-calmBlue">都市伝説</span></a>
+                            <a href="<?php echo home_url('/horror/') ?>" class="c-header__contentsBurgerNavBtn"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_horror.png" alt="都市伝説"><span class="u-bold u-calmBlue">都市伝説</span></a>
                         </li>
-                        <li><a href="<?php echo home_url('area/east') ?>" class="c-header__contentsBurgerNavBtn"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_east.png" alt="5県東部"><span class="u-bold u-calmBlue">県東部</span></a>
+                        <li><a href="<?php echo home_url('/area/east/') ?>" class="c-header__contentsBurgerNavBtn"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_east.png" alt="5県東部"><span class="u-bold u-calmBlue">県東部</span></a>
                         </li>
-                        <li><a href="<?php echo home_url('area/west') ?>" class="c-header__contentsBurgerNavBtn"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_west.png" alt="県西部"><span class="u-bold u-calmBlue">県西部</span></a>
+                        <li><a href="<?php echo home_url('/area/west/') ?>" class="c-header__contentsBurgerNavBtn"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_west.png" alt="県西部"><span class="u-bold u-calmBlue">県西部</span></a>
                         </li>
-                        <li><a href="<?php echo home_url('area/city') ?>" class="c-header__contentsBurgerNavBtn"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_city.png" alt="徳島市"><span class="u-bold u-calmBlue">徳島市</span></a>
+                        <li><a href="<?php echo home_url('/area/city/') ?>" class="c-header__contentsBurgerNavBtn"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_city.png" alt="徳島市"><span class="u-bold u-calmBlue">徳島市</span></a>
                         </li>
-                        <li><a href="<?php echo home_url('area/south') ?>" class="c-header__contentsBurgerNavBtn"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_south.png" alt="県南部"><span class="u-bold u-calmBlue">県南部</span></a>
+                        <li><a href="<?php echo home_url('/area/south/') ?>" class="c-header__contentsBurgerNavBtn"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_south.png" alt="県南部"><span class="u-bold u-calmBlue">県南部</span></a>
                         </li>
                         <li>
                             <div class="c-header__contentsBurgerNavBtn"><img class="c-navBtn" src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_header_info.png" alt="ご案内"><span class="u-bold u-calmBlue">ご案内</span></div>
                             <ul class="p-BurgerNavDetail">
-                                <li><a href="<?php echo home_url('famous') ?>">徳島の名物</a></li>
-                                <li><a href="<?php echo home_url('event') ?>">徳島県のイベント</a></li>
+                                <li><a href="<?php echo home_url('/famous/') ?>">徳島の名物</a></li>
+                                <li><a href="<?php echo home_url('/event/') ?>">徳島県のイベント</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -140,7 +140,7 @@
 
         <section class="l-searchArea">
             <div class="c-button__seachForm__close">
-                <button id="c-button__searchForm__close" class="close c-button__searchForm__close "><img src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_searchForm_close.png" alt="×" srcset="" width="25px" height="25px" class="c-button__searchForm--close"></button>
+                <button id="c-button__searchForm__close" class="close c-button__searchForm__close "><img src="<?php echo get_template_directory_uri(); ?>/assets/images/btn_searchForm_close.png" alt="閉じる" width="25" height="25" class="c-button__searchForm--close"></button>
             </div>
             <div id="searchfilter">
                 <?php echo do_shortcode('[searchandfilter fields="searcharea,contents"  types="radio,radio" " submit_label="この条件で絞り込む" headings="エリアを選択,コンテンツを選択"]'); ?>

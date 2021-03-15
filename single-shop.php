@@ -9,7 +9,7 @@
         <!-- breadCrumb -->
         <div class="p-breadCrumb">
             <div class="p-breadCrumb__inner">
-                <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
+                <a href="<?php echo home_url('/'); ?>"><span>トップ</span></a>
                 <i class="fas fa-angle-right"></i>
                 <span><?php echo get_the_term_list($post->ID, 'area') ?></span>
                 <i class="fas fa-angle-right"></i><span><?php echo esc_html(get_post_type_object(get_post_type())->label); ?></span>

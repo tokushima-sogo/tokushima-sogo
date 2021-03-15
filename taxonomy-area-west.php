@@ -6,7 +6,7 @@
     <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner">
-            <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
+            <a href="<?php echo home_url('/'); ?>"><span>トップ</span></a>
             <i class="fas fa-angle-right"></i>
             <span>県西部</span>
         </div>
@@ -21,7 +21,7 @@
             <h2 class="c-heading u-center u-white u-west">徳島西部</h2>
             <div class="p-description__item u-flex">
                 <div class="c-description__text">
-                    テキストが入ります。
+                    県西部は日本百名山に名を連ねる「剣山」や、日本を代表する三大河川の一つで「四国三郎」と呼ばれる吉野川に囲まれており、壮大な自然を感じることができる。県西部の中でも絶景で激流の渓谷として知られている「大歩危」では、2017年ラフティング世界選手権が開催された。大会期間中、約3万人が来場した。また実際にラフティングを体験できる施設もあり、今もなお、多くの観光客を魅了している。他にも徳島を代表する観光スポット「祖谷のかずら橋」や「うだつの町並み」があり、どこか懐かしい、のどかな雰囲気を感じられるエリアである。
                 </div>
                 <div class="c-description__map">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/img_archive_west_map02.png" class="c-map" alt="徳島西部">
@@ -89,12 +89,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- article -->
-                        <div class="c-title u-center">
-                            <!-- コンテンツの抜粋 -->
-                            <?php the_excerpt(); ?>
                         </div>
                     </article>
                 <?php endwhile; ?>
@@ -174,12 +168,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- article -->
-                        <div class="c-title u-center">
-                            <!-- コンテンツの抜粋 -->
-                            <?php the_excerpt(); ?>
-                        </div>
                     </article>
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
@@ -258,14 +246,7 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- article -->
-                        <div class="c-title u-center">
-                            <!-- コンテンツの抜粋 -->
-                            <?php the_excerpt(); ?>
-                        </div>
                     </article>
-
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>

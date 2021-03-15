@@ -6,7 +6,7 @@
     <!-- breadCrumb -->
     <div class="p-breadCrumb">
         <div class="p-breadCrumb__inner u-panHorror">
-            <a href="<?php echo home_url(); ?>"><span>トップ</span></a>
+            <a href="<?php echo home_url('/'); ?>"><span>トップ</span></a>
             <i class="fas fa-angle-right"></i>
             <span>都市伝説</span>
         </div>

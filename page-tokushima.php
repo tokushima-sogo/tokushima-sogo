@@ -1,11 +1,22 @@
 <?php get_header(); ?>
 
 <main class="l-main">
+
+    <!-- breadCrumb -->
+    <div class="p-breadCrumb">
+        <div class="p-breadCrumb__inner">
+            <a href="<?php echo home_url('/'); ?>"><span>トップ</span></a>
+            <i class="fas fa-angle-right"></i>
+            <span>徳島について</span>
+        </div>
+    </div>
+    <!-- breadCrumb -->
+
     <div class="l-page">
         <!-- description -->
         <section class="l-description">
             <div class="p-description">
-                <h2 class="c-heading u-flex">徳島県について</h2>
+                <h2 class="c-heading u-flex">徳島について</h2>
                 <p class="c-description__text">
                     徳島県は、四国の東部に位置し、県庁所在地は徳島市。南を高知県、北は香川県と接しており、東には太平洋の大海原が広がっています。兵庫県の淡路島と大鳴門橋で結ばれており、本州から車移動する場合の「四国の玄関口」といった役割。
                 </p>

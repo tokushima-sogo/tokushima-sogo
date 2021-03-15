@@ -1,6 +1,17 @@
 <?php get_header(); ?>
 
 <main class="l-main">
+
+    <!-- breadCrumb -->
+    <div class="p-breadCrumb">
+        <div class="p-breadCrumb__inner">
+            <a href="<?php echo home_url('/'); ?>"><span>トップ</span></a>
+            <i class="fas fa-angle-right"></i>
+            <span>プライバシーポリシー</span>
+        </div>
+    </div>
+    <!-- breadCrumb -->
+
     <div class="l-page">
         <!-- description -->
         <div class="p-description">

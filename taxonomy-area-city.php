@@ -91,12 +91,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- article -->
-                        <div class="c-title u-center">
-                            <!-- コンテンツの抜粋 -->
-                            <?php the_excerpt(); ?>
-                        </div>
                     </article>
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
@@ -174,13 +168,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- article -->
-
-                        <div class="c-title u-center">
-                            <!-- コンテンツの抜粋 -->
-                            <?php the_excerpt(); ?>
                         </div>
                     </article>
                 <?php endwhile; ?>
@@ -262,14 +249,7 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- article -->
-                        <div class="c-title u-center">
-                            <!-- コンテンツの抜粋 -->
-                            <?php the_excerpt(); ?>
-                        </div>
                     </article>
-
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             <?php endif; ?>
