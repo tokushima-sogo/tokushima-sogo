@@ -16,7 +16,7 @@
 
         <!-- elevatorArea -->
         <div class="p-elevatorArea u-bg3ea5c8">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_catchCopy02.png" class="c-catchCopy" alt="ロープウェイに乗って見つけよう！あ・わくわくする徳島">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/img_front_catchCopy.png" class="c-catchCopy" alt="ロープウェイに乗って見つけよう！あ・わくわくする徳島">
             <!-- class="u-mb20" -->
             <section id="js_6f" class="u-mb2p">
                 <div class="p-floorBlock6">
@@ -128,12 +128,12 @@
                 <h2 class="c-floorName u-bg2d294f u-mb10">ご案内</h2>
                 <div class="p-guideArea u-m0A">
                     <h3 class="c-guideTitle">このサイトの使い方</h3>
-                    <p class="c-floor__text">
-                        当サイトは“架空の案内所“をモチーフにし、徳島県の観光情報を掲載したサイトです。<br>
-                        実際に案内所に訪れた時のように、ぜひ一階から最上階までゆっくり楽しんでみてください！<br><br>
-                        行きたい所を見つけたら、「MYマップに追加」ボタンを押す事で、地図を作成することが出来ます。<br>
-                        ぜひ、自分だけの地図を作って遊んでみてください！
-                    </p>
+                    <li class="u-mb10">当サイトは“架空の案内所“をモチーフにし、徳島県の観光情報を掲載したサイトです。
+                        <br>
+                        実際に案内所に訪れた時のように、一階から最上階までゆっくり楽しんでみてください！
+                    </li>
+                    <li>行きたい場所を見つけたら、<span>「MYマップに追加」</span>ボタンを押す事で、MYマップに登録できます。<br>
+                        サイト上部の<span>「MYマップ」</span>ボタンを押せば自分だけの地図が完成です！</li>
                 </div>
             </div>
         </section>

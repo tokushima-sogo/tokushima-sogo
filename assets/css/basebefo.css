@@ -170,8 +170,12 @@ main {
   display: inline-block;
   width: 100%;
   height: 26px;
-  padding-top: 6px;
+  /* padding-top: 6px; */
   text-align: center;
+  color: #000000;
+  border-radius: 4px 0 0 4px;
+  font-size: 18px;
+  line-height: 26px;
 }
 
 .lift5 {
@@ -184,8 +188,12 @@ main {
   display: inline-block;
   width: 100%;
   height: 26px;
-  padding-top: 6px;
+  /* padding-top: 6px; */
   text-align: center;
+  color: #000000;
+  border-radius: 4px 0 0 4px;
+  font-size: 18px;
+  line-height: 26px;
 }
 
 .lift4 {
@@ -198,8 +206,12 @@ main {
   display: inline-block;
   width: 100%;
   height: 26px;
-  padding-top: 6px;
+  /* padding-top: 6px; */
   text-align: center;
+  color: #000000;
+  border-radius: 4px 0 0 4px;
+  font-size: 18px;
+  line-height: 26px;
 }
 
 .lift3 {
@@ -212,8 +224,12 @@ main {
   display: inline-block;
   width: 100%;
   height: 26px;
-  padding-top: 6px;
+  /* padding-top: 6px; */
   text-align: center;
+  color: #000000;
+  border-radius: 4px 0 0 4px;
+  font-size: 18px;
+  line-height: 26px;
 }
 
 .lift2 {
@@ -226,8 +242,12 @@ main {
   display: inline-block;
   width: 100%;
   height: 26px;
-  padding-top: 6px;
+  /* padding-top: 6px; */
   text-align: center;
+  color: #000000;
+  border-radius: 4px 0 0 4px;
+  font-size: 18px;
+  line-height: 26px;
 }
 
 .lift1 {
@@ -240,8 +260,12 @@ main {
   display: inline-block;
   width: 100%;
   height: 26px;
-  padding-top: 6px;
+  /* padding-top: 6px; */
   text-align: center;
+  color: #000000;
+  border-radius: 4px 0 0 4px;
+  font-size: 18px;
+  line-height: 26px;
 }
 
 .p-instaArea {

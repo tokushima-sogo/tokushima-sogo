@@ -111,7 +111,7 @@
 
 /* 『このサイトの使い方』 */
 .p-floorBlock_info {
-  padding: 4% 15%;
+  padding: 4% 10%;
   position: relative;
 }
 
@@ -240,10 +240,12 @@
 .c-specialLink {
   display: inline-block;
   height: 80%;
+  color:#2d294f;
 }
 
 .c-specialLink:hover {
   transform: scale(1.1);
+  color: #cf7e7c;
 }
 
 /* 都市伝説の階のリンク */
@@ -384,6 +386,30 @@
     min-width: 100px;
     position: absolute;
     top: 90%;
+    transform: translate(0, -90%);
+    left: -10%;
+    display: block;
+  }
+
+  .c-fukidashi {
+    height: auto;
+    width: 30%;
+    min-width: 100px;
+    position: absolute;
+    top: -5%;
+    transform: translate(-30%, -15%);
+    left: -20%;
+    display: block;
+  }
+}
+
+/* @media (min-width: 768px) {
+  .c-awaodori {
+    height: auto;
+    width: 18%;
+    min-width: 100px;
+    position: absolute;
+    top: 90%;
     transform: translate(0, -100%);
     left: 0;
     display: block;
@@ -392,15 +418,14 @@
   .c-fukidashi {
     height: auto;
     width: 22%;
-  min-width: 100px;
-
+    min-width: 100px;
     position: absolute;
     top: 10%;
     transform: translate(0, 0);
     left: -15%;
     display: block;
   }
-}
+} */
 
 .p-floorBlock {
   text-align: center;
@@ -460,6 +485,10 @@
   }
 }
 
+#sb_instagram #sbi_load .sbi_load_btn, #sb_instagram .sbi_follow_btn a{
+  margin: 0;
+}
+
 .p-special {
   justify-content: space-around;
   padding: 2% 10% 0 10%;
@@ -491,7 +520,6 @@
   margin-bottom: 2vw;
   color: #2d294f;
   width: 150px;
-
   border: #2d294f 1px solid;
 }
 
