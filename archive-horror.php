@@ -166,7 +166,7 @@
                                 <div class="c-date u-center u-fontHorror">公開日：<?php the_time('Y-m-d'); ?></div>
 
                                 <div class="p-tag u-flex">
-                                    <div class="c-tag u-bgHorror"> <?php echo get_the_term_list($post->ID, 'taxotag'); ?>
+                                    <div class="c-tag u-bgHorror"><?php echo get_the_term_list($post->ID, 'taxotag'); ?>
                                     </div>
                                 </div>
                             </div>

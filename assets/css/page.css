@@ -8,12 +8,12 @@
 .l-page {
   width: 90%;
   margin: 0 auto;
-  padding: 30px 0;
+  padding: 30px 0 0;
 }
 
 /* このサイトについて */
 .l-reference {
-  width: 90%;
+  width: 100%;
   max-width: 900px;
   margin: 0 auto;
   padding: 0;
@@ -21,9 +21,11 @@
 
 /* テーブル */
 .l-pageTable {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  padding: 30px 15px;
+  /* 変更 */
+  padding: 30px 0;
+  /* padding: 30px 15px; */
 }
 
 /* map */
@@ -196,6 +198,7 @@
   font-size: 1.6rem;
   line-height: 1.5;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -248,7 +251,7 @@
   border-radius: 8px;
   border: 1px solid #707070;
   background: #ffffff;
-  font-size: 140%;
+  font-size: 125%;
 }
 
 .c-pageTable__td.u-contact textarea {
@@ -276,11 +279,10 @@
   -webkit-appearance: none;
   display: inline-block;
   width: 100px;
-  margin: 30px 0;
+  margin: 30px 0 0;
   padding: 7px;
   border-radius: 30px;
-  font-family: "mamelon5";
-  font-size: 2.6rem;
+  font-size: 1.4rem;
   letter-spacing: 1px;
   cursor: pointer;
 }

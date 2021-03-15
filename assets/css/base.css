@@ -260,8 +260,8 @@ header a:hover {
 
 .p-header_search p,
 .p-header__contentsList li a p {
-  height: 60px;
-  padding: 5px;
+  /* height: 60px;
+  padding: 5px; */
   font-size: 1.3rem;
 }
 
@@ -670,7 +670,7 @@ a.c-header__navListDetail {
 @media (min-width: 1025px) {
   .c-footer__contentsDetail li a {
     display: block;
-    width: 100px;
+    width: 120px;
     padding: 14px 0 0 33%;
     color: #FFFFFF;
     font-size: 1.6rem;

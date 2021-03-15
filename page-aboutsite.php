@@ -36,21 +36,21 @@
             </div>
             <div class="l-reference">
                 <div class="u-center">
-                    <h3 class="c-subHeading">地域情報、等</h3>
+                    <h3 class="c-subHeading">地域情報等</h3>
                 </div>
                 <div class="l-pageTable">
                     <table class="p-pageTable">
                         <tr>
                             <th class="c-pageTable__th">ウィキペディア</th>
-                            <td class="c-pageTable__td"><a href="https://ja.wikipedia.org/wiki/" target="_blank">https://ja.wikipedia.org/wiki/</a></td>
+                            <td class="c-pageTable__td"><a href="https://ja.wikipedia.org/wiki/" target="_blank">ウィキペディア</a></td>
                         </tr>
                         <tr>
                             <th class="c-pageTable__th">徳島県観光情報:阿波ナビ</th>
-                            <td class="c-pageTable__td"><a href="http://www.awanavi.jp/" target="_blank">http://www.awanavi.jp/</a></td>
+                            <td class="c-pageTable__td"><a href="http://www.awanavi.jp/" target="_blank">阿波ナビ</a></td>
                         </tr>
                         <tr>
                             <th class="c-pageTable__th">周辺地図:Googleマップ</th>
-                            <td class="c-pageTable__td"><a href="https://www.google.co.jp/maps/?hl=ja" target="_blank">https://www.google.co.jp/maps/?hl=ja</a></td>
+                            <td class="c-pageTable__td"><a href="https://www.google.co.jp/maps/?hl=ja" target="_blank">Googleマップ</a></td>
                         </tr>
                     </table>
                 </div>
@@ -64,11 +64,11 @@
                     <table class="p-pageTable">
                         <tr>
                             <th class="c-pageTable__th">イラストAC</th>
-                            <td class="c-pageTable__td"><a href="https://www.ac-illust.com/" target="_blank">https://www.ac-illust.com/</a></td>
+                            <td class="c-pageTable__td"><a href="https://www.ac-illust.com/" target="_blank">イラストAC</a></td>
                         </tr>
                         <tr>
                             <th class="c-pageTable__th">CLEANPNG</th>
-                            <td class="c-pageTable__td"><a href="https://www.cleanpng.com/" target="_blank">https://www.cleanpng.com/</a></td>
+                            <td class="c-pageTable__td"><a href="https://www.cleanpng.com/" target="_blank">CLEANPNG</a></td>
                         </tr>
                     </table>
                 </div>

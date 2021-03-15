@@ -36,7 +36,7 @@
             <?php
             $args = array(
                 'post_type'         => 'famous',  // カスタム投稿タイプ名
-                'orderby'          => 'rand',     //ランダムで表示
+                'orderby'           => 'rand',    //ランダムで表示
                 'tax_query'         => array(
                     'relation'      => 'AND',
                     array(
@@ -79,7 +79,15 @@
                                 </div>
                                 <ul class="p-singleTagList__ul u-flex">
                                     <?php
-                                    echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li', '</li><li class="c-singleTagList__li>', '</li>');
+                                    $terms = get_the_terms($post->ID, 'taxotag');
+                                    if ($terms[0]) {
+                                        echo '<li class="c-singleTagList__li">' . $terms[0]->name . '</li>';
+                                    }
+                                    if (isset($terms[1])) {
+                                        echo '<li class="c-singleTagList__li">' . $terms[1]->name . '</li>';
+                                    } else {
+                                        echo '<p>&nbsp;</p>';
+                                    }
                                     ?>
                                 </ul>
                             </div>
@@ -163,7 +171,15 @@
                                 </div>
                                 <ul class="p-singleTagList__ul u-flex">
                                     <?php
-                                    echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li', '</li><li class="c-singleTagList__li>', '</li>');
+                                    $terms = get_the_terms($post->ID, 'taxotag');
+                                    if ($terms[0]) {
+                                        echo '<li class="c-singleTagList__li">' . $terms[0]->name . '</li>';
+                                    }
+                                    if (isset($terms[1])) {
+                                        echo '<li class="c-singleTagList__li">' . $terms[1]->name . '</li>';
+                                    } else {
+                                        echo '<p>&nbsp;</p>';
+                                    }
                                     ?>
                                 </ul>
                             </div>
@@ -247,7 +263,15 @@
                                 </div>
                                 <ul class="p-singleTagList__ul u-flex">
                                     <?php
-                                    echo get_the_term_list($post->ID, 'taxotag', '<li class="c-singleTagList__li', '</li><li class="c-singleTagList__li>', '</li>');
+                                    $terms = get_the_terms($post->ID, 'taxotag');
+                                    if ($terms[0]) {
+                                        echo '<li class="c-singleTagList__li">' . $terms[0]->name . '</li>';
+                                    }
+                                    if (isset($terms[1])) {
+                                        echo '<li class="c-singleTagList__li">' . $terms[1]->name . '</li>';
+                                    } else {
+                                        echo '<p>&nbsp;</p>';
+                                    }
                                     ?>
                                 </ul>
                                 <!-- singleTagList -->
