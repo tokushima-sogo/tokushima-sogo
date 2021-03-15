@@ -22,10 +22,11 @@
 /* テーブル */
 .l-pageTable {
   width: 100%;
+  /*  max-width追記*/
+  max-width: 900px;
+ /*  追記おわり*/
   margin: 0 auto;
-  /* 変更 */
   padding: 30px 0;
-  /* padding: 30px 15px; */
 }
 
 /* map */

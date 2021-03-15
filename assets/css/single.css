@@ -227,7 +227,8 @@
 /* グリッドの指定 */
 .p-articleList {
   justify-content: center;
-  gap: 50px;
+  /* gap: 50px; */
+  grid-gap:15px 50px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
   width: 90%;
   margin: 0 auto;
