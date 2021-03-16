@@ -263,6 +263,7 @@
             <?php $args = array(
                 'post_type'        => $post_type,         //カスタム投稿タイプ名
                 'orderby'          => 'rand',             //ランダムで表示
+                'posts_per_page'    => 3,                 //記事を3件のみ出力
                 'exclude'          => $post_id,           // 表示中の投稿を除外
                 'tax_query'        => array(
                     array(

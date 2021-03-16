@@ -1,41 +1,67 @@
 <?php get_header(); ?>
 
-<main>
+<main class="l-main">
 
-    <!-- 各ページへのリンク -->
-    <!-- 6F -->
-    <!-- クイズゲームへ -->
-    <a href="<?php echo esc_url(home_url('/quiz')); ?>"></a>
-    <!-- 特集ページへ -->
-    <a href="<?php echo get_post_type_archive_link('special'); ?>">特集ページへ</a>
+    <!-- breadCrumb -->
+    <div class="p-breadCrumb">
+        <div class="p-breadCrumb__inner">
+            <a href="<?php echo home_url('/'); ?>"><span>トップ</span></a>
+            <i class="fas fa-angle-right"></i>
+            <span>検索結果</span>
+        </div>
+    </div>
+    <!-- breadCrumb -->
 
-    <!-- 5F -->
-    <!-- 東部のアーカイブ -->
-    <a href="<?php echo get_post_type_archive_link('east'); ?>">東部</a>
+    <section class="l-description">
+        <div class="p-description">
+            <h2 class="c-heading u-flex">検索結果</h2>
+        </div>
+    </section>
 
-    <!-- 4F -->
-    <!-- 西部のアーカイブ -->
-    <a href="<?php echo get_post_type_archive_link('west'); ?>">西部</a>
-
-    <!-- 3F -->
-    <!-- 市内のアーカイブ -->
-    <a href="<?php echo get_post_type_archive_link('city'); ?>">徳島市内</a>
-
-    <!-- 2F -->
-    <!-- 南部のアーカイブ -->
-    <a href="<?php echo get_post_type_archive_link('south'); ?>">南部</a>
-
-    <!-- 1F -->
-    <!-- 徳島について固定ページ -->
-    <a href="<?php echo esc_url(home_url('/tokushima')); ?>">徳島について</a>
-    <!-- 名物のアーカイブ -->
-    <a href="<?php echo get_post_type_archive_link('famous'); ?>">名物</a>
-    <!-- イベントのアーカイブ -->
-    <a href="<?php echo get_post_type_archive_link('event'); ?>">イベント</a>
-
-    <!-- B1F -->
-    <!-- 都市伝説のアーカイブ -->
-    <a href="<?php echo get_post_type_archive_link('horror'); ?>">都市伝説</a>
+    <div class="l-articleList">
+        <!-- articleList -->
+        <div class="p-articleList u-grid">
+            <?php if (have_posts()) : ?>
+                <?php while (have_posts()) : ?>
+                    <?php the_post(); ?>
+                    <article class="p-article">
+                        <!-- imgArea -->
+                        <div class="p-imgArea">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/frame_archive_common_thumbFrame.png" class="c-frame" alt="額縁">
+                            <!-- thumbnail -->
+                            <a href="<?php the_permalink(); ?>" class="c-thumbnail">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <?php the_post_thumbnail('medium') ?>
+                                <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" class="c-thumbnail" alt="画像がありません">
+                                <?php endif; ?>
+                            </a>
+                        </div>
+                        <!-- textArea -->
+                        <div class="p-textArea">
+                            <div class="p-textContent">
+                                <div class="c-title u-center">
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                </div>
+                                <div class="p-tag u-flex">
+                                    <div class="c-tag u-mr15">
+                                        <?php
+                                        echo get_the_term_list($post->ID, 'area');
+                                        ?>
+                                    </div>
+                                    <div class="c-tag">
+                                        <?php
+                                        echo esc_html(get_post_type_object(get_post_type())->label);
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                <?php endwhile; ?>
+            <?php endif; ?>
+        </div>
+    </div>
 
 </main>
 

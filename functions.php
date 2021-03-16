@@ -86,6 +86,8 @@ function add_tokushima_sogo_styles()
     //トップページ
     if (is_front_page()) {
         wp_enqueue_style('tokushima_sogo_front_page_style', get_template_directory_uri() . '/assets/css/front-page.css');
+    } else if (is_search()) {
+        wp_enqueue_style('tokushima_sogo_taxonomy_style', get_template_directory_uri() . '/assets/css/taxonomy.css');
 
         //固定ページ
     } else if (is_page('quiz')) {

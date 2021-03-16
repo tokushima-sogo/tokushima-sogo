@@ -33,7 +33,7 @@
                         <div class="c-specialBanner">
                             <a href="<?php the_permalink(); ?>" class="c-thumbnail">
                                 <?php if (has_post_thumbnail()) : ?>
-                                    <?php the_post_thumbnail('medium') ?>
+                                    <?php the_post_thumbnail('full') ?>
                                 <?php else : ?>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="画像がありません">
                                 <?php endif; ?>

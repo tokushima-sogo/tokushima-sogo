@@ -27,7 +27,8 @@ form > div > ul > li:nth-of-type(1) > ul > li:nth-of-type(1) {
 }
 /* コンテンツ一覧を隠す */
 form > div > ul > li:nth-of-type(2) > ul > li:nth-of-type(1) {
-  display: none;
+  font-size: 13px;
+  margin-bottom: 12px;
 }
 /* 検索ボタン */
 form > div > ul > li:nth-of-type(3) > input:nth-of-type(2) {

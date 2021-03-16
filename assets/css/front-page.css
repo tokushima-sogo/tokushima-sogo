@@ -203,7 +203,9 @@
 .c-sirasagi,
 .c-turtle,
 .c-surfing {
-  height: 10vh;
+  /* height: 10vh; */
+  height: 15vw;
+  max-height: 180px;
 }
 
 /* 各階のマップの大きさ */
@@ -211,7 +213,9 @@
 .c-floorMapNisi,
 .c-floorMapTokusimacity,
 .c-floorMapMinami {
-  height: 8vh;
+  /* height: 8vh; */
+  height: 13vw;
+  max-height: 160px;
 }
 
 /* 特設会場のイラスト二つ */
@@ -411,30 +415,6 @@
   }
 }
 
-/* @media (min-width: 768px) {
-  .c-awaodori {
-    height: auto;
-    width: 18%;
-    min-width: 100px;
-    position: absolute;
-    top: 90%;
-    transform: translate(0, -100%);
-    left: 0;
-    display: block;
-  }
-
-  .c-fukidashi {
-    height: auto;
-    width: 22%;
-    min-width: 100px;
-    position: absolute;
-    top: 10%;
-    transform: translate(0, 0);
-    left: -15%;
-    display: block;
-  }
-} */
-
 .p-floorBlock {
   text-align: center;
 }
@@ -510,6 +490,10 @@
 .p-guideArea {
   font-size: 1.4rem;
   line-height: 1.2;
+}
+
+.p-guideArea p {
+  text-align: left;
 }
 
 .u-bg2d294f {
