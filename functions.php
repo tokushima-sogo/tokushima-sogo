@@ -140,7 +140,7 @@ function add_tokushima_sogo_scripts()
     // slickの利用
     wp_enqueue_script('slick_carousel_js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', '', '', true);
     if (is_front_page()) {
-        // wp_enqueue_script('scroll_js', get_template_directory_uri() . '/assets/js/scroll.js', '', '', true);
+        wp_enqueue_script('scroll_js', get_template_directory_uri() . '/assets/js/scroll.js', '', '', true);
         wp_enqueue_script('elevator', get_template_directory_uri() . '/assets/js/elevator.js', '', '', true);
     } else if (is_single()) {
         wp_enqueue_script('slick_setting_js', get_template_directory_uri() . '/assets/js/slicksetting.js', '', '', true);

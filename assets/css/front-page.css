@@ -25,11 +25,18 @@
   width: 15vw;
   position: absolute;
   left: 5%;
-  top: 15%;
+  /* top: 15%; */
+  top: 90px;
   min-width: 60px;
   z-index: 2;
-
 }
+
+@media (min-width: 1025px) {
+.c-catchCopy {
+  top: 120px;
+  }
+}
+
 
 /* ヘッダー分の高さ確保 */
 .l-main {
@@ -148,6 +155,7 @@
 .c-floor__text li{
   font-size: 1.2rem;
   color: black;
+  text-align: left;
 }
 
 .c-floor__text span {

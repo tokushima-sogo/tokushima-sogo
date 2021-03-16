@@ -854,3 +854,8 @@ footer a:hover {
     order: 4;
   }
 }
+
+span[id="front_info"] {
+  display: block;
+  content: "";
+}

@@ -11,7 +11,6 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
 
-    <link href="<?php echo get_template_directory_uri(); ?>/assets/css/quiz.css" rel="stylesheet">
     <script>
         const PATH = "<?php echo get_template_directory_uri(); ?>";
     </script>

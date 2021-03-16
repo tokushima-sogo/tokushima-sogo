@@ -87,7 +87,7 @@
                     <li><a href="<?php echo esc_url(home_url('/aboutsite/')); ?>">このサイトについて</a></li>
                     <li><a href="<?php echo esc_url(home_url('/privacy/')); ?>">プライバシーポリシー</a></li>
                     <li><a href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/')); ?>#front_info">サイトの使い方</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/')); ?>#js_2f">サイトの使い方</a></li>
                 </ul>
             </li>
 
