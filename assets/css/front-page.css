@@ -184,11 +184,24 @@
 }
 
 .l-department {
+  background-image: url(../images/mv_front_mb.png);
+  background-size: cover;
+  background-position: center center;
+  padding-top: 4%;
+}
+@media (min-width: 425px) {
+  .l-department {
+  background-image: url(../images/mv_front_web.png);
+  }
+}
+
+/* .l-department
+.l-department {
   background-image: url(../images/mv_front_web.png);
   background-size: cover;
   background-position: center center;
   margin-top: 4%;
-}
+} */
 
 .p-floorImg > img + img {
   padding-left: 2%;
