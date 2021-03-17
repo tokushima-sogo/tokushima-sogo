@@ -88,7 +88,8 @@
   color: rgb(255, 123, 0);
 } */
 .mtphr-dnt-default-tick  a {
-  color: #ffffff;
+  /* color: #ffffff; */
+  color: rgb(255, 123, 0);
 }
 
 @media (min-width: 768px) {
