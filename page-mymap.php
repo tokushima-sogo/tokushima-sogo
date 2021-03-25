@@ -99,9 +99,9 @@
                 </div>
                 <div id="map" class="map_disappear"></div>
             </div>
-            <div class="u-mapBtn--center ">
+            <!-- <div class="u-mapBtn--center ">
                 <button id="printBtn" class="mapBtn u-mapBtn--bgcOrange print_none">マップ印刷
-            </div>
+            </div> -->
         </section>
     </div>
     <!-- /googlemap表示 -->
